@@ -1,0 +1,539 @@
+/* ---------------------------------------------------- */
+/* -------------------START GENERAL-------------------- */
+/* ---------------------------------------------------- */
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('/fonts/GothamMedium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Light';
+    src: url('/fonts/GothamLight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html,
+body {
+    height: 100%;
+    background: #ffffff;
+    transition: 1s;
+}
+
+body {
+    min-width: 500px;
+}
+
+/* ---------------------------------------------------- */
+/* --------------------END GENERAL--------------------- */
+/* ---------------------------------------------------- */
+
+/* ---------------------------------------------------- */
+/* ------------------START DARK MODE------------------- */
+/* ---------------------------------------------------- */
+
+.tema {
+    display: none;
+}
+
+.dark,
+.dark header {
+    background-color: #606060 !important;
+    color: #fff !important;
+}
+
+.bi {
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+.bi-sun {
+    color:white;
+}
+.bi-moon {
+    display: none;
+}
+
+.dark .bi-sun {
+    display: none;
+}
+
+.dark .bi-moon {
+    display: block;
+}
+
+.dark .footer {
+    background-color: #122f42;
+}
+
+.dark .nav {
+    background-color: #122f42;
+}
+
+.dark {
+    background-color: #3d3d3d !important;
+}
+
+.dark .bg-perso {
+    background-color: #122f42 !important;
+}
+
+.dark .card {
+    background-color: #122f42 !important;
+    color: #fff;
+}
+
+.dark canvas {
+    color: #fff !important;
+}
+
+.dark footer {
+    background-color: #122f42 !important;
+}
+
+.dark main {
+    background-color: #3d3d3d !important;
+    color: #fff !important;
+}
+
+.dark th {
+    color: #fff;
+}
+
+.dark td {
+    color: #fff;
+}
+
+.dark tbody tr:hover {
+    background-color: #cccccc;
+    border-color: black;
+}
+
+.dark input {
+    background-color: #3d3d3d;
+    color: #fff;
+}
+
+
+.dark .btn {
+    background-color: #122f42;
+    color: #fff;
+    border-color: #fff;
+}
+
+.dark ul {
+    background-color: #122f42;
+}
+
+.dark ul a,
+ul hr {
+    color: #fff;
+    background-color: #122f42;
+}
+
+.dark select {
+    color: #fff;
+    background-color: #122f42;
+}
+
+.dark .logimg {
+    background-color: #3d3d3d;
+}
+
+.dark .welcometxt {
+    color: #fff;
+}
+
+.dark .larg-btn {
+    border-color: #122f42;
+}
+
+.dark .larg-btn:hover {
+    background-color: #3382B8;
+    border-color: #3382B8;
+}
+
+.dark .input-log::placeholder {
+    color: #787777 !important;
+}
+
+.dark .logimg {
+    background-image: url("/images/CompassLoginScreenDark.png");
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: bottom;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+}
+.dark .icon-user {
+    background-image: url("/images/user-icon-white.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-x: 3%;
+    background-size: 7%;
+}
+
+.dark .icon-pass {
+    background-image: url("/images/password-icon-white.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-x: 3%;
+    background-size: 7%;
+}
+.dark input.icon-user:focus {
+    background-image: url("/images/user-icon.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-x: 3%;
+    background-size: 7%;
+}
+
+.dark input.icon-pass:focus {
+    background-image: url("/images/password-icon.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-x: 3%;
+    background-size: 7%;
+}
+.dark .proposta input {
+    background-color: #122f42 !important;
+    font-weight: 600;
+}
+.dark .proposta input:focus {
+    background-color: #d0d0d0 !important;
+    color: black;
+    font-weight: 600;
+}
+.dark .proposta select {
+    background-color: #122f42;
+    color: #fff;
+}
+.dark .proposta .data {
+    color-scheme: dark;
+}
+.dark .proposta .data {
+    color: #6C757D;
+}
+
+.dark .proposta h1, h2, h3, h4, h5{
+    color: #fff !important;
+}
+.dark .blue-compass {
+    color:#fff !important;
+    font-weight: 800;
+}
+.dark .span-class {
+    background-color: #122f42;
+    color: #fff;
+}
+.dark .btnhv:hover {
+    background-color: #1a4663;
+}
+.dark .btnhv {
+    border-color: #122f42;
+}
+.dark .paginate {
+    background-color: #3d3d3d !important;
+    color: #fff;
+}
+/* ---------------------------------------------------- */
+/* -------------------END DARK MODE-------------------- */
+/* ---------------------------------------------------- */
+
+
+/* ---------------------------------------------------- */
+/* ------------------START LOGIN PAGE------------------ */
+/* ---------------------------------------------------- */
+
+.bg-image-vertical {
+    position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+}
+
+@media (min-width: 1025px) {
+    .h-custom-2 {
+        height: 100%;
+    }
+}
+
+.icon-user {
+    background-image: url("/images/user-icon.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-x: 3%;
+    background-size: 7%;
+}
+
+.icon-pass {
+    background-image: url("/images/password-icon.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-x: 3%;
+    background-size: 7%;
+}
+
+input[type=email] {
+    width: 100%;
+    padding-left: 12%;
+    box-sizing: border-box;
+}
+
+input[type=password] {
+    width: 100%;
+    padding-left: 12%;
+    box-sizing: border-box;
+}
+
+.form-control {
+    border-radius: 25px;
+    background-color: rgb(244, 244, 244);
+}
+
+.form-control:focus {
+    background-color: rgb(244, 244, 244);
+    border-color: #3382B8;
+    box-shadow: 0 0 0 0.25rem rgba(51, 130, 184, .25);
+}
+
+.corpadrao {
+    background-color: #3382B8;
+    border-color: #3382B8;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.welcometxt {
+    color: rgb(51, 130, 184);
+    font-weight: bolder;
+    font-family: Gotham;
+}
+
+.standartTxt {
+    font-family: Gotham Light;
+    font-weight: 600;
+}
+
+.container {
+    margin: 0;
+    width: 100%;
+}
+
+.footerBg {
+    background-color: #3382B8;
+    height: 15vh;
+}
+
+.footerLogo {
+    height: 24px;
+    width: 24px;
+}
+
+.algLogo {
+    height: 36px;
+    width: 36px;
+}
+
+.footerFont {
+    color: #ffffff;
+    font-size: small;
+}
+
+.logimg {
+    background-image: url("/images/CompassLoginScreenBranco2.png");
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: bottom;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    max-width: 1920px;
+    height: 100vh;
+}
+
+.img-mobile {
+    width: 60%;
+    height: 60%;
+}
+
+.altura {
+    min-height: 85vh;
+}
+
+.at100vh {
+    min-height: 100vh;
+}
+
+.larg-btn {
+    width: 100%;
+}
+
+.tog-log {
+    text-align: end;
+    margin-right: 1%;
+}
+/* ---------------------------------------------------- */
+/* -------------------END LOGIN PAGE------------------- */
+/* ---------------------------------------------------- */
+
+
+
+/* ---------------------------------------------------- */
+/* ------------------START DASHBOARD------------------- */
+/* ---------------------------------------------------- */
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+.b-example-divider {
+    width: 100%;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+}
+
+.bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+}
+
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.btn-bd-primary {
+    --bd-violet-bg: #712cf9;
+    --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: var(--bd-violet-bg);
+    --bs-btn-border-color: var(--bd-violet-bg);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #6528e0;
+    --bs-btn-hover-border-color: #6528e0;
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: #5a23c8;
+    --bs-btn-active-border-color: #5a23c8;
+}
+
+.bd-mode-toggle {
+    z-index: 1500;
+}
+
+.bg-perso {
+    background-color: #3382B8 !important;
+}
+
+.dashboardTxt {
+    font-family: Gotham Light;
+    font-weight: 600;
+}
+
+.side-title {
+    color: #ffffff !important;
+}
+
+.logo-dash {
+    background-image: url("/images/compass-logo-horizontal.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card-just {
+    padding-left: 5%;
+}
+
+.card-height {
+    height:45vh;
+    max-height: 500px;
+}
+/* ---------------------------------------------------- */
+/* -------------------END DASHBOARD-------------------- */
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+/* ------------------START PROPOSTA-------------------- */
+/* ---------------------------------------------------- */
+    .proposta h1, h2, h3, h4, h5 {
+        color: #3382B8 !important;
+        font-weight: 600;
+    }
+    .blue-compass {
+        color: #3382B8;
+        font-weight: 600;
+    }
+/* ---------------------------------------------------- */
+/* --------------------END PROPOSTA-------------------- */
+/* ---------------------------------------------------- */
+
+/* ---------------------------------------------------- */
+/* ---------------START FUNCIONARIO PAGE--------------- */
+/* ---------------------------------------------------- */
+.span-class {
+    background-color: #3382B8;
+    color: #fff;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+/* ---------------------------------------------------- */
+/* ----------------END FUNCIONARIO PAGE---------------- */
+/* ---------------------------------------------------- */
+
+/* ---------------------------------------------------- */
+/* -------------START GERFUNCIONARIO PAGE---------------*/
+/* ---------------------------------------------------- */
+.btn-compass-color {
+    background-color: #3382B8;
+    color: #fff;
+}
+.btn-compass-color:hover {
+    background-color: #296791;
+    color: #fff;
+}
+
+/* ---------------------------------------------------- */
+/* --------------END GERFUNCIONARIO PAGE----------------*/
+/* ---------------------------------------------------- */

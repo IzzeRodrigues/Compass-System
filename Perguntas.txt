@@ -1,0 +1,23 @@
+Existe a possibilidade da carga ter características que pedem caminhões diferentes?
+Diferença entre truck e truck bau
+O que é Cav e Bug
+
+Se operação DTA
+{
+	Imp. Susp. = Valor Mercadoria * (%imposto Susp / 100)
+}
+senão 
+{
+	Imp. Susp. = 0
+}
+Total Imp. Seg. = Valor Mercadoria + Container (*Valor???*) + Imp. Susp.
+RCTRC = Total Imp. Seg. * (%RCTRC / 100)
+RCFDC = Total Imp. Seg. * (%RCFDC / 100)
+Se seguro = true
+{
+	GRIS = Total Imp. Seg. * (%GRIS / 100)
+}
+senão
+{
+	GRIS = 0
+}
