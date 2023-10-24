@@ -291,7 +291,7 @@
                     <div class="row">
                         <div class="col-md-3 col-sm-6 col-12 mb-3">
                             <label>Seguro</label>
-                            <select class="form-control">
+                            <select class="form-control" onblur="calcularImpostos()" onchange="calcularImpostos()">
                                 <option selected disabled>Selecione...</option>
                                 <option>Seguro</option>
                                 <option>GRIS</option>
@@ -299,7 +299,7 @@
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>% Seguro</label>
-                            <input type="number" min="0" class="form-control">
+                            <input type="number" min="0" class="form-control" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Total Seguro</label>
@@ -307,43 +307,43 @@
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Estacionamento</label>
-                            <input type="number" min="0" class="form-control">
+                            <input type="number" min="0" class="form-control" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>IMO</label>
-                            <input type="number" min="0" class="form-control">
+                            <input type="number" min="0" class="form-control" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>DTA GRU/VCP/BSB</label>
-                            <input type="number" min="0" class="form-control">
+                            <input type="number" min="0" class="form-control" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>Ajudantes</label>
-                            <input type="number" min="0" class="form-control">
+                            <input type="number" min="0" class="form-control" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>ICMS</label>
-                            <input type="number" min="0" class="form-control">
+                            <input type="number" min="0" class="form-control" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>Sub Total</label>
-                            <input type="number" min="0" class="form-control">
+                            <input type="number" min="0" class="form-control" readonly>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>Total da Prest</label>
-                            <input type="number" min="0" class="form-control">
+                            <input type="number" min="0" class="form-control" readonly>
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>Despesas</label>
-                            <input type="number" min="0" class="form-control">
+                            <input type="number" min="0" class="form-control" readonly>
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>Lucro Bruto</label>
-                            <input type="number" min="0" class="form-control">
+                            <input type="number" min="0" class="form-control" readonly>
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>Margem</label>
