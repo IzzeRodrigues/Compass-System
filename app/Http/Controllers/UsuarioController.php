@@ -84,7 +84,7 @@ class UsuarioController extends Controller
             );
             setcookie(
                 "cargoUsuario",
-                $resultado[0]->nm_cargo_vendedor,
+                $resultado[0]->nm_cargo_usuario,
                 time() + (60 * 60),
                 "/",
             );
@@ -184,7 +184,7 @@ class UsuarioController extends Controller
                 //     return redirect()->route('admindex');
                 // }
 
-                DB::insert("insert into tb_usuario (nm_nome_completo, nm_cargo_vendedor, cd_senha) values (?, ?, ?)", [$nomeFuncionario, $cargo, $senha]);
+                DB::insert("insert into tb_usuario (nm_nome_completo, nm_cargo_usuario, cd_senha) values (?, ?, ?)", [$nomeFuncionario, $cargo, $senha]);
 
                 $resultado = DB::select ("select * from tb_usuario where nm_nome_completo = '$nomeFuncionario'");
 
