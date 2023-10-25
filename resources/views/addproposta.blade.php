@@ -209,7 +209,7 @@
                                 <option value="container6000kg">De 3501 a 6000Kg / 22,1 a 35m³ / 10 pallets</option>
                                 <option value="container12000kg">De 6001 a 12000Kg / 35,1 a 45m³ / 14 pallets</option>
                                 <option value="container25000kg">De 12001 a 25000Kg / 45,1 a 76m³ / 26 pallets</option>
-                                <option value="outros">OUTROS</option>
+                                <option value="outros">Outros</option>
                             </select>
                         </div>
                     </div>
