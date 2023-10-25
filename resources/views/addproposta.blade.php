@@ -290,20 +290,20 @@
                     </div>
                     <div class="row">
                         <div class="col-md-3 col-sm-6 col-12 mb-3">
-                            <label>Seguro</label>
-                            <select class="form-control" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <label>GRIS</label>
+                            <select class="form-control" id="checkGRIS" name="checkGRIS" onblur="calcularImpostos()" onchange="calcularImpostos()">
                                 <option selected disabled>Selecione...</option>
-                                <option>Seguro</option>
-                                <option>GRIS</option>
+                                <option value="sim">Sim</option>
+                                <option value="nao">Não</option>
                             </select>
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
-                            <label>% Seguro</label>
-                            <input type="number" min="0" class="form-control" id="porcentagemSeguro" name="porcentagemSeguro" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <label>% GRIS</label>
+                            <input type="number" min="0" class="form-control" id="porcentagemGRIS" name="porcentagemGRIS" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>Total Seguro</label>
-                            <input type="number" min="0" class="form-control" id="valorSeguro" name="valorSeguro" readonly>
+                            <label>Total GRIS</label>
+                            <input type="number" min="0" class="form-control" id="valorGRIS" name="valorGRIS" readonly>
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Estacionamento</label>
