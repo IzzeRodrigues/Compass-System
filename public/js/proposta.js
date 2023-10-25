@@ -52,8 +52,6 @@ function inicioProposta()
 
     // document.getElementById('dataPropsota').valueAsDate = data.getFullYear();
 
-    curl -i -x OPTIONS -H ""
-
     console.log("Tá rodando");
     
     fetch('http://localhost/compassSlim/getUsuario')
@@ -199,4 +197,8 @@ function calcularImpostos()
     {
         document.getElementById('valorRCFDC').value = (totalImpostoSeguro * (porcentagemRCFDC / 100));
     }
+
+    rctrc = document.getElementById('valorRCTRC').value;
+    rcfdc = document.getElementById('valorRCFDC').value;
+    
 }   
