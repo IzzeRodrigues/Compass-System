@@ -36,13 +36,13 @@ function inicioProposta()
     //     document.getElementById('emailResponsavel').value = resultado;
     // }
 
-    // valorDecodificado = decodeURIComponent(document.cookie);
-    // valor = `; ${valorDecodificado}`;
-    // partes = valor.split('; nomeUsuario=');
-    // if (partes.length === 2)
-    // {
-    //     resultado = partes.pop().split(';').shift();
-    // }
+    valorDecodificado = decodeURIComponent(document.cookie);
+    valor = `; ${valorDecodificado}`;
+    partes = valor.split('; nomeUsuario=');
+    if (partes.length === 2)
+    {
+        resultado = partes.pop().split(';').shift();
+    }
     // if (resultado !== undefined)
     // {
     //     document.getElementById('nomeResponsavel').value = resultado;
@@ -54,15 +54,15 @@ function inicioProposta()
 
     console.log("Tá rodando");
     
-    fetch('http://localhost/compassSlim/getUsuario')
+    fetch('http://localhost/slimCompass/usuario/'+resultado)
     .then((response) => response.json())
     .then((json) => setNome(json))
 }
 
 function setNome(valor)
 {
-    console.log(valor);
-    // document.getElementById('nomeResponsavel').value = valor.nm_nome_completo;
+    // console.log(valor);
+    document.getElementById('nomeResponsavel').value = valor.nm_nome_completo;
 }
 
 function verificarVeiculo()
@@ -183,7 +183,11 @@ function calcularImpostos()
         document.getElementById('valorSusp').value = 0;
     }
     //Calculando o valor total do imposto do seguro
-    document.getElementById('totalImpostoSeguro').value = (valorMercadoria + container + parseFloat(document.getElementById('valorSusp').value));
+    valorSusp = document.getElementById('valorSusp').value;
+    if (valorSusp != NaN && valorSusp != 0)
+    {
+        document.getElementById('totalImpostoSeguro').value = (valorMercadoria + container + parseFloat(document.getElementById('valorSusp').value));
+    }
     totalImpostoSeguro = document.getElementById('totalImpostoSeguro').value;
     porcentagemRCTRC = document.getElementById('porcentagemRCTRC').value;
     //Calculando o valor de RCTRC
@@ -200,5 +204,6 @@ function calcularImpostos()
 
     rctrc = document.getElementById('valorRCTRC').value;
     rcfdc = document.getElementById('valorRCFDC').value;
+
     
 }   
