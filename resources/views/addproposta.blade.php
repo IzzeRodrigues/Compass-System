@@ -267,7 +267,7 @@
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>Frete Peso</label>
-                            <input type="number" min="0" class="form-control" id="pesoFrete" name="pesoFrete" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="number" min="0" class="form-control" id="fretePeso" name="fretePeso" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                     </div>
                     <div class="row">
@@ -382,7 +382,7 @@
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Pedágio Motorista</label>
-                            <input type="number" min="0" class="form-control">
+                            <input type="number" min="0" class="form-control" id="valorPedagio" name="valorPedagio" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>RCFDC</label>

@@ -54,15 +54,25 @@ function inicioProposta()
 
     console.log("Tá rodando");
     
-    fetch('http://localhost/slimCompass/usuario/'+resultado)
+    fetch('http://localhost/slimCompass/getNome/'+resultado)
     .then((response) => response.json())
     .then((json) => setNome(json))
+
 }
 
-function setNome(valor)
+function setNome(nome)
 {
-    // console.log(valor);
-    document.getElementById('nomeResponsavel').value = valor.nm_nome_completo;
+    document.getElementById('nomeResponsavel').value = nome.nm_nome_completo;
+    document.getElementById('cargoResponsavel').value = nome.nm_cargo_usuario;
+    fetch('http://localhost/slimCompass/getEmail/'+nome.cd_usuario)
+    .then((response) => response.json())
+    .then((json) => setEmail(json))
+
+}
+
+function setEmail(email)
+{
+    document.getElementById('emailResponsavel').value = email.nm_email_usuario;
 }
 
 function verificarVeiculo()
@@ -169,13 +179,15 @@ function calcularImpostos()
     valorMercadoria = parseFloat(document.getElementById('valorMercadoria').value);
     container = parseFloat(document.getElementById('container').value);
     porcentagemSusp = parseFloat(document.getElementById('porcentagemSusp').value);
+
     tipoOperacao = document.getElementById("tipoOperacao").value;
     //Calculando o valor de Susp.
     if (tipoOperacao == "DTA")
     {
-        if (valorMercadoria != "" && container != "" && porcentagemSusp != "")
+        if (valorMercadoria && container && porcentagemSusp)
         {
-            document.getElementById('valorSusp').value = (valorMercadoria * (porcentagemSusp / 100));
+            valorSusp = valorMercadoria * (porcentagemSusp / 100);
+            document.getElementById('valorSusp').value = valorSusp;
         }
     }
     else
@@ -186,24 +198,52 @@ function calcularImpostos()
     valorSusp = document.getElementById('valorSusp').value;
     if (valorSusp != NaN && valorSusp != 0)
     {
-        document.getElementById('totalImpostoSeguro').value = (valorMercadoria + container + parseFloat(document.getElementById('valorSusp').value));
+        totalImpostoSeguro = valorMercadoria + container + parseFloat(valorSusp)
+        document.getElementById('totalImpostoSeguro').value = totalImpostoSeguro;
     }
-    totalImpostoSeguro = document.getElementById('totalImpostoSeguro').value;
-    porcentagemRCTRC = document.getElementById('porcentagemRCTRC').value;
+    fretePeso = parseFloat(document.getElementById('fretePeso').value);
+    porcentagemRCTRC = parseFloat(document.getElementById('porcentagemRCTRC').value);
     //Calculando o valor de RCTRC
-    if (totalImpostoSeguro != "" && porcentagemRCTRC != "")
+    rctrc = ""; //Gambiarra
+    if (totalImpostoSeguro && porcentagemRCTRC)
     {
-        document.getElementById('valorRCTRC').value = (totalImpostoSeguro * (porcentagemRCTRC / 100));
+        rctrc = (totalImpostoSeguro * (porcentagemRCTRC / 100))
+        document.getElementById('valorRCTRC').value = rctrc;
     }
     porcentagemRCFDC = document.getElementById('porcentagemRCFDC').value;
     //Calculando valor RCFDC
-    if(totalImpostoSeguro != "" && porcentagemRCFDC !="")
+    rcfdc = ""; //Gambiarra
+    if(totalImpostoSeguro && porcentagemRCFDC)
     {
-        document.getElementById('valorRCFDC').value = (totalImpostoSeguro * (porcentagemRCFDC / 100));
+        rcfdc = (totalImpostoSeguro * (porcentagemRCFDC / 100))
+        document.getElementById('valorRCFDC').value = rcfdc;
     }
 
-    rctrc = document.getElementById('valorRCTRC').value;
-    rcfdc = document.getElementById('valorRCFDC').value;
+    checkGRIS = document.getElementById('checkGRIS').value;
+    porcentagemGRIS = parseFloat(document.getElementById('porcentagemGRIS').value);
+    GRIS = "";
+    if (checkGRIS == "sim" && porcentagemGRIS)
+    {
+        GRIS = totalImpostoSeguro * (porcentagemGRIS / 100);
+        document.getElementById('valorGRIS').value = GRIS;
+    }
+    else
+    {
+        GRIS = 0;
+        document.getElementById('valorGRIS').value = GRIS;
+    }
 
-    
+    pedagio = parseFloat(document.getElementById('valorPedagio').value);
+    estacionamento = parseFloat(document.getElementById('valorEstacionamento').value);
+    IMO = parseFloat(document.getElementById('valorIMO').value);
+    DTA_GVB = parseFloat(document.getElementById('valorDTA_GVB').value);
+    ajudantes = parseFloat(document.getElementById('valorAjudantes').value);
+    ICMS = valorICMS = parseFloat(document.getElementById('valorICMS').value);
+    if ((fretePeso !== "" || fretePeso !== NaN || fretePeso !== undefined || fretePeso !== null) && (valorSusp !== "" || valorSusp !== NaN || valorSusp !== undefined || valorSusp !== null) && (rctrc !== "" || rctrc !== NaN || rctrc !== undefined || rctrc !== null) && (rcfdc !== "" || rcfdc !== NaN || rcfdc !== undefined || rcfdc !== null) && (GRIS !== "" || GRIS !== NaN || GRIS !== undefined || GRIS !== null) && (pedagio !== "" || pedagio !== NaN || pedagio !== undefined || pedagio !== null) && (estacionamento !== "" || estacionamento !== NaN || estacionamento !== undefined || estacionamento !== null) && (IMO !== "" || IMO !== NaN || IMO !== undefined || IMO !== null) && (DTA_GVB !== "" || DTA_GVB !== NaN || DTA_GVB !== undefined || DTA_GVB !== null) && (ajudantes !== "" || ajudantes !== NaN || ajudantes !== undefined || ajudantes !== null))
+    {
+        console.log('entrandoContaFinal')
+        subTotal = parseFloat(fretePeso) + parseFloat(valorSusp) + parseFloat(rctrc) + parseFloat(rcfdc) + parseFloat(GRIS) + parseFloat(pedagio) + parseFloat(estacionamento) + parseFloat(IMO) + parseFloat(DTA_GVB) + parseFloat(ajudantes);
+        console.log(subTotal);
+        document.getElementById('subTotal').value = subTotal; 
+    }
 }   
