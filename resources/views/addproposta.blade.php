@@ -220,7 +220,7 @@
                         </div>
                         <div class="col-6 mb-3">
                             <label>Nº de Eixos</label>
-                            <input type="text" class="form-control" placeholder="Ex:1" readonly id="numeroEixos" name="numeroEixos">
+                            <input type="text" class="form-control" placeholder="Ex:1" readonly id="numeroEixos_cabecalho" name="numeroEixos_cabecalho">
                         </div>
                     </div>
                     <div class="row">
@@ -324,7 +324,11 @@
                             <input type="number" min="0" class="form-control" id="valorAjudantes" name="valorAjudantes" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
-                            <label>ICMS</label>
+                            <label>Valor ICMS</label>
+                            <input type="number" min="0" class="form-control" id="valorICMS" name="valorICMS" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                            <label>% ICMS</label>
                             <input type="number" min="0" class="form-control" id="valorICMS" name="valorICMS" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
@@ -494,7 +498,7 @@
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Quant. De Eixos</label>
-                            <input type="number" min="0" class="form-control" readonly>
+                            <input type="number" min="0" class="form-control" id="numeroEixos_carga" name="numeroEixos_carga"readonly>
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>KM Ida</label>
