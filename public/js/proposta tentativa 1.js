@@ -1,5 +1,3 @@
-let puxouMoeda = false;
-
 function inicioProposta()
 {
     // let email = "emailUsuario=";
@@ -80,6 +78,17 @@ function setEmail(email)
 function verificarVeiculo()
 {
     let container = document.getElementById('tipoContainer').value;
+    // let pallets = document.getElementById('pallets').value;
+    // if (pallets > 6)
+    // {
+    //     document.getElementById('tipoVeiculo').value = "Baú Toco";
+    //     document.getElementById('numeroEixos').value = 2;
+    // }
+    // else
+    // {
+    //     document.getElementById('tipoVeiculo').value = "Baú 3/4";
+    //     document.getElementById('numeroEixos').value = 2;
+    // }
 
     if(container == "container20")
     {
@@ -193,26 +202,26 @@ function calcularImpostos()
         document.getElementById('totalImpostoSeguro').value = totalImpostoSeguro;
     }
     fretePeso = parseFloat(document.getElementById('fretePeso').value);
-    porcentagemRCTRC_operacao = parseFloat(document.getElementById('porcentagemRCTRC_operacao').value);
+    porcentagemRCTRC = parseFloat(document.getElementById('porcentagemRCTRC').value);
     //Calculando o valor de RCTRC
-    rctrcOperacao = document.getElementById('valorRCTRC_operacao').value;
-    if (totalImpostoSeguro && porcentagemRCTRC_operacao)
+    rctrc = ""; //Gambiarra
+    if (totalImpostoSeguro && porcentagemRCTRC)
     {
-        rctrcOperacao = (totalImpostoSeguro * (porcentagemRCTRC_operacao / 100))
-        document.getElementById('valorRCTRC_operacao').value = rctrcOperacao;
+        rctrc = (totalImpostoSeguro * (porcentagemRCTRC / 100))
+        document.getElementById('valorRCTRC').value = rctrc;
     }
-    porcentagemRCFDC_operacao = document.getElementById('porcentagemRCFDC_operacao').value;
+    porcentagemRCFDC = document.getElementById('porcentagemRCFDC').value;
     //Calculando valor RCFDC
-    rcfdcOperacao = document.getElementById('valorRCFDC_operacao').value;
-    if(totalImpostoSeguro && porcentagemRCFDC_operacao)
+    rcfdc = ""; //Gambiarra
+    if(totalImpostoSeguro && porcentagemRCFDC)
     {
-        rcfdcOperacao = (totalImpostoSeguro * (porcentagemRCFDC_operacao / 100))
-        document.getElementById('valorRCFDC_operacao').value = rcfdcOperacao;
+        rcfdc = (totalImpostoSeguro * (porcentagemRCFDC / 100))
+        document.getElementById('valorRCFDC').value = rcfdc;
     }
 
     checkGRIS = document.getElementById('checkGRIS').value;
     porcentagemGRIS = parseFloat(document.getElementById('porcentagemGRIS').value);
-    GRIS = document.getElementById('valorGRIS').value;
+    GRIS = "";
     if (checkGRIS == "sim" && porcentagemGRIS)
     {
         GRIS = totalImpostoSeguro * (porcentagemGRIS / 100);
@@ -220,46 +229,46 @@ function calcularImpostos()
     }
     else
     {
-        if (checkGRIS == "nao")
-        {
-            GRIS = 0;
-            document.getElementById('valorGRIS').value = GRIS;
-        }
+        GRIS = 0;
+        document.getElementById('valorGRIS').value = GRIS;
     }
 
-    GRIS = parseFloat(document.getElementById('valorGRIS').value);
     pedagio = parseFloat(document.getElementById('valorPedagio').value);
     estacionamento = parseFloat(document.getElementById('valorEstacionamento').value);
     IMO = parseFloat(document.getElementById('valorIMO').value);
     DTA_GVB = parseFloat(document.getElementById('valorDTA_GVB').value);
     ajudantes = parseFloat(document.getElementById('valorAjudantes').value);
     ICMS = valorICMS = parseFloat(document.getElementById('valorICMS').value);
-
-    if (!isNaN(fretePeso))
+    // if ((fretePeso != "" && fretePeso != NaN && fretePeso != undefined && fretePeso != null) && (valorSusp != "" && valorSusp != NaN && valorSusp != undefined && valorSusp != null) && (rctrc != "" && rctrc != NaN && rctrc != undefined && rctrc != null) && (rcfdc != "" && rcfdc != NaN && rcfdc != undefined && rcfdc != null) && (GRIS != "" && GRIS != NaN && GRIS != undefined && GRIS != null) && (pedagio != "" && pedagio != NaN && pedagio != undefined && pedagio != null) && (estacionamento != "" && estacionamento != NaN && estacionamento != undefined && estacionamento != null) && (IMO != "" && IMO != NaN && IMO != undefined && IMO != null) && (DTA_GVB != "" && DTA_GVB != NaN && DTA_GVB != undefined && DTA_GVB != null) && (ajudantes != "" && ajudantes != NaN && ajudantes != undefined && ajudantes != null))
+    // {
+    //     console.log('entrandoContaFinal 2')
+    //     subTotal = parseFloat(fretePeso) + parseFloat(valorSusp) + parseFloat(rctrc) + parseFloat(rcfdc) + parseFloat(GRIS) + parseFloat(pedagio) + parseFloat(estacionamento) + parseFloat(IMO) + parseFloat(DTA_GVB) + parseFloat(ajudantes);
+    //     console.log(subTotal);
+    //     document.getElementById('subTotal').value = subTotal; 
+    // }
+    if (fretePeso != "" && fretePeso != NaN && fretePeso != undefined && fretePeso != null)
     {
-        if (!isNaN(valorSusp))
+        if (valorSusp != "" && valorSusp != NaN && valorSusp != undefined && valorSusp != null)
         {
-            if (!isNaN(rctrcOperacao))
+            if (rctrc != "" && rctrc != NaN && rctrc != undefined && rctrc != null)
             {
-                if (!isNaN(rcfdcOperacao))
+                if (rcfdc != "" && rcfdc != NaN && rcfdc != undefined && rcfdc != null)
                 {
-                    if (!isNaN(GRIS))
+                    if (GRIS != "" && GRIS != NaN && GRIS != undefined && GRIS != null)
                     {
-                        if (!isNaN(pedagio))
+                        if (pedagio != "" && pedagio != NaN && pedagio != undefined && pedagio != null)
                         {
-                            console.log("Entrando pedágio")
-                            if (!isNaN(estacionamento))
+                            if (estacionamento != "" && estacionamento != NaN && estacionamento != undefined && estacionamento != null)
                             {
-                                console.log("Entrando estacionamento")
-                                if (!isNaN(IMO))
+                                if (IMO != "" && IMO != NaN && IMO != undefined && IMO != null)
                                 {
-                                    console.log("Entrando IMO")
-                                    if (!isNaN(DTA_GVB))
+                                    if (DTA_GVB != "" && DTA_GVB != NaN && DTA_GVB != undefined && DTA_GVB != null)
                                     {
-                                        console.log("Entrando DTA_GVB")
-                                        if (!isNaN(ajudantes))
+                                        if (ajudantes != "" && ajudantes != NaN && ajudantes != undefined && ajudantes != null)
                                         {
-                                            subTotal = parseFloat(fretePeso) + parseFloat(valorSusp) + parseFloat(rctrcOperacao) + parseFloat(rcfdcOperacao) + parseFloat(GRIS) + parseFloat(pedagio) + parseFloat(estacionamento) + parseFloat(IMO) + parseFloat(DTA_GVB) + parseFloat(ajudantes);
+                                            console.log('entrandoContaFinal 2')
+                                            subTotal = parseFloat(fretePeso) + parseFloat(valorSusp) + parseFloat(rctrc) + parseFloat(rcfdc) + parseFloat(GRIS) + parseFloat(pedagio) + parseFloat(estacionamento) + parseFloat(IMO) + parseFloat(DTA_GVB) + parseFloat(ajudantes);
+                                            console.log(subTotal);
                                             document.getElementById('subTotal').value = subTotal; 
                                         }
                                     }
@@ -271,20 +280,4 @@ function calcularImpostos()
             }
         }
     }
-
-    if(!puxouMoeda)
-    {
-        fetch('https://economia.awesomeapi.com.br/last/USD-BRL')
-        .then((response) => response.json())
-        .then((json) => setMoeda(json))
-    }
-    
-}
-
-function setMoeda(moeda)
-{
-    puxouMoeda = true;
-    console.log(moeda);
-    valorDolar = moeda.USDBRL.bid;
-    document.getElementById('valorDolarReal').value = (Math.round(valorDolar * 100)/ 100).toFixed(2); // Só consigo deixar 2 casas assim por algum motivo
-}
+}   
