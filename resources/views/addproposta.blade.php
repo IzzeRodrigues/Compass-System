@@ -321,8 +321,8 @@
                             <input type="number" min="0" class="form-control" id="valorGRIS" name="valorGRIS" readonly>
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>DTA GRU/VCP/BSB</label>
-                            <input type="number" min="0" class="form-control" id="valorDTA_GVB" name="valorDTA_GVB" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <label>Pedágio</label>
+                            <input type="number" min="0" class="form-control" id="valorPedagio_operacao" name="valorPedagio_operacao" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                     </div>
                     <div class="row">
@@ -384,6 +384,12 @@
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
+                            <label>DTA GRU/VCP/BSB</label>
+                            <input type="number" min="0" class="form-control" id="valorDTA_GVB" name="valorDTA_GVB" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                        </div>
+                    </div>
+                    <div class="row">
                         <h3 class="mb-4">Motorista</h3>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Motorista Autônomo</label>
@@ -391,7 +397,7 @@
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Pedágio Motorista</label>
-                            <input type="number" min="0" class="form-control" id="valorPedagio" name="valorPedagio" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="number" min="0" class="form-control" id="valorPedagio_motorista" name="valorPedagio_motorista" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>RCFDC</label>
