@@ -78,7 +78,6 @@
                         </div>
                     </div>
                     <div class="row">
-
                         <div class="col-md-3 col-sm-4 col-12 mb-3">
                             <label>Produto</label>
                             <input type="text" class="form-control" placeholder="Ex:Print Ink (IMO) Class 3">
@@ -350,16 +349,23 @@
                             <label>Total da Prest</label>
                             <input type="number" min="0" class="form-control" id="totalPrest" name="totalPrest" readonly>
                         </div>
-
                     </div>
                     <div class="row">
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
+                            <label>% Total da Prest</label>
+                            <input type="number" min="0" class="form-control" id="porcentagemTotalPrest" name="porcentagemTotalPrest" readonly>
+                        </div>
+                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Despesas</label>
-                            <input type="number" min="0" class="form-control" id="valorDespesas" name="valorDespesas" readonly>
+                            <input type="number" min="0" class="form-control" id="valorDespesas_operacao" name="valorDespesas_operacao" readonly>
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Lucro Bruto</label>
                             <input type="number" min="0" class="form-control" id="valorLucroBruto" name="valorLucroBruto" readonly>
+                        </div>
+                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
+                            <label>% Lucro Bruto</label>
+                            <input type="number" min="0" class="form-control" id="porcentagemLucroBruto" name="porcentagemLucroBruto" readonly>
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Margem</label>
@@ -367,7 +373,7 @@
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Valor de Container</label>
-                            <select class="form-control" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <select class="form-control">
                                 <option selected disabled>Selecione...</option>
                                 <option>20 Dry - R$30.000,00</option>
                                 <option>40 Dry/HC - R$40.000,00</option>
@@ -406,7 +412,6 @@
                             <label>Desconto RCTRC</label>
                             <input type="number" min="0" class="form-control" id="valorDescontoRCTRC" name="valorDescontoRCTRC" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
-
                     </div>
                     <div class="row">
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
@@ -444,13 +449,11 @@
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>COFINS</label>
                             <input type="number" min="0" class="form-control" id="" name="" onblur="calcularImpostos()" onchange="calcularImpostos()">
-                        </div>
-                        
+                        </div>                  
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>% COFINS</label>
                             <input type="number" min="0" class="form-control" id="" name="" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
-
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>ICMS</label>
                             <input type="number" min="0" class="form-control" id="" name="" onblur="calcularImpostos()" onchange="calcularImpostos()">

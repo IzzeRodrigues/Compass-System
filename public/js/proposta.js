@@ -84,75 +84,86 @@ function verificarVeiculo()
     if(container == "container20")
     {
         document.getElementById('tipoVeiculo').value = "Truck";
-        document.getElementById('numeroEixos').value = 3;
+        document.getElementById('numeroEixos_cabecalho').value = 3;
+        document.getElementById('numeroEixos_carga').value = 3;
     }
     else
     {
         if(container == "container40-25tons")
         {
             document.getElementById('tipoVeiculo').value = "Cav e Bug";
-            document.getElementById('numeroEixos').value = 5;
+            document.getElementById('numeroEixos_cabecalho').value = 5;
+            document.getElementById('numeroEixos_carga').value = 5;
         }
         else
         {
             if(container == "container40-30tons")
             {
                 document.getElementById('tipoVeiculo').value = "Cav e Bug";
-                document.getElementById('numeroEixos').value = 6;
+                document.getElementById('numeroEixos_cabecalho').value = 6;
+                document.getElementById('numeroEixos_carga').value = 6;
             }
             else
             {
                 if(container == "container500kg")
                 {
                     document.getElementById('tipoVeiculo').value = "Fiorino";
-                    document.getElementById('numeroEixos').value = 1;
+                    document.getElementById('numeroEixos_cabecalho').value = 1;
+                    document.getElementById('numeroEixos_carga').value = 1;
                 }
                 else
                 {
                     if(container == "container1200kg")
                     {
                         document.getElementById('tipoVeiculo').value = "Van";
-                        document.getElementById('numeroEixos').value = 1;
+                        document.getElementById('numeroEixos_cabecalho').value = 1;
+                        document.getElementById('numeroEixos_carga').value = 1;
                     }
                     else
                     {
                         if(container == "container3500kg")
                         {
                             document.getElementById('tipoVeiculo').value = "Baú 3/4";
-                            document.getElementById('numeroEixos').value = 2;
+                            document.getElementById('numeroEixos_cabecalho').value = 2;
+                            document.getElementById('numeroEixos_carga').value = 2;
                         }
                         else
                         {
                             if(container == "container6000kg")
                             {
                                 document.getElementById('tipoVeiculo').value = "Baú Toco";
-                                document.getElementById('numeroEixos').value = 2;
+                                document.getElementById('numeroEixos_cabecalho').value = 2;
+                                document.getElementById('numeroEixos_carga').value = 2;
                             }
                             else
                             {
                                 if(container == "container12000kg")
                                 {
                                     document.getElementById('tipoVeiculo').value = "Baú Truck";
-                                    document.getElementById('numeroEixos').value = 3;
+                                    document.getElementById('numeroEixos_cabecalho').value = 3;
+                                    document.getElementById('numeroEixos_carga').value = 3;
                                 }
                                 else
                                 {
                                     if(container == "container25000kg")
                                     {
                                         document.getElementById('tipoVeiculo').value = "Carreta Baú";
-                                        document.getElementById('numeroEixos').value = 5;
+                                        document.getElementById('numeroEixos_cabecalho').value = 5;
+                                        document.getElementById('numeroEixos_carga').value = 5;
                                     }
                                     else
                                     {
                                         if(container == "outros")
                                         {
                                             document.getElementById('tipoVeiculo').value = "Carreta LS";
-                                            document.getElementById('numeroEixos').value = 6;
+                                            document.getElementById('numeroEixos_cabecalho').value = 6;
+                                            document.getElementById('numeroEixos_carga').value = 6;
                                         }
                                         else
                                         {
                                             document.getElementById('tipoVeiculo').value = "Tipo Inválido";
-                                            document.getElementById('numeroEixos').value = 0;
+                                            document.getElementById('numeroEixos_cabecalho').value = 0;
+                                            document.getElementById('numeroEixos_carga').value = 0;
                                         }
                                     }
                                 }
@@ -226,50 +237,39 @@ function calcularImpostos()
             document.getElementById('valorGRIS').value = GRIS;
         }
     }
+    ICMS = parseFloat(document.getElementById('valorICMS').value);
+    porcentagemICMS = document.getElementById('porcentagemICMS').value;
 
+    //Calculando ICMS e Total Prest
+    if (!isNaN(fretePeso) && !isNaN(rctrcOperacao) && !isNaN(rcfdcOperacao) && !isNaN(GRIS) && !isNaN(pedagio_operacao) && !isNaN(estacionamento) && !isNaN(IMO) && !isNaN(DTA_GVB) && !isNaN(ajudantes) && !isNaN(porcentagemICMS))
+    {
+        totalOperacao = parseFloat(fretePeso) + parseFloat(valorSusp) + parseFloat(rctrcOperacao) + parseFloat(rcfdcOperacao) + parseFloat(GRIS) + parseFloat(pedagio_operacao) + parseFloat(estacionamento) + parseFloat(IMO) + parseFloat(DTA_GVB) + parseFloat(ajudantes);
+        coeficienteICMS = 1 - (porcentagemICMS / 100);
+        valorICMS = totalOperacao / coeficienteICMS - totalOperacao;
+        document.getElementById('valorICMS').value = (Math.round(valorICMS * 100)/ 100).toFixed(2);
+        valorTotalPrest = totalOperacao / coeficienteICMS;
+        document.getElementById('totalPrest').value = (Math.round(valorTotalPrest * 100 / 100)).toFixed(2);
+        porcentagemTotalPrest = (Math.round((valorTotalPrest / totalImpostoSeguro) * 100) / 100).toFixed(2);
+        document.getElementById('porcentagemTotalPrest').value = porcentagemTotalPrest;
+    }
+    
     GRIS = parseFloat(document.getElementById('valorGRIS').value);
-    pedagio = parseFloat(document.getElementById('valorPedagio').value);
+    pedagio_operacao = parseFloat(document.getElementById('valorPedagio_operacao').value);
+    if (!isNaN(pedagio_operacao))
+    {
+        document.getElementById('valorPedagio_despesa').value = pedagio_operacao;
+    }
     estacionamento = parseFloat(document.getElementById('valorEstacionamento').value);
     IMO = parseFloat(document.getElementById('valorIMO').value);
     DTA_GVB = parseFloat(document.getElementById('valorDTA_GVB').value);
     ajudantes = parseFloat(document.getElementById('valorAjudantes').value);
-    ICMS = valorICMS = parseFloat(document.getElementById('valorICMS').value);
 
-    if (!isNaN(fretePeso))
+
+    //Calculando subTotal
+    if (!isNaN(fretePeso) && !isNaN(rctrcOperacao) && !isNaN(rcfdcOperacao) && !isNaN(GRIS) && !isNaN(pedagio_operacao) && !isNaN(estacionamento) && !isNaN(IMO) && !isNaN(DTA_GVB) && !isNaN(ajudantes))
     {
-        if (!isNaN(valorSusp))
-        {
-            if (!isNaN(rctrcOperacao))
-            {
-                if (!isNaN(rcfdcOperacao))
-                {
-                    if (!isNaN(GRIS))
-                    {
-                        if (!isNaN(pedagio))
-                        {
-                            console.log("Entrando pedágio")
-                            if (!isNaN(estacionamento))
-                            {
-                                console.log("Entrando estacionamento")
-                                if (!isNaN(IMO))
-                                {
-                                    console.log("Entrando IMO")
-                                    if (!isNaN(DTA_GVB))
-                                    {
-                                        console.log("Entrando DTA_GVB")
-                                        if (!isNaN(ajudantes))
-                                        {
-                                            subTotal = parseFloat(fretePeso) + parseFloat(valorSusp) + parseFloat(rctrcOperacao) + parseFloat(rcfdcOperacao) + parseFloat(GRIS) + parseFloat(pedagio) + parseFloat(estacionamento) + parseFloat(IMO) + parseFloat(DTA_GVB) + parseFloat(ajudantes);
-                                            document.getElementById('subTotal').value = subTotal; 
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        subTotal = parseFloat(fretePeso) + parseFloat(valorSusp) + parseFloat(rctrcOperacao) + parseFloat(rcfdcOperacao) + parseFloat(GRIS) + parseFloat(pedagio_operacao) + parseFloat(estacionamento) + parseFloat(IMO) + parseFloat(DTA_GVB) + parseFloat(ajudantes);
+        document.getElementById('subTotal').value = subTotal; 
     }
 
     if(!puxouMoeda)
@@ -277,6 +277,10 @@ function calcularImpostos()
         fetch('https://economia.awesomeapi.com.br/last/USD-BRL')
         .then((response) => response.json())
         .then((json) => setMoeda(json))
+    }
+    else
+    {
+
     }
     
 }
