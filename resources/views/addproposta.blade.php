@@ -371,16 +371,7 @@
                             <label>Margem</label>
                             <input type="text" min="0" class="form-control" id="valorMargemLucro" name="valorMargemLucro" readonly>
                         </div>
-                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>Valor de Container</label>
-                            <select class="form-control">
-                                <option selected disabled>Selecione...</option>
-                                <option>20 Dry - R$30.000,00</option>
-                                <option>40 Dry/HC - R$40.000,00</option>
-                                <option>20/40 Refeer ou NOR - R$110.000,00</option>
-                                <option>Demais unidades - CONSULTAR</option>
-                            </select>
-                        </div>
+
                     </div>
                     <div class="row">
 
@@ -390,6 +381,10 @@
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Motorista Autônomo</label>
                             <input type="number" min="0" class="form-control" id="valorMotoristaAutonomo" name="valorMotoristaAutonomo" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                        </div>
+                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
+                            <label>Pedágio Motorista</label>
+                            <input type="number" min="0" class="form-control" id="valorPedagio_despesa" name="valorPedagio_despesa" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>% RCFDC</label>
@@ -407,20 +402,11 @@
                             <label>RCTRC</label>
                             <input type="number" min="0" class="form-control" id="valorRCTRC_despesa" name="valorRCTRC_despesa" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
-
-                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>Desconto RCTRC</label>
-                            <input type="number" min="0" class="form-control" id="valorDescontoRCTRC" name="valorDescontoRCTRC" onblur="calcularImpostos()" onchange="calcularImpostos()">
-                        </div>
                     </div>
                     <div class="row">
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>Pedágio Motorista</label>
-                            <input type="number" min="0" class="form-control" id="valorPedagio_despesa" name="valorPedagio_despesa" onblur="calcularImpostos()" onchange="calcularImpostos()">
-                        </div>
-                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>IRPJ</label>
-                            <input type="number" min="0" class="form-control" id="valorIRJP" name="valorIRJP" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <label>% Simples NAC</label>
+                            <input type="number" min="0" class="form-control" id="porcentagemSimplesNAC" name="porcentagemSimplesNAC" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Simples NAC</label>
@@ -431,28 +417,36 @@
                             <input type="number" min="0" class="form-control" id="porcentagemIRPJ" name="porcentagemIRPJ" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>Adic. IRPJ</label>
-                            <input type="number" min="0" class="form-control" id="valorAdicionalIRPJ" name="valorAdicionalIRPJ" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <label>IRPJ</label>
+                            <input type="number" min="0" class="form-control" id="valorIRJP" name="valorIRJP" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>% Adic. IRPJ</label>
                             <input type="number" min="0" class="form-control" id="porcentagemAdicionalIRPJ" name="porcentagemAdicionalIRPJ" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
+                            <label>Adic. IRPJ</label>
+                            <input type="number" min="0" class="form-control" id="valorAdicionalIRPJ" name="valorAdicionalIRPJ" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                        </div>       
+                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
+                            <label>% PIS</label>
+                            <input type="number" min="0" class="form-control" id="porcentagemPIS" name="porcentagemPIS" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                        </div>       
+                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>PIS</label>
                             <input type="number" min="0" class="form-control" id="valorPIS" name="valorPIS" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>% PIS</label>
-                            <input type="number" min="0" class="form-control" id="porcentagemPIS" name="porcentagemPIS" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <label>% COFINS</label>
+                            <input type="number" min="0" class="form-control" id="porcentagemCOFINS" name="porcentagemCOFINS" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>COFINS</label>
                             <input type="number" min="0" class="form-control" id="valorCOFINS" name="valorCOFINS" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>                  
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>% COFINS</label>
-                            <input type="number" min="0" class="form-control" id="porcentagemCOFINS" name="porcentagemCOFINS" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <label>% ICMS</label>
+                            <input type="number" min="0" class="form-control" id="porcentagemICMS_despesa" name="porcentagemICMS_despesa" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>ICMS</label>
@@ -467,24 +461,20 @@
                             <input type="number" min="0" class="form-control" id="valorGRISRastreamento" name="valorGRISRastreamento" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
+                            <label>DTA/DI - Terceirizado</label>
+                            <input type="number" min="0" class="form-control" id="valorDTA_DI" name="valorDTA_DI" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                        </div>
+                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Estacionamento</label>
                             <input type="number" min="0" class="form-control" id="valorEstacionamento_despesa" name="valorEstacionamento_despesa" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>Despacho BSB</label>
-                            <input type="number" min="0" class="form-control" id="valorDespachoBSB" name="valorDespachoBSB" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <label>Ajudantes</label>
+                            <input type="number" min="0" class="form-control" id="valorAjudantes_despesa" name="valorAjudantes_despesa" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>Despesas</label>
-                            <input type="number" min="0" class="form-control" id="valorDespesas_despesa" name="valorDespesas_despesa" readonly>
-                        </div>
-                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>Simplifica Comissão</label>
-                            <input type="number" min="0" class="form-control" id="valorSimpComissao" name="valorSimpComissao" onblur="calcularImpostos()" onchange="calcularImpostos()">
-                        </div>
-                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>% Simp Comissão</label>
-                            <input type="number" min="0" class="form-control" id="porcentagemSimpComissao" name="porcentagemSimpComissao" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <label>Profit</label>
+                            <input type="number" min="0" class="form-control" id="valorProfit" name="valorProfit" readonly>
                         </div>
                     </div>
                     <div class="row">
@@ -577,22 +567,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
-                            <label>Eixo para LS</label>
-                            <input type="number" min="0" class="form-control" id="" name="" onblur="calcularImpostos()" onchange="calcularImpostos()">
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
-                            <label>Pedágio para LS</label>
-                            <input type="number" min="0" class="form-control" id="" name="" onblur="calcularImpostos()" onchange="calcularImpostos()">
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
-                            <label>Margem %</label>
-                            <input type="number" min="0" class="form-control" id="" name="" onblur="calcularImpostos()" onchange="calcularImpostos()">
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
-                            <label>Total Adic. LS</label>
-                            <input type="number" min="0" class="form-control" id="" name="" readonly>
-                        </div>
+
                     </div>
                     <div class="row justify-content-between">
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
