@@ -48,7 +48,7 @@
                     </div>
                     <div class="row">
 
-                        <div class="col-md-8 col-sm-6 col-12 mb-3">
+                        <div class="col-md-6 col-sm-6 col-12 mb-3">
                             <label>Referência ACL</label>
                             <div class="row">
                                 <div class="col-md-4 col-sm-4 col-4 mb-3">
@@ -68,45 +68,44 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4 col-sm-4 col-12 mb-3">
+                        <div class="col-md-3 col-sm-4 col-12 mb-3">
                             <label>Referência Cliente</label>
                             <input type="text" class="form-control" placeholder="Ex:INX-Rique/Guatemala">
                         </div>
-                        <div class="col-md-4 col-sm-4 col-12 mb-3">
+                        <div class="col-md-3 col-sm-4 col-12 mb-3">
                             <label>Horário de Recebimento</label>
                             <input type="text" class="form-control" placeholder="A combinar">
                         </div>
-                        <div class="col-md-4 col-sm-4 col-12 mb-3">
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-3 col-sm-4 col-12 mb-3">
                             <label>Produto</label>
                             <input type="text" class="form-control" placeholder="Ex:Print Ink (IMO) Class 3">
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4 col-sm-4 col-12 mb-3">
+                        <div class="col-md-3 col-sm-4 col-12 mb-3">
                             <label>Quant/Embalagem</label>
                             <input type="text" class="form-control" placeholder="Ex:8 Pallets" id="pallets" name="pallets" onchange="verificarVeiculo()">
                         </div>
-                        <div class="col-md-4 col-sm-4 col-12 mb-3">
+                        <div class="col-md-3 col-sm-4 col-12 mb-3">
                             <label>Peso Total/Cubagem</label>
                             <input type="text" class="form-control" placeholder="Ex:6161kg (6,656m3)">
                         </div>
-                        <div class="col-md-4 col-sm-4 col-12 mb-3">
+                        <div class="col-md-3 col-sm-4 col-12 mb-3">
                             <label>Nome da Empresa</label>
                             <input type="text" class="form-control" placeholder="Ex:Copa Logística">
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4 col-sm-4 col-12 mb-3">
+                        <div class="col-md-3 col-sm-4 col-12 mb-3">
                             <label>Contato</label>
                             <input type="text" class="form-control" placeholder="Ex:Amanda">
                         </div>
-                        <div class="col-md-4 col-sm-4 col-12 mb-3">
+                        <div class="col-md-3 col-sm-4 col-12 mb-3">
                             <label>E-mail Contato</label>
                             <input type="text" class="form-control" placeholder="Ex:amanda@copalog.com.br">
                         </div>
-                        <div class="col-md-4 col-sm-4 col-12 mb-3">
+                        <div class="col-md-3 col-sm-4 col-12 mb-3">
                             <label>Tipo de Frete</label>
                             <select class="form-control">
                                 <option selected disabled>Selecione...</option>
@@ -341,7 +340,7 @@
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>% ICMS</label>
-                            <input type="number" min="0" class="form-control" id="valorICMS" name="valorICMS" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="number" min="0" class="form-control" id="porcentagemICMS" name="porcentagemICMS" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Total da Prest</label>
