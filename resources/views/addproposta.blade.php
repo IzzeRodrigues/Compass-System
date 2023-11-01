@@ -275,7 +275,7 @@
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Frete Peso</label>
-                            <input type="number" min="0" class="form-control" id="fretePeso" name="fretePeso" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="number" min="0" class="form-control" id="valorFretePeso" name="valorFretePeso" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>% RCTRC</label>
@@ -331,7 +331,7 @@
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Ajudantes</label>
-                            <input type="number" min="0" class="form-control" id="valorAjudantes" name="valorAjudantes" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="number" min="0" class="form-control" id="valorAjudantes_operacao" name="valorAjudantes_operacao" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>% ICMS</label>
@@ -367,9 +367,9 @@
                             <label>% Lucro Bruto</label>
                             <input type="number" min="0" class="form-control" id="porcentagemLucroBruto" name="porcentagemLucroBruto" readonly>
                         </div>
-                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
+                        <div class="col-md-4 col-sm-6 col-12 form-group mb-3">
                             <label>Margem</label>
-                            <input type="text" min="0" class="form-control" id="valorMargemLucro" name="valorMargemLucro" readonly>
+                            <input type="text" min="0" class="form-control" id="valorMargemLucroBruto" name="valorMargemLucroBruto" readonly>
                         </div>
 
                     </div>
@@ -486,6 +486,10 @@
                             <label>% Comissão</label>
                             <input type="number" min="0" class="form-control" id="porcentagemComissao" name="porcentagemComissao" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
+                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
+                            <label>Despesas</label>
+                            <input type="number" min="0" class="form-control" id="valorDespesas_despesa" name="valorDespesas_despesa" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                        </div>
 
                     </div>
                     <div class="row">
@@ -579,7 +583,7 @@
                             </select>
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
-                            <label>Moeda</label>
+                            <label>Cotação</label>
                             <input type="number" min="0" class="form-control" id="valorMoedaEstrangeira" name="valorMoedaEstrangeira" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
