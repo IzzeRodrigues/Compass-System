@@ -339,7 +339,7 @@
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Valor ICMS</label>
-                            <input type="number" min="0" class="form-control" id="valorICMS" name="valorICMS" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="number" min="0" class="form-control" id="valorICMS" name="valorICMS" readonly>
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Sub Total</label>
@@ -347,7 +347,7 @@
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Total da Prest</label>
-                            <input type="number" min="0" class="form-control" id="totalPrest" name="totalPrest" readonly>
+                            <input type="number" min="0" class="form-control" id="valorTotalPrest" name="valorTotalPrest" readonly>
                         </div>
                     </div>
                     <div class="row">
@@ -388,7 +388,7 @@
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>% RCFDC</label>
-                            <input type="number" min="0" class="form-control" id="porcentabemRCFDC_despesa" name="porcentagemRCFDC_despesa" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="number" min="0" class="form-control" id="porcentagemRCFDC_despesa" name="porcentagemRCFDC_despesa" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>RCFDC</label>
@@ -418,7 +418,7 @@
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>IRPJ</label>
-                            <input type="number" min="0" class="form-control" id="valorIRJP" name="valorIRJP" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="number" min="0" class="form-control" id="valorIRPJ" name="valorIRPJ" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>% Adic. IRPJ</label>
