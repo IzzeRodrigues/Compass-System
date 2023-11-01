@@ -1,4 +1,5 @@
 let puxouMoeda = false;
+let valoresMoedas;
 
 function inicioProposta()
 {
@@ -230,6 +231,10 @@ function calcularImpostos()
     precoCombustivelLitro = document.getElementById('valorPrecoCombustivelLitro').value;
     totalCombustivelLitros = document.getElementById('valorTotalCombustivelLitros').value;
     totalCombustivel = document.getElementById('valorTotalCombustivel').value;
+    tipoMoeda = document.getElementById('tipoMoedaEstrangeira').value;
+    moedaEstrangeira = document.getElementById('valorMoedaEstrangeira').value;
+    cargaUSD_EUR = document.getElementById('valorCargaUSD_EUR').value;
+    cargaBRL = document.getElementById('valorCargaBRL').value;
 
     /*
     -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -363,19 +368,38 @@ function calcularImpostos()
         document.getElementById('valorTotalDespesaViagem').value = totalDespesaViagem;
     }
 
+    //Calculando valor da carga
+    if ((!isNaN(cargaUSD_EUR) && cargaUSD_EUR != "") && (!isNaN(moedaEstrangeira) && moedaEstrangeira != ""))
+    {
+        cargaBRL = Math.round(parseFloat(cargaUSD_EUR) * parseFloat(moedaEstrangeira)).toFixed(2);
+        document.getElementById('valorCargaBRL').value = cargaBRL;
+    }
+
     if(!puxouMoeda)
     {
-        fetch('https://economia.awesomeapi.com.br/last/USD-BRL')
+        fetch('https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL')
         .then((response) => response.json())
         .then((json) => setMoeda(json))
     }
-    
 }
 
 function setMoeda(moeda)
 {
     puxouMoeda = true;
-    console.log(moeda);
-    valorDolar = moeda.USDBRL.bid;
-    document.getElementById('valorDolarReal').value = (Math.round(valorDolar * 100)/ 100).toFixed(2); // Só consigo deixar 2 casas assim por algum motivo
+    valoresMoedas = moeda;
+    tipoMoeda = document.getElementById('tipoMoedaEstrangeira').value;
+    valorMoeda = document.getElementById('valorMoedaEstrangeira').value;
+    if (tipoMoeda == "dolar")
+    {
+        valorMoeda = moeda.USDBRL.bid;
+        document.getElementById('valorMoedaEstrangeira').value = (Math.round(valorMoeda * 100)/ 100).toFixed(2); // Só consigo deixar 2 casas assim por algum motivo
+    }
+    else
+    {
+        if (tipoMoeda == "euro")
+        {
+            valorMoeda = moeda.EURBRL.bid;
+            document.getElementById('valorMoedaEstrangeira').value = (Math.round(valorMoeda * 100)/ 100).toFixed(2);
+        }
+    }
 }

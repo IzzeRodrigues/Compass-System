@@ -565,26 +565,26 @@
                     <div class="row">
 
                     </div>
-                    <div class="row justify-content-between">
-                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>Frete Valor Negociável</label>
-                            <input type="number" min="0" class="form-control" id="" name="" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                            <label>Valor da Carga USD/EUR</label>
+                            <input type="number" min="0" class="form-control" id="valorCargaUSD_EUR" name="valorCargaUSD_EUR" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
-                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>Pedágio Valor Negociável</label>
-                            <input type="number" min="0" class="form-control" id="" name="" onblur="calcularImpostos()" onchange="calcularImpostos()">
-                        </div>
-                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>Frete + Pedag. Negoc.</label>
-                            <input type="number" min="0" class="form-control" id="" name="" onblur="calcularImpostos()" onchange="calcularImpostos()">
-                        </div>
-                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>Valor da Carga</label>
-                            <input type="number" min="0" class="form-control" id="" name="" onblur="calcularImpostos()" onchange="calcularImpostos()">
-                        </div>
-                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>Moeda</label>
-                            <input type="number" min="0" class="form-control" id="valorDolarReal" name="valorDolarReal" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <select type="number" min="0" class="form-control" id="tipoMoedaEstrangeira" name="tipoMoedaEstrangeira" onblur="calcularImpostos();setMoeda(valoresMoedas)" onchange="calcularImpostos();setMoeda(valoresMoedas)">
+                                <option selected disabled>Selecione...</option>
+                                <option value="dolar">Dólar</option>
+                                <option value="euro">Euro</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                            <label>Moeda</label>
+                            <input type="number" min="0" class="form-control" id="valorMoedaEstrangeira" name="valorMoedaEstrangeira" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                            <label>Valor da Carga BRL</label>
+                            <input type="number" min="0" class="form-control" id="valorCargaBRL" name="valorCargaBRL" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                     </div>
                     <div class="row">
