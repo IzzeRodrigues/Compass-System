@@ -96,16 +96,16 @@
                             <input type="text" class="form-control" placeholder="Ex:Copa Logística">
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-3 col-sm-4 col-12 mb-3">
+                    <div class="row justify-content-between">
+                        <div class="col-md-4 col-sm-4 col-12 mb-3">
                             <label>Contato</label>
                             <input type="text" class="form-control" placeholder="Ex:Amanda">
                         </div>
-                        <div class="col-md-3 col-sm-4 col-12 mb-3">
+                        <div class="col-md-4 col-sm-4 col-12 mb-3">
                             <label>E-mail Contato</label>
                             <input type="text" class="form-control" placeholder="Ex:amanda@copalog.com.br">
                         </div>
-                        <div class="col-md-3 col-sm-4 col-12 mb-3">
+                        <div class="col-md-4 col-sm-4 col-12 mb-3">
                             <label>Tipo de Frete</label>
                             <select class="form-control">
                                 <option selected disabled>Selecione...</option>
@@ -204,7 +204,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12 col-sm-12 col-12 mb-3">
+                        <div class="col-md-6 col-sm-12 col-12 mb-3">
                             <label>Tipo de Container/Pallets</label>
                             <select class="form-control" id="tipoContainer" name="tipoContainer" onchange="verificarVeiculo();">
                                 <option selected disabled>Selecione...</option>
@@ -220,16 +220,17 @@
                                 <option value="outros">Outros</option>
                             </select>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6 mb-3">
+                        <div class="col-md-3 col-sm-6 mb-3">
                             <label>Tipo de Veículo</label>
                             <input type="text" class="form-control" placeholder="Ex: Carreta Baú" readonly id="tipoVeiculo" name="tipoVeiculo">
                         </div>
-                        <div class="col-6 mb-3">
+                        <div class="col-md-3 col-sm-6 mb-3">
                             <label>Nº de Eixos</label>
                             <input type="text" class="form-control" placeholder="Ex:1" readonly id="numeroEixos_cabecalho" name="numeroEixos_cabecalho">
                         </div>
+                    </div>
+                    <div class="row">
+                        
                     </div>
                     <div class="row">
                         <h3 class="mb-4">Operação</h3>
@@ -331,27 +332,32 @@
                             <input type="number" min="0" class="form-control" id="valorAjudantes" name="valorAjudantes" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>Sub Total</label>
-                            <input type="number" min="0" class="form-control" id="subTotal" name="subTotal" readonly>
+                            <label>% ICMS</label>
+                            <input type="number" min="0" class="form-control" id="porcentagemICMS" name="porcentagemICMS" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Valor ICMS</label>
                             <input type="number" min="0" class="form-control" id="valorICMS" name="valorICMS" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>% ICMS</label>
-                            <input type="number" min="0" class="form-control" id="porcentagemICMS" name="porcentagemICMS" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <label>DTA GRU/VCP/BSB</label>
+                            <input type="number" min="0" class="form-control" id="valorDTA_GVB" name="valorDTA_GVB" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                        </div>
+                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
+                            <label>Sub Total</label>
+                            <input type="number" min="0" class="form-control" id="subTotal" name="subTotal" readonly>
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Total da Prest</label>
                             <input type="number" min="0" class="form-control" id="totalPrest" name="totalPrest" readonly>
                         </div>
+
+                    </div>
+                    <div class="row">
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Despesas</label>
                             <input type="number" min="0" class="form-control" id="valorDespesas" name="valorDespesas" readonly>
                         </div>
-                    </div>
-                    <div class="row">
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Lucro Bruto</label>
                             <input type="number" min="0" class="form-control" id="valorLucroBruto" name="valorLucroBruto" readonly>
@@ -378,16 +384,10 @@
                             <label>Moeda</label>
                             <input type="number" min="0" class="form-control" id="valorDolarReal" name="valorDolarReal" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
-                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>Margem</label>
-                            <input type="text" min="0" class="form-control" id="valorMargem" name="valorMargem" readonly>
-                        </div>
+
                     </div>
                     <div class="row">
-                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>DTA GRU/VCP/BSB</label>
-                            <input type="number" min="0" class="form-control" id="valorDTA_GVB" name="valorDTA_GVB" onblur="calcularImpostos()" onchange="calcularImpostos()">
-                        </div>
+
                     </div>
                     <div class="row">
                         <h3 class="mb-4">Despesas</h3>
@@ -495,7 +495,6 @@
                         </div>
                     </div>
                     <div class="row">
-
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Comissão</label>
                             <input type="number" min="0" class="form-control" id="" name="" onblur="calcularImpostos()" onchange="calcularImpostos()">
@@ -504,9 +503,6 @@
                             <label>% Comissão</label>
                             <input type="number" min="0" class="form-control" id="" name="" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
-
-                    </div>
-                    <div class="row">
 
                     </div>
                     <div class="row">
@@ -619,8 +615,65 @@
                             <input type="number" min="0" class="form-control">
                         </div>
                     </div>
+                    <div class="row">
+                        <h3>Motorista</h3>
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                            <label>Valores</label>
+                            <input type="number" min="0" class="form-control">
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                            <label>Frete Conf. ANTT</label>
+                            <input type="number" min="0" class="form-control">
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                            <label>Vale Pedágio Tabela</label>
+                            <input type="number" min="0" class="form-control">
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                            <label>Total Aut. Tabela</label>
+                            <input type="number" min="0" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                            <label>Frete All In Fechado</label>
+                            <input type="number" min="0" class="form-control">
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                            <label>Tentar Fechar Em</label>
+                            <input type="number" min="0" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row justify-content-between">
+                        <h3>Cotação Autônomo</h3>
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                            <label>Nome Motorista</label>
+                            <input type="text" min="0" class="form-control">
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12 mb-3">
+                            <label>Data da Cotação</label>
+                            <input type="date" class="form-control data" id="dataProposta" name="dataProposta">
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                            <label>Valor</label>
+                            <input type="number" min="0" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                            <label>Nome Motorista</label>
+                            <input type="text" min="0" class="form-control">
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12 mb-3">
+                            <label>Data da Cotação</label>
+                            <input type="date" class="form-control data" id="dataProposta" name="dataProposta">
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                            <label>Valor</label>
+                            <input type="number" min="0" class="form-control">
+                        </div>
+                    </div>
                     <div class="row justify-content-end mt-1">
-
                         <div class="pt-1 mb-4 d-grid gap-2 col-md-3 col-sm-6">
                             <a href="#"><button class="btn btn-info btn-lg btn-block shadow-sm corpadrao larg-btn" role="button" type="button">Salvar</button></a>
                         </div>
