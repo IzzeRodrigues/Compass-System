@@ -313,7 +313,7 @@
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Pedágio</label>
-                            <input type="number" min="0" class="form-control" id="valorPedagio_operacao" name="valorPedagio_operacao" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="number" min="0" class="form-control" id="valorPedagio_operacao" name="valorPedagio_operacao" readonly>
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Estacionamento</label>
@@ -384,7 +384,7 @@
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Pedágio Motorista</label>
-                            <input type="number" min="0" class="form-control" id="valorPedagio_despesa" name="valorPedagio_despesa" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="number" min="0" class="form-control" id="valorPedagio_despesa" name="valorPedagio_despesa" readonly>
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>% RCFDC</label>
@@ -509,23 +509,19 @@
                         </div>
                     </div>
                     <div class="row justify-content-between">
-                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>Valor por eixo</label>
-                            <input type="number" min="0" class="form-control" id="valorPorEixo" name="valorPorEixo" onblur="calcularImpostos()" onchange="calcularImpostos()">
-                        </div>
-                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>Quant. De Eixos</label>
                             <input type="number" min="0" class="form-control" id="valorEixos_carga" name="valorEixos_carga" readonly>
                         </div>
-                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>KM Ida</label>
                             <input type="number" min="0" class="form-control" id="valorQuilometragemIda" name="valorQuilometragemIda" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
-                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>KM Volta</label>
                             <input type="number" min="0" class="form-control" id="valorQuilometragemVolta" name="valorQuilometragemVolta" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
-                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>Total de KM</label>
                             <input type="number" min="0" class="form-control" id="valorQuilometragemTotal" name="valorQuilometragemTotal" readonly>
                         </div>
