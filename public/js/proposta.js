@@ -297,7 +297,7 @@ function calcularImpostos()
     }
 
     //Calculando total do imposto do seguro
-    if (!isNaN(valorSusp))
+    if (!isNaN(valorSusp) && !isNaN(container) && !isNaN(valorMercadoria))
     {
         totalImpostoSeguro = valorMercadoria + container + parseFloat(valorSusp)
         document.getElementById('valorTotalImpostoSeguro').value = totalImpostoSeguro;
@@ -305,27 +305,22 @@ function calcularImpostos()
 
     
     //Calculando RCTRC
-    if (totalImpostoSeguro && porcentRCTRC_operacao)
+    if (!isNaN(totalImpostoSeguro) && !isNaN(porcentRCTRC_operacao))
     {
         rctrc_operacao = (totalImpostoSeguro * (porcentRCTRC_operacao / 100))
         document.getElementById('valorRCTRC_operacao').value = rctrc_operacao;
     }
     
     //Calculando RCFDC
-    if(totalImpostoSeguro && porcentRCFDC_operacao)
+    if(!isNaN(totalImpostoSeguro) && !isNaN(porcentRCFDC_operacao))
     {
         rcfdc_operacao = (totalImpostoSeguro * (porcentRCFDC_operacao / 100))
         document.getElementById('valorRCFDC_operacao').value = rcfdc_operacao;
     }
 
-
-    console.log('chegando na verificacao gris')
     //Calculando GRIS
-    console.log(checkGRIS)
-    console.log(porcentGRIS)
     if (checkGRIS == "sim" && !isNaN(porcentGRIS))
     {
-        console.log('entrando sim')
         GRIS = totalImpostoSeguro * (porcentGRIS / 100);
         document.getElementById('valorGRIS').value = GRIS;
     }
@@ -333,7 +328,6 @@ function calcularImpostos()
     {
         if (checkGRIS == "nao")
         {
-            console.log('entrando nao')
             GRIS = 0;
             document.getElementById('valorGRIS').value = GRIS;
         }
@@ -380,7 +374,7 @@ function calcularImpostos()
         document.getElementById('porcentagemLucroBruto').value = porcentLucroBruto;
     }
 
-    if(!isNaN(porcentLucroBruto) && !porcentLucroBruto != "")
+    if(!isNaN(porcentLucroBruto) && porcentLucroBruto != "")
     {
         if (porcentLucroBruto > 15)
         {
@@ -488,8 +482,8 @@ function calcularImpostos()
     //Calculando despesas
     if ((!isNaN(motoristaAutonomo) && motoristaAutonomo != "") && (!isNaN(pedagio_despesa) && pedagio_despesa != "") && (!isNaN(rcfdc_despesa) && rcfdc_despesa != "") && (!isNaN(rctrc_despesa) && rctrc_despesa != "") && (!isNaN(simplesNAC) && simplesNAC != "") && (!isNaN(IRPJ) && IRPJ != "") && (!isNaN(adicionalIRPJ) && adicionalIRPJ != "") && (!isNaN(PIS) && PIS != "") && (!isNaN(COFINS) && COFINS != "") && (!isNaN(ICMS_despesa) && ICMS_despesa != "") && (!isNaN(buonnyCadastro) && buonnyCadastro != "") && (!isNaN(GRISRastreamento) && GRISRastreamento != "") && (!isNaN(DTA_DI) && DTA_DI != "") && (!isNaN(estacionamento_despesa) && estacionamento_despesa != "") && (!isNaN(ajudantes_despesa) && ajudantes_despesa != "") && (!isNaN(profit) && profit != "") && (!isNaN(comissao) && comissao != ""))
     {
-        despesas_despesa = Math.round(motoristaAutonomo + pedagio_despesa + rcfdc_despesa + rctrc_despesa + simplesNAC + IRPJ + adicionalIRPJ + PIS + COFINS + ICMS_despesa + buonnyCadastro + GRISRastreamento + DTA_DI + estacionamento_despesa + ajudantes_despesa + profit + comissao).toFixed(2);
-        console
+        despesas_despesa = Math.round(parseFloat(motoristaAutonomo) + parseFloat(pedagio_despesa) + parseFloat(rcfdc_despesa) + parseFloat(rctrc_despesa) + parseFloat(simplesNAC) + parseFloat(IRPJ) + parseFloat(adicionalIRPJ) + parseFloat(PIS) + parseFloat(COFINS) + parseFloat(ICMS_despesa) + parseFloat(buonnyCadastro) + parseFloat(GRISRastreamento) + parseFloat(DTA_DI) + parseFloat(estacionamento_despesa) + parseFloat(ajudantes_despesa) + parseFloat(profit) + parseFloat(comissao)).toFixed(2);
+        console.log('entrando Despesas');
         document.getElementById('valorDespesas_despesa').value = despesas_despesa;
     }
 

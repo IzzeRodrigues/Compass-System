@@ -474,13 +474,13 @@
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Profit</label>
-                            <input type="number" min="0" class="form-control" id="valorProfit" name="valorProfit" readonly>
+                            <input type="number" min="0" class="form-control" id="valorProfit" name="valorProfit" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Comissão</label>
-                            <input type="number" min="0" class="form-control" id="valorComissao" name="valorComissao" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="number" min="0" class="form-control" id="valorComissao" name="valorComissao" readonly>
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>% Comissão</label>
