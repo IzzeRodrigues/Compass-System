@@ -271,7 +271,7 @@
                     <div class="row">
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Total Imp. Seg.</label>
-                            <input type="number" min="0" class="form-control" id="totalImpostoSeguro" name="totalImpostoSeguro" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="number" min="0" class="form-control" id="valorTotalImpostoSeguro" name="valorTotalImpostoSeguro" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Frete Peso</label>
@@ -297,7 +297,7 @@
                     <div class="row">
                         <div class="col-md-2 col-sm-6 col-12 mb-3">
                             <label>GRIS</label>
-                            <select class="form-control" id="checkGRIS" name="checkGRIS" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <select class="form-control" id="valorCheckGRIS" name="valorCheckGRIS" onblur="calcularImpostos()" onchange="calcularImpostos()">
                                 <option selected disabled>Selecione...</option>
                                 <option value="sim">Sim</option>
                                 <option value="nao">Não</option>

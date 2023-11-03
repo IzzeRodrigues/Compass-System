@@ -205,13 +205,13 @@ function calcularImpostos()
     porcentSusp = parseFloat(document.getElementById('porcentagemSusp').value);
     tipoOperacao = document.getElementById("tipoOperacao").value;
     valorSusp = parseFloat(document.getElementById('valorSusp').value);
-    totalImpostoSeguro = parseFloat(document.getElementById('totalImpostoSeguro').value);
+    totalImpostoSeguro = parseFloat(document.getElementById('valorTotalImpostoSeguro').value);
     fretePeso = parseFloat(document.getElementById('valorFretePeso').value);
     porcentRCTRC_operacao = parseFloat(document.getElementById('porcentagemRCTRC_operacao').value);
     rctrc_operacao = parseFloat(document.getElementById('valorRCTRC_operacao').value);
     porcentRCFDC_operacao = parseFloat(document.getElementById('porcentagemRCFDC_operacao').value);
     rcfdc_operacao = parseFloat(document.getElementById('valorRCFDC_operacao').value);
-    checkGRIS = parseFloat(document.getElementById('checkGRIS').value);
+    checkGRIS = document.getElementById('valorCheckGRIS').value;
     porcentGRIS = parseFloat(document.getElementById('porcentagemGRIS').value);
     GRIS = parseFloat(document.getElementById('valorGRIS').value);
     porcentICMS = parseFloat(document.getElementById('porcentagemICMS').value);
@@ -300,7 +300,7 @@ function calcularImpostos()
     if (!isNaN(valorSusp))
     {
         totalImpostoSeguro = valorMercadoria + container + parseFloat(valorSusp)
-        document.getElementById('totalImpostoSeguro').value = totalImpostoSeguro;
+        document.getElementById('valorTotalImpostoSeguro').value = totalImpostoSeguro;
     }
 
     
@@ -318,9 +318,14 @@ function calcularImpostos()
         document.getElementById('valorRCFDC_operacao').value = rcfdc_operacao;
     }
 
+
+    console.log('chegando na verificacao gris')
     //Calculando GRIS
-    if (checkGRIS == "sim" && porcentGRIS)
+    console.log(checkGRIS)
+    console.log(porcentGRIS)
+    if (checkGRIS == "sim" && !isNaN(porcentGRIS))
     {
+        console.log('entrando sim')
         GRIS = totalImpostoSeguro * (porcentGRIS / 100);
         document.getElementById('valorGRIS').value = GRIS;
     }
@@ -328,6 +333,7 @@ function calcularImpostos()
     {
         if (checkGRIS == "nao")
         {
+            console.log('entrando nao')
             GRIS = 0;
             document.getElementById('valorGRIS').value = GRIS;
         }
