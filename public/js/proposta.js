@@ -204,7 +204,7 @@ function calcularImpostos()
     container = parseFloat(document.getElementById('container').value);
     porcentSusp = parseFloat(document.getElementById('porcentagemSusp').value);
     tipoOperacao = document.getElementById("tipoOperacao").value;
-    valorSusp = parseFloat(document.getElementById('valorSusp').value);
+    impostoSuspenso = parseFloat(document.getElementById('valorImpostoSuspenso').value);
     totalImpostoSeguro = parseFloat(document.getElementById('valorTotalImpostoSeguro').value);
     fretePeso = parseFloat(document.getElementById('valorFretePeso').value);
     porcentRCTRC_operacao = parseFloat(document.getElementById('porcentagemRCTRC_operacao').value);
@@ -287,19 +287,19 @@ function calcularImpostos()
     {
         if (!isNaN(valorMercadoria) && !isNaN(container) && !isNaN(porcentSusp))
         {
-            valorSusp = valorMercadoria * (porcentSusp / 100);
-            document.getElementById('valorSusp').value = valorSusp;
+            impostoSuspenso = valorMercadoria * (porcentSusp / 100);
+            document.getElementById('valorImpostoSuspenso').value = impostoSuspenso;
         }
     }
     else
     {
-        document.getElementById('valorSusp').value = 0;
+        document.getElementById('valorImpostoSuspenso').value = 0;
     }
 
     //Calculando total do imposto do seguro
-    if (!isNaN(valorSusp) && !isNaN(container) && !isNaN(valorMercadoria))
+    if (!isNaN(impostoSuspenso) && !isNaN(container) && !isNaN(valorMercadoria))
     {
-        totalImpostoSeguro = valorMercadoria + container + parseFloat(valorSusp)
+        totalImpostoSeguro = valorMercadoria + container + parseFloat(impostoSuspenso)
         document.getElementById('valorTotalImpostoSeguro').value = totalImpostoSeguro;
     }
 
@@ -307,21 +307,21 @@ function calcularImpostos()
     //Calculando RCTRC
     if (!isNaN(totalImpostoSeguro) && !isNaN(porcentRCTRC_operacao))
     {
-        rctrc_operacao = (totalImpostoSeguro * (porcentRCTRC_operacao / 100))
+        rctrc_operacao = Math.round(totalImpostoSeguro * (porcentRCTRC_operacao / 100)).toFixed(2);
         document.getElementById('valorRCTRC_operacao').value = rctrc_operacao;
     }
     
     //Calculando RCFDC
     if(!isNaN(totalImpostoSeguro) && !isNaN(porcentRCFDC_operacao))
     {
-        rcfdc_operacao = (totalImpostoSeguro * (porcentRCFDC_operacao / 100))
+        rcfdc_operacao = Math.round(totalImpostoSeguro * (porcentRCFDC_operacao / 100)).toFixed(2);
         document.getElementById('valorRCFDC_operacao').value = rcfdc_operacao;
     }
 
     //Calculando GRIS
     if (checkGRIS == "sim" && !isNaN(porcentGRIS))
     {
-        GRIS = totalImpostoSeguro * (porcentGRIS / 100);
+        GRIS = Math.round(totalImpostoSeguro * (porcentGRIS / 100)).toFixed(2);
         document.getElementById('valorGRIS').value = GRIS;
     }
     else
@@ -336,13 +336,13 @@ function calcularImpostos()
     //Calculando ICMS e Total Prest
     if (!isNaN(fretePeso) && !isNaN(rctrc_operacao) && !isNaN(rcfdc_operacao) && !isNaN(GRIS) && !isNaN(pedagio_operacao) && !isNaN(estacionamento) && !isNaN(IMO) && !isNaN(DTA_GVB) && !isNaN(ajudantes_operacao) && !isNaN(porcentICMS))
     {
-        totalOperacao = parseFloat(fretePeso) + parseFloat(valorSusp) + parseFloat(rctrc_operacao) + parseFloat(rcfdc_operacao) + parseFloat(GRIS) + parseFloat(pedagio_operacao) + parseFloat(estacionamento) + parseFloat(IMO) + parseFloat(DTA_GVB) + parseFloat(ajudantes_operacao);
+        totalOperacao = parseFloat(fretePeso) + parseFloat(rctrc_operacao) + parseFloat(rcfdc_operacao) + parseFloat(GRIS) + parseFloat(pedagio_operacao) + parseFloat(estacionamento) + parseFloat(IMO) + parseFloat(DTA_GVB) + parseFloat(ajudantes_operacao);
         coeficienteICMS = 1 - (porcentICMS / 100);
-        valorICMS = totalOperacao / coeficienteICMS - totalOperacao;
-        document.getElementById('valorICMS').value = (Math.round(valorICMS * 100)/ 100).toFixed(2);
-        totalPrest = totalOperacao / coeficienteICMS;
-        document.getElementById('valorTotalPrest').value = (Math.round(totalPrest * 100 / 100)).toFixed(2);
-        porcentTotalPrest = (Math.round((totalPrest / totalImpostoSeguro) * 100) / 100).toFixed(2);
+        valorICMS = Math.round(totalOperacao / coeficienteICMS - totalOperacao).toFixed(2);
+        document.getElementById('valorICMS').value = valorICMS;
+        totalPrest = Math.round(totalOperacao / coeficienteICMS).toFixed(2);
+        document.getElementById('valorTotalPrest').value = totalPrest;
+        porcentTotalPrest = Math.round(totalPrest / totalImpostoSeguro).toFixed(2);
         document.getElementById('porcentagemTotalPrest').value = porcentTotalPrest;
     }
 
@@ -355,7 +355,7 @@ function calcularImpostos()
     //Calculando subTotal
     if (!isNaN(fretePeso) && !isNaN(rctrc_operacao) && !isNaN(rcfdc_operacao) && !isNaN(GRIS) && !isNaN(pedagio_operacao) && !isNaN(estacionamento) && !isNaN(IMO) && !isNaN(DTA_GVB) && !isNaN(ajudantes_operacao))
     {
-        subTotal = parseFloat(fretePeso) + parseFloat(valorSusp) + parseFloat(rctrc_operacao) + parseFloat(rcfdc_operacao) + parseFloat(GRIS) + parseFloat(pedagio_operacao) + parseFloat(estacionamento) + parseFloat(IMO) + parseFloat(DTA_GVB) + parseFloat(ajudantes_operacao);
+        subTotal = parseFloat(fretePeso) + parseFloat(impostoSuspenso) + parseFloat(rctrc_operacao) + parseFloat(rcfdc_operacao) + parseFloat(GRIS) + parseFloat(pedagio_operacao) + parseFloat(estacionamento) + parseFloat(IMO) + parseFloat(DTA_GVB) + parseFloat(ajudantes_operacao);
         document.getElementById('subTotal').value = subTotal; 
     }
 
@@ -366,11 +366,11 @@ function calcularImpostos()
     }
 
     //Calculando lucro bruto
-    if(!isNaN(subTotal) && !isNaN(despesas_operacao))
+    if(!isNaN(totalPrest) && !isNaN(despesas_operacao) && !isNaN(subTotal))
     {
-        lucroBruto = Math.round(subTotal - despesas_operacao).toFixed(2);
+        lucroBruto = Math.round(totalPrest - despesas_operacao).toFixed(2);
         document.getElementById('valorLucroBruto').value = lucroBruto;
-        porcentLucroBruto = Math.round(lucroBruto / subTotal).toFixed(2);
+        porcentLucroBruto = Math.round(lucroBruto / subTotal * 100).toFixed(2);
         document.getElementById('porcentagemLucroBruto').value = porcentLucroBruto;
     }
 
@@ -379,10 +379,14 @@ function calcularImpostos()
         if (porcentLucroBruto > 15)
         {
             document.getElementById('valorMargemLucroBruto').value = "MARGEM OK";
+            document.getElementById('valorMargemLucroBruto').style.fontWeight = "bold";
+            document.getElementById('valorMargemLucroBruto').style.color = "green";
         }
         else
         {
             document.getElementById('valorMargemLucroBruto').value = "VOU DESCONTAR DA SUA COMISSÃO!";
+            document.getElementById('valorMargemLucroBruto').style.fontWeight = "bold";
+            document.getElementById('valorMargemLucroBruto').style.color = "red";
         }
     }
     
@@ -443,7 +447,7 @@ function calcularImpostos()
     //Calculando COFINS
     if (!isNaN(porcentCOFINS) && !isNaN(totalPrest))
     {
-        COFINS = Math.round(totalPrest * (porcentPIS / 100)).toFixed(2);
+        COFINS = Math.round(totalPrest * (porcentCOFINS / 100)).toFixed(2);
         document.getElementById('valorCOFINS').value = COFINS;
     }
 
@@ -461,29 +465,10 @@ function calcularImpostos()
         document.getElementById('valorComissao').value = comissao;
     }
 
-    // console.log(motoristaAutonomo);
-    // console.log(pedagio_despesa);
-    // console.log(rcfdc_despesa);
-    // console.log(rctrc_despesa);
-    // console.log(simplesNAC);
-    // console.log(IRPJ);
-    // console.log(adicionalIRPJ);
-    // console.log(PIS);
-    // console.log(COFINS);
-    // console.log(ICMS_despesa);
-    // console.log(buonnyCadastro);
-    // console.log(GRISRastreamento);
-    // console.log(DTA_DI);
-    // console.log(estacionamento_despesa);
-    // console.log(ajudantes_despesa);
-    // console.log(profit);
-    // console.log(comissao);
-
     //Calculando despesas
-    if ((!isNaN(motoristaAutonomo) && motoristaAutonomo != "") && (!isNaN(pedagio_despesa) && pedagio_despesa != "") && (!isNaN(rcfdc_despesa) && rcfdc_despesa != "") && (!isNaN(rctrc_despesa) && rctrc_despesa != "") && (!isNaN(simplesNAC) && simplesNAC != "") && (!isNaN(IRPJ) && IRPJ != "") && (!isNaN(adicionalIRPJ) && adicionalIRPJ != "") && (!isNaN(PIS) && PIS != "") && (!isNaN(COFINS) && COFINS != "") && (!isNaN(ICMS_despesa) && ICMS_despesa != "") && (!isNaN(buonnyCadastro) && buonnyCadastro != "") && (!isNaN(GRISRastreamento) && GRISRastreamento != "") && (!isNaN(DTA_DI) && DTA_DI != "") && (!isNaN(estacionamento_despesa) && estacionamento_despesa != "") && (!isNaN(ajudantes_despesa) && ajudantes_despesa != "") && (!isNaN(profit) && profit != "") && (!isNaN(comissao) && comissao != ""))
+    if (!isNaN(motoristaAutonomo) && !isNaN(pedagio_despesa) && !isNaN(rcfdc_despesa) && !isNaN(rctrc_despesa) && !isNaN(simplesNAC) && !isNaN(IRPJ) && !isNaN(adicionalIRPJ) && !isNaN(PIS) && !isNaN(COFINS) && !isNaN(ICMS_despesa) && !isNaN(buonnyCadastro) && !isNaN(GRISRastreamento) && !isNaN(DTA_DI) && !isNaN(estacionamento_despesa) && !isNaN(ajudantes_despesa) && !isNaN(profit) && !isNaN(comissao))
     {
         despesas_despesa = Math.round(parseFloat(motoristaAutonomo) + parseFloat(pedagio_despesa) + parseFloat(rcfdc_despesa) + parseFloat(rctrc_despesa) + parseFloat(simplesNAC) + parseFloat(IRPJ) + parseFloat(adicionalIRPJ) + parseFloat(PIS) + parseFloat(COFINS) + parseFloat(ICMS_despesa) + parseFloat(buonnyCadastro) + parseFloat(GRISRastreamento) + parseFloat(DTA_DI) + parseFloat(estacionamento_despesa) + parseFloat(ajudantes_despesa) + parseFloat(profit) + parseFloat(comissao)).toFixed(2);
-        console.log('entrando Despesas');
         document.getElementById('valorDespesas_despesa').value = despesas_despesa;
     }
 
@@ -494,21 +479,21 @@ function calcularImpostos()
     */
       
     //Calculando quilometragemTotal
-    if ((!isNaN(quilometragemIda) && quilometragemIda != "") && (!isNaN(quilometragemVolta) && quilometragemVolta != ""))
+    if (!isNaN(quilometragemIda) && !isNaN(quilometragemVolta))
     {
         quilometragemTotal = parseFloat(quilometragemIda) + parseFloat(quilometragemVolta);
         document.getElementById('valorQuilometragemTotal').value = quilometragemTotal;
     }
 
     //Calculando pedágio
-    if ((!isNaN(pedagioEixoIda) && pedagioEixoIda != "") && (!isNaN(pedagioEixoVolta) && pedagioEixoVolta != "") && (!isNaN(eixosCarga) && eixosCarga != ""))
+    if (!isNaN(pedagioEixoIda) && !isNaN(pedagioEixoVolta) && !isNaN(eixosCarga))
     {
         pedagio_carga = pedagioEixoIda * eixosCarga + pedagioEixoVolta * eixosCarga;
         document.getElementById('valorPedagio_carga').value = pedagio_carga;
     }
 
     //Calculando combustível
-    if ((!isNaN(consumoMedioQuilometroLitro) && consumoMedioQuilometroLitro != "") && (!isNaN(precoCombustivelLitro) && precoCombustivelLitro != "") && (!isNaN(quilometragemTotal) && quilometragemTotal != ""))
+    if (!isNaN(consumoMedioQuilometroLitro) && !isNaN(precoCombustivelLitro) && !isNaN(quilometragemTotal))
     {
         totalCombustivelLitros = Math.round(quilometragemTotal / consumoMedioQuilometroLitro).toFixed(2);
         document.getElementById('valorTotalCombustivelLitros').value = totalCombustivelLitros;
@@ -518,14 +503,14 @@ function calcularImpostos()
     
 
     //Calculando despesa total
-    if((!isNaN(totalCombustivel) && totalCombustivel != "") && (!isNaN(pedagio_carga) && pedagio_carga != ""))
+    if(!isNaN(totalCombustivel) && !isNaN(pedagio_carga))
     {
         totalDespesaViagem = Math.round(parseFloat(totalCombustivel) + parseFloat(pedagio_carga)).toFixed(2);
         document.getElementById('valorTotalDespesaViagem').value = totalDespesaViagem;
     }
 
     //Calculando valor da carga
-    if ((!isNaN(cargaUSD_EUR) && cargaUSD_EUR != "") && (!isNaN(moedaEstrangeira) && moedaEstrangeira != ""))
+    if (!isNaN(cargaUSD_EUR) && !isNaN(moedaEstrangeira))
     {
         cargaBRL = Math.round(parseFloat(cargaUSD_EUR) * parseFloat(moedaEstrangeira)).toFixed(2);
         document.getElementById('valorCargaBRL').value = cargaBRL;
