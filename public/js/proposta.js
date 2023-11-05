@@ -276,6 +276,8 @@ function calcularImpostos()
     cargaBRL = parseFloat(document.getElementById('valorCargaBRL').value);
 
     //Motorista
+    precoQuilometragemMotorista = NaN;
+    precoMinimoMotorista = NaN;
     valores = parseFloat(document.getElementById('valorValores').value);
     freteANTT = parseFloat(document.getElementById('valorFreteANTT').value);
     pedagio_motorista = parseFloat(document.getElementById('valorPedagio_motorista').value);
@@ -295,8 +297,6 @@ function calcularImpostos()
     -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     */
 
-    precoQuilometragemMotista = NaN;
-    precoMinimoMotorista = NaN;
 
 
     //Calculando o valor de Susp.
@@ -568,6 +568,7 @@ function setMoeda(moeda)
     -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     */
 
+    //Calculando valores motorista
     if (!isNaN(tipoCarga) && !isNaN(eixosCarga))
     {
         switch (tipoCarga)
@@ -578,37 +579,44 @@ function setMoeda(moeda)
                 {
                     case 2:
                     {
-                        precoQuilometragemMotista = 3.2479;
+                        precoMinimoMotorista = 347.47;
+                        precoQuilometragemMotorista = 3.2479;
                         break;
                     }
                     case 3:
                     {
-                        precoQuilometragemMotista = 4.1594;
+                        precoMinimoMotorista = 416.85;
+                        precoQuilometragemMotorista = 4.1594;
                         break;
                     }
                     case 4:
                     {
-                        precoQuilometragemMotista = 4.6405;
+                        precoMinimoMotorista = 411.52;
+                        precoQuilometragemMotorista = 4.6405;
                         break;
                     }
                     case 5:
                     {
-                        precoQuilometragemMotista = 5.3195;
+                        precoMinimoMotorista = 459.36;
+                        precoQuilometragemMotorista = 5.3195;
                         break;
                     }
                     case 6:
                     {
-                        precoQuilometragemMotista = 6.0672;
+                        precoMinimoMotorista = 514.29
+                        precoQuilometragemMotorista = 6.0672;
                         break;
                     }
                     case 7:
                     {
-                        precoQuilometragemMotista = 6.7492;
+                        precoMinimoMotorista = 626.41;
+                        precoQuilometragemMotorista = 6.7492;
                         break;
                     }
                     case 9:
                     {
-                        precoQuilometragemMotista = 7.5685;
+                        precoMinimoMotorista = 645.41;
+                        precoQuilometragemMotorista = 7.5685;
                         break;
                     }
                 }
@@ -620,37 +628,44 @@ function setMoeda(moeda)
                 {
                     case 2:
                     {
-                        precoQuilometragemMotista = 3.8516;
+                        precoMinimoMotorista = 347.47;
+                        precoQuilometragemMotorista = 3.8516;
                         break;
                     }
                     case 3:
                     {
-                        precoQuilometragemMotista = 4.9030;
+                        precoMinimoMotorista = 416.85;
+                        precoQuilometragemMotorista = 4.9030;
                         break;
                     }
                     case 4:
                     {
-                        precoQuilometragemMotista = 5.5061;
+                        precoMinimoMotorista = 411.52;
+                        precoQuilometragemMotorista = 5.5061;
                         break;
                     }
                     case 5:
                     {
-                        precoQuilometragemMotista = 6.4257;
+                        precoMinimoMotorista = 459.36;
+                        precoQuilometragemMotorista = 6.4257;
                         break;
                     }
                     case 6:
                     {
-                        precoQuilometragemMotista = 7.2770;
+                        precoMinimoMotorista = 514.29;
+                        precoQuilometragemMotorista = 7.2770;
                         break;
                     }
                     case 7:
                     {
-                        precoQuilometragemMotista = 7.9360;
+                        precoMinimoMotorista = 626.41;
+                        precoQuilometragemMotorista = 7.9360;
                         break;
                     }
                     case 9:
                     {
-                        precoQuilometragemMotista = 8.9270;
+                        precoMinimoMotorista = 645.57;
+                        precoQuilometragemMotorista = 8.9270;
                         break;
                     }
                 }
@@ -662,37 +677,44 @@ function setMoeda(moeda)
                 {
                     case 2:
                     {
-                        precoQuilometragemMotista = 3.2479; //Ver Não Existe
+                        precoMinimoMotorista = 100;
+                        precoQuilometragemMotorista = 1; //Ver Não Existe
                         break;
                     }
                     case 3:
                     {
-                        precoQuilometragemMotista = 4.1594;
+                        precoMinimoMotorista = 416.85;
+                        precoQuilometragemMotorista = 4.1594;
                         break;
                     }
                     case 4:
                     {
-                        precoQuilometragemMotista = 4.6405;
+                        precoMinimoMotorista = 411.52;
+                        precoQuilometragemMotorista = 4.6405;
                         break;
                     }
                     case 5:
                     {
-                        precoQuilometragemMotista = 5.3195;
+                        precoMinimoMotorista = 459.36;
+                        precoQuilometragemMotorista = 5.3195;
                         break;
                     }
                     case 6:
                     {
-                        precoQuilometragemMotista = 6.0672;
+                        precoMinimoMotorista = 514.29;
+                        precoQuilometragemMotorista = 6.0672;
                         break;
                     }
                     case 7:
                     {
-                        precoQuilometragemMotista = 6.7492;
+                        precoMinimoMotorista = 626.41;
+                        precoQuilometragemMotorista = 6.7492;
                         break;
                     }
                     case 9:
                     {
-                        precoQuilometragemMotista = 7.5685;
+                        precoMinimoMotorista = 645.57;
+                        precoQuilometragemMotorista = 7.5685;
                         break;
                     }
                 }
@@ -704,37 +726,44 @@ function setMoeda(moeda)
                 {
                     case 2:
                     {
-                        precoQuilometragemMotista = 3.2479;
+                        precoMinimoMotorista = 100;
+                        precoQuilometragemMotorista = 1;
                         break;
                     }
                     case 3:
                     {
-                        precoQuilometragemMotista = 4.1594;
+                        precoMinimoMotorista = 100;
+                        precoQuilometragemMotorista = 1;
                         break;
                     }
                     case 4:
                     {
-                        precoQuilometragemMotista = 4.6405;
+                        precoMinimoMotorista = 100;
+                        precoQuilometragemMotorista = 1;
                         break;
                     }
                     case 5:
                     {
-                        precoQuilometragemMotista = 5.3195;
+                        precoMinimoMotorista = 100;
+                        precoQuilometragemMotorista = 1;
                         break;
                     }
                     case 6:
                     {
-                        precoQuilometragemMotista = 6.0672;
+                        precoMinimoMotorista = 100;
+                        precoQuilometragemMotorista = 1;
                         break;
                     }
                     case 7:
                     {
-                        precoQuilometragemMotista = 6.7492;
+                        precoMinimoMotorista = 100;
+                        precoQuilometragemMotorista = 1;
                         break;
                     }
                     case 9:
                     {
-                        precoQuilometragemMotista = 7.5685;
+                        precoMinimoMotorista = 100;
+                        precoQuilometragemMotorista = 1;
                         break;
                     }
                 }
@@ -746,37 +775,44 @@ function setMoeda(moeda)
                 {
                     case 2:
                     {
-                        precoQuilometragemMotista = 3.2479;
+                        precoMinimoMotorista = 100; 
+                        precoQuilometragemMotorista = 1;
                         break;
                     }
                     case 3:
                     {
-                        precoQuilometragemMotista = 4.1594;
+                        precoMinimoMotorista = 100; 
+                        precoQuilometragemMotorista = 1;
                         break;
                     }
                     case 4:
                     {
-                        precoQuilometragemMotista = 4.6405;
+                        precoMinimoMotorista = 100; 
+                        precoQuilometragemMotorista = 1;
                         break;
                     }
                     case 5:
                     {
-                        precoQuilometragemMotista = 5.3195;
+                        precoMinimoMotorista = 100; 
+                        precoQuilometragemMotorista = 1;
                         break;
                     }
                     case 6:
                     {
-                        precoQuilometragemMotista = 6.0672;
+                        precoMinimoMotorista = 100; 
+                        precoQuilometragemMotorista = 1;
                         break;
                     }
                     case 7:
                     {
-                        precoQuilometragemMotista = 6.7492;
+                        precoMinimoMotorista = 100; 
+                        precoQuilometragemMotorista = 1;
                         break;
                     }
                     case 9:
                     {
-                        precoQuilometragemMotista = 7.5685;
+                        precoMinimoMotorista = 100; 
+                        precoQuilometragemMotorista = 1;
                         break;
                     }
                 }
@@ -788,37 +824,44 @@ function setMoeda(moeda)
                 {
                     case 2:
                     {
-                        precoQuilometragemMotista = 3.8516;
+                        precoMinimoMotorista = 397.75;
+                        precoQuilometragemMotorista = 3.8516;
                         break;
                     }
                     case 3:
                     {
-                        precoQuilometragemMotista = 4.9030;
+                        precoMinimoMotorista = 470.64;
+                        precoQuilometragemMotorista = 4.9030;
                         break;
                     }
                     case 4:
                     {
-                        precoQuilometragemMotista = 5.5061;
+                        precoMinimoMotorista = 474.55;
+                        precoQuilometragemMotorista = 5.5061;
                         break;
                     }
                     case 5:
                     {
-                        precoQuilometragemMotista = 6.4257;
+                        precoMinimoMotorista = 563.48;
+                        precoQuilometragemMotorista = 6.4257;
                         break;
                     }
                     case 6:
                     {
-                        precoQuilometragemMotista = 7.2770;
+                        precoMinimoMotorista = 618.41;
+                        precoQuilometragemMotorista = 7.2770;
                         break;
                     }
                     case 7:
                     {
-                        precoQuilometragemMotista = 7.9360;
+                        precoMinimoMotorista = 724.23;
+                        precoQuilometragemMotorista = 7.9360;
                         break;
                     }
                     case 9:
                     {
-                        precoQuilometragemMotista = 8.9270;
+                        precoMinimoMotorista = 755.79;
+                        precoQuilometragemMotorista = 8.9270;
                         break;
                     }
                 }
@@ -830,37 +873,44 @@ function setMoeda(moeda)
                 {
                     case 2:
                     {
-                        precoQuilometragemMotista = 3.4140;
+                        precoMinimoMotorista = 427.79;
+                        precoQuilometragemMotorista = 3.4140;
                         break;
                     }
                     case 3:
                     {
-                        precoQuilometragemMotista = 4.2814;
+                        precoMinimoMotorista = 497.16;
+                        precoQuilometragemMotorista = 4.2814;
                         break;
                     }
                     case 4:
                     {
-                        precoQuilometragemMotista = 4.7605;
+                        precoMinimoMotorista = 494.38;
+                        precoQuilometragemMotorista = 4.7605;
                         break;
                     }
                     case 5:
                     {
-                        precoQuilometragemMotista = 5.4079;
+                        precoMinimoMotorista = 542.21;
+                        precoQuilometragemMotorista = 5.4079;
                         break;
                     }
                     case 6:
                     {
-                        precoQuilometragemMotista = 6.1198;
+                        precoMinimoMotorista = 597.14;
+                        precoQuilometragemMotorista = 6.1198;
                         break;
                     }
                     case 7:
                     {
-                        precoQuilometragemMotista = 6.8177;
+                        precoMinimoMotorista = 713.67;
+                        precoQuilometragemMotorista = 6.8177;
                         break;
                     }
                     case 9:
                     {
-                        precoQuilometragemMotista = 7.6021;
+                        precoMinimoMotorista = 735.27;
+                        precoQuilometragemMotorista = 7.6021;
                         break;
                     }
                 }
@@ -872,37 +922,44 @@ function setMoeda(moeda)
                 {
                     case 2:
                     {
-                        precoQuilometragemMotista = 3.2479;
+                        precoMinimoMotorista = 100; 
+                        precoQuilometragemMotorista = 1;
                         break;
                     }
                     case 3:
                     {
-                        precoQuilometragemMotista = 4.1594;
+                        precoMinimoMotorista = 100; 
+                        precoQuilometragemMotorista = 1;
                         break;
                     }
                     case 4:
                     {
-                        precoQuilometragemMotista = 4.6405;
+                        precoMinimoMotorista = 100; 
+                        precoQuilometragemMotorista = 1;
                         break;
                     }
                     case 5:
                     {
-                        precoQuilometragemMotista = 5.3195;
+                        precoMinimoMotorista = 100; 
+                        precoQuilometragemMotorista = 1;
                         break;
                     }
                     case 6:
                     {
-                        precoQuilometragemMotista = 6.0672;
+                        precoMinimoMotorista = 100; 
+                        precoQuilometragemMotorista = 1;
                         break;
                     }
                     case 7:
                     {
-                        precoQuilometragemMotista = 6.7492;
+                        precoMinimoMotorista = 100; 
+                        precoQuilometragemMotorista = 1;
                         break;
                     }
                     case 9:
                     {
-                        precoQuilometragemMotista = 7.5685;
+                        precoMinimoMotorista = 100; 
+                        precoQuilometragemMotorista = 1;
                         break;
                     }
                 }
@@ -914,37 +971,44 @@ function setMoeda(moeda)
                 {
                     case 2:
                     {
-                        precoQuilometragemMotista = 3.2479; //Ver Não Existe
+                        precoMinimoMotorista = 100
+                        precoQuilometragemMotorista = 1; //Ver Não Existe
                         break;
                     }
                     case 3:
                     {
-                        precoQuilometragemMotista = 4.2814;
+                        precoMinimoMotorista = 497.16;
+                        precoQuilometragemMotorista = 4.2814;
                         break;
                     }
                     case 4:
                     {
-                        precoQuilometragemMotista = 4.7605;
+                        precoMinimoMotorista = 494.38;
+                        precoQuilometragemMotorista = 4.7605;
                         break;
                     }
                     case 5:
                     {
-                        precoQuilometragemMotista = 5.4079;
+                        precoMinimoMotorista = 542.21;
+                        precoQuilometragemMotorista = 5.4079;
                         break;
                     }
                     case 6:
                     {
-                        precoQuilometragemMotista = 6.1198;
+                        precoMinimoMotorista = 597.14;
+                        precoQuilometragemMotorista = 6.1198;
                         break;
                     }
                     case 7:
                     {
-                        precoQuilometragemMotista = 6.8177;
+                        precoMinimoMotorista = 713.67;
+                        precoQuilometragemMotorista = 6.8177;
                         break;
                     }
                     case 9:
                     {
-                        precoQuilometragemMotista = 7.6021;
+                        precoMinimoMotorista = 735.27;
+                        precoQuilometragemMotorista = 7.6021;
                         break;
                     }
                 }
@@ -956,37 +1020,44 @@ function setMoeda(moeda)
                 {
                     case 2:
                     {
-                        precoQuilometragemMotista = 3.2479;
+                        precoMinimoMotorista = 100; 
+                        precoQuilometragemMotorista = 1;
                         break;
                     }
                     case 3:
                     {
-                        precoQuilometragemMotista = 4.1594;
+                        precoMinimoMotorista = 100; 
+                        precoQuilometragemMotorista = 1;
                         break;
                     }
                     case 4:
                     {
-                        precoQuilometragemMotista = 4.6405;
+                        precoMinimoMotorista = 100; 
+                        precoQuilometragemMotorista = 1;
                         break;
                     }
                     case 5:
                     {
-                        precoQuilometragemMotista = 5.3195;
+                        precoMinimoMotorista = 100; 
+                        precoQuilometragemMotorista = 1;
                         break;
                     }
                     case 6:
                     {
-                        precoQuilometragemMotista = 6.0672;
+                        precoMinimoMotorista = 100; 
+                        precoQuilometragemMotorista = 1;
                         break;
                     }
                     case 7:
                     {
-                        precoQuilometragemMotista = 6.7492;
+                        precoMinimoMotorista = 100; 
+                        precoQuilometragemMotorista = 1;
                         break;
                     }
                     case 9:
                     {
-                        precoQuilometragemMotista = 7.5685;
+                        precoMinimoMotorista = 100; 
+                        precoQuilometragemMotorista = 1;
                         break;
                     }
                 }
@@ -998,134 +1069,165 @@ function setMoeda(moeda)
                 {
                     case 2:
                     {
-                        precoQuilometragemMotista = 4.1857;
+                        precoMinimoMotorista = 487.62;
+                        precoQuilometragemMotorista = 4.1857;
                         break;
                     }
                     case 3:
                     {
-                        precoQuilometragemMotista = 5.1820;
+                        precoMinimoMotorista = 560.51;
+                        precoQuilometragemMotorista = 5.1820;
                         break;
                     }
                     case 4:
                     {
-                        precoQuilometragemMotista = 5.7613;
+                        precoMinimoMotorista = 567.72;
+                        precoQuilometragemMotorista = 5.7613;
                         break;
                     }
                     case 5:
                     {
-                        precoQuilometragemMotista = 6.6414;
+                        precoMinimoMotorista = 656.65;
+                        precoQuilometragemMotorista = 6.6414;
                         break;
                     }
                     case 6:
                     {
-                        precoQuilometragemMotista = 7.4479;
+                        precoMinimoMotorista = 711.58;
+                        precoQuilometragemMotorista = 7.4479;
                         break;
                     }
                     case 7:
                     {
-                        precoQuilometragemMotista = 8.1277;
+                        precoMinimoMotorista = 823.12;
+                        precoQuilometragemMotorista = 8.1277;
                         break;
                     }
                     case 9:
                     {
-                        precoQuilometragemMotista = 9.0754;
+                        precoMinimoMotorista = 857.86;
+                        precoQuilometragemMotorista = 9.0754;
                         break;
                     }
                 }
                 break;
             }
         }
+        valores = `R$${precoQuilometragemMotorista} + R$${precoMinimoMotorista}`;
+        document.getElementById('valorValores').value = valores;
     }
+
+    //Calculando frete conforme ANTT
+    if (!isNaN(precoMinimoMotorista) && !isNaN(precoMinimoMotorista) && !isNaN(quilometragemTotal))
+    {
+        freteANTT = Math.round(precoQuilometragemMotorista * quilometragemTotal + precoMinimoMotorista).toFixed(2);
+        document.getElementById('valorFreteANTT').value = freteANTT;
+    }
+
+    //Pegando valor do pedagio
+    if (!isNaN(pedagio_carga))
+    {
+        pedagio_motorista = pedagio_carga;
+        document.getElementById('valorPedagio_motorista').value = pedagio_motorista;
+    }
+
+    //Calculando total autonomo
+    if (!isNaN(freteANTT) && !isNaN(pedagio_motorista))
+    {
+        totalAutonomo = Math.round(freteANTT + pedagio_motorista).toFixed(2);
+        document.getElementById('valorTotalAutonomo').value = totalAutonomo;
+    }
+
 
     if (!isNaN(tipoCarga) && tipoCarga != "" && isNaN(quilometragemTotal))
     {
         if (quilometragemTotal < 100)
         {
-            precoQuilometragemMotista = 2.19;
+            precoQuilometragemMotorista = 2.19;
         }
         else
         {
             if (quilometragemTotal < 200)
             {
-                precoQuilometragemMotista = 1.35;
+                precoQuilometragemMotorista = 1.35;
             }
             else
             {
                 if (quilometragemTotal < 300)
                 {
-                    precoQuilometragemMotista = 1.18;
+                    precoQuilometragemMotorista = 1.18;
                 }
                 else
                 {
                     if (quilometragemTotal < 400)
                     {
-                        precoQuilometragemMotista = 1.11;
+                        precoQuilometragemMotorista = 1.11;
                     }
                     else
                     {
                         if (quilometragemTotal < 500)
                         {
-                            precoQuilometragemMotista = 1.07;
+                            precoQuilometragemMotorista = 1.07;
                         }
                         else
                         {
                             if (quilometragemTotal < 600)
                             {
-                                precoQuilometragemMotista = 1.04;
+                                precoQuilometragemMotorista = 1.04;
                             }
                             else
                             {
                                 if (quilometragemTotal < 700)
                                 {
-                                    precoQuilometragemMotista = 1.02;
+                                    precoQuilometragemMotorista = 1.02;
                                 }
                                 else
                                 {
                                     if (quilometragemTotal < 800)
                                     {
-                                        precoQuilometragemMotista = 1.01;
+                                        precoQuilometragemMotorista = 1.01;
                                     }
                                     else
                                     {
                                         if (quilometragemTotal < 900)
                                         {
-                                            precoQuilometragemMotista = 1;
+                                            precoQuilometragemMotorista = 1;
                                         }
                                         else
                                         {
                                             if (quilometragemTotal < 1000)
                                             {
-                                                precoQuilometragemMotista = 0.99;
+                                                precoQuilometragemMotorista = 0.99;
                                             }
                                             else
                                             {
                                                 if (quilometragemTotal < 1100)
                                                 {
-                                                    precoQuilometragemMotista = 0.99;
+                                                    precoQuilometragemMotorista = 0.99;
                                                 }
                                                 else
                                                 {
                                                     if (quilometragemTotal < 1200)
                                                     {
-                                                        precoQuilometragemMotista = 0.98;
+                                                        precoQuilometragemMotorista = 0.98;
                                                     }
                                                     else
                                                     {
                                                         if (quilometragemTotal < 1300)
                                                         {
-                                                            precoQuilometragemMotista = 0.98;
+                                                            precoQuilometragemMotorista = 0.98;
                                                         }
                                                         else
                                                         {
                                                             if (quilometragemTotal < 1400)
                                                             {
-                                                                precoQuilometragemMotista = 0.97;
+                                                                precoQuilometragemMotorista = 0.97;
                                                             }
                                                             else
                                                             {
                                                                 if (quilometragemTotal < 1500)
                                                                 {
-                                                                    precoQuilometragemMotista = 0.97;
+                                                                    precoQuilometragemMotorista = 0.97;
                                                                 }
                                                                 else
                                                                 {
@@ -1148,7 +1250,7 @@ function setMoeda(moeda)
     }
 
     
-    if (!isNaN(precoMinimoMotorista) && !isNaN(precoQuilometragemMotista) && (!isNaN(tipoCarga) && tipoCarga != ""))
+    if (!isNaN(precoMinimoMotorista) && !isNaN(precoQuilometragemMotorista) && (!isNaN(tipoCarga) && tipoCarga != ""))
     {
         
     }
