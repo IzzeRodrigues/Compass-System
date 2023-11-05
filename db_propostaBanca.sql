@@ -1,6 +1,6 @@
-create database db_compass character set = 'utf8' collate = 'utf8_general_ci';
+create database db_compassbanca character set = 'utf8' collate = 'utf8_general_ci';
 
-use db_compass;
+use db_compassbanca;
 
 CREATE TABLE IF NOT EXISTS tb_proposta (
     cd_proposta INT NOT NULL AUTO_INCREMENT,
@@ -111,7 +111,8 @@ CREATE TABLE IF NOT EXISTS tb_proposta (
     vl_lucro_tentar_fechar_motorista DECIMAL(20 , 2 ),
     nm_motorista_cotacao VARCHAR(100),
     dt_cotacao DATE,
-    vl_cotacao DECIMAL(20 , 2 )
+    vl_cotacao DECIMAL(20 , 2 ),
+    constraint pk_proposta primary key (cd_proposta)
 );
 
 CREATE TABLE IF NOT EXISTS tb_icms (
