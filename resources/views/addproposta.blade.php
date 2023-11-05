@@ -22,9 +22,9 @@
                     <div class="col-md-3 col-sm-6 col-4 mb-3">
                         <label>Tipo Proposta</label>
                         <select class="form-control">
-                            <option selected disabled>Selecione...</option>
-                            <option>Padrão</option>
-                            <option>Estudo</option>
+                            <option value="naoSelecionado" selected disabled>Selecione...</option>
+                            <option value="tipoPadrao">Padrão</option>
+                            <option value="tipoEstudo">Estudo</option>
                         </select>
                     </div>
                     <div class="row">
@@ -53,11 +53,11 @@
                             <div class="row">
                                 <div class="col-md-4 col-sm-4 col-4 mb-3">
                                     <select class="form-control">
-                                        <option selected disabled>Selecione...</option>
-                                        <option>CA</option>
-                                        <option>MM</option>
-                                        <option>CR</option>
-                                        <option>MP</option>
+                                        <option value="naoSelecionado" selected disabled>Selecione...</option>
+                                        <option value="referenciaCA">CA</option>
+                                        <option value="referenciaMM">MM</option>
+                                        <option value="referenciaCR">CR</option>
+                                        <option value="referenciaMP">MP</option>
                                     </select>
                                 </div>
                                 <div class="col-md-4 col-sm-5 col-4 mb-3">
@@ -107,10 +107,10 @@
                         <div class="col-md-4 col-sm-4 col-12 mb-3">
                             <label>Tipo de Frete</label>
                             <select class="form-control">
-                                <option selected disabled>Selecione...</option>
-                                <option>Marítimo</option>
-                                <option>Aéreo</option>
-                                <option>Frete Interno</option>
+                                <option value="naoSelecionado" selected disabled>Selecione...</option>
+                                <option value="freteMaritimo">Marítimo</option>
+                                <option value="freteAereo">Aéreo</option>
+                                <option value="freteInterno">Frete Interno</option>
                             </select>
                         </div>
                     </div>
@@ -120,7 +120,7 @@
                             <div class="row">
                                 <div class="col-md-6 col-12 mb-3">
                                     <select class="form-control">
-                                        <option selected disabled>Selecione...</option>
+                                        <option value="naoSelecionado" selected disabled>Selecione...</option>
                                         <option value="AC">Acre</option>
                                         <option value="AL">Alagoas</option>
                                         <option value="AP">Amapá</option>
@@ -160,7 +160,7 @@
                             <div class="row">
                                 <div class="col-md-6 col-12 mb-3">
                                     <select class="form-control">
-                                        <option selected disabled>Selecione...</option>
+                                        <option value="naoSelecionado" selected disabled>Selecione...</option>
                                         <option value="AC">Acre</option>
                                         <option value="AL">Alagoas</option>
                                         <option value="AP">Amapá</option>
@@ -206,7 +206,7 @@
                         <div class="col-md-6 col-sm-12 col-12 mb-3">
                             <label>Tipo de Container/Pallets</label>
                             <select class="form-control" id="tipoContainer" name="tipoContainer" onchange="verificarVeiculo();">
-                                <option selected disabled>Selecione...</option>
+                                <option value="naoSelecionado" selected disabled>Selecione...</option>
                                 <option value="container20">Container de 20' - até 14,5 tons bruto (carga + tara)</option>
                                 <option value="container40-25tons">Container de 20' / 40 - até 25 tons bruto (carga + tara)</option>
                                 <option value="container40-30tons">Container de 20' / 40' até 30 tons bruto (carga + tara)</option>
@@ -236,7 +236,7 @@
                         <div class="col-md-2 col-sm-6 col-12 mb-3">
                             <label>Tipo de Operação</label>
                             <select class="form-control" id="tipoOperacao" name="tipoOperacao" onblur="calcularImpostos()" onchange="calcularImpostos()">
-                                <option selected disabled>Selecione...</option>
+                                <option value="naoSelecionado" selected disabled>Selecione...</option>
                                 <option value="DTA">DTA</option>
                                 <option value="DI">DI</option>
                                 <option value="EXPO">EXPO</option>
@@ -246,9 +246,9 @@
                         <div class="col-md-2 col-sm-6 col-12 mb-3">
                             <label>Impostos</label>
                             <select class="form-control" onblur="calcularImpostos()" onchange="calcularImpostos()">
-                                <option selected disabled>Selecione...</option>
-                                <option>Simples Nacional</option>
-                                <option>Lucro Presumido</option>
+                                <option value="naoSelecionado"selected disabled>Selecione...</option>
+                                {{-- <option value="simplesNacional">Simples Nacional</option> --}}
+                                <option value="lucroPresumido">Lucro Presumido</option>
                             </select>
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
@@ -275,7 +275,7 @@
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Frete Peso</label>
-                            <input type="number" step=0.01 min="0" class="form-control" id="valorFretePeso" name="valorFretePeso" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="number" step=0.01 min="0" class="form-control" id="valorFretePeso_operacao" name="valorFretePeso_operacao" readonly onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>% RCTRC</label>
@@ -494,10 +494,10 @@
                     </div>
                     <div class="row">
                         <h3>Carga</h3>
-                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>Tipo de Carga</label>
-                            <select class="form-control" id="valorTipoCarga" name="valorTipoCarga"  onblur="calcularImpostos()" onchange="calcularImpostos()">
-                                <option selected disabled>Selecione...</option>
+                            <select class="form-control" id="valorTipoCarga" name="valorTipoCarga" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                                <option value="naoSelecionado" selected disabled >Selecione...</option>
                                 <option value="cargaGeral">Carga Geral</option>
                                 <option value="granelSolido">Granel Sólido</option>
                                 <option value="conteinerizada">Conteinerizada</option>
@@ -577,7 +577,7 @@
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>Moeda</label>
                             <select type="number" step=0.01 min="0" class="form-control" id="tipoMoedaEstrangeira" name="tipoMoedaEstrangeira" onblur="calcularImpostos();setMoeda(valoresMoedas)" onchange="calcularImpostos();setMoeda(valoresMoedas)">
-                                <option selected disabled>Selecione...</option>
+                                <option value="naoSelecionado" selected disabled>Selecione...</option>
                                 <option value="dolar">Dólar</option>
                                 <option value="euro">Euro</option>
                             </select>
@@ -592,10 +592,21 @@
                         </div>
                     </div>
                     <div class="row">
+                        <h3>Frete Peso</h3>
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                            <label>Valor Frete Peso</label>
+                            <input type="text" class="form-control" id="valorFretePeso_fretePeso" name="valorFretePeso_fretePeso" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                            <label>Percentual</label>
+                            <input type="number" step=0.01 min="0" class="form-control" id="porcentagemPercentualFretePeso" name="porcentagemPercentualFretePeso" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                        </div>
+                    </div>
+                    <div class="row">
                         <h3>Motorista</h3>
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>Valores</label>
-                            <input type="number" step=0.01 min="0" class="form-control" id="valorValores" name="valorValores" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="text" class="form-control" id="valorValores" name="valorValores" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>Frete Conf. ANTT</label>
