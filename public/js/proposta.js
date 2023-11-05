@@ -73,6 +73,18 @@ function inicioProposta()
 
     console.log("Essa é a resposta da variável: "+ resposta2);
 
+    datacao = new Date();
+    dia = datacao.getDate();
+    if (dia < 10)
+    {
+        dia = `0${dia}`;
+    }
+    mes = datacao.getMonth() + 1;
+    ano = datacao.getFullYear();
+
+    document.getElementById('dataProposta').value = `${ano}-${mes}-${dia}`;
+    document.getElementById('numeroProposta').value = "0001";
+    document.getElementById('versaoProposta').value = "01";
 }
 
 function setNome(nome)
@@ -214,7 +226,7 @@ function calcularImpostos()
     checkGRIS = document.getElementById('valorCheckGRIS').value;
     porcentGRIS = parseFloat(document.getElementById('porcentagemGRIS').value);
     GRIS = parseFloat(document.getElementById('valorGRIS').value);
-    porcentICMS = parseFloat(document.getElementById('porcentagemICMS').value);
+    porcentICMS_operacao = parseFloat(document.getElementById('porcentagemICMS_operacao').value);
     ICMS = parseFloat(document.getElementById('valorICMS').value);
     estacionamento = parseFloat(document.getElementById('valorEstacionamento').value);
     IMO = parseFloat(document.getElementById('valorIMO').value);
@@ -365,11 +377,21 @@ function calcularImpostos()
         }
     }
 
+        //Definindo porcentagem ICMS
+        if (tipoOperacao == "EXPO")
+        {
+            porcentICMS_operacao = 0;
+            porcentICMS_despesa = 0;
+            document.getElementById('porcentagemICMS_operacao').value = porcentICMS_operacao;
+            document.getElementById('porcentagemICMS_despesa').value = porcentICMS_despesa;
+        }
+
+
     //Calculando ICMS e Total Prest
-    if (!isNaN(fretePeso_operacao) && !isNaN(rctrc_operacao) && !isNaN(rcfdc_operacao) && !isNaN(GRIS) && !isNaN(pedagio_operacao) && !isNaN(estacionamento) && !isNaN(IMO) && !isNaN(DTA_GVB) && !isNaN(ajudantes_operacao) && !isNaN(porcentICMS))
+    if (!isNaN(fretePeso_operacao) && !isNaN(rctrc_operacao) && !isNaN(rcfdc_operacao) && !isNaN(GRIS) && !isNaN(pedagio_operacao) && !isNaN(estacionamento) && !isNaN(IMO) && !isNaN(DTA_GVB) && !isNaN(ajudantes_operacao) && !isNaN(porcentICMS_operacao))
     {
         totalOperacao = parseFloat(fretePeso_operacao) + parseFloat(rctrc_operacao) + parseFloat(rcfdc_operacao) + parseFloat(GRIS) + parseFloat(pedagio_operacao) + parseFloat(estacionamento) + parseFloat(IMO) + parseFloat(DTA_GVB) + parseFloat(ajudantes_operacao);
-        coeficienteICMS = 1 - (porcentICMS / 100);
+        coeficienteICMS = 1 - (porcentICMS_operacao / 100);
         valorICMS = Math.fround(totalOperacao / coeficienteICMS - totalOperacao).toFixed(2);
         document.getElementById('valorICMS').value = valorICMS;
         totalPrest = Math.fround(totalOperacao / coeficienteICMS).toFixed(2);
@@ -387,8 +409,8 @@ function calcularImpostos()
     //Calculando subTotal
     if (!isNaN(fretePeso_operacao) && !isNaN(rctrc_operacao) && !isNaN(rcfdc_operacao) && !isNaN(GRIS) && !isNaN(pedagio_operacao) && !isNaN(estacionamento) && !isNaN(IMO) && !isNaN(DTA_GVB) && !isNaN(ajudantes_operacao))
     {
-        subTotal = parseFloat(fretePeso_operacao) + parseFloat(impostoSuspenso) + parseFloat(rctrc_operacao) + parseFloat(rcfdc_operacao) + parseFloat(GRIS) + parseFloat(pedagio_operacao) + parseFloat(estacionamento) + parseFloat(IMO) + parseFloat(DTA_GVB) + parseFloat(ajudantes_operacao);
-        document.getElementById('subTotal').value = subTotal; 
+        subTotal = Math.fround(parseFloat(fretePeso_operacao) + parseFloat(impostoSuspenso) + parseFloat(rctrc_operacao) + parseFloat(rcfdc_operacao) + parseFloat(GRIS) + parseFloat(pedagio_operacao) + parseFloat(estacionamento) + parseFloat(IMO) + parseFloat(DTA_GVB) + parseFloat(ajudantes_operacao)).toFixed(2);
+        document.getElementById('subTotal').value = subTotal;
     }
 
     //Passando valor de despesas

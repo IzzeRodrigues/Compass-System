@@ -43,7 +43,7 @@
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 mb-3">
                             <label>Data da Proposta</label>
-                            <input type="date" class="form-control data" id="dataProposta" name="dataProposta">
+                            <input type="date" class="form-control data" id="dataProposta" name="dataProposta" readonly>
                         </div>
                     </div>
                     <div class="row">
@@ -52,7 +52,7 @@
                             <label>Referência ACL</label>
                             <div class="row">
                                 <div class="col-md-4 col-sm-4 col-4 mb-3">
-                                    <select class="form-control">
+                                    <select class="form-control" id="referencia" name="referencia">
                                         <option value="naoSelecionado" selected disabled>Selecione...</option>
                                         <option value="referenciaCA">CA</option>
                                         <option value="referenciaMM">MM</option>
@@ -61,10 +61,10 @@
                                     </select>
                                 </div>
                                 <div class="col-md-4 col-sm-5 col-4 mb-3">
-                                    <input type="number" class="form-control" placeholder="Nº Proposta" readonly  id="numeroProposta" name="numeroProposta">
+                                    <input type="number" class="form-control" placeholder="Nº Proposta" readonly id="numeroProposta" name="numeroProposta">
                                 </div>
                                 <div class="col-md-4 col-sm-3 col-4 mb-3">
-                                    <input type="number" class="form-control" placeholder="Versão"readonly  id="versaoProposta" name="versaoProposta">
+                                    <input type="number" class="form-control" placeholder="Versão" readonly id="versaoProposta" name="versaoProposta">
                                 </div>
                             </div>
                         </div>
@@ -335,7 +335,7 @@
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>% ICMS</label>
-                            <input type="number" step=0.01 min="0" class="form-control" id="porcentagemICMS" name="porcentagemICMS" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="number" step=0.01 min="0" class="form-control" id="porcentagemICMS_operacao" name="porcentagemICMS_operacao" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Valor ICMS</label>
