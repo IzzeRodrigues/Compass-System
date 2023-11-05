@@ -496,17 +496,17 @@
                         <h3>Carga</h3>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Tipo de Carga</label>
-                            <select class="form-control" id="tipoCarga" name="tipoCarga"  onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <select class="form-control" id="valorTipoCarga" name="valorTipoCarga"  onblur="calcularImpostos()" onchange="calcularImpostos()">
                                 <option selected disabled>Selecione...</option>
                                 <option value="cargaGeral">Carga Geral</option>
                                 <option value="granelSolido">Granel Sólido</option>
                                 <option value="conteinerizada">Conteinerizada</option>
-                                <option value="perigosaCargaGeral">Perigosa - Carga Geral</option>
-                                <option value="perigosaGranelSolido">Perigosa - Granel Sólido</option>
-                                <option value="perigosaConteinerizada">Perigosa - Conteinerizada</option>
                                 <option value="neogranel">Neogranel</option>
                                 <option value="granelLiquido">Granel Líquido</option>
                                 <option value="frigorificada">Frigorificada</option>
+                                <option value="perigosaCargaGeral">Perigosa - Carga Geral</option>
+                                <option value="perigosaGranelSolido">Perigosa - Granel Sólido</option>
+                                <option value="perigosaConteinerizada">Perigosa - Conteinerizada</option>
                                 <option value="perigosaGranelLiquido">Perigosa - Granel Líquido</option>
                                 <option value="perigosaFrigorificada">Perigosa - Frigorificada</option>
                             </select>
@@ -595,29 +595,41 @@
                         <h3>Motorista</h3>
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>Valores</label>
-                            <input type="number" step=0.01 min="0" class="form-control">
+                            <input type="number" step=0.01 min="0" class="form-control" id="valorValores" name="valorValores" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>Frete Conf. ANTT</label>
-                            <input type="number" step=0.01 min="0" class="form-control">
+                            <input type="number" step=0.01 min="0" class="form-control" id="valorFreteANTT" name="valorFreteANTT" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>Vale Pedágio Tabela</label>
-                            <input type="number" step=0.01 min="0" class="form-control">
+                            <input type="number" step=0.01 min="0" class="form-control" id="valorPedagio_motorista" name="valorPedagio_motorista" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>Total Aut. Tabela</label>
-                            <input type="number" step=0.01 min="0" class="form-control">
+                            <input type="number" step=0.01 min="0" class="form-control" id="valorTotalAutonomo" name="valorTotalAutonomo" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                            <label>Lucro Total Aut. Tabela</label>
+                            <input type="number" step=0.01 min="0" class="form-control" id="valorLucroTotalAutonomo" name="valorLucroTotalAutonomo" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>Frete All In Fechado</label>
-                            <input type="number" step=0.01 min="0" class="form-control">
+                            <input type="number" step=0.01 min="0" class="form-control" id="valorFreteAllFechado" name="valorFreteAllFechado" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                            <label>Lucro Frete All In Fechado</label>
+                            <input type="number" step=0.01 min="0" class="form-control" id="valorLucroFreteAllFechado" name="valorLucroFreteAllFechado" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>Tentar Fechar Em</label>
-                            <input type="number" step=0.01 min="0" class="form-control">
+                            <input type="number" step=0.01 min="0" class="form-control" id="valorFreteFecharEm" name="valorFreteFecharEm" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                            <label>Lucro Tentar Fechar Em</label>
+                            <input type="number" step=0.01 min="0" class="form-control" id="valorLucroFreteFecharEm" name="valorLucroFreteFecharEm" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                     </div>
                     <div class="row justify-content-between">

@@ -258,6 +258,7 @@ function calcularImpostos()
     despesas_despesa = parseFloat(document.getElementById('valorDespesas_despesa').value);
 
     //Carga
+    tipoCarga = document.getElementById('valorTipoCarga').value;
     quilometragemIda = parseFloat(document.getElementById('valorQuilometragemIda').value);
     quilometragemVolta = parseFloat(document.getElementById('valorQuilometragemVolta').value);
     quilometragemTotal = parseFloat(document.getElementById('valorQuilometragemTotal').value);
@@ -274,13 +275,29 @@ function calcularImpostos()
     cargaUSD_EUR = parseFloat(document.getElementById('valorCargaUSD_EUR').value);
     cargaBRL = parseFloat(document.getElementById('valorCargaBRL').value);
 
+    //Motorista
+    valores = parseFloat(document.getElementById('valorValores').value);
+    freteANTT = parseFloat(document.getElementById('valorFreteANTT').value);
+    pedagio_motorista = parseFloat(document.getElementById('valorPedagio_motorista').value);
+    totalAutonomo = parseFloat(document.getElementById('valorTotalAutonomo').value);
+    lucroTotalAutonomo = parseFloat(document.getElementById('valorLucroTotalAutonomo').value);
+    freteAllFechado = parseFloat(document.getElementById('valorFreteAllFechado').value);
+    lucroFreteAllFechado = parseFloat(document.getElementById('valorLucroFreteAllFechado').value);
+    freteFecharEm = parseFloat(document.getElementById('valorFreteFecharEm').value);
+    lucroFreteAllFechado = parseFloat(document.getElementById('valorTotal').value);
+
+
+    //74 variáveis até o momento
+
     /*
     -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     ----------------------------------------------------------------------------  Parte da Operação  ------------------------------------------------------------------------------
     -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     */
 
-    
+    precoQuilometragemMotista = NaN;
+    precoMinimoMotorista = NaN;
+
 
     //Calculando o valor de Susp.
     if (tipoOperacao == "DTA")
@@ -477,7 +494,7 @@ function calcularImpostos()
     ------------------------------------------------------------------------------  Parte da Carga  -------------------------------------------------------------------------------
     -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     */
-      
+
     //Calculando quilometragemTotal
     if (!isNaN(quilometragemIda) && !isNaN(quilometragemVolta))
     {
@@ -544,3 +561,594 @@ function setMoeda(moeda)
         }
     }
 }
+
+    /*
+    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    ------------------------------------------------------------------------------  Parte do Motorista  ---------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    */
+
+    if (!isNaN(tipoCarga) && !isNaN(eixosCarga))
+    {
+        switch (tipoCarga)
+        {
+            case "cargaGeral":
+            {
+                switch (eixosCarga)
+                {
+                    case 2:
+                    {
+                        precoQuilometragemMotista = 3.2479;
+                        break;
+                    }
+                    case 3:
+                    {
+                        precoQuilometragemMotista = 4.1594;
+                        break;
+                    }
+                    case 4:
+                    {
+                        precoQuilometragemMotista = 4.6405;
+                        break;
+                    }
+                    case 5:
+                    {
+                        precoQuilometragemMotista = 5.3195;
+                        break;
+                    }
+                    case 6:
+                    {
+                        precoQuilometragemMotista = 6.0672;
+                        break;
+                    }
+                    case 7:
+                    {
+                        precoQuilometragemMotista = 6.7492;
+                        break;
+                    }
+                    case 9:
+                    {
+                        precoQuilometragemMotista = 7.5685;
+                        break;
+                    }
+                }
+                break;
+            }
+            case "granelSolido":
+            {
+                switch (eixosCarga)
+                {
+                    case 2:
+                    {
+                        precoQuilometragemMotista = 3.8516;
+                        break;
+                    }
+                    case 3:
+                    {
+                        precoQuilometragemMotista = 4.9030;
+                        break;
+                    }
+                    case 4:
+                    {
+                        precoQuilometragemMotista = 5.5061;
+                        break;
+                    }
+                    case 5:
+                    {
+                        precoQuilometragemMotista = 6.4257;
+                        break;
+                    }
+                    case 6:
+                    {
+                        precoQuilometragemMotista = 7.2770;
+                        break;
+                    }
+                    case 7:
+                    {
+                        precoQuilometragemMotista = 7.9360;
+                        break;
+                    }
+                    case 9:
+                    {
+                        precoQuilometragemMotista = 8.9270;
+                        break;
+                    }
+                }
+                break;
+            }
+            case "conteinerizada":
+            {
+                switch (eixosCarga)
+                {
+                    case 2:
+                    {
+                        precoQuilometragemMotista = 3.2479; //Ver Não Existe
+                        break;
+                    }
+                    case 3:
+                    {
+                        precoQuilometragemMotista = 4.1594;
+                        break;
+                    }
+                    case 4:
+                    {
+                        precoQuilometragemMotista = 4.6405;
+                        break;
+                    }
+                    case 5:
+                    {
+                        precoQuilometragemMotista = 5.3195;
+                        break;
+                    }
+                    case 6:
+                    {
+                        precoQuilometragemMotista = 6.0672;
+                        break;
+                    }
+                    case 7:
+                    {
+                        precoQuilometragemMotista = 6.7492;
+                        break;
+                    }
+                    case 9:
+                    {
+                        precoQuilometragemMotista = 7.5685;
+                        break;
+                    }
+                }
+                break;
+            }
+            case "neogranel": //Ver Não Existe
+            {
+                switch (eixosCarga)
+                {
+                    case 2:
+                    {
+                        precoQuilometragemMotista = 3.2479;
+                        break;
+                    }
+                    case 3:
+                    {
+                        precoQuilometragemMotista = 4.1594;
+                        break;
+                    }
+                    case 4:
+                    {
+                        precoQuilometragemMotista = 4.6405;
+                        break;
+                    }
+                    case 5:
+                    {
+                        precoQuilometragemMotista = 5.3195;
+                        break;
+                    }
+                    case 6:
+                    {
+                        precoQuilometragemMotista = 6.0672;
+                        break;
+                    }
+                    case 7:
+                    {
+                        precoQuilometragemMotista = 6.7492;
+                        break;
+                    }
+                    case 9:
+                    {
+                        precoQuilometragemMotista = 7.5685;
+                        break;
+                    }
+                }
+                break;
+            }
+            case "granelLiquido": //Ver Não Existe
+            {
+                switch (eixosCarga)
+                {
+                    case 2:
+                    {
+                        precoQuilometragemMotista = 3.2479;
+                        break;
+                    }
+                    case 3:
+                    {
+                        precoQuilometragemMotista = 4.1594;
+                        break;
+                    }
+                    case 4:
+                    {
+                        precoQuilometragemMotista = 4.6405;
+                        break;
+                    }
+                    case 5:
+                    {
+                        precoQuilometragemMotista = 5.3195;
+                        break;
+                    }
+                    case 6:
+                    {
+                        precoQuilometragemMotista = 6.0672;
+                        break;
+                    }
+                    case 7:
+                    {
+                        precoQuilometragemMotista = 6.7492;
+                        break;
+                    }
+                    case 9:
+                    {
+                        precoQuilometragemMotista = 7.5685;
+                        break;
+                    }
+                }
+                break;
+            }
+            case "frigorificada":
+            {
+                switch (eixosCarga)
+                {
+                    case 2:
+                    {
+                        precoQuilometragemMotista = 3.8516;
+                        break;
+                    }
+                    case 3:
+                    {
+                        precoQuilometragemMotista = 4.9030;
+                        break;
+                    }
+                    case 4:
+                    {
+                        precoQuilometragemMotista = 5.5061;
+                        break;
+                    }
+                    case 5:
+                    {
+                        precoQuilometragemMotista = 6.4257;
+                        break;
+                    }
+                    case 6:
+                    {
+                        precoQuilometragemMotista = 7.2770;
+                        break;
+                    }
+                    case 7:
+                    {
+                        precoQuilometragemMotista = 7.9360;
+                        break;
+                    }
+                    case 9:
+                    {
+                        precoQuilometragemMotista = 8.9270;
+                        break;
+                    }
+                }
+                break;
+            }
+            case "perigosaCargaGeral":
+            {
+                switch (eixosCarga)
+                {
+                    case 2:
+                    {
+                        precoQuilometragemMotista = 3.4140;
+                        break;
+                    }
+                    case 3:
+                    {
+                        precoQuilometragemMotista = 4.2814;
+                        break;
+                    }
+                    case 4:
+                    {
+                        precoQuilometragemMotista = 4.7605;
+                        break;
+                    }
+                    case 5:
+                    {
+                        precoQuilometragemMotista = 5.4079;
+                        break;
+                    }
+                    case 6:
+                    {
+                        precoQuilometragemMotista = 6.1198;
+                        break;
+                    }
+                    case 7:
+                    {
+                        precoQuilometragemMotista = 6.8177;
+                        break;
+                    }
+                    case 9:
+                    {
+                        precoQuilometragemMotista = 7.6021;
+                        break;
+                    }
+                }
+                break;
+            }
+            case "perigosaGranelSolido": //Ver Não Existe
+            {
+                switch (eixosCarga)
+                {
+                    case 2:
+                    {
+                        precoQuilometragemMotista = 3.2479;
+                        break;
+                    }
+                    case 3:
+                    {
+                        precoQuilometragemMotista = 4.1594;
+                        break;
+                    }
+                    case 4:
+                    {
+                        precoQuilometragemMotista = 4.6405;
+                        break;
+                    }
+                    case 5:
+                    {
+                        precoQuilometragemMotista = 5.3195;
+                        break;
+                    }
+                    case 6:
+                    {
+                        precoQuilometragemMotista = 6.0672;
+                        break;
+                    }
+                    case 7:
+                    {
+                        precoQuilometragemMotista = 6.7492;
+                        break;
+                    }
+                    case 9:
+                    {
+                        precoQuilometragemMotista = 7.5685;
+                        break;
+                    }
+                }
+                break;
+            }
+            case "perigosaConteinerizada":
+            {
+                switch (eixosCarga)
+                {
+                    case 2:
+                    {
+                        precoQuilometragemMotista = 3.2479; //Ver Não Existe
+                        break;
+                    }
+                    case 3:
+                    {
+                        precoQuilometragemMotista = 4.2814;
+                        break;
+                    }
+                    case 4:
+                    {
+                        precoQuilometragemMotista = 4.7605;
+                        break;
+                    }
+                    case 5:
+                    {
+                        precoQuilometragemMotista = 5.4079;
+                        break;
+                    }
+                    case 6:
+                    {
+                        precoQuilometragemMotista = 6.1198;
+                        break;
+                    }
+                    case 7:
+                    {
+                        precoQuilometragemMotista = 6.8177;
+                        break;
+                    }
+                    case 9:
+                    {
+                        precoQuilometragemMotista = 7.6021;
+                        break;
+                    }
+                }
+                break;
+            }
+            case "perigosaGranelLiquido": //Ver Não Existe
+            {
+                switch (eixosCarga)
+                {
+                    case 2:
+                    {
+                        precoQuilometragemMotista = 3.2479;
+                        break;
+                    }
+                    case 3:
+                    {
+                        precoQuilometragemMotista = 4.1594;
+                        break;
+                    }
+                    case 4:
+                    {
+                        precoQuilometragemMotista = 4.6405;
+                        break;
+                    }
+                    case 5:
+                    {
+                        precoQuilometragemMotista = 5.3195;
+                        break;
+                    }
+                    case 6:
+                    {
+                        precoQuilometragemMotista = 6.0672;
+                        break;
+                    }
+                    case 7:
+                    {
+                        precoQuilometragemMotista = 6.7492;
+                        break;
+                    }
+                    case 9:
+                    {
+                        precoQuilometragemMotista = 7.5685;
+                        break;
+                    }
+                }
+                break;
+            }
+            case "perigosaFrigorificada":
+            {
+                switch (eixosCarga)
+                {
+                    case 2:
+                    {
+                        precoQuilometragemMotista = 4.1857;
+                        break;
+                    }
+                    case 3:
+                    {
+                        precoQuilometragemMotista = 5.1820;
+                        break;
+                    }
+                    case 4:
+                    {
+                        precoQuilometragemMotista = 5.7613;
+                        break;
+                    }
+                    case 5:
+                    {
+                        precoQuilometragemMotista = 6.6414;
+                        break;
+                    }
+                    case 6:
+                    {
+                        precoQuilometragemMotista = 7.4479;
+                        break;
+                    }
+                    case 7:
+                    {
+                        precoQuilometragemMotista = 8.1277;
+                        break;
+                    }
+                    case 9:
+                    {
+                        precoQuilometragemMotista = 9.0754;
+                        break;
+                    }
+                }
+                break;
+            }
+        }
+    }
+
+    if (!isNaN(tipoCarga) && tipoCarga != "" && isNaN(quilometragemTotal))
+    {
+        if (quilometragemTotal < 100)
+        {
+            precoQuilometragemMotista = 2.19;
+        }
+        else
+        {
+            if (quilometragemTotal < 200)
+            {
+                precoQuilometragemMotista = 1.35;
+            }
+            else
+            {
+                if (quilometragemTotal < 300)
+                {
+                    precoQuilometragemMotista = 1.18;
+                }
+                else
+                {
+                    if (quilometragemTotal < 400)
+                    {
+                        precoQuilometragemMotista = 1.11;
+                    }
+                    else
+                    {
+                        if (quilometragemTotal < 500)
+                        {
+                            precoQuilometragemMotista = 1.07;
+                        }
+                        else
+                        {
+                            if (quilometragemTotal < 600)
+                            {
+                                precoQuilometragemMotista = 1.04;
+                            }
+                            else
+                            {
+                                if (quilometragemTotal < 700)
+                                {
+                                    precoQuilometragemMotista = 1.02;
+                                }
+                                else
+                                {
+                                    if (quilometragemTotal < 800)
+                                    {
+                                        precoQuilometragemMotista = 1.01;
+                                    }
+                                    else
+                                    {
+                                        if (quilometragemTotal < 900)
+                                        {
+                                            precoQuilometragemMotista = 1;
+                                        }
+                                        else
+                                        {
+                                            if (quilometragemTotal < 1000)
+                                            {
+                                                precoQuilometragemMotista = 0.99;
+                                            }
+                                            else
+                                            {
+                                                if (quilometragemTotal < 1100)
+                                                {
+                                                    precoQuilometragemMotista = 0.99;
+                                                }
+                                                else
+                                                {
+                                                    if (quilometragemTotal < 1200)
+                                                    {
+                                                        precoQuilometragemMotista = 0.98;
+                                                    }
+                                                    else
+                                                    {
+                                                        if (quilometragemTotal < 1300)
+                                                        {
+                                                            precoQuilometragemMotista = 0.98;
+                                                        }
+                                                        else
+                                                        {
+                                                            if (quilometragemTotal < 1400)
+                                                            {
+                                                                precoQuilometragemMotista = 0.97;
+                                                            }
+                                                            else
+                                                            {
+                                                                if (quilometragemTotal < 1500)
+                                                                {
+                                                                    precoQuilometragemMotista = 0.97;
+                                                                }
+                                                                else
+                                                                {
+                                                                    
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    
+    if (!isNaN(precoMinimoMotorista) && !isNaN(precoQuilometragemMotista) && (!isNaN(tipoCarga) && tipoCarga != ""))
+    {
+        
+    }
