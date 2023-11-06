@@ -18,7 +18,7 @@
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">Criar Proposta</li>
                 </ol>
-                <form class="proposta" action="">
+                <form class="proposta" method="GET" action="/acoesProposta">
                     <div class="col-md-3 col-sm-6 col-4 mb-3">
                         <label>Tipo Proposta</label>
                         <select class="form-control">
@@ -674,16 +674,16 @@
                     </div>
                     <div class="row justify-content-end mt-1">
                         <div class="pt-1 mb-4 d-grid gap-2 col-md-3 col-sm-6">
-                            <a href="#"><button class="btn btn-info btn-lg btn-block shadow-sm corpadrao larg-btn" role="button" type="button">Salvar</button></a>
+                            <input class="btn btn-info btn-lg btn-block shadow-sm corpadrao larg-btn" type="submit" value="Salvar" name="botaoSalvar">
                         </div>
                         <div class="pt-1 mb-4 d-grid gap-2 col-md-3 col-sm-6">
-                            <a href="#"><button class="btn btn-info btn-lg btn-block shadow-sm corpadrao larg-btn" role="button" type="button">Gerar PDF</button></a>
+                            <input class="btn btn-info btn-lg btn-block shadow-sm corpadrao larg-btn" type="submit" value="Gerar PDF" name="botaoGerarPDF">
                         </div>
                         <div class="pt-1 mb-4 d-grid gap-2 col-md-3 col-sm-6">
-                            <a href="#"><button class="btn btn-info btn-lg btn-block shadow-sm corpadrao larg-btn" role="button" type="button">Ass. Digital</button></a>
+                            <input class="btn btn-info btn-lg btn-block shadow-sm corpadrao larg-btn" type="submit" value="Ass. Digital" name="botaoAssinar">
                         </div>
                         <div class="pt-1 mb-4 d-grid gap-2 col-md-3 col-sm-6">
-                            <a href="#"><button class="btn btn-info btn-lg btn-block shadow-sm corpadrao larg-btn" role="button" type="button">Cancelar</button></a>
+                            <input class="btn btn-info btn-lg btn-block shadow-sm corpadrao larg-btn" type="submit" value="Cancelar" name="botaoCancelar">
                         </div>
                     </div>
                 </form>

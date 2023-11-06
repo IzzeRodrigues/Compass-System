@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CompassController;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\PropostaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +30,9 @@ Route::get('/forgotpass', [CompassController::class, 'forgotpass'])->name('forgo
 Route::get('/admconfig', [CompassController::class, 'admconfig'])->name('admconfig');
 Route::get('/gerfuncionario', [CompassController::class, 'gerfuncionario'])->name('gerfuncionario');
 Route::get('/gercliente', [CompassController::class, 'gercliente'])->name('gercliente');
+
+Route::get('/acoesProposta', [PropostaController::class, 'escolherAcao'])->name('acoesProposta');
+Route::get('/gerarProposta', [PropostaController::class, 'gerarPDF'])->name('gerarPDF');
 
 Route::get('/verificarUsuario', [UsuarioController::class, 'verificarUsuario'])->name('verificarUsuario');
 Route::get('/adicionarUsuario', [UsuarioController::class, 'adicionarUsuario'])->name('adicionarUsuario');
