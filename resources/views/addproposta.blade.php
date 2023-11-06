@@ -43,7 +43,7 @@
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 mb-3">
                             <label>Data da Proposta</label>
-                            <input type="date" class="form-control data" id="dataProposta" name="dataProposta" readonly>
+                            <input type="date" class="form-control data" id="valorDataProposta" name="valorDataProposta" readonly>
                         </div>
                     </div>
                     <div class="row">
@@ -52,7 +52,7 @@
                             <label>Referência ACL</label>
                             <div class="row">
                                 <div class="col-md-4 col-sm-4 col-4 mb-3">
-                                    <select class="form-control" id="referencia" name="referencia">
+                                    <select class="form-control" id="valorReferenciaProposta" name="valorReferenciaProposta">
                                         <option value="naoSelecionado" selected disabled>Selecione...</option>
                                         <option value="referenciaCA">CA</option>
                                         <option value="referenciaMM">MM</option>
@@ -61,52 +61,52 @@
                                     </select>
                                 </div>
                                 <div class="col-md-4 col-sm-5 col-4 mb-3">
-                                    <input type="number" class="form-control" placeholder="Nº Proposta" readonly id="numeroProposta" name="numeroProposta">
+                                    <input type="number" class="form-control" placeholder="Nº Proposta" readonly id="valorNumeroProposta" name="valorNumeroProposta">
                                 </div>
                                 <div class="col-md-4 col-sm-3 col-4 mb-3">
-                                    <input type="number" class="form-control" placeholder="Versão" readonly id="versaoProposta" name="versaoProposta">
+                                    <input type="text" class="form-control" placeholder="Versão" readonly id="valorVersaoProposta" name="valorVersaoProposta">
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-4 col-12 mb-3">
                             <label>Referência Cliente</label>
-                            <input type="text" class="form-control" placeholder="Ex:INX-Rique/Guatemala">
+                            <input type="text" class="form-control" placeholder="Ex:INX-Rique/Guatemala" id="valorReferenciaCliente" name="valorReferenciaCliente">
                         </div>
                         <div class="col-md-3 col-sm-4 col-12 mb-3">
                             <label>Horário de Recebimento</label>
-                            <input type="text" class="form-control" placeholder="A combinar">
+                            <input type="text" class="form-control" placeholder="A combinar" id="valorHorarioRecebimento" name="valorHorarioRecebimento">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-3 col-sm-4 col-12 mb-3">
                             <label>Produto</label>
-                            <input type="text" class="form-control" placeholder="Ex:Print Ink (IMO) Class 3">
+                            <input type="text" class="form-control" placeholder="Ex:Print Ink (IMO) Class 3" id="valorNomeProduto" name="valorNomeProduto">
                         </div>
                         <div class="col-md-3 col-sm-4 col-12 mb-3">
                             <label>Quant/Embalagem</label>
-                            <input type="text" class="form-control" placeholder="Ex:8 Pallets" id="pallets" name="pallets" onchange="verificarVeiculo()">
+                            <input type="text" class="form-control" placeholder="Ex:8 Pallets" id="valorPallets" name="valorPallets">
                         </div>
                         <div class="col-md-3 col-sm-4 col-12 mb-3">
                             <label>Peso Total/Cubagem</label>
-                            <input type="text" class="form-control" placeholder="Ex:6161kg (6,656m3)">
+                            <input type="text" class="form-control" placeholder="Ex:6161kg (6,656m3)" id="valorPeso" name="valorPeso">
                         </div>
                         <div class="col-md-3 col-sm-4 col-12 mb-3">
                             <label>Nome da Empresa</label>
-                            <input type="text" class="form-control" placeholder="Ex:Copa Logística">
+                            <input type="text" class="form-control" placeholder="Ex:Copa Logística" id="valorNomeCliente" name="valorNomeCliente">
                         </div>
                     </div>
                     <div class="row justify-content-between">
                         <div class="col-md-4 col-sm-4 col-12 mb-3">
                             <label>Contato</label>
-                            <input type="text" class="form-control" placeholder="Ex:Amanda">
+                            <input type="text" class="form-control" placeholder="Ex:Amanda" id="valorNomeContatoCliente" name="valorNomeContatoCliente">
                         </div>
                         <div class="col-md-4 col-sm-4 col-12 mb-3">
                             <label>E-mail Contato</label>
-                            <input type="text" class="form-control" placeholder="Ex:amanda@copalog.com.br">
+                            <input type="text" class="form-control" placeholder="Ex:amanda@copalog.com.br" id="valorEmailContatoCliente" name="valorEmailContatoCliente">
                         </div>
                         <div class="col-md-4 col-sm-4 col-12 mb-3">
                             <label>Tipo de Frete</label>
-                            <select class="form-control">
+                            <select class="form-control" id="valorTipoFrete" name="valorTipoFrete" onblur="calcularImpostos()" onchange="calcularImpostos()">
                                 <option value="naoSelecionado" selected disabled>Selecione...</option>
                                 <option value="freteMaritimo">Marítimo</option>
                                 <option value="freteAereo">Aéreo</option>
@@ -119,7 +119,7 @@
                             <label>Origem</label>
                             <div class="row">
                                 <div class="col-md-6 col-12 mb-3">
-                                    <select class="form-control">
+                                    <select class="form-control" id="valorEstadoOrigem" name="valorEstadoOrigem" onblur="calcularImpostos()" onchange="calcularImpostos()">
                                         <option value="naoSelecionado" selected disabled>Selecione...</option>
                                         <option value="AC">Acre</option>
                                         <option value="AL">Alagoas</option>
@@ -151,7 +151,7 @@
                                     </select>
                                 </div>
                                 <div class="col-md-6 col-12 mb-3">
-                                    <input type="text" class="form-control" placeholder="Ex: Santos(Margem Direita)">
+                                    <input type="text" class="form-control" placeholder="Ex: Santos(Margem Direita)" id="valorCidadeOrigem" name="valorCidadeOrigem">
                                 </div>
                             </div>
                         </div>
@@ -159,7 +159,7 @@
                             <label>Destino</label>
                             <div class="row">
                                 <div class="col-md-6 col-12 mb-3">
-                                    <select class="form-control">
+                                    <select class="form-control" id="valorEstadoDestino" name="valorEstadoDestino" onblur="calcularImpostos()" onchange="calcularImpostos()">
                                         <option value="naoSelecionado" selected disabled>Selecione...</option>
                                         <option value="AC">Acre</option>
                                         <option value="AL">Alagoas</option>
@@ -191,7 +191,7 @@
                                     </select>
                                 </div>
                                 <div class="col-md-6 col-12 mb-3">
-                                    <input type="text" class="form-control" placeholder="Ex: Poços de Calda">
+                                    <input type="text" class="form-control" placeholder="Ex: Poços de Calda" id="valorCidadeDestino" name="valorCidadeDestino">
                                 </div>
                             </div>
                         </div>
@@ -199,13 +199,13 @@
                     <div class="row">
                         <div class="col-12 mb-3">
                             <label>Devolução(Se houver em caso de FCL)</label>
-                            <input type="text" class="form-control" placeholder="Ex: Container vazio retirado REDEX Margem Direita (EXPO)">
+                            <input type="text" class="form-control" placeholder="Ex: Container vazio retirado REDEX Margem Direita (EXPO)" id="valorLocalDevolucao" name="valorLocalDevolucao">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-sm-12 col-12 mb-3">
                             <label>Tipo de Container/Pallets</label>
-                            <select class="form-control" id="tipoContainer" name="tipoContainer" onchange="verificarVeiculo();">
+                            <select class="form-control" id="valorTipoContainer" name="valorTipoContainer" onchange="verificarVeiculo();">
                                 <option value="naoSelecionado" selected disabled>Selecione...</option>
                                 <option value="container20">Container de 20' - até 14,5 tons bruto (carga + tara)</option>
                                 <option value="container40-25tons">Container de 20' / 40 - até 25 tons bruto (carga + tara)</option>
@@ -221,7 +221,7 @@
                         </div>
                         <div class="col-md-3 col-sm-6 mb-3">
                             <label>Tipo de Veículo</label>
-                            <input type="text" class="form-control" placeholder="Ex: Carreta Baú" readonly id="tipoVeiculo" name="tipoVeiculo">
+                            <input type="text" class="form-control" placeholder="Ex: Carreta Baú" readonly id="valorTipoVeiculo" name="valorTipoVeiculo">
                         </div>
                         <div class="col-md-3 col-sm-6 mb-3">
                             <label>Nº de Eixos</label>

@@ -1,5 +1,7 @@
 let puxouMoeda = false;
 let valoresMoedas;
+let puxouICMS = false;
+let combinacaoICMS;
 
 function inicioProposta()
 {
@@ -82,9 +84,9 @@ function inicioProposta()
     mes = datacao.getMonth() + 1;
     ano = datacao.getFullYear();
 
-    document.getElementById('dataProposta').value = `${ano}-${mes}-${dia}`;
-    document.getElementById('numeroProposta').value = "0001";
-    document.getElementById('versaoProposta').value = "01";
+    document.getElementById('valorDataProposta').value = `${ano}-${mes}-${dia}`;
+    document.getElementById('valorNumeroProposta').value = "0001";
+    document.getElementById('valorVersaoProposta').value = "Versão 01";
 }
 
 function setNome(nome)
@@ -94,7 +96,6 @@ function setNome(nome)
     fetch('http://localhost/slimCompass/getEmail/'+nome.cd_usuario)
     .then((response) => response.json())
     .then((json) => setEmail(json))
-
 }
 
 function setEmail(email)
@@ -104,11 +105,11 @@ function setEmail(email)
 
 function verificarVeiculo()
 {
-    let container = document.getElementById('tipoContainer').value;
+    let container = document.getElementById('valorTipoContainer').value;
 
     if(container == "container20")
     {
-        document.getElementById('tipoVeiculo').value = "Truck";
+        document.getElementById('valorTipoVeiculo').value = "Truck";
         document.getElementById('valorEixos_cabecalho').value = 3;
         document.getElementById('valorEixos_carga').value = 3;
     }
@@ -116,7 +117,7 @@ function verificarVeiculo()
     {
         if(container == "container40-25tons")
         {
-            document.getElementById('tipoVeiculo').value = "Cav e Bug";
+            document.getElementById('valorTipoVeiculo').value = "Cav e Bug";
             document.getElementById('valorEixos_cabecalho').value = 5;
             document.getElementById('valorEixos_carga').value = 5;
         }
@@ -124,7 +125,7 @@ function verificarVeiculo()
         {
             if(container == "container40-30tons")
             {
-                document.getElementById('tipoVeiculo').value = "Cav e Bug";
+                document.getElementById('valorTipoVeiculo').value = "Cav e Bug";
                 document.getElementById('valorEixos_cabecalho').value = 6;
                 document.getElementById('valorEixos_carga').value = 6;
             }
@@ -132,7 +133,7 @@ function verificarVeiculo()
             {
                 if(container == "container500kg")
                 {
-                    document.getElementById('tipoVeiculo').value = "Fiorino";
+                    document.getElementById('valorTipoVeiculo').value = "Fiorino";
                     document.getElementById('valorEixos_cabecalho').value = 1;
                     document.getElementById('valorEixos_carga').value = 1;
                 }
@@ -140,7 +141,7 @@ function verificarVeiculo()
                 {
                     if(container == "container1200kg")
                     {
-                        document.getElementById('tipoVeiculo').value = "Van";
+                        document.getElementById('valorTipoVeiculo').value = "Van";
                         document.getElementById('valorEixos_cabecalho').value = 1;
                         document.getElementById('valorEixos_carga').value = 1;
                     }
@@ -148,7 +149,7 @@ function verificarVeiculo()
                     {
                         if(container == "container3500kg")
                         {
-                            document.getElementById('tipoVeiculo').value = "Baú 3/4";
+                            document.getElementById('valorTipoVeiculo').value = "Baú 3/4";
                             document.getElementById('valorEixos_cabecalho').value = 2;
                             document.getElementById('valorEixos_carga').value = 2;
                         }
@@ -156,7 +157,7 @@ function verificarVeiculo()
                         {
                             if(container == "container6000kg")
                             {
-                                document.getElementById('tipoVeiculo').value = "Baú Toco";
+                                document.getElementById('valorTipoVeiculo').value = "Baú Toco";
                                 document.getElementById('valorEixos_cabecalho').value = 2;
                                 document.getElementById('valorEixos_carga').value = 2;
                             }
@@ -164,7 +165,7 @@ function verificarVeiculo()
                             {
                                 if(container == "container12000kg")
                                 {
-                                    document.getElementById('tipoVeiculo').value = "Baú Truck";
+                                    document.getElementById('valorTipoVeiculo').value = "Baú Truck";
                                     document.getElementById('valorEixos_cabecalho').value = 3;
                                     document.getElementById('valorEixos_carga').value = 3;
                                 }
@@ -172,7 +173,7 @@ function verificarVeiculo()
                                 {
                                     if(container == "container25000kg")
                                     {
-                                        document.getElementById('tipoVeiculo').value = "Carreta Baú";
+                                        document.getElementById('valorTipoVeiculo').value = "Carreta Baú";
                                         document.getElementById('valorEixos_cabecalho').value = 5;
                                         document.getElementById('valorEixos_carga').value = 5;
                                     }
@@ -180,13 +181,13 @@ function verificarVeiculo()
                                     {
                                         if(container == "outros")
                                         {
-                                            document.getElementById('tipoVeiculo').value = "Carreta LS";
+                                            document.getElementById('valorTipoVeiculo').value = "Carreta LS";
                                             document.getElementById('valorEixos_cabecalho').value = 6;
                                             document.getElementById('valorEixos_carga').value = 6;
                                         }
                                         else
                                         {
-                                            document.getElementById('tipoVeiculo').value = "Tipo Inválido";
+                                            document.getElementById('valorTipoVeiculo').value = "Tipo Inválido";
                                             document.getElementById('valorEixos_cabecalho').value = 0;
                                             document.getElementById('valorEixos_carga').value = 0;
                                         }
@@ -210,6 +211,33 @@ function calcularImpostos()
     -------------------------------------------------------------------------  Declaração de variáveis  ---------------------------------------------------------------------------
     -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     */
+
+    //Cabecalho
+    nomeUsuario = document.getElementById('nomeResponsavel').value;
+    emailUsuario = document.getElementById('emailResponsavel').value;
+    cargoUsuario = document.getElementById('cargoResponsavel').value;
+    dataProposta = document.getElementById('valorDataProposta').value;
+    referenciaProposta = document.getElementById('valorReferenciaProposta').value;
+    numeroProposta = document.getElementById('valorNumeroProposta').value;
+    versaoProposta = document.getElementById('valorVersaoProposta').value;
+    referenciaCliente = document.getElementById('valorReferenciaCliente').value;
+    horarioRecebimento = document.getElementById('valorHorarioRecebimento').value;
+    nomeProduto = document.getElementById('valorNomeProduto').value;
+    pallets = document.getElementById('valorPallets').value;
+    peso = document.getElementById('valorPeso').value;
+    nomeCliente = document.getElementById('valorNomeCliente').value;
+    nomeContatoCliente = document.getElementById('valorNomeContatoCliente').value;
+    emailContatoCliente = document.getElementById('valorEmailContatoCliente').value;
+    tipoFrete = document.getElementById('valorTipoFrete').value;
+    estadoOrigem = document.getElementById('valorEstadoOrigem').value;
+    cidadeOrigem = document.getElementById('valorCidadeOrigem').value;
+    estadoDestino = document.getElementById('valorEstadoDestino').value;
+    cidadeDestino = document.getElementById('valorCidadeDestino').value;
+    estadosViagem = `${estadoOrigem}_${estadoDestino}`;
+    localDevolucao = document.getElementById('valorLocalDevolucao').value;
+    tipoContainer = document.getElementById('valorTipoContainer').value;
+    tipoVeiculo = document.getElementById('valorTipoVeiculo').value;
+    eixosCabecalho = parseFloat(document.getElementById('valorEixos_cabecalho').value);
 
     //Operacao
     valorMercadoria = parseFloat(document.getElementById('valorMercadoria').value);
@@ -384,6 +412,30 @@ function calcularImpostos()
             porcentICMS_despesa = 0;
             document.getElementById('porcentagemICMS_operacao').value = porcentICMS_operacao;
             document.getElementById('porcentagemICMS_despesa').value = porcentICMS_despesa;
+        }
+        else
+        {
+            if (estadoOrigem != "naoSelecionado" && estadoDestino != "naoSelecionado")
+            {
+                if (estadosViagem != combinacaoICMS)
+                {
+                    puxouICMS = false;
+                }
+                if (puxouICMS == false)
+                {
+                    fetch('http://localhost/slimCompass/getICMS/'+estadosViagem)
+                    .then((response) => response.json())
+                    .then((json) => {
+                        if (json != undefined)
+                        {
+                            puxouICMS = true; 
+                            document.getElementById('porcentagemICMS_operacao').value = json.pc_icms; 
+                            document.getElementById('porcentagemICMS_despesa').value = json.pc_icms; 
+                            combinacaoICMS = estadosViagem;
+                        }
+                    })
+                }
+            }
         }
 
 
