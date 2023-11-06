@@ -39,4 +39,8 @@ class CompassController extends Controller
     public function gercliente(){
         return view('gercliente');
     }
+
+    public function testePDF(){
+        return view('criadorPDF');
+    }
 }

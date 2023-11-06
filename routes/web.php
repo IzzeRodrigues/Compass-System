@@ -33,6 +33,7 @@ Route::get('/gercliente', [CompassController::class, 'gercliente'])->name('gercl
 
 Route::get('/acoesProposta', [PropostaController::class, 'escolherAcao'])->name('acoesProposta');
 Route::get('/gerarProposta', [PropostaController::class, 'gerarPDF'])->name('gerarPDF');
+Route::get('/testePDF', [CompassController::class, 'testePDF'])->name('testePDF');
 
 Route::get('/verificarUsuario', [UsuarioController::class, 'verificarUsuario'])->name('verificarUsuario');
 Route::get('/adicionarUsuario', [UsuarioController::class, 'adicionarUsuario'])->name('adicionarUsuario');

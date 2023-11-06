@@ -1,40 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use \Mpdf\Mpdf as PDF;
-use illuminate\support\facades\Storage;
 
-class PropostaController extends Controller
-{
-    function escolherAcao(Request $request)
-    {
-        if($request->botaoSalvar)
-        {
-
-        }
-        if($request->botaoGerarPDF)
-        {
-            $variaveis = $request->all();
-            return redirect()->route('testePDF', $variaveis);
-        }
-    }
-
-    function testePDF(Request $request)
-    {
-        $data = ['users'=>'Lucas'];
-        // $pdf = PDF::loadView('users', $data);
-        // $pdf->getMpdf()->addPage();
-
-        // return $pdf->stream('user');
-    }
-
-    function gerarPDF(Request $request)
-    {
-        // var_dump($request->all());
-        // VARIÁVEIS DE CRIAÇÃO DE PÁGINA PDF:
-        $mpdf = new PDF([
+$mpdf = new \Mpdf\Mpdf([
             'default_font' => 'arial',
             'default_font_size' => '6.5',
             'margin_left' => 2,
@@ -684,5 +652,3 @@ class PropostaController extends Controller
         $mpdf->Output();
         // Em "adicionais" e "adicionais se necessário" será necessário criar um if no backend com as possibilidades, em caso de valor 0, dependendo do caso, usar "isento" "não aplicável" "sob consulta" "conferir legislação" ou isento comercialmente. 
         // Nesses dois, em caso de valor fixo, é importante acrescentar os sinais R$ - $ - % - € que não estarão no doc por conta das possibilidades acima.
-            }
-}

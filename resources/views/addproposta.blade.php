@@ -18,7 +18,7 @@
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">Criar Proposta</li>
                 </ol>
-                <form class="proposta" method="GET" action="/acoesProposta">
+                <form class="proposta" method="GET" action="http://localhost/Compass/CriadorPDF/index.php">
                     <div class="col-md-3 col-sm-6 col-4 mb-3">
                         <label>Tipo Proposta</label>
                         <select class="form-control">
@@ -317,7 +317,7 @@
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Estacionamento</label>
-                            <input type="number" step=0.01 min="0" class="form-control" id="valorEstacionamento" name="valorEstacionamento" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="number" step=0.01 min="0" class="form-control" id="valorEstacionamento_operacao" name="valorEstacionamento_operacao" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>IMO</label>
@@ -339,7 +339,7 @@
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Valor ICMS</label>
-                            <input type="number" step=0.01 min="0" class="form-control" id="valorICMS" name="valorICMS" readonly onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="number" step=0.01 min="0" class="form-control" id="valorICMS_operacao" name="valorICMS_operacao" readonly onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Sub Total</label>
@@ -645,31 +645,137 @@
                     </div>
                     <div class="row justify-content-between">
                         <h3>Cotação Autônomo</h3>
-                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                        <div class="col-md-4 col-sm-6 col-12 form-group mb-3">
                             <label>Nome Motorista</label>
-                            <input type="text" min="0" class="form-control">
+                            <input type="text" min="0" class="form-control" id="motoristaCotado1" name="motoristaCotado1" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-12 mb-3">
+                            <label>Data da Cotação</label>
+                            <input type="date" class="form-control data" id="dataCotacaoMotorista1" name="dataCotacaoMotorista1" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-12 form-group mb-3">
+                            <label>Valor</label>
+                            <input type="number" step=0.01 min="0" class="form-control"id="valorMotoristaCotado1" name="valorMotoristaCotado1" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                        </div>
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="col-md-4 col-sm-6 col-12 form-group mb-3">
+                            <label>Nome Motorista</label>
+                            <input type="text" min="0" class="form-control"id="motoristaCotado2" name="motoristaCotado2" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-12 mb-3">
+                            <label>Data da Cotação</label>
+                            <input type="date" class="form-control data" id="dataCotacaoMotorista2" name="dataCotacaoMotorista2" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-12 form-group mb-3">
+                            <label>Valor</label>
+                            <input type="number" step=0.01 min="0" class="form-control"id="valorMotoristaCotado2" name="valorMotoristaCotado2" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                        </div>
+                    </div>
+                    <div class="row justify-content-between">
+                        <h3>Adicionais</h3>
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                            <label>Utilização de isca</label>
+                            <select type="number" step=0.01 min="0" class="form-control" id="valorTipoUtilizacaoIsca" name="valorTipoUtilizacaoIsca" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                                <option value="naoSelecionado" selected disabled>Selecione...</option>
+                                <option value="sim">Sim</option>
+                                <option value="nao">Não</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                            <label>Valor Utilizacao Isca</label>
+                            <input type="text" step=0.01 min="0" class="form-control" id="valorUtilizacaoIsca" name="valorUtilizacaoIsca" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 mb-3">
-                            <label>Data da Cotação</label>
-                            <input type="date" class="form-control data" id="dataProposta" name="dataProposta">
+                            <label>Monitoramento de isca</label>
+                            <select type="number" step=0.01 min="0" class="form-control" id="valorTipoMonitoramentoIsca" name="valorTipoMonitoramentoIsca" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                                <option value="naoSelecionado" selected disabled>Selecione...</option>
+                                <option value="sim">Sim</option>
+                                <option value="nao">Não</option>
+                            </select>
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
-                            <label>Valor</label>
-                            <input type="number" step=0.01 min="0" class="form-control">
+                            <label>Valor Monitoramento Isca</label>
+                            <input type="text" step=0.01 min="0" class="form-control" id="valorMonitoramentoIsca" name="valorMonitoramentoIsca" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                     </div>
                     <div class="row justify-content-between">
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
-                            <label>Nome Motorista</label>
-                            <input type="text" min="0" class="form-control">
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-12 mb-3">
-                            <label>Data da Cotação</label>
-                            <input type="date" class="form-control data" id="dataProposta" name="dataProposta">
+                            <label>Escolta Armada</label>
+                            <select type="number" step=0.01 min="0" class="form-control" id="valorTipoEscoltaArmada" name="valorTipoEscoltaArmada" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                                <option value="naoSelecionado" selected disabled>Selecione...</option>
+                                <option value="sim">Sim</option>
+                                <option value="nao">Não</option>
+                            </select>
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
-                            <label>Valor</label>
-                            <input type="number" step=0.01 min="0" class="form-control">
+                            <label>Valor Escolta Armada</label>
+                            <input type="text" step=0.01 min="0" class="form-control" id="valorEscoltaArmada" name="valorEscoltaArmada" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12 mb-3">
+                            <label>Adicional Carga IMO</label>
+                            <select type="number" step=0.01 min="0" class="form-control" id="valorTipoAdicionalCargaIMO" name="valorTipoAdicionalCargaIMO" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                                <option value="naoSelecionado" selected disabled>Selecione...</option>
+                                <option value="sim">Sim</option>
+                                <option value="nao">Não</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                            <label>Valor Adc Carga IMO</label>
+                            <input type="text" step=0.01 min="0" class="form-control" id="valorAdicionalCargaIMO" name="valorAdicionalCargaIMO" onblur="calcularImpostos()" onchange="calcularImpostos()" readonly>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                            <label>Carregamento Expresso</label>
+                            <select type="number" step=0.01 min="0" class="form-control" id="valorTipoCarregamentoExpresso" name="valorTipoCarregamentoExpresso" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                                <option value="naoSelecionado" selected disabled>Selecione...</option>
+                                <option value="sim">Sim</option>
+                                <option value="nao">Não</option>
+                                <option value="insento">Isento Comercialmente</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                            <label>Valor Carregamento Expresso</label>
+                            <input type="text" step=0.01 min="0" class="form-control" id="valorCarregamentoExpresso" name="valorCarregamentoExpresso" onblur="calcularImpostos()" onchange="calcularImpostos()" readonly>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12 mb-3">
+                            <label>Utilização Cavalo LS</label>
+                            <select type="number" step=0.01 min="0" class="form-control" id="valorTipoUtilizacaoCavaloLS" name="valorTipoUtilizacaoCavaloLS" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                                <option value="naoSelecionado" selected disabled>Selecione...</option>
+                                <option value="sim">Sim</option>
+                                <option value="nao">Não</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                            <label>Valor Cavalo LS</label>
+                            <input type="text" step=0.01 min="0" class="form-control" id="valorUtilizacaoCavaloLS" name="valorUtilizacaoCavaloLS" onblur="calcularImpostos()" onchange="calcularImpostos()" readonly>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                            <label>Estadia Especial</label>
+                            <select type="number" step=0.01 min="0" class="form-control" id="valorTipoEstadiaEspecial" name="valorTipoEstadiaEspecial" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                                <option value="naoSelecionado" selected disabled>Selecione...</option>
+                                <option value="sim">Sim</option>
+                                <option value="nao">Não</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                            <label>Valor Estadia Especial</label>
+                            <input type="text" step=0.01 min="0" class="form-control" id="valorEstadiaEspecial" name="valorEstadiaEspecial" onblur="calcularImpostos()" onchange="calcularImpostos()" readonly>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12 mb-3">
+                            <label>Sobrestadia Carregamento</label>
+                            <select type="number" step=0.01 min="0" class="form-control" id="valorTipoSobrestadiaCarregamento" name="valorTipoSobrestadiaCarregamento" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                                <option value="naoSelecionado" selected disabled>Selecione...</option>
+                                <option value="sim">Sim</option>
+                                <option value="nao">Não</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                            <label>Valor Sobrestadia Carregamento</label>
+                            <input type="text" step=0.01 min="0" class="form-control" id="valorSobrestadiaCarregamento" name="valorSobrestadiaCarregamento" onblur="calcularImpostos()" onchange="calcularImpostos()" readonly>
                         </div>
                     </div>
                     <div class="row justify-content-end mt-1">

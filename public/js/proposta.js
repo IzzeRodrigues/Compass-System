@@ -238,6 +238,7 @@ function calcularImpostos()
     tipoContainer = document.getElementById('valorTipoContainer').value;
     tipoVeiculo = document.getElementById('valorTipoVeiculo').value;
     eixosCabecalho = parseFloat(document.getElementById('valorEixos_cabecalho').value);
+    //25
 
     //Operacao
     valorMercadoria = parseFloat(document.getElementById('valorMercadoria').value);
@@ -255,8 +256,8 @@ function calcularImpostos()
     porcentGRIS = parseFloat(document.getElementById('porcentagemGRIS').value);
     GRIS = parseFloat(document.getElementById('valorGRIS').value);
     porcentICMS_operacao = parseFloat(document.getElementById('porcentagemICMS_operacao').value);
-    ICMS = parseFloat(document.getElementById('valorICMS').value);
-    estacionamento = parseFloat(document.getElementById('valorEstacionamento').value);
+    ICMS_operacao = parseFloat(document.getElementById('valorICMS_operacao').value);
+    estacionamento_operacao = parseFloat(document.getElementById('valorEstacionamento_operacao').value);
     IMO = parseFloat(document.getElementById('valorIMO').value);
     DTA_GVB = parseFloat(document.getElementById('valorDTA_GVB').value);
     ajudantes_operacao = parseFloat(document.getElementById('valorAjudantes_operacao').value);
@@ -337,15 +338,41 @@ function calcularImpostos()
     lucroFreteFecharEm = parseFloat(document.getElementById('valorLucroFreteFecharEm').value);
     //11
 
-    //26 + 27 + 17 + 2 + 11
+    //Cotacao
+    motoristaCot1 = document.getElementById('motoristaCotado1').value;
+    dataCotMotorista1 = document.getElementById('dataCotacaoMotorista1').value;
+    valorMotoristaCot1 = document.getElementById('valorMotoristaCotado1').value;
+    motoristaCot2 = document.getElementById('motoristaCotado2').value;
+    dataCotMotorista2 = document.getElementById('dataCotacaoMotorista2').value;
+    valorMotoristaCot2 = document.getElementById('valorMotoristaCotado2').value;
+    //6
+
+    //Adicionais
+    tipoUtilizacaoIsca = document.getElementById('valorTipoUtilizacaoIsca').value;
+    utilizacaoIsca = parseFloat(document.getElementById('valorUtilizacaoIsca').value);
+    tipoMonitoramentoIsca = document.getElementById('valorTipoMonitoramentoIsca').value;
+    monitoramentoIsca = parseFloat(document.getElementById('valorMonitoramentoIsca').value);
+    tipoEscoltaArmada = document.getElementById('valorTipoEscoltaArmada').value;
+    escoltaArmada = parseFloat(document.getElementById('valorEscoltaArmada').value);
+    tipoAdicionalCargaIMO = document.getElementById('valorTipoAdicionalCargaIMO').value;
+    adicionalCargaIMO = parseFloat(document.getElementById('valorAdicionalCargaIMO').value);
+    tipoCarregamentoExpresso = document.getElementById('valorTipoCarregamentoExpresso').value;
+    carregamentoExpresso = parseFloat(document.getElementById('valorCarregamentoExpresso').value);
+    tipoUtilizacaoCavaloLS = document.getElementById('valorTipoUtilizacaoCavaloLS').value;
+    utilizacaoCavaloLS = parseFloat(document.getElementById('valorUtilizacaoCavaloLS').value);
+    tipoEstadiaEspecial = document.getElementById('valorTipoEstadiaEspecial').value;
+    estadiaEspecial = parseFloat(document.getElementById('valorEstadiaEspecial').value);
+    tipoSobrestadiaCarregamento = document.getElementById('valorTipoSobrestadiaCarregamento').value;
+    sobrestadiaCarregamento = parseFloat(document.getElementById('valorSobrestadiaCarregamento').value);
+    //16
+
+    //25 + 26 + 27 + 17 + 2 + 11 + 6 + 16
 
     /*
     -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     ----------------------------------------------------------------------------  Parte da Operação  ------------------------------------------------------------------------------
     -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     */
-
-
 
     //Calculando o valor de Susp.
     if (tipoOperacao == "DTA")
@@ -440,12 +467,12 @@ function calcularImpostos()
 
 
     //Calculando ICMS e Total Prest
-    if (!isNaN(fretePeso_operacao) && !isNaN(rctrc_operacao) && !isNaN(rcfdc_operacao) && !isNaN(GRIS) && !isNaN(pedagio_operacao) && !isNaN(estacionamento) && !isNaN(IMO) && !isNaN(DTA_GVB) && !isNaN(ajudantes_operacao) && !isNaN(porcentICMS_operacao))
+    if (!isNaN(fretePeso_operacao) && !isNaN(rctrc_operacao) && !isNaN(rcfdc_operacao) && !isNaN(GRIS) && !isNaN(pedagio_operacao) && !isNaN(estacionamento_operacao) && !isNaN(IMO) && !isNaN(DTA_GVB) && !isNaN(ajudantes_operacao) && !isNaN(porcentICMS_operacao))
     {
-        totalOperacao = parseFloat(fretePeso_operacao) + parseFloat(rctrc_operacao) + parseFloat(rcfdc_operacao) + parseFloat(GRIS) + parseFloat(pedagio_operacao) + parseFloat(estacionamento) + parseFloat(IMO) + parseFloat(DTA_GVB) + parseFloat(ajudantes_operacao);
+        totalOperacao = parseFloat(fretePeso_operacao) + parseFloat(rctrc_operacao) + parseFloat(rcfdc_operacao) + parseFloat(GRIS) + parseFloat(pedagio_operacao) + parseFloat(estacionamento_operacao) + parseFloat(IMO) + parseFloat(DTA_GVB) + parseFloat(ajudantes_operacao);
         coeficienteICMS = 1 - (porcentICMS_operacao / 100);
-        valorICMS = Math.fround(totalOperacao / coeficienteICMS - totalOperacao).toFixed(2);
-        document.getElementById('valorICMS').value = valorICMS;
+        ICMS_operacao = Math.fround(totalOperacao / coeficienteICMS - totalOperacao).toFixed(2);
+        document.getElementById('valorICMS_operacao').value = ICMS_operacao;
         totalPrest = Math.fround(totalOperacao / coeficienteICMS).toFixed(2);
         document.getElementById('valorTotalPrest').value = totalPrest;
         porcentTotalPrest = Math.fround(totalPrest / totalImpostoSeguro).toFixed(2);
@@ -459,9 +486,9 @@ function calcularImpostos()
     }
     
     //Calculando subTotal
-    if (!isNaN(fretePeso_operacao) && !isNaN(rctrc_operacao) && !isNaN(rcfdc_operacao) && !isNaN(GRIS) && !isNaN(pedagio_operacao) && !isNaN(estacionamento) && !isNaN(IMO) && !isNaN(DTA_GVB) && !isNaN(ajudantes_operacao))
+    if (!isNaN(fretePeso_operacao) && !isNaN(rctrc_operacao) && !isNaN(rcfdc_operacao) && !isNaN(GRIS) && !isNaN(pedagio_operacao) && !isNaN(estacionamento_operacao) && !isNaN(IMO) && !isNaN(DTA_GVB) && !isNaN(ajudantes_operacao))
     {
-        subTotal = Math.fround(parseFloat(fretePeso_operacao) + parseFloat(impostoSuspenso) + parseFloat(rctrc_operacao) + parseFloat(rcfdc_operacao) + parseFloat(GRIS) + parseFloat(pedagio_operacao) + parseFloat(estacionamento) + parseFloat(IMO) + parseFloat(DTA_GVB) + parseFloat(ajudantes_operacao)).toFixed(2);
+        subTotal = Math.fround(parseFloat(fretePeso_operacao) + parseFloat(impostoSuspenso) + parseFloat(rctrc_operacao) + parseFloat(rcfdc_operacao) + parseFloat(GRIS) + parseFloat(pedagio_operacao) + parseFloat(estacionamento_operacao) + parseFloat(IMO) + parseFloat(DTA_GVB) + parseFloat(ajudantes_operacao)).toFixed(2);
         document.getElementById('subTotal').value = subTotal;
     }
 
@@ -492,7 +519,8 @@ function calcularImpostos()
         {
             document.getElementById('valorMargemLucroBruto').value = "VOU DESCONTAR DA SUA COMISSÃO!";
             document.getElementById('valorMargemLucroBruto').style.fontWeight = "bold";
-            document.getElementById('valorMargemLucroBruto').style.color = "red";
+            document.getElementById('valorMargemLucroBruto').style.color = "rgb(135, 4, 35)";
+            document.getElementById('valorMargemLucroBruto').style.backgroundColor = "rgb(255, 199, 205)";
         }
     }
     
@@ -1225,6 +1253,137 @@ function calcularImpostos()
     {
         lucroFreteFecharEm = Math.fround( freteFecharEm - totalDespesaViagem).toFixed(2);
         document.getElementById('valorLucroFreteFecharEm').value = lucroFreteFecharEm;
+    }
+
+    /*
+    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    ------------------------------------------------------------------------------  Parte de Adicionais  --------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    */
+
+    //Colocando valor de utilizacao de isca
+    if (tipoUtilizacaoIsca == "nao")
+    {
+        document.getElementById('valorUtilizacaoIsca').value = "ISENTO";
+        document.getElementById('valorUtilizacaoIsca').readOnly = true;
+    }
+    else
+    {
+        if (tipoUtilizacaoIsca == "sim")
+        {
+            document.getElementById('valorUtilizacaoIsca').readOnly = false;
+        }
+    }
+
+    //Colocando valor de monitoramento de isca
+    if (tipoMonitoramentoIsca == "nao")
+    {
+        document.getElementById('valorMonitoramentoIsca').value = "ISENTO";
+        document.getElementById('valorMonitoramentoIsca').readOnly = true;
+    }
+    else
+    {
+        if (tipoMonitoramentoIsca == "sim")
+        {
+            document.getElementById('valorMonitoramentoIsca').readOnly = false;
+        }
+    }
+
+    //Colocando valor na escolta armada
+    if (tipoEscoltaArmada == "nao")
+    {
+        document.getElementById('valorEscoltaArmada').value = "ISENTO";
+        document.getElementById('valorEscoltaArmada').readOnly = true;
+    }
+    else
+    {
+        if (tipoEscoltaArmada == "sim")
+        {
+            document.getElementById('valorEscoltaArmada').readOnly = false;
+        }
+    }
+
+    //Colocando valor no adicional de carga IMO
+    if (tipoAdicionalCargaIMO == "nao")
+    {
+        document.getElementById('valorAdicionalCargaIMO').value = "NÃO APLICÁVEL";
+        document.getElementById('valorAdicionalCargaIMO').readOnly = true;
+    }
+    else
+    {
+        (tipoAdicionalCargaIMO == "sim")
+        {
+            document.getElementById('valorAdicionalCargaIMO').value = 600;
+            document.getElementById('valorAdicionalCargaIMO').readOnly = true;
+        }
+    }
+
+    //Colocando valor no carregamento expresso
+    if (tipoCarregamentoExpresso == "nao")
+    {
+        document.getElementById('valorCarregamentoExpresso').value = "NÃO APLICÁVEL";
+        document.getElementById('valorCarregamentoExpresso').readOnly = true;
+    }
+    else
+    {
+        if (tipoCarregamentoExpresso == "sim")
+        {
+            document.getElementById('valorCarregamentoExpresso').value = 690;
+            document.getElementById('valorCarregamentoExpresso').readOnly = true;
+        }
+        else
+        {
+            if (tipoCarregamentoExpresso == "isento")
+            {
+                document.getElementById('valorCarregamentoExpresso').value = "INSENTO COMERCIALMENTE";
+                document.getElementById('valorCarregamentoExpresso').readOnly = true;
+            }
+        }
+    }
+
+    //Colocando valor na utilizacao do cavalo LS
+    if (tipoUtilizacaoCavaloLS == "nao")
+    {
+        document.getElementById('valorUtilizacaoCavaloLS').value = "NÃO APLICÁVEL";
+        document.getElementById('valorUtilizacaoCavaloLS').readOnly = true;
+    }
+    else
+    {
+        if (tipoUtilizacaoCavaloLS == "sim")
+        {
+            document.getElementById('valorUtilizacaoCavaloLS').value = 490;
+            document.getElementById('valorUtilizacaoCavaloLS').readOnly = true;
+        }
+    }
+
+    //Colocando valor na estadia especial
+    if (tipoEstadiaEspecial == "nao")
+    {
+        document.getElementById('valorEstadiaEspecial').value = "NÃO APLICÁVEL";
+        document.getElementById('valorEstadiaEspecial').readOnly = true;
+    }
+    else
+    {
+        if (tipoEstadiaEspecial == "sim")
+        {
+            document.getElementById('valorEstadiaEspecial').value = 590;
+            document.getElementById('valorEstadiaEspecial').readOnly = true;
+        }
+    }
+
+    //Colocando valor na sobrestadia de carregamento
+    if (tipoSobrestadiaCarregamento == "nao")
+    {
+        document.getElementById('valorSobrestadiaCarregamento').value = "NÃO APLICÁVEL";
+        document.getElementById('valorSobrestadiaCarregamento').readOnly = true;
+    }
+    else
+    {
+        if (tipoSobrestadiaCarregamento == "sim")
+        {
+            document.getElementById('valorSobrestadiaCarregamento').value = 59;
+            document.getElementById('valorSobrestadiaCarregamento').readOnly = true;
+        }
     }
 }
 
