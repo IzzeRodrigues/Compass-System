@@ -59,17 +59,17 @@ function inicioProposta()
 
     console.log("Tá rodando");
     
-    fetch('http://localhost/slimCompass/getNome/'+resultado)
+    fetch('http://localhost/Compass/slimCompass/getNome/'+resultado)
     .then((response) => response.json())
     .then((json) => setNome(json))
     
     var resposta2
 
-    // fetch('http://localhost/slimCompass/getNome/'+resultado)
+    // fetch('http://localhost/Compass/slimCompass/getNome/'+resultado)
     // .then((response) => response.json())
     // .then((json) => console.log("Essa é a resposta direto do banco: "+json))
 
-    fetch('http://localhost/slimCompass/getNome/'+resultado)
+    fetch('http://localhost/Compass/slimCompass/getNome/'+resultado)
     .then((response) => response.json())
     .then((json) => {console.log(json); resposta2 = json; console.log('passou pela definicao')})
 
@@ -93,7 +93,7 @@ function setNome(nome)
 {
     document.getElementById('nomeResponsavel').value = nome.nm_nome_completo;
     document.getElementById('cargoResponsavel').value = nome.nm_cargo_usuario;
-    fetch('http://localhost/slimCompass/getEmail/'+nome.cd_usuario)
+    fetch('http://localhost/Compass/slimCompass/getEmail/'+nome.cd_usuario)
     .then((response) => response.json())
     .then((json) => setEmail(json))
 }
@@ -450,7 +450,7 @@ function calcularImpostos()
                 }
                 if (puxouICMS == false)
                 {
-                    fetch('http://localhost/slimCompass/getICMS/'+estadosViagem)
+                    fetch('http://localhost/Compass/slimCompass/getICMS/'+estadosViagem)
                     .then((response) => response.json())
                     .then((json) => {
                         if (json != undefined)
@@ -629,7 +629,7 @@ function calcularImpostos()
     //Calculando pedágio
     if (!isNaN(pedagioEixoIda) && !isNaN(pedagioEixoVolta) && !isNaN(eixosCarga))
     {
-        pedagio_carga = pedagioEixoIda * eixosCarga + pedagioEixoVolta * eixosCarga;
+        pedagio_carga = Math.fround(parseFloat(pedagioEixoIda) * parseFloat(eixosCarga) + parseFloat(pedagioEixoVolta) * parseFloat(eixosCarga)).toFixed(2);
         document.getElementById('valorPedagio_carga').value = pedagio_carga;
     }
 
