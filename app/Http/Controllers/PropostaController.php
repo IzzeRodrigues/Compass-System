@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use \Mpdf\Mpdf;
+use PDF;
 
 class PropostaController extends Controller
 {
@@ -25,7 +25,7 @@ class PropostaController extends Controller
         var_dump($request->all());
 
         // VARIÁVEIS DE CRIAÇÃO DE PÁGINA PDF:
-        $mpdf = new \Mpdf\Mpdf([
+        $mpdf = new Mpdf([
             'default_font' => 'arial',
             'default_font_size' => '6.5',
             'margin_left' => 2,
