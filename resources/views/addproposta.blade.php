@@ -18,14 +18,19 @@
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">Criar Proposta</li>
                 </ol>
-                <form class="proposta" method="GET" action="http://localhost/Compass/CriadorPDF/index.php">
-                    <div class="col-md-3 col-sm-6 col-4 mb-3">
-                        <label>Tipo Proposta</label>
-                        <select class="form-control">
-                            <option value="naoSelecionado" selected disabled>Selecione...</option>
-                            <option value="tipoPadrao">Padrão</option>
-                            <option value="tipoEstudo">Estudo</option>
-                        </select>
+                <form class="proposta" method="GET" action="http://localhost/Compass/CriadorPDF/index.php" target="_blank">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6 col-4 mb-3">
+                            <label>Tipo Proposta</label>
+                            <select class="form-control">
+                                <option value="naoSelecionado" selected disabled>Selecione...</option>
+                                <option value="tipoPadrao">Padrão</option>
+                                <option value="tipoEstudo">Estudo</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-4 mb-3 d-flex justify align-items-end">
+                            <button class="btn btn-info btn-block shadow-sm corpadrao col-12" onclick="preencherInputs()" type="button">Preencher proposta</button>
+                        </div>
                     </div>
                     <div class="row">
                         <h3 class="mb-4 blue-compass">Cabeçalho</h3>
@@ -54,10 +59,10 @@
                                 <div class="col-md-4 col-sm-4 col-4 mb-3">
                                     <select class="form-control" id="valorReferenciaProposta" name="valorReferenciaProposta">
                                         <option value="naoSelecionado" selected disabled>Selecione...</option>
-                                        <option value="referenciaCA">CA</option>
-                                        <option value="referenciaMM">MM</option>
-                                        <option value="referenciaCR">CR</option>
-                                        <option value="referenciaMP">MP</option>
+                                        <option value="CA">CA</option>
+                                        <option value="MM">MM</option>
+                                        <option value="CR">CR</option>
+                                        <option value="MP">MP</option>
                                     </select>
                                 </div>
                                 <div class="col-md-4 col-sm-5 col-4 mb-3">
@@ -245,7 +250,7 @@
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 mb-3">
                             <label>Impostos</label>
-                            <select class="form-control" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <select class="form-control" id="tipoImpostos" name="tipoImpostos" onblur="calcularImpostos()" onchange="calcularImpostos()">
                                 <option value="naoSelecionado"selected disabled>Selecione...</option>
                                 {{-- <option value="simplesNacional">Simples Nacional</option> --}}
                                 <option value="lucroPresumido">Lucro Presumido</option>

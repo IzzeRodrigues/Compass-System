@@ -17,7 +17,8 @@ class PropostaController extends Controller
         if($request->botaoGerarPDF)
         {
             $variaveis = $request->all();
-            return redirect()->route('testePDF', $variaveis);
+            // return redirect()->route('testePDF', $variaveis);
+            return redirect()->away("http://google.com");
         }
     }
 }

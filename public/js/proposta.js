@@ -475,7 +475,7 @@ function calcularImpostos()
         document.getElementById('valorICMS_operacao').value = ICMS_operacao;
         totalPrest = Math.fround(totalOperacao / coeficienteICMS).toFixed(2);
         document.getElementById('valorTotalPrest').value = totalPrest;
-        porcentTotalPrest = Math.fround(totalPrest / totalImpostoSeguro).toFixed(2);
+        porcentTotalPrest = Math.fround(totalPrest / totalImpostoSeguro * 100).toFixed(2);
         document.getElementById('porcentagemTotalPrest').value = porcentTotalPrest;
     }
 
@@ -488,7 +488,7 @@ function calcularImpostos()
     //Calculando subTotal
     if (!isNaN(fretePeso_operacao) && !isNaN(rctrc_operacao) && !isNaN(rcfdc_operacao) && !isNaN(GRIS) && !isNaN(pedagio_operacao) && !isNaN(estacionamento_operacao) && !isNaN(IMO) && !isNaN(DTA_GVB) && !isNaN(ajudantes_operacao))
     {
-        subTotal = Math.fround(parseFloat(fretePeso_operacao) + parseFloat(impostoSuspenso) + parseFloat(rctrc_operacao) + parseFloat(rcfdc_operacao) + parseFloat(GRIS) + parseFloat(pedagio_operacao) + parseFloat(estacionamento_operacao) + parseFloat(IMO) + parseFloat(DTA_GVB) + parseFloat(ajudantes_operacao)).toFixed(2);
+        subTotal = Math.fround(parseFloat(fretePeso_operacao) + parseFloat(rctrc_operacao) + parseFloat(rcfdc_operacao) + parseFloat(GRIS) + parseFloat(pedagio_operacao) + parseFloat(estacionamento_operacao) + parseFloat(IMO) + parseFloat(DTA_GVB) + parseFloat(ajudantes_operacao)).toFixed(2);
         document.getElementById('subTotal').value = subTotal;
     }
 
@@ -514,6 +514,7 @@ function calcularImpostos()
             document.getElementById('valorMargemLucroBruto').value = "MARGEM OK";
             document.getElementById('valorMargemLucroBruto').style.fontWeight = "bold";
             document.getElementById('valorMargemLucroBruto').style.color = "green";
+            document.getElementById('valorMargemLucroBruto').style.backgroundColor = "rgb(244, 244, 244)";
         }
         else
         {
@@ -1410,3 +1411,165 @@ function setMoeda(moeda)
         }
     }
 }
+
+function preencherInputs()
+{
+    // document.getElementById('nomeResponsavel').value = "" 
+    // document.getElementById('emailResponsavel').value = ""
+    // document.getElementById('cargoResponsavel').value = ""
+    // document.getElementById('valorDataProposta').value = ""
+    document.getElementById('valorReferenciaProposta').value = "MM"
+    // document.getElementById('valorNumeroProposta').value = ""
+    // document.getElementById('valorVersaoProposta').value = ""
+    document.getElementById('valorReferenciaCliente').value = "Junior"
+    document.getElementById('valorHorarioRecebimento').value = "17:30"
+    document.getElementById('valorNomeProduto').value = "Medicamento"
+    document.getElementById('valorPallets').value = "4"
+    document.getElementById('valorPeso').value = "300"
+    document.getElementById('valorNomeCliente').value = "Drogaria São Paulo"
+    document.getElementById('valorNomeContatoCliente').value = "José"
+    document.getElementById('valorEmailContatoCliente').value = "jose@drogariaSP.com.br"
+    document.getElementById('valorTipoFrete').value = "freteInterno"
+    document.getElementById('valorEstadoOrigem').value = "SP"
+    document.getElementById('valorCidadeOrigem').value = "São Paulo"
+    document.getElementById('valorEstadoDestino').value = "SP"
+    document.getElementById('valorCidadeDestino').value = "São Vicente"
+    // estadosViagem = "" `${estadoOrigem}_${estadoDestino}`
+    document.getElementById('valorLocalDevolucao').value = ""
+    document.getElementById('valorTipoContainer').value = "container3500kg"
+    document.getElementById('valorTipoVeiculo').value = "Baú 3/4"
+    document.getElementById('valorEixos_cabecalho').value = "2"
+    //25
+
+    //Operacao
+    document.getElementById('tipoOperacao').value = "DTA"
+    document.getElementById('tipoImpostos').value = "lucroPresumido"
+    document.getElementById('valorMercadoria').value = "250000"
+    document.getElementById('container').value = "0"
+    document.getElementById('porcentagemSusp').value = "40"
+    // document.getElementById('valorImpostoSuspenso').value = ""
+    // document.getElementById('valorTotalImpostoSeguro').value = ""
+    // document.getElementById('valorFretePeso_operacao').value = ""
+    document.getElementById('porcentagemRCTRC_operacao').value = "6"
+    // document.getElementById('valorRCTRC_operacao').value = ""
+    document.getElementById('porcentagemRCFDC_operacao').value = "6"
+    // document.getElementById('valorRCFDC_operacao').value = ""
+    document.getElementById('valorCheckGRIS').value = "sim"
+    document.getElementById('porcentagemGRIS').value = "3"
+    // document.getElementById('valorGRIS').value = ""
+    // document.getElementById('porcentagemICMS_operacao').value = ""
+    // document.getElementById('valorICMS_operacao').value = ""
+    document.getElementById('valorEstacionamento_operacao').value = "110"
+    document.getElementById('valorIMO').value = "0"
+    document.getElementById('valorDTA_GVB').value = "230"
+    document.getElementById('valorAjudantes_operacao').value = "0"
+    // document.getElementById('valorPedagio_operacao').value = ""
+    // document.getElementById('valorTotalPrest').value = ""
+    // document.getElementById('valorDespesas_operacao').value = ""
+    // document.getElementById('valorLucroBruto').value = ""
+    // document.getElementById('porcentagemLucroBruto').value = ""
+    // document.getElementById('valorMargemLucroBruto').value = ""
+    //26
+
+    //Despesa
+    // document.getElementById('valorMotoristaAutonomo').value = ""
+    // document.getElementById('valorPedagio_despesa').value = ""
+    document.getElementById('porcentagemRCFDC_despesa').value = "6"
+    // document.getElementById('valorRCFDC_despesa').value = ""
+    document.getElementById('porcentagemRCTRC_despesa').value = "5"
+    // document.getElementById('valorRCTRC_despesa').value = ""
+    document.getElementById('porcentagemSimplesNAC').value = "1.5"
+    // document.getElementById('valorSimplesNAC').value = ""
+    document.getElementById('porcentagemIRPJ').value = "1.2"
+    // document.getElementById('valorIRPJ').value = ""
+    document.getElementById('porcentagemAdicionalIRPJ').value = "0.2"
+    // document.getElementById('valorAdicionalIRPJ').value = ""
+    document.getElementById('porcentagemPIS').value = "0.6"
+    // document.getElementById('valorPIS').value = ""
+    document.getElementById('porcentagemCOFINS').value = "0.8"
+    // document.getElementById('valorCOFINS').value = ""
+    // document.getElementById('porcentagemICMS_despesa').value = ""
+    // document.getElementById('valorICMS_despesa').value = ""
+    document.getElementById('valorBuonnyCadastro').value = "35"
+    document.getElementById('valorGRISRastreamento').value = "50"
+    document.getElementById('valorDTA_DI').value = "0"
+    document.getElementById('valorEstacionamento_despesa').value = "110"
+    document.getElementById('valorAjudantes_despesa').value = "0"
+    document.getElementById('valorProfit').value = "500"
+    // document.getElementById('valorComissao').value = ""
+    document.getElementById('porcentagemComissao').value = "5"
+    // document.getElementById('valorDespesas_despesa').value = ""
+    //27
+
+    //Carga
+    document.getElementById('valorTipoCarga').value = "cargaGeral"
+    document.getElementById('valorQuilometragemIda').value = "75"
+    document.getElementById('valorQuilometragemVolta').value = "75"
+    // document.getElementById('valorQuilometragemTotal').value = ""
+    document.getElementById('valorPedagioEixoIda').value = "32.5"
+    document.getElementById('valorPedagioEixoVolta').value = "28.5"
+    document.getElementById('valorEixos_carga').value = "2"
+    // document.getElementById('valorPedagio_carga').value = ""
+    document.getElementById('valorConsumoMedioQuilometroLitro').value = "4.5"
+    document.getElementById('valorPrecoCombustivelLitro').value = "6.22"
+    // document.getElementById('valorTotalCombustivelLitros').value = ""
+    // document.getElementById('valorTotalCombustivel').value = ""
+    // document.getElementById('valorTotalDespesaViagem').value = ""
+    document.getElementById('tipoMoedaEstrangeira').value = "dolar"
+    // document.getElementById('valorMoedaEstrangeira').value = ""
+    document.getElementById('valorCargaUSD_EUR').value = "250000"
+    // document.getElementById('valorCargaBRL').value = ""
+    //17
+
+    //Frete peso
+    // document.getElementById('valorFretePeso_fretePeso').value = ""
+    document.getElementById('porcentagemPercentualFretePeso').value = "30"
+    //2
+
+    //Motorista
+    // precoQuilometragemMotorista = NaN
+    // precoMinimoMotorista = NaN
+    // document.getElementById('valorValores').value = ""
+    // document.getElementById('valorFreteANTT').value = ""
+    // document.getElementById('valorPedagio_motorista').value = ""
+    // document.getElementById('valorTotalAutonomo').value = ""
+    // document.getElementById('valorLucroTotalAutonomo').value = ""
+    document.getElementById('valorFreteAllFechado').value = "1000"
+    // document.getElementById('valorLucroFreteAllFechado').value = ""
+    document.getElementById('valorFreteFecharEm').value = "1000"
+    // document.getElementById('valorLucroFreteFecharEm').value = ""
+    //11
+
+    //Cotacao
+    document.getElementById('motoristaCotado1').value = "João"
+    document.getElementById('dataCotacaoMotorista1').value = "2023-11-05"
+    document.getElementById('valorMotoristaCotado1').value = "6000"
+    document.getElementById('motoristaCotado2').value = "Rogério"
+    document.getElementById('dataCotacaoMotorista2').value = "2023-11-03"
+    document.getElementById('valorMotoristaCotado2').value = "5000"
+    //6
+
+    //Adicionais
+    document.getElementById('valorTipoUtilizacaoIsca').value = "nao"
+    // document.getElementById('valorUtilizacaoIsca').value = ""
+    document.getElementById('valorTipoMonitoramentoIsca').value = "nao"
+    // document.getElementById('valorMonitoramentoIsca').value = ""
+    document.getElementById('valorTipoEscoltaArmada').value = "nao"
+    // document.getElementById('valorEscoltaArmada').value = ""
+    document.getElementById('valorTipoAdicionalCargaIMO').value = "sim"
+    // document.getElementById('valorAdicionalCargaIMO').value = ""
+    document.getElementById('valorTipoCarregamentoExpresso').value = "sim"
+    // document.getElementById('valorCarregamentoExpresso').value = ""
+    document.getElementById('valorTipoUtilizacaoCavaloLS').value = "sim"
+    // document.getElementById('valorUtilizacaoCavaloLS').value = ""
+    document.getElementById('valorTipoEstadiaEspecial').value = "sim"
+    // document.getElementById('valorEstadiaEspecial').value = ""
+    document.getElementById('valorTipoSobrestadiaCarregamento').value = "sim"
+    // document.getElementById('valorSobrestadiaCarregamento').value = ""
+    calcularImpostos();
+}
+
+var intervalId = window.setInterval(function(){
+    calcularImpostos();
+    setMoeda(valoresMoedas);
+}, 100);
