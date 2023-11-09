@@ -18,7 +18,7 @@
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">Criar Proposta</li>
                 </ol>
-                <form class="proposta" method="GET" action="http://localhost/Compass/CriadorPDF/index.php" target="_blank">
+                <form class="proposta" method="GET" action="http://localhost/Compass/criadorPDF" target="_blank">
                     <div class="row">
                         <div class="col-md-3 col-sm-6 col-4 mb-3">
                             <label>Tipo Proposta</label>
@@ -385,7 +385,7 @@
                         <h3 class="mb-4">Despesas</h3>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Motorista Autônomo</label>
-                            <input type="number" step=0.01 min="0" class="form-control" id="valorMotoristaAutonomo" name="valorMotoristaAutonomo" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="number" step=0.01 min="0" class="form-control" id="valorMotoristaAutonomo" name="valorMotoristaAutonomo" onblur="calcularImpostos()" onchange="calcularImpostos()" readonly>
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Pedágio Motorista</label>
@@ -431,7 +431,7 @@
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Adic. IRPJ</label>
-                            <input type="number" step=0.01 min="0" class="form-control" id="valorAdicionalIRPJ" readonly onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="number" step=0.01 min="0" class="form-control" id="valorAdicionalIRPJ" name="valorAdicionalIRPJ" readonly onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>       
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>% PIS</label>
@@ -439,7 +439,7 @@
                         </div>       
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>PIS</label>
-                            <input type="number" step=0.01 min="0" class="form-control" id="valorPIS" readonly onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="number" step=0.01 min="0" class="form-control" id="valorPIS" name="valorPIS" readonly onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>% COFINS</label>
@@ -447,7 +447,7 @@
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>COFINS</label>
-                            <input type="number" step=0.01 min="0" class="form-control" id="valorCOFINS" readonly onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="number" step=0.01 min="0" class="form-control" id="valorCOFINS" name="valorCOFINS" readonly onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>                  
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>% ICMS</label>
@@ -455,7 +455,7 @@
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>ICMS</label>
-                            <input type="number" step=0.01 min="0" class="form-control" id="valorICMS_despesa" readonly onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="number" step=0.01 min="0" class="form-control" id="valorICMS_despesa" name="valorICMS_despesa" readonly onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Buonny Cadastro</label>
@@ -611,25 +611,25 @@
                         <h3>Motorista</h3>
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>Valores</label>
-                            <input type="text" class="form-control" id="valorValores" name="valorValores" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="text" class="form-control" id="valorValores" name="valorValores" onblur="calcularImpostos()" onchange="calcularImpostos()" readonly>
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>Frete Conf. ANTT</label>
-                            <input type="number" step=0.01 min="0" class="form-control" id="valorFreteANTT" name="valorFreteANTT" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="number" step=0.01 min="0" class="form-control" id="valorFreteANTT" name="valorFreteANTT" onblur="calcularImpostos()" onchange="calcularImpostos()" readonly>
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>Vale Pedágio Tabela</label>
-                            <input type="number" step=0.01 min="0" class="form-control" id="valorPedagio_motorista" name="valorPedagio_motorista" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="number" step=0.01 min="0" class="form-control" id="valorPedagio_motorista" name="valorPedagio_motorista" onblur="calcularImpostos()" onchange="calcularImpostos()" readonly>
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>Total Aut. Tabela</label>
-                            <input type="number" step=0.01 min="0" class="form-control" id="valorTotalAutonomo" name="valorTotalAutonomo" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="number" step=0.01 min="0" class="form-control" id="valorTotalAutonomo" name="valorTotalAutonomo" onblur="calcularImpostos()" onchange="calcularImpostos()" readonly>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>Lucro Total Aut. Tabela</label>
-                            <input type="number" step=0.01 min="0" class="form-control" id="valorLucroTotalAutonomo" name="valorLucroTotalAutonomo" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="number" step=0.01 min="0" class="form-control" id="valorLucroTotalAutonomo" name="valorLucroTotalAutonomo" onblur="calcularImpostos()" onchange="calcularImpostos()" readonly>
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>Frete All In Fechado</label>
@@ -637,7 +637,7 @@
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>Lucro Frete All In Fechado</label>
-                            <input type="number" step=0.01 min="0" class="form-control" id="valorLucroFreteAllFechado" name="valorLucroFreteAllFechado" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="number" step=0.01 min="0" class="form-control" id="valorLucroFreteAllFechado" name="valorLucroFreteAllFechado" onblur="calcularImpostos()" onchange="calcularImpostos()" readonly>
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>Tentar Fechar Em</label>
@@ -645,7 +645,7 @@
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
                             <label>Lucro Tentar Fechar Em</label>
-                            <input type="number" step=0.01 min="0" class="form-control" id="valorLucroFreteFecharEm" name="valorLucroFreteFecharEm" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="number" step=0.01 min="0" class="form-control" id="valorLucroFreteFecharEm" name="valorLucroFreteFecharEm" onblur="calcularImpostos()" onchange="calcularImpostos()" readonly>
                         </div>
                     </div>
                     <div class="row justify-content-between">
@@ -660,13 +660,13 @@
                         </div>
                         <div class="col-md-4 col-sm-6 col-12 form-group mb-3">
                             <label>Valor</label>
-                            <input type="number" step=0.01 min="0" class="form-control"id="valorMotoristaCotado1" name="valorMotoristaCotado1" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="number" step=0.01 min="0" class="form-control" id="valorMotoristaCotado1" name="valorMotoristaCotado1" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                     </div>
                     <div class="row justify-content-between">
                         <div class="col-md-4 col-sm-6 col-12 form-group mb-3">
                             <label>Nome Motorista</label>
-                            <input type="text" min="0" class="form-control"id="motoristaCotado2" name="motoristaCotado2" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="text" min="0" class="form-control" id="motoristaCotado2" name="motoristaCotado2" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-4 col-sm-6 col-12 mb-3">
                             <label>Data da Cotação</label>
@@ -674,7 +674,7 @@
                         </div>
                         <div class="col-md-4 col-sm-6 col-12 form-group mb-3">
                             <label>Valor</label>
-                            <input type="number" step=0.01 min="0" class="form-control"id="valorMotoristaCotado2" name="valorMotoristaCotado2" onblur="calcularImpostos()" onchange="calcularImpostos()">
+                            <input type="number" step=0.01 min="0" class="form-control" id="valorMotoristaCotado2" name="valorMotoristaCotado2" onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                     </div>
                     <div class="row justify-content-between">
