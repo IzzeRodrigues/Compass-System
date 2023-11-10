@@ -518,6 +518,10 @@ input[type=password] {
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
 }
+
+#senha-func {
+    padding-left: 5%;
+}
 /* ---------------------------------------------------- */
 /* ----------------END FUNCIONARIO PAGE---------------- */
 /* ---------------------------------------------------- */

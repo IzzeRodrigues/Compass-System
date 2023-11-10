@@ -56,7 +56,7 @@
 
                         <div class="col-md-4 col-sm-6 col-12 form-group mb-3">
                             <label>Senha</label>
-                            <input type="text" name="senha" class="form-control">
+                            <input type="password" name="senha" id="senha-func" class="form-control">
                         </div>
                     </div>
                     <div class="row justify-content-end mt-3">
