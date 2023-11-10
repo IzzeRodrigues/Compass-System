@@ -113,7 +113,7 @@
                             <label>Tipo de Frete</label>
                             <select class="form-control" id="valorTipoFrete" name="valorTipoFrete" onblur="calcularImpostos()" onchange="calcularImpostos()">
                                 <option value="naoSelecionado" selected disabled>Selecione...</option>
-                                <option value="freteMaritimo">Marítimo</option>
+                                <option value="FRETE MAR">Marítimo</option>
                                 <option value="freteAereo">Aéreo</option>
                                 <option value="freteInterno">Frete Interno</option>
                             </select>

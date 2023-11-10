@@ -59,11 +59,11 @@ function inicioProposta()
 
     console.log("Tá rodando");
     
-    fetch('http://localhost/Compass/slimCompass/getNome/'+resultado)
-    .then((response) => response.json())
-    .then((json) => setNome(json))
+    // fetch('http://localhost/Compass/slimCompass/getNome/'+resultado)
+    // .then((response) => response.json())
+    // .then((json) => setNome(json))
     
-    var resposta2
+    let resposta2 = {};
 
     // fetch('http://localhost/Compass/slimCompass/getNome/'+resultado)
     // .then((response) => response.json())
@@ -71,9 +71,10 @@ function inicioProposta()
 
     fetch('http://localhost/Compass/slimCompass/getNome/'+resultado)
     .then((response) => response.json())
-    .then((json) => {console.log(json); resposta2 = json; console.log('passou pela definicao')})
+    .then((json) => resposta2 = json)
 
-    console.log("Essa é a resposta da variável: "+ resposta2);
+    console.log(resposta2);
+    console.log("Essa é a resposta da variável: "+ resposta2.nm_nome_completo);
 
     datacao = new Date();
     dia = datacao.getDate();

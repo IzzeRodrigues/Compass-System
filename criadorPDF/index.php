@@ -148,7 +148,24 @@ $transporte = '<table style="width:100%; margin:0; padding:0; border-collapse: c
 $mpdf->WriteHTML($transporte);
 
 // VARIÁVEIS CONTAINER: 
-$tipo_transporte_carga = $variaveis['valorTipoFrete'];
+if ($variaveis['valorTipoFrete'] == "freteMaritimo")
+{
+    $tipo_transporte_carga = "FRETE MARÍTIMO";
+}
+else
+{
+    if ($variaveis['valorTipoFrete'] == "freteAereo")
+    {
+        $tipo_transporte_carga = "FRETE AÉREO";
+    }
+    else
+    {
+        if ($variaveis['valorTipoFrete'] == "freteInterno")
+        {
+            $tipo_transporte_carga = "FRETE INTERNO";
+        }
+    }
+}
 $frete_14tons_bruto = 'R$ ';
 $frete_25tons_bruto = 'R$ ';
 $frete_30tons = 'R$ '; 
