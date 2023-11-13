@@ -1,3 +1,4 @@
+
 let puxouMoeda = false;
 let valoresMoedas;
 let puxouICMS = false;
@@ -57,24 +58,24 @@ function inicioProposta()
 
     // document.getElementById('dataPropsota').valueAsDate = data.getFullYear();
 
-    console.log("Tá rodando");
+    // console.log("Tá rodando");
     
-    // fetch('http://localhost/Compass/slimCompass/getNome/'+resultado)
-    // .then((response) => response.json())
-    // .then((json) => setNome(json))
+    fetch('http://localhost/Compass/slimCompass/getNome/'+resultado)
+    .then((response) => response.json())
+    .then((json) => setNome(json))
     
-    let resposta2 = {};
+    // let resposta2 = {};
 
     // fetch('http://localhost/Compass/slimCompass/getNome/'+resultado)
     // .then((response) => response.json())
     // .then((json) => console.log("Essa é a resposta direto do banco: "+json))
 
-    fetch('http://localhost/Compass/slimCompass/getNome/'+resultado)
-    .then((response) => response.json())
-    .then((json) => resposta2 = json)
+    // fetch('http://localhost/Compass/slimCompass/getNome/'+resultado)
+    // .then((response) => response.json())
+    // .then((json) => resposta2 = json)
 
-    console.log(resposta2);
-    console.log("Essa é a resposta da variável: "+ resposta2.nm_nome_completo);
+    // console.log(resposta2);
+    // console.log("Essa é a resposta da variável: "+ resposta2.nm_nome_completo);
 
     datacao = new Date();
     dia = datacao.getDate();
@@ -242,7 +243,15 @@ function calcularImpostos()
     //25
 
     //Operacao
-    valorMercadoria = parseFloat(document.getElementById('valorMercadoria').value);
+    valorMercadoria = parseFloat((document.getElementById('valorMercadoria').value).replaceAll(["R$",".",","], ""));
+    valorMercadoriaPontuado = "";
+    function numberToReal(numero) {
+        var numero = numero.toFixed(2).split('.');
+        numero[0] = "R$ " + numero[0].split(/(?=(?:...)*$)/).join('.');
+        valorMercadoriaPontuado = numero.join(',');
+    }
+    numberToReal(valorMercadoria);
+    valorMercadoriaPontuadoSemPonto = valorMercadoriaPontuado.replaceAll(["R$",".",","], "");
     container = parseFloat(document.getElementById('container').value);
     porcentSusp = parseFloat(document.getElementById('porcentagemSusp').value);
     tipoOperacao = document.getElementById("tipoOperacao").value;

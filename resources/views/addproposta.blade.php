@@ -88,11 +88,11 @@
                             <input type="text" class="form-control" placeholder="Ex:Print Ink (IMO) Class 3" id="valorNomeProduto" name="valorNomeProduto">
                         </div>
                         <div class="col-md-3 col-sm-4 col-12 mb-3">
-                            <label>Quant/Embalagem</label>
+                            <label>Quant./Embalagem</label>
                             <input type="text" class="form-control" placeholder="Ex:8 Pallets" id="valorPallets" name="valorPallets">
                         </div>
                         <div class="col-md-3 col-sm-4 col-12 mb-3">
-                            <label>Peso Total/Cubagem</label>
+                            <label>Peso Total em Kg./Cubagem</label>
                             <input type="text" class="form-control" placeholder="Ex:6161kg (6,656m3)" id="valorPeso" name="valorPeso">
                         </div>
                         <div class="col-md-3 col-sm-4 col-12 mb-3">
@@ -120,10 +120,10 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6 col-sm-6 col-12 mb-3">
+                        <div class="col-md-3 col-sm-6 col-12 mb-3">
                             <label>Origem</label>
                             <div class="row">
-                                <div class="col-md-6 col-12 mb-3">
+                                <div class="col-md-12 col-12">
                                     <select class="form-control" id="valorEstadoOrigem" name="valorEstadoOrigem" onblur="calcularImpostos()" onchange="calcularImpostos()">
                                         <option value="naoSelecionado" selected disabled>Selecione...</option>
                                         <option value="AC">Acre</option>
@@ -155,15 +155,16 @@
                                         <option value="TO">Tocantins</option>
                                     </select>
                                 </div>
-                                <div class="col-md-6 col-12 mb-3">
-                                    <input type="text" class="form-control" placeholder="Ex: Santos(Margem Direita)" id="valorCidadeOrigem" name="valorCidadeOrigem">
-                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-6 col-12 mb-3">
+                        <div class="col-md-3 col-sm-6 col-12 mb-3">
+                            <label>Cidade de Origem</label>
+                            <input type="text" class="form-control" placeholder="Ex: Santos(Margem Direita)" id="valorCidadeOrigem" name="valorCidadeOrigem">
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12 mb-3">
                             <label>Destino</label>
                             <div class="row">
-                                <div class="col-md-6 col-12 mb-3">
+                                <div class="col-md-12 col-12">
                                     <select class="form-control" id="valorEstadoDestino" name="valorEstadoDestino" onblur="calcularImpostos()" onchange="calcularImpostos()">
                                         <option value="naoSelecionado" selected disabled>Selecione...</option>
                                         <option value="AC">Acre</option>
@@ -195,10 +196,11 @@
                                         <option value="TO">Tocantins</option>
                                     </select>
                                 </div>
-                                <div class="col-md-6 col-12 mb-3">
-                                    <input type="text" class="form-control" placeholder="Ex: Poços de Calda" id="valorCidadeDestino" name="valorCidadeDestino">
-                                </div>
                             </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12 mb-3">
+                            <label>Cidade de Destino</label>
+                            <input type="text" class="form-control" placeholder="Ex: Poços de Calda" id="valorCidadeDestino" name="valorCidadeDestino">
                         </div>
                     </div>
                     <div class="row">
@@ -347,17 +349,17 @@
                             <input type="number" step=0.01 min="0" class="form-control" id="valorICMS_operacao" name="valorICMS_operacao" readonly onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>Sub Total</label>
+                            <label>Sub. Total</label>
                             <input type="number" step=0.01 min="0" class="form-control" id="subTotal" name="subTotal" readonly onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>Total da Prest</label>
+                            <label>Total da Prest.</label>
                             <input type="number" step=0.01 min="0" class="form-control" id="valorTotalPrest" name="valorTotalPrest" readonly onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>% Total da Prest</label>
+                            <label>% Total da Prest.</label>
                             <input type="number" step=0.01 min="0" class="form-control" id="porcentagemTotalPrest" name="porcentagemTotalPrest" readonly onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
@@ -801,6 +803,7 @@
             </div>
         </main>
         <script>inicioProposta()</script>
+        <script src="dist/jquery.inputmask.js"></script>
         @stop
         @stop
     </div>
