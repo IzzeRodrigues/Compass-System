@@ -26,7 +26,7 @@ class PropostaController extends Controller
             $_SESSION['proposta'] = $variaveis;
             // var_dump($_SESSION['proposta']);
 
-            return redirect()->away("http://localhost/Compass/criadorPDF/");
+            return redirect()->away("http://localhost/Compass/criadorPDF/pdfDigital.php");
 
             // return redirect()->route('testePDF', $variaveis);
             // return Redirect::away("http://localhost/Compass/criadorPDF/?$variaveis");
