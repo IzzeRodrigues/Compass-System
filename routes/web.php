@@ -20,6 +20,8 @@ Route::get('/', function () {
     return view('login');
 })->name('inicio');
 
+Route::get('/telabase', [CompassController::class, 'telabase'])->name('telabase');
+
 Route::get('/comercial', [CompassController::class, 'comercial'])->name('comercial');
 Route::get('/admindex', [CompassController::class, 'admindex'])->name('admindex');
 Route::get('/login', [CompassController::class, 'login'])->name('login');
