@@ -31,7 +31,7 @@
 
             <section>
 
-                
+
 
                 <div class="altura">
                     <div class="row d-block d-lg-none text-center">
@@ -50,8 +50,9 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-outline mb-4">
-                                        <input type="password" id="form2Example18" name="senha" class="form-control form-control-lg form-text-pad icon-pass standartTxt shadow-sm input-log" placeholder="Senha" />
+                                    <div class="form-outline mb-4 input-senha">
+                                        <input type="password" id="form2Example18" name="senha" class="form-control form-control-lg form-text-pad icon-pass standartTxt shadow-sm input-log passcfg" placeholder="Senha" />
+                                        <i class="bi bi-eye eye-open" id="open-eye" onclick="mostrarSenha()"></i>
                                     </div>
                                     <div class="row">
                                         <div class="form-check col-6 text-start">
@@ -114,6 +115,8 @@
   </div>
   <script src="/js/bootstrap.js"></script>
   <script src="/js/script.js"></script>
+  <script src="/js/showpass.js"></script>
   <script src="/js/erroLogin.js"></script>
+
 </body>
 </html>

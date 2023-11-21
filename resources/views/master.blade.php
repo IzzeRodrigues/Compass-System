@@ -59,7 +59,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
-                            <?php 
+                            <?php
                             if (isset($_COOKIE['privilegioUsuario']))
                             {
                                 if ($_COOKIE['privilegioUsuario'] == "administrador")
@@ -78,10 +78,10 @@
                                     </div>");
                                 }
                             }
-                            
+
 
                             ?>
-                            
+
                             <a class="nav-link" href="charts.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Informações
@@ -146,6 +146,7 @@
         <script src="assets/demo/comercial-chart-area-demo.js"></script>
         <script src="assets/demo/comercial-chart-bar-demo.js"></script>
         <script src="js/scripts.js"></script>
+        <script src="js/showpass.js"></script>
         <script src="js/script.js" defer></script>
     </body>
 </html>

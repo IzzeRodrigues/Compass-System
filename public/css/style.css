@@ -49,9 +49,11 @@ body {
     font-size: 1.3rem;
     cursor: pointer;
 }
+
 .bi-sun {
-    color:white;
+    color: white;
 }
+
 .bi-moon {
     display: none;
 }
@@ -168,6 +170,7 @@ ul hr {
     width: 100%;
     height: 100%;
 }
+
 .dark .icon-user {
     background-image: url("/images/user-icon-white.png");
     background-repeat: no-repeat;
@@ -183,6 +186,7 @@ ul hr {
     background-position-x: 3%;
     background-size: 7%;
 }
+
 .dark input.icon-user:focus {
     background-image: url("/images/user-icon.png");
     background-repeat: no-repeat;
@@ -198,47 +202,62 @@ ul hr {
     background-position-x: 3%;
     background-size: 7%;
 }
+
 .dark .proposta input {
     background-color: #122f42 !important;
     font-weight: 600;
 }
+
 .dark .proposta input:focus {
     background-color: #d0d0d0 !important;
     color: black;
     font-weight: 600;
 }
+
 .dark .proposta select {
     background-color: #122f42;
     color: #fff;
 }
+
 .dark .proposta .data {
     color-scheme: dark;
 }
+
 .dark .proposta .data {
     color: #6C757D;
 }
 
-.dark .proposta h1, h2, h3, h4, h5{
+.dark .proposta h1,
+h2,
+h3,
+h4,
+h5 {
     color: #fff !important;
 }
+
 .dark .blue-compass {
-    color:#fff !important;
+    color: #fff !important;
     font-weight: 800;
 }
+
 .dark .span-class {
     background-color: #122f42;
     color: #fff;
 }
+
 .dark .btnhv:hover {
     background-color: #1a4663;
 }
+
 .dark .btnhv {
     border-color: #122f42;
 }
+
 .dark .paginate {
     background-color: #3d3d3d !important;
     color: #fff;
 }
+
 /* ---------------------------------------------------- */
 /* -------------------END DARK MODE-------------------- */
 /* ---------------------------------------------------- */
@@ -380,6 +399,23 @@ input[type=password] {
     text-align: end;
     margin-right: 1%;
 }
+
+.input-senha {
+    position: relative;
+}
+
+.input-senha i {
+    font-size: 200%;
+    cursor: pointer;
+    position: absolute;
+    right: 5%;
+    top: 1%;
+}
+
+.passcfg {
+    padding-left: 12%;
+}
+
 /* ---------------------------------------------------- */
 /* -------------------END LOGIN PAGE------------------- */
 /* ---------------------------------------------------- */
@@ -488,23 +524,30 @@ input[type=password] {
 }
 
 .card-height {
-    height:45vh;
+    height: 45vh;
     max-height: 500px;
 }
+
 /* ---------------------------------------------------- */
 /* -------------------END DASHBOARD-------------------- */
 /* ---------------------------------------------------- */
 /* ---------------------------------------------------- */
 /* ------------------START PROPOSTA-------------------- */
 /* ---------------------------------------------------- */
-    .proposta h1, h2, h3, h4, h5 {
-        color: #3382B8 !important;
-        font-weight: 600;
-    }
-    .blue-compass {
-        color: #3382B8;
-        font-weight: 600;
-    }
+.proposta h1,
+h2,
+h3,
+h4,
+h5 {
+    color: #3382B8 !important;
+    font-weight: 600;
+}
+
+.blue-compass {
+    color: #3382B8;
+    font-weight: 600;
+}
+
 /* ---------------------------------------------------- */
 /* --------------------END PROPOSTA-------------------- */
 /* ---------------------------------------------------- */
@@ -522,6 +565,7 @@ input[type=password] {
 #senha-func {
     padding-left: 5%;
 }
+
 /* ---------------------------------------------------- */
 /* ----------------END FUNCIONARIO PAGE---------------- */
 /* ---------------------------------------------------- */
@@ -533,6 +577,7 @@ input[type=password] {
     background-color: #3382B8;
     color: #fff;
 }
+
 .btn-compass-color:hover {
     background-color: #296791;
     color: #fff;
