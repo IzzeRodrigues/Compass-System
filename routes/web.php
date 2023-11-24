@@ -31,6 +31,7 @@ Route::get('/addcliente', [CompassController::class, 'addcliente'])->name('addcl
 Route::get('/forgotpass', [CompassController::class, 'forgotpass'])->name('forgotpass');
 Route::get('/admconfig', [CompassController::class, 'admconfig'])->name('admconfig');
 Route::get('/gerfuncionario', [CompassController::class, 'gerfuncionario'])->name('gerfuncionario');
+Route::get('/verfuncionario', [CompassController::class, 'verfuncionario'])->name('verfuncionario');
 Route::get('/gercliente', [CompassController::class, 'gercliente'])->name('gercliente');
 
 Route::get('/acoesProposta', [PropostaController::class, 'escolherAcao'])->name('acoesProposta');

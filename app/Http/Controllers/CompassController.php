@@ -36,6 +36,9 @@ class CompassController extends Controller
     public function gerfuncionario(){
         return view('gerfuncionario');
     }
+    public function verfuncionario(){
+        return view('verfuncionario');
+    }
     public function gercliente(){
         return view('gercliente');
     }
