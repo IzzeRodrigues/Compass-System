@@ -43,4 +43,8 @@ class CompassController extends Controller
     public function testePDF(){
         return view('criadorPDF');
     }
+
+    public function telabase(){
+        return view('telabase');
+    }
 }

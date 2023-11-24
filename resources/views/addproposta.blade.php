@@ -35,28 +35,43 @@
                     <div class="row">
                         <h3 class="mb-4 blue-compass">Cabeçalho</h3>
                         <div class="col-md-3 col-sm-12 col-12 mb-3">
+                            <label>Filial ACL Group</label>
+                            <select class="form-control" id="filialACL" name="filialACL">
+                                <option value="naoSelecionado">Selecione...</option>
+                                <option value="ACL Cargo Matriz-06.695.952/0001-53">ACL Cargo Matriz</option>
+                                <option value="ACL Cargo Anápolis-06.695.952/0004-04">ACL Cargo Anápolis</option>
+                                <option value="ACL Cargo Paranaguá-06.695.952/0005-87">ACL Cargo Paranaguá</option>
+                                <option value="ACL Cargo Santos-06.695.952/0003-15">ACL Cargo Santos</option>
+                                <option value="ACL Cargo Rio de Janeiro-06.695.952/0002-34">ACL Cargo Rio de Janeiro</option>
+                                <option value="ACL Cargo São Vicente-06.695.952/0006-68">ACL Cargo São Vicente</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2 col-sm-12 col-12 mb-3">
                             <label>Responsável</label>
                             <input type="text" class="form-control" readonly placeholder="Responsável" id="nomeResponsavel" name="nomeResponsavel">
                         </div>
-                        <div class="col-md-3 col-sm-6 col-12 mb-3">
+                        <div class="col-md-2 col-sm-6 col-12 mb-3">
                             <label>E-mail Responsável</label>
                             <input type="text" class="form-control" readonly placeholder="Email@aclcargo.com.br" id="emailResponsavel" name="emailResponsavel">
+                        </div>
+                        <div class="col-md-2 col-sm-6 col-12 mb-3">
+                            <label>CPF Responsável</label>
+                            <input type="text" class="form-control" placeholder="CPF" id="CPFResponsavel" name="CPFResponsavel">
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 mb-3">
                             <label>Cargo</label>
                             <input type="text" class="form-control" readonly placeholder="Vendas e Relacionamento" id="cargoResponsavel" name="cargoResponsavel">
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-3 col-sm-6 col-12 mb-3">
                             <label>Data da Proposta</label>
                             <input type="date" class="form-control data" id="valorDataProposta" name="valorDataProposta" readonly>
                         </div>
-                    </div>
-                    <div class="row">
-
                         <div class="col-md-6 col-sm-6 col-12 mb-3">
                             <label>Referência ACL</label>
                             <div class="row">
-                                <div class="col-md-4 col-sm-4 col-4 mb-3">
+                                <div class="col-md-4 col-sm-4 col-4">
                                     <select class="form-control" id="valorReferenciaProposta" name="valorReferenciaProposta">
                                         <option value="naoSelecionado" selected disabled>Selecione...</option>
                                         <option value="CA">CA</option>
@@ -65,10 +80,10 @@
                                         <option value="MP">MP</option>
                                     </select>
                                 </div>
-                                <div class="col-md-4 col-sm-5 col-4 mb-3">
+                                <div class="col-md-4 col-sm-5 col-4">
                                     <input type="number" class="form-control" placeholder="Nº Proposta" readonly id="valorNumeroProposta" name="valorNumeroProposta">
                                 </div>
-                                <div class="col-md-4 col-sm-3 col-4 mb-3">
+                                <div class="col-md-4 col-sm-3 col-4">
                                     <input type="text" class="form-control" placeholder="Versão" readonly id="valorVersaoProposta" name="valorVersaoProposta">
                                 </div>
                             </div>
@@ -77,39 +92,41 @@
                             <label>Referência Cliente</label>
                             <input type="text" class="form-control" placeholder="Ex:INX-Rique/Guatemala" id="valorReferenciaCliente" name="valorReferenciaCliente">
                         </div>
+                        
+                    </div>
+                    <div class="row">
                         <div class="col-md-3 col-sm-4 col-12 mb-3">
                             <label>Horário de Recebimento</label>
                             <input type="text" class="form-control" placeholder="A combinar" id="valorHorarioRecebimento" name="valorHorarioRecebimento">
                         </div>
-                    </div>
-                    <div class="row">
                         <div class="col-md-3 col-sm-4 col-12 mb-3">
                             <label>Produto</label>
                             <input type="text" class="form-control" placeholder="Ex:Print Ink (IMO) Class 3" id="valorNomeProduto" name="valorNomeProduto">
                         </div>
                         <div class="col-md-3 col-sm-4 col-12 mb-3">
-                            <label>Quant/Embalagem</label>
+                            <label>Quant./Embalagem</label>
                             <input type="text" class="form-control" placeholder="Ex:8 Pallets" id="valorPallets" name="valorPallets">
                         </div>
                         <div class="col-md-3 col-sm-4 col-12 mb-3">
-                            <label>Peso Total/Cubagem</label>
+                            <label>Peso Total em Kg./Cubagem</label>
                             <input type="text" class="form-control" placeholder="Ex:6161kg (6,656m3)" id="valorPeso" name="valorPeso">
                         </div>
+                        
+                    </div>
+                    <div class="row justify-content-between">
                         <div class="col-md-3 col-sm-4 col-12 mb-3">
                             <label>Nome da Empresa</label>
                             <input type="text" class="form-control" placeholder="Ex:Copa Logística" id="valorNomeCliente" name="valorNomeCliente">
                         </div>
-                    </div>
-                    <div class="row justify-content-between">
-                        <div class="col-md-4 col-sm-4 col-12 mb-3">
+                        <div class="col-md-3 col-sm-4 col-12 mb-3">
                             <label>Contato</label>
                             <input type="text" class="form-control" placeholder="Ex:Amanda" id="valorNomeContatoCliente" name="valorNomeContatoCliente">
                         </div>
-                        <div class="col-md-4 col-sm-4 col-12 mb-3">
+                        <div class="col-md-3 col-sm-4 col-12 mb-3">
                             <label>E-mail Contato</label>
                             <input type="text" class="form-control" placeholder="Ex:amanda@copalog.com.br" id="valorEmailContatoCliente" name="valorEmailContatoCliente">
                         </div>
-                        <div class="col-md-4 col-sm-4 col-12 mb-3">
+                        <div class="col-md-3 col-sm-4 col-12 mb-3">
                             <label>Tipo de Frete</label>
                             <select class="form-control" id="valorTipoFrete" name="valorTipoFrete" onblur="calcularImpostos()" onchange="calcularImpostos()">
                                 <option value="naoSelecionado" selected disabled>Selecione...</option>
@@ -120,10 +137,10 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6 col-sm-6 col-12 mb-3">
+                        <div class="col-md-3 col-sm-6 col-12 mb-3">
                             <label>Origem</label>
                             <div class="row">
-                                <div class="col-md-6 col-12 mb-3">
+                                <div class="col-md-12 col-12">
                                     <select class="form-control" id="valorEstadoOrigem" name="valorEstadoOrigem" onblur="calcularImpostos()" onchange="calcularImpostos()">
                                         <option value="naoSelecionado" selected disabled>Selecione...</option>
                                         <option value="AC">Acre</option>
@@ -155,15 +172,16 @@
                                         <option value="TO">Tocantins</option>
                                     </select>
                                 </div>
-                                <div class="col-md-6 col-12 mb-3">
-                                    <input type="text" class="form-control" placeholder="Ex: Santos(Margem Direita)" id="valorCidadeOrigem" name="valorCidadeOrigem">
-                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-6 col-12 mb-3">
+                        <div class="col-md-3 col-sm-6 col-12 mb-3">
+                            <label>Cidade de Origem</label>
+                            <input type="text" class="form-control" placeholder="Ex: Santos(Margem Direita)" id="valorCidadeOrigem" name="valorCidadeOrigem">
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12 mb-3">
                             <label>Destino</label>
                             <div class="row">
-                                <div class="col-md-6 col-12 mb-3">
+                                <div class="col-md-12 col-12">
                                     <select class="form-control" id="valorEstadoDestino" name="valorEstadoDestino" onblur="calcularImpostos()" onchange="calcularImpostos()">
                                         <option value="naoSelecionado" selected disabled>Selecione...</option>
                                         <option value="AC">Acre</option>
@@ -195,10 +213,11 @@
                                         <option value="TO">Tocantins</option>
                                     </select>
                                 </div>
-                                <div class="col-md-6 col-12 mb-3">
-                                    <input type="text" class="form-control" placeholder="Ex: Poços de Calda" id="valorCidadeDestino" name="valorCidadeDestino">
-                                </div>
                             </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12 mb-3">
+                            <label>Cidade de Destino</label>
+                            <input type="text" class="form-control" placeholder="Ex: Poços de Calda" id="valorCidadeDestino" name="valorCidadeDestino">
                         </div>
                     </div>
                     <div class="row">
@@ -347,17 +366,17 @@
                             <input type="number" step=0.01 min="0" class="form-control" id="valorICMS_operacao" name="valorICMS_operacao" readonly onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>Sub Total</label>
+                            <label>Sub. Total</label>
                             <input type="number" step=0.01 min="0" class="form-control" id="subTotal" name="subTotal" readonly onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>Total da Prest</label>
+                            <label>Total da Prest.</label>
                             <input type="number" step=0.01 min="0" class="form-control" id="valorTotalPrest" name="valorTotalPrest" readonly onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>% Total da Prest</label>
+                            <label>% Total da Prest.</label>
                             <input type="number" step=0.01 min="0" class="form-control" id="porcentagemTotalPrest" name="porcentagemTotalPrest" readonly onblur="calcularImpostos()" onchange="calcularImpostos()">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
@@ -785,22 +804,23 @@
                     </div>
                     <div class="row justify-content-end mt-1">
                         <div class="pt-1 mb-4 d-grid gap-2 col-md-3 col-sm-6">
-                            <input class="btn btn-info btn-lg btn-block shadow-sm corpadrao larg-btn" type="submit" value="Salvar" name="botaoSalvar">
+                            <input class="btn btn-info btn-block shadow-sm corpadrao larg-btn col-12 py-2" type="submit" value="Salvar" name="botaoSalvar">
                         </div>
                         <div class="pt-1 mb-4 d-grid gap-2 col-md-3 col-sm-6">
-                            <input class="btn btn-info btn-lg btn-block shadow-sm corpadrao larg-btn" type="submit" value="Gerar PDF" name="botaoGerarPDF">
+                            <input class="btn btn-info btn-block shadow-sm corpadrao larg-btn col-12 py-2" type="submit" value="Ass. Fisicamente" name="botaoAssinarFisicamente">
                         </div>
                         <div class="pt-1 mb-4 d-grid gap-2 col-md-3 col-sm-6">
-                            <input class="btn btn-info btn-lg btn-block shadow-sm corpadrao larg-btn" type="submit" value="Ass. Digital" name="botaoAssinar">
+                            <input class="btn btn-info btn-block shadow-sm corpadrao larg-btn col-12 py-2" type="submit" value="Ass. Digitalmente" name="botaoAssinarDigitalmente">
                         </div>
                         <div class="pt-1 mb-4 d-grid gap-2 col-md-3 col-sm-6">
-                            <input class="btn btn-info btn-lg btn-block shadow-sm corpadrao larg-btn" type="submit" value="Cancelar" name="botaoCancelar">
+                            <input class="btn btn-info btn-block shadow-sm corpadrao larg-btn col-12 py-2" type="submit" value="Cancelar" name="botaoCancelar">
                         </div>
                     </div>
                 </form>
             </div>
         </main>
         <script>inicioProposta()</script>
+        <script src="dist/jquery.inputmask.js"></script>
         @stop
         @stop
     </div>
