@@ -416,6 +416,7 @@ input[type=password] {
     padding-left: 12%;
 }
 
+
 /* ---------------------------------------------------- */
 /* -------------------END LOGIN PAGE------------------- */
 /* ---------------------------------------------------- */
@@ -565,7 +566,31 @@ h5 {
 #senha-func {
     padding-left: 5%;
 }
+.input-senhafunc {
+    position: relative;
+}
 
+.input-senhafunc i {
+    font-size: 150%;
+    cursor: pointer;
+    position: absolute;
+    right: 5%;
+    top: 40%;
+}
+.input-senha-add {
+    position: relative;
+}
+
+.input-senha-add i {
+    font-size: 150%;
+    cursor: pointer;
+    position: absolute;
+    right: 6%;
+    top: 40%;
+}
+#senha-func-add {
+    padding-left: 5%;
+}
 /* ---------------------------------------------------- */
 /* ----------------END FUNCIONARIO PAGE---------------- */
 /* ---------------------------------------------------- */

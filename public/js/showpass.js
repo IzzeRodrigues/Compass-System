@@ -2,6 +2,7 @@
 
 var btnShowPass = document.getElementById('open-eye')
 
+
 const senha = document.querySelector('.passcfg');
 const btn = document.querySelector('.eye-open');
 

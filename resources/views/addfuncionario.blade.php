@@ -54,9 +54,10 @@
                             </select>
                         </div>
 
-                        <div class="col-md-4 col-sm-6 col-12 form-group mb-3">
+                        <div class="col-md-4 col-sm-6 col-12 form-group mb-3 input-senha-add">
                             <label>Senha</label>
-                            <input type="password" name="senha" id="senha-func" class="form-control">
+                            <input type="password" name="senha" id="senha-func-add" class="form-control passcfg3">
+                            <i class="bi bi-eye eye-open3" id="eye-senha-func3" name="open-eye" onclick="mostrarSenha()"></i>
                         </div>
                     </div>
                     <div class="row justify-content-end mt-3">
@@ -73,7 +74,7 @@
         @stop
         @stop
     </div>
-
+    <script src="/js/showpassadd.js"></script>
 
 </body>
 </html>

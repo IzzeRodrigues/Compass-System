@@ -54,10 +54,10 @@
                             </select>
                         </div>
 
-                        <div class="col-md-4 col-sm-6 col-12 form-group mb-3">
+                        <div class="col-md-4 col-sm-6 col-12 form-group mb-3 input-senhafunc">
                             <label>Senha</label>
-                            <input type="password" name="open-eye" id="senha-func" class="form-control">
-                            <i class="bi bi-eye eye-open" id="open-eye" name="open-eye" onclick="mostrarSenha()"></i>
+                            <input type="password" id="senha-func" class="form-control passcfg2">
+                            <i class="bi bi-eye eye-open2" id="eye-senha-func2" name="open-eye" onclick="mostrarSenha()"></i>
                         </div>
                     </div>
                     <div class="row justify-content-end mt-3">
@@ -77,7 +77,7 @@
         @stop
         @stop
     </div>
-
+    <script src="/js/showpassfunc.js"></script>
 
 </body>
 </html>
