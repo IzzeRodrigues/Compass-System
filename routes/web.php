@@ -33,6 +33,7 @@ Route::get('/admconfig', [CompassController::class, 'admconfig'])->name('admconf
 Route::get('/gerfuncionario', [CompassController::class, 'gerfuncionario'])->name('gerfuncionario');
 Route::get('/verfuncionario', [CompassController::class, 'verfuncionario'])->name('verfuncionario');
 Route::get('/gercliente', [CompassController::class, 'gercliente'])->name('gercliente');
+Route::get('/assdigital', [CompassController::class, 'assdigital'])->name('assdigital');
 
 Route::get('/acoesProposta', [PropostaController::class, 'escolherAcao'])->name('acoesProposta');
 Route::get('/salvarProposta', [PropostaController::class, 'salvarProposta'])->name('salvarProposta');
@@ -42,3 +43,4 @@ Route::get('/testePDF', [CompassController::class, 'testePDF'])->name('testePDF'
 Route::get('/verificarUsuario', [UsuarioController::class, 'verificarUsuario'])->name('verificarUsuario');
 Route::get('/adicionarUsuario', [UsuarioController::class, 'adicionarUsuario'])->name('adicionarUsuario');
 Route::get('/deslogar', [UsuarioController::class, 'deslogar'])->name('deslogar');
+

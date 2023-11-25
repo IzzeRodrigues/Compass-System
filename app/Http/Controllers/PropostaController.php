@@ -19,17 +19,19 @@ class PropostaController extends Controller
         {
 
         }
-        if($request->botaoGerarPDF)
+        if($request->botaoAssinarFisicamente)
         {
-            
             $variaveis = $request->all();
             $_SESSION['proposta'] = $variaveis;
-            // var_dump($_SESSION['proposta']);
+            // var_dump($variaveis);
+            return redirect()->away("http://localhost/Compass/criadorPDF");
+        }
+        if($request->botaoAssinarDigitalmente)
+        {
+            $variaveis = $request -> all();
+            $_SESSION['proposta'] = $variaveis;
+            return redirect()->route("assdigital");
 
-            return redirect()->away("http://localhost/Compass/criadorPDF/pdfDigital.php");
-
-            // return redirect()->route('testePDF', $variaveis);
-            // return Redirect::away("http://localhost/Compass/criadorPDF/?$variaveis");
         }
     }
 

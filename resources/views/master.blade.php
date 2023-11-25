@@ -146,7 +146,7 @@
         <script src="assets/demo/comercial-chart-area-demo.js"></script>
         <script src="assets/demo/comercial-chart-bar-demo.js"></script>
         <script src="js/scripts.js"></script>
-        <script src="js/showpass.js"></script>
+        {{-- <script src="js/showpass.js"></script> --}}
         <script src="js/script.js" defer></script>
     </body>
 </html>

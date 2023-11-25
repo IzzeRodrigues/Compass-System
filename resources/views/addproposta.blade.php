@@ -18,7 +18,7 @@
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">Criar Proposta</li>
                 </ol>
-                <form class="proposta" method="GET" action="http://localhost/Compass/criadorPDF" target="_blank">
+                <form class="proposta" method="GET" action="http://localhost:8000/acoesProposta" target="_blank">
                     <div class="row">
                         <div class="col-md-3 col-sm-6 col-4 mb-3">
                             <label>Tipo Proposta</label>

@@ -50,4 +50,7 @@ class CompassController extends Controller
     public function telabase(){
         return view('telabase');
     }
+    public function assdigital(){
+        return view('assdigital');
+    }
 }

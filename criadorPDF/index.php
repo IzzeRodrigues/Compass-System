@@ -1,25 +1,26 @@
 <?php
 //IMPORTAÇÃO DA BIBLIOTECA
 
-$variaveis = $_GET;
+session_start();
+$variaveis = $_SESSION['proposta'];
 
-if ($variaveis['botaoSalvar'])
-{
-    session_start();
-    $_SESSION['variaveis'] = $variaveis;
-    header("Location: http://localhost:8000/salvarProposta");
-}
+// if ($variaveis['botaoSalvar'])
+// {
+//     session_start();
+//     $_SESSION['variaveis'] = $variaveis;
+//     header("Location: http://localhost:8000/salvarProposta");
+// }
 
 require_once __DIR__ . '/vendor/autoload.php';
 
 
-if ($variaveis['botaoAssinarFisicamente'])
+if (isset($variaveis['botaoAssinarFisicamente']))
 {
     assinaturaFisica($variaveis);
 }
 else
 {
-    if ($variaveis['botaoAssinarDigitalmente'])
+    if (isset($variaveis['botaoAssinarDigitalmente']))
     {
         assinaturaDigital($variaveis);
     }
