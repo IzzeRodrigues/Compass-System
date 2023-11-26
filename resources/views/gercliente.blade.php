@@ -345,6 +345,8 @@
                             </tbody>
                         </table>
                     </div>
+                </div>
+            </div>
         </main>
         @stop
         @stop
