@@ -52,7 +52,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -61,7 +61,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -70,7 +70,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -79,7 +79,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -88,7 +88,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -97,7 +97,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -106,7 +106,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -115,7 +115,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -124,7 +124,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -133,7 +133,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -142,7 +142,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -151,7 +151,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -160,7 +160,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -169,7 +169,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -178,7 +178,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -187,7 +187,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -196,7 +196,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -205,7 +205,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -214,7 +214,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -223,7 +223,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -232,7 +232,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -241,7 +241,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -250,7 +250,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -259,7 +259,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -268,7 +268,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -277,7 +277,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -286,7 +286,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -295,7 +295,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -304,7 +304,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -313,7 +313,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -322,7 +322,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -331,7 +331,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -340,7 +340,7 @@
                                     <td>Marcia.lopes@danone.com.br</td>
                                     <td>(31) 3111-2222</td>
                                     <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                             </tbody>
                         </table>

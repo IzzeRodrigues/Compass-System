@@ -30,6 +30,7 @@
                                     <th>Origem</th>
                                     <th>Destino</th>
                                     <th>Tipo Veículo</th>
+                                    <th>Tipo Operação</th>
                                     <th>Ação</th>
                                 </tr>
                             </thead>
@@ -41,306 +42,510 @@
                                     <th>Origem</th>
                                     <th>Destino</th>
                                     <th>Tipo Veículo</th>
+                                    <th>Tipo Operação</th>
                                     <th>Ação</th>
                                 </tr>
                             </tfoot>
                             <tbody>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Visualizar</button><button type="button" class="btn btn-secondary me-1 btnhv">Alterar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>ACL MM 2341</td>
+                                    <td>Padrão</td>
+                                    <td>Danone Ltda</td>
+                                    <td>GRU</td>
+                                    <td>Poços de Calda</td>
+                                    <td>Baú 3/4</td>
+                                    <td>DTA</td>
+                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                             </tbody>
                         </table>

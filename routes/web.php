@@ -26,13 +26,17 @@ Route::get('/comercial', [CompassController::class, 'comercial'])->name('comerci
 Route::get('/admindex', [CompassController::class, 'admindex'])->name('admindex');
 Route::get('/login', [CompassController::class, 'login'])->name('login');
 Route::get('/addproposta', [CompassController::class, 'addproposta'])->name('addproposta');
+Route::get('/gerproposta', [CompassController::class, 'gerproposta'])->name('gerproposta');
 Route::get('/addfuncionario', [CompassController::class, 'addfuncionario'])->name('addfuncionario');
-Route::get('/addcliente', [CompassController::class, 'addcliente'])->name('addcliente');
-Route::get('/forgotpass', [CompassController::class, 'forgotpass'])->name('forgotpass');
-Route::get('/admconfig', [CompassController::class, 'admconfig'])->name('admconfig');
 Route::get('/gerfuncionario', [CompassController::class, 'gerfuncionario'])->name('gerfuncionario');
 Route::get('/verfuncionario', [CompassController::class, 'verfuncionario'])->name('verfuncionario');
+Route::get('/addcliente', [CompassController::class, 'addcliente'])->name('addcliente');
 Route::get('/gercliente', [CompassController::class, 'gercliente'])->name('gercliente');
+Route::get('/vercliente', [CompassController::class, 'vercliente'])->name('vercliente');
+Route::get('/forgotpass', [CompassController::class, 'forgotpass'])->name('forgotpass');
+Route::get('/admconfig', [CompassController::class, 'admconfig'])->name('admconfig');
+Route::get('/impostos', [CompassController::class, 'impostos'])->name('impostos');
+
 Route::get('/assdigital', [CompassController::class, 'assdigital'])->name('assdigital');
 
 Route::get('/acoesProposta', [PropostaController::class, 'escolherAcao'])->name('acoesProposta');

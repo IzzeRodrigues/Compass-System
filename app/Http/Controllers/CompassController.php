@@ -18,11 +18,29 @@ class CompassController extends Controller
     public function addproposta(){
         return view('addproposta');
     }
+    public function gerproposta(){
+        return view('gerproposta');
+    }
     public function addfuncionario(){
         return view('addfuncionario');
     }
+    public function gerfuncionario(){
+        return view('gerfuncionario');
+    }
+    public function verfuncionario(){
+        return view('verfuncionario');
+    }
     public function addcliente(){
         return view('addcliente');
+    }
+    public function gercliente(){
+        return view('gercliente');
+    }
+    public function impostos(){
+        return view('impostos');
+    }
+    public function vercliente(){
+        return view('vercliente');
     }
     public function forgotpass(){
         return view('forgotpass');
@@ -33,15 +51,8 @@ class CompassController extends Controller
     public function comconfig(){
         return view('comconfig');
     }
-    public function gerfuncionario(){
-        return view('gerfuncionario');
-    }
-    public function verfuncionario(){
-        return view('verfuncionario');
-    }
-    public function gercliente(){
-        return view('gercliente');
-    }
+
+
 
     public function testePDF(){
         return view('criadorPDF');

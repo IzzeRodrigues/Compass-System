@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 </head>
 <body>
-    @section('title', 'Compass - Adicionar Cliente')
+    @section('title', 'Compass - Gerenciar Clientes')
     <div id="layoutSidenav_content">
         <main>
     @section('master')
@@ -15,7 +15,7 @@
             <div class="container-fluid px-4">
                 <h1 class="mt-4">Compass</h1>
                 <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item active">Adicionar Cliente</li>
+                    <li class="breadcrumb-item active">Gerenciar Clientes</li>
                 </ol>
                 <div class="row">
                     <div class="col-md-4 col-sm-6 col-12 mb-3">
@@ -105,6 +105,9 @@
 
                         <div class="pt-1 mb-4 d-grid gap-2 col-md-3 col-sm-6">
                             <a href="#"><button class="btn btn-info btn-lg btn-block shadow-sm corpadrao larg-btn" role="button" type="submit">Salvar</button></a>
+                        </div>
+                        <div class="pt-1 mb-4 d-grid gap-2 col-md-3 col-sm-6">
+                            <a href="#"><button class="btn btn-info btn-lg btn-block shadow-sm corpadrao larg-btn" role="button" type="button">Excluir</button></a>
                         </div>
                         <div class="pt-1 mb-4 d-grid gap-2 col-md-3 col-sm-6">
                             <a href="#"><button class="btn btn-info btn-lg btn-block shadow-sm corpadrao larg-btn" role="button" type="button">Cancelar</button></a>

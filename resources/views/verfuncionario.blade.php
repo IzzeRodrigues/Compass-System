@@ -37,7 +37,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row justify-content-between">
                         <div class="col-md-5 col-sm-12 col-12 form-group mb-3">
                             <label>E-mail</label>
                             <div class="input-group">
@@ -54,7 +54,7 @@
                             </select>
                         </div>
 
-                        <div class="col-md-4 col-sm-6 col-12 form-group mb-3 input-senhafunc">
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3 input-senhafunc">
                             <label>Senha</label>
                             <input type="password" id="senha-func" class="form-control passcfg2">
                             <i class="bi bi-eye eye-open2" id="eye-senha-func2" name="open-eye" onclick="mostrarSenha()"></i>
@@ -62,7 +62,7 @@
                     </div>
                     <div class="row justify-content-end mt-3">
                         <div class="pt-1 mb-4 d-grid gap-2 col-md-3 col-sm-6 col-6">
-                            <a><button class="btn btn-info btn-lg btn-block shadow-sm corpadrao larg-btn" role="button" type="submit">Salvar Alterações</button></a>
+                            <a><button class="btn btn-info btn-lg btn-block shadow-sm corpadrao larg-btn" role="button" type="submit">Salvar</button></a>
                         </div>
                         <div class="pt-1 mb-4 d-grid gap-2 col-md-3 col-sm-6 col-6">
                             <a><button class="btn btn-info btn-lg btn-block shadow-sm corpadrao larg-btn danger" role="button" type="">Excluir</button></a>

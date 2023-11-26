@@ -82,9 +82,9 @@
 
                             ?>
 
-                            <a class="nav-link" href="charts.html">
+                            <a class="nav-link" href="/impostos">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Informações
+                                Impostos
                             </a>
 
                             <div class="sb-sidenav-menu-heading side-title">Comercial</div>
@@ -96,7 +96,7 @@
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                                     <a class="nav-link collapsed" href="/addproposta">Adicionar</a>
-                                    <a class="nav-link collapsed" href="#">Procurar</a>
+                                    <a class="nav-link collapsed" href="/gerproposta">Procurar</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseClientes" aria-expanded="false" aria-controls="collapseClientes">

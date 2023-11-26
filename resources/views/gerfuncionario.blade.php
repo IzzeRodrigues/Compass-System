@@ -32,35 +32,35 @@
                             <td>Marco Carvalho</td>
                             <td>marco.antonio@aclcargo.com.br</td>
                             <td>ADM</td>
-                            <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                            <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                         </tr>
                         <tr>
                             <th scope="row">2</th>
                             <td>Luiz Carlos</td>
                             <td>luiz@aclcargo.com.br</td>
                             <td>ADM</td>
-                            <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                            <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                         </tr>
                         <tr>
                             <th scope="row">3</th>
                             <td>Helena Carvalho</td>
                             <td>helena.carvalho@aclcargo.com.br</td>
                             <td>Usuário</td>
-                            <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                            <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                         </tr>
                         <tr>
                             <th scope="row">4</th>
                             <td>Cristiano Bexiga</td>
                             <td>cristiano.bexiga@aclcargo.com.br</td>
                             <td>Usuário</td>
-                            <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                            <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                         </tr>
                         <tr>
                             <th scope="row">5</th>
                             <td>Bruno Nabuco</td>
                             <td>bruno.nabuco@aclcargo.com.br</td>
                             <td>Usuário</td>
-                            <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                            <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                         </tr>
                     </tbody>
                 </table>
@@ -117,7 +117,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>2</td>
@@ -125,7 +125,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>3</td>
@@ -133,7 +133,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>4</td>
@@ -141,7 +141,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>5</td>
@@ -149,7 +149,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>6</td>
@@ -157,7 +157,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>7</td>
@@ -165,7 +165,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>8</td>
@@ -173,7 +173,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>9</td>
@@ -181,7 +181,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>10</td>
@@ -189,7 +189,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>11</td>
@@ -197,7 +197,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>12</td>
@@ -205,7 +205,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>13</td>
@@ -213,7 +213,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>14</td>
@@ -221,7 +221,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -229,7 +229,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -237,7 +237,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -245,7 +245,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -253,7 +253,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -261,7 +261,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -269,7 +269,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -277,7 +277,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -285,7 +285,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -293,7 +293,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -301,7 +301,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -309,7 +309,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -317,7 +317,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -325,7 +325,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -333,7 +333,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -341,7 +341,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -349,7 +349,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -357,7 +357,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -365,7 +365,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -373,7 +373,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -381,7 +381,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -389,7 +389,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -397,7 +397,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -405,7 +405,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -413,7 +413,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -421,7 +421,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -429,7 +429,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -437,7 +437,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -445,7 +445,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -453,7 +453,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -461,7 +461,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -469,7 +469,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -477,7 +477,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -485,7 +485,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -493,7 +493,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -501,7 +501,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -509,7 +509,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -517,7 +517,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -525,7 +525,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -533,7 +533,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -541,7 +541,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -549,7 +549,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -557,7 +557,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -565,7 +565,7 @@
                                 <td>marco.antonio@aclcargo.com</td>
                                 <td>Administrador</td>
                                 <td>Diretor Nacional de Negócios</td>
-                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Visualizar/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                <td><a href="/verfuncionario"><button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                             </tr>
                         </tbody>
                     </table>
