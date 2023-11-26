@@ -16,7 +16,7 @@
             <div class="container-fluid px-4">
                 <h1 class="mt-4">Compass</h1>
             {{-- <div class="table table-sm table-responsive-sm">
-                <table class="table table-bordered table-hover">
+                <table class="table table-bordered table-hover" id="datatablesSimple">
                     <thead>
                         <tr>
                             <th scope="col">ID</th>

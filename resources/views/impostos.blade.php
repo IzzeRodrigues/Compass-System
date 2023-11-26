@@ -23,7 +23,7 @@
                 <form method="get" action="/adicionarUsuario">
                     <div class="row">
                         <label>ICMS</label>
-                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Origem</label>
                             <select class="form-control" name="">
                             <option value="naoSelecionado" selected disabled>Selecione...</option>
@@ -56,7 +56,7 @@
                                         <option value="TO">Tocantins</option>
                             </select>
                         </div>
-                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Destino</label>
                             <select class="form-control" name="">
                             <option value="naoSelecionado" selected disabled>Selecione...</option>
@@ -95,76 +95,47 @@
                         </div>
                     </div>
                     <div class="row">
-                        <label>Imposto 1</label>
-                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>Valor %</label>
-                            <input type="number" name="alterICMS" id="alterICMS" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <label>Imposto 2</label>
-                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>Valor %</label>
-                            <input type="number" name="alterICMS" id="alterICMS" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <label>Imposto 3</label>
-                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>Valor %</label>
-                            <input type="number" name="alterICMS" id="alterICMS" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <label>Imposto 4</label>
-                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>Valor %</label>
-                            <input type="number" name="alterICMS" id="alterICMS" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <label>Imposto 5</label>
-                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>Valor %</label>
-                            <input type="number" name="alterICMS" id="alterICMS" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <label>Imposto 6</label>
-                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>Valor %</label>
-                            <input type="number" name="alterICMS" id="alterICMS" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <label>Imposto 7</label>
-                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>Valor %</label>
-                            <input type="number" name="alterICMS" id="alterICMS" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <label>Imposto 8</label>
-                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>Valor %</label>
-                            <input type="number" name="alterICMS" id="alterICMS" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <label>Imposto 9</label>
-                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>Valor %</label>
-                            <input type="number" name="alterICMS" id="alterICMS" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <label>Imposto 10</label>
-                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
-                            <label>Valor %</label>
-                            <input type="number" name="alterICMS" id="alterICMS" class="form-control">
-                        </div>
-                    </div>
 
+                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
+                            <label>% PIS</label>
+                            <input type="number" name="alterICMS" id="editPIS" class="form-control">
+                        </div>
+                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
+                            <label>% IRPJ</label>
+                            <input type="number" name="alterICMS" id="editICMS" class="form-control">
+                        </div>
+                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
+                            <label>% Adic IRPJ</label>
+                            <input type="number" name="alterICMS" id="editAdicIRPJ" class="form-control">
+                        </div>
+                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
+                            <label>% COFINS</label>
+                            <input type="number" name="alterICMS" id="editCOFINS" class="form-control">
+                        </div>
+                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
+                            <label>Imp. Susp.</label>
+                            <input type="number" name="alterICMS" id="editImpSusp" class="form-control">
+                        </div>
+                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
+                            <label>RCTRC</label>
+                            <input type="number" name="alterICMS" id="editRCTRC" class="form-control">
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
+                            <label>RCFDC</label>
+                            <input type="number" name="alterICMS" id="editRCFDC" class="form-control">
+                        </div>
+                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
+                            <label>% Simples Nac.</label>
+                            <input type="number" name="alterICMS" id="editSimpNac" class="form-control">
+                        </div>
+                        <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
+                            <label>% Frete Peso</label>
+                            <input type="number" name="alterICMS" id="editFretePeso" class="form-control">
+                        </div>
+                    </div>
                     <div class="row justify-content-end mt-3">
                         <div class="pt-1 mb-4 d-grid gap-2 col-md-3 col-sm-6 col-6">
                             <a><button class="btn btn-info btn-lg btn-block shadow-sm corpadrao larg-btn" role="button" type="submit">Salvar</button></a>

@@ -27,6 +27,7 @@ Route::get('/admindex', [CompassController::class, 'admindex'])->name('admindex'
 Route::get('/login', [CompassController::class, 'login'])->name('login');
 Route::get('/addproposta', [CompassController::class, 'addproposta'])->name('addproposta');
 Route::get('/gerproposta', [CompassController::class, 'gerproposta'])->name('gerproposta');
+Route::get('/verproposta', [CompassController::class, 'verproposta'])->name('verproposta');
 Route::get('/addfuncionario', [CompassController::class, 'addfuncionario'])->name('addfuncionario');
 Route::get('/gerfuncionario', [CompassController::class, 'gerfuncionario'])->name('gerfuncionario');
 Route::get('/verfuncionario', [CompassController::class, 'verfuncionario'])->name('verfuncionario');

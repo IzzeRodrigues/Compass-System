@@ -55,7 +55,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -65,7 +65,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -75,7 +75,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -85,7 +85,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -95,7 +95,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -105,7 +105,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -115,7 +115,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -125,7 +125,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -135,7 +135,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -145,7 +145,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -155,7 +155,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -165,7 +165,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -175,7 +175,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -185,7 +185,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -195,7 +195,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -205,7 +205,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -215,7 +215,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -225,7 +225,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -235,7 +235,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -245,7 +245,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -255,7 +255,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -265,7 +265,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -275,7 +275,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -285,7 +285,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -295,7 +295,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -305,7 +305,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -315,7 +315,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -325,7 +325,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -335,7 +335,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -345,7 +345,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -355,7 +355,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -365,7 +365,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -375,7 +375,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -385,7 +385,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -395,7 +395,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -405,7 +405,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -415,7 +415,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -425,7 +425,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -435,7 +435,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -445,7 +445,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -455,7 +455,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -465,7 +465,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -475,7 +475,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -485,7 +485,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -495,7 +495,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -505,7 +505,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -515,7 +515,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -525,7 +525,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -535,7 +535,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                                 <tr>
                                     <td>ACL MM 2341</td>
@@ -545,7 +545,7 @@
                                     <td>Poços de Calda</td>
                                     <td>Baú 3/4</td>
                                     <td>DTA</td>
-                                    <td><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
+                                    <td><a href="/verproposta"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Editar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
                                 </tr>
                             </tbody>
                         </table>

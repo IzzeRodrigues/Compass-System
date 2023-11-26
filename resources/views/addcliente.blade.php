@@ -27,7 +27,7 @@
                         <select class="form-control">
                             <option selected disabled>Selecione...</option>
                             <option>Cliente Cargo</option>
-                            <option>Cliente MM</option>
+                            <option>Cliente Multi</option>
                         </select>
                     </div>
                 </div>

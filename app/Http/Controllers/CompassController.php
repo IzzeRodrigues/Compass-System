@@ -21,6 +21,9 @@ class CompassController extends Controller
     public function gerproposta(){
         return view('gerproposta');
     }
+    public function verproposta(){
+        return view('verproposta');
+    }
     public function addfuncionario(){
         return view('addfuncionario');
     }

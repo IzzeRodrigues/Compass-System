@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico" type="image/x-icon">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 </head>
 <body>
-    @section('title', 'Compass - Gerenciar Clientes')
+    @section('title', 'Compass - Ver/Editar Clientes')
     <div id="layoutSidenav_content">
         <main>
     @section('master')
@@ -15,7 +16,7 @@
             <div class="container-fluid px-4">
                 <h1 class="mt-4">Compass</h1>
                 <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item active">Gerenciar Clientes</li>
+                    <li class="breadcrumb-item active">Ver/Editar Clientes</li>
                 </ol>
                 <div class="row">
                     <div class="col-md-4 col-sm-6 col-12 mb-3">
@@ -27,7 +28,7 @@
                         <select class="form-control">
                             <option selected disabled>Selecione...</option>
                             <option>Cliente Cargo</option>
-                            <option>Cliente MM</option>
+                            <option>Cliente Multi</option>
                         </select>
                     </div>
                 </div>

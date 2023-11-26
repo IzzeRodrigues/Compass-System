@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico" type="image/x-icon">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 </head>
 <body>
-    @section('title', 'Compass - Ver/Editar Funcionário')
+    @section('title', 'Compass - Ver/Editas Funcionário')
     <div id="layoutSidenav_content">
         <main>
     @section('master')
@@ -18,7 +19,7 @@
             <div class="container-fluid px-4">
                 <h1 class="mt-4">Compass</h1>
                 <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item active">Funcionário</li>
+                    <li class="breadcrumb-item active">Ver/Editar Funcionário</li>
                 </ol>
                 <form method="get" action="/adicionarUsuario">
                     <div class="row">
