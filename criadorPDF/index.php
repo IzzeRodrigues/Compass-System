@@ -73,6 +73,7 @@ $data_atual = $dataExibicao;
 $ref_cliente = $variaveis['valorReferenciaProposta'];
 $cliente = $variaveis['valorNomeCliente'];
 $contato_cliente = $variaveis['valorEmailContatoCliente'];
+
 if($variaveis['valorTotalImpostoSeguro'] != 0)
 {
     $valor_carga = "R$ " . $variaveis['valorTotalImpostoSeguro'];
@@ -593,10 +594,12 @@ $adicionais = '<table style="width:100%; border-spacing: 0; border-collapse:cola
          '. $valor_icms .' 
         </td>
     </tr>
+</table>';
+$mpdf->WriteHTML($adicionais);
+//LUCAS FAZER CALCULO AQUI!!!!!!!!!!!! 2
+$valor_sem_adicionais_soma = '<table style="width:100%; border-collapse:collapse;"> 
     <tr style="background-color:yellow;">
-        <td style="border: 0.5px solid black; border-left:0; border-right:0;">
-        </td>
-        <td  style="border: 0.5px solid black;  border-top:0; border-left:0;">
+        <td style=" width: 76.3%; border: 0.5px solid black;  border-top:0;">
         VALOR DA PROPOSTA (SEM ADICIONAIS SE NECESSÁRIO) 
         </td>
         <td style="border: 0.5px solid black; border-left:0;">
@@ -604,7 +607,7 @@ $adicionais = '<table style="width:100%; border-spacing: 0; border-collapse:cola
         </td>
     </tr>
 </table>';
-$mpdf->WriteHTML($adicionais);
+$mpdf->WriteHTML($valor_sem_adicionais_soma);
 
 // VARIÁVEIS ADICIONAIS SE NECESSÁRIO:
 $valor_ajudante = "R$ " . $variaveis['valorAjudantes_operacao'];
@@ -766,6 +769,20 @@ $adicionais_necessario = '<table style="width:100%; border-spacing: 0; border-co
     </tr>
 </table>';
 $mpdf->WriteHTML($adicionais_necessario);
+
+$valor_proposta_completa = '90.000,00'; //LUCAS FAZER CALCULO AQUI!!!!!!!!!!!!
+$valor_total = '<table style=" background-color:yellow; width:100%; border-spacing: 0; border-collapse:colapse; border:0.5px solid black;">
+    <tr>
+        <td style="width:80%; border-top:0; border-right: 0.5px solid black;  border-left: 0.5px solid black; font-weight:bold;">
+            Valor total da proposta
+        </td>
+        <td style="border-top:0; border-right: 0.5px solid black;  border-left: 0.5px solid black; font-weight:bold;">
+            R$'.$valor_proposta_completa.'
+        </td>
+    </tr>
+</table>
+';
+$mpdf->WriteHTML($valor_total);
 
 // LOGOTIPOS PARCEIROS
 $parceiros = '<table style="border: 0.5px solid black; margin:0; padding:0; text-align:center;" width="100%">
@@ -853,8 +870,12 @@ $mpdf->Output();
 // Nesses dois, em caso de valor fixo, é importante acrescentar os sinais R$ - $ - % - € que não estarão no doc por conta das possibilidades acima.
 };
 
+/*----------------------------------------------------------------------------ASSINATURA DIGITAL----------------------------------------------------------------------------------------------*/
+
+
 function assinaturaDigital($variaveis)
 {
+    $representante = $_SESSION['representante'];
 // VARIÁVEIS DE CRIAÇÃO DE PÁGINA PDF:
 $mpdf = new \Mpdf\Mpdf([
     'default_font' => 'arial',
@@ -900,6 +921,7 @@ $data_atual = $dataExibicao;
 $ref_cliente = $variaveis['valorReferenciaProposta'];
 $cliente = $variaveis['valorNomeCliente'];
 $contato_cliente = $variaveis['valorEmailContatoCliente'];
+$_SESSION['infos'] = [$contato_cliente, $cliente];
 if($variaveis['valorTotalImpostoSeguro'] != 0)
 {
     $valor_carga = "R$ " . $variaveis['valorTotalImpostoSeguro'];
@@ -916,6 +938,11 @@ $depto_criador = $variaveis['cargoResponsavel'];
 $filialSeparada = explode('-',$variaveis['filialACL'],2);
 $nomeFilial = $filialSeparada[0];
 $cnpjFilial = $filialSeparada[1];
+
+// var_dump($filialSeparada);
+// var_dump($nomeFilial);
+// var_dump($cnpjFilial);
+// var_dump($variaveis['filialACL']);
 // CRIAÇÃO DA TABLE TRANSPORTE:
 $transporte = '<table style="width:100%; margin:0; padding:0; border-collapse: collapse;">
     <tr>
@@ -1432,6 +1459,18 @@ $adicionais = '<table style="width:100%; border-spacing: 0; border-collapse:cola
     </tr>
 </table>';
 $mpdf->WriteHTML($adicionais);
+//LUCAS FAZER CALCULO AQUI!!!!!!!!!!!!
+$valor_sem_adicionais_soma = '<table style="width:100%; border-collapse:collapse;">
+    <tr style="background-color:yellow;">
+        <td style=" width: 76.3%; border: 0.5px solid black;  border-top:0;">
+        VALOR DA PROPOSTA (SEM ADICIONAIS SE NECESSÁRIO) 
+        </td>
+        <td style="border: 0.5px solid black; border-left:0;">
+        '. $valor_proposta .'
+        </td>
+    </tr>
+</table>';
+$mpdf->WriteHTML($valor_sem_adicionais_soma);
 
 // VARIÁVEIS ADICIONAIS SE NECESSÁRIO:
 $valor_ajudante = "R$ " . $variaveis['valorAjudantes_operacao'];
@@ -1594,6 +1633,21 @@ $adicionais_necessario = '<table style="width:100%; border-spacing: 0; border-co
 </table>';
 $mpdf->WriteHTML($adicionais_necessario);
 
+$valor_proposta_completa = '90.000,00'; //LUCAS FAZER CALCULO AQUI!!!!!!!!!!!!
+$valor_total = '<table style=" background-color:yellow; width:100%; border-spacing: 0; border-collapse:colapse; border:0.5px solid black;">
+    <tr>
+        <td style="width:80%; border-top:0; border-right: 0.5px solid black;  border-left: 0.5px solid black; font-weight:bold;">
+            Valor total da proposta
+        </td>
+        <td style="border-top:0; border-right: 0.5px solid black;  border-left: 0.5px solid black; font-weight:bold;">
+            R$'.$valor_proposta_completa.'
+        </td>
+    </tr>
+</table>
+';
+$mpdf->WriteHTML($valor_total);
+
+
 // LOGOTIPOS PARCEIROS
 $parceiros = '<table style="border: 0.5px solid black; margin:0; padding:0; text-align:center;" width="100%">
     <tr>
@@ -1675,7 +1729,30 @@ $assinatura = '<div style=" border:0.5px solid black; border-top:none;">
 </div>';
 $mpdf->WriteHTML($assinatura);
 
-$mpdf->Output();
+if (isset($_SESSION['representante']))
+{
+    $clausulaDigital = '<div style=" border:0.5px solid black; border-top:none;">
+    <table style="">
+        <tr>
+            <td>
+            *DOCUMENTO ORIGINAL Grupo ACL Cargo SEDE: Rua Alexandre Gusmão, 11 CJ. 1315/16/17/18
+            Santos (SP) devidamente inscrita no e-CNPJ/A1 certificado sob o número '.$cnpjFilial.', neste representado por '.$representante['nomeRepresentante'].' portador(a) do documento de número '.$representante['docRepresentante'].', possuindo o contato '.$representante['emailRepresentante'].'  Encontra-se de acordo com a proposta apresentada nesse documento.         
+            </td>
+        </tr>
+    </table>
+    </div>';
+    $mpdf->WriteHTML($clausulaDigital);
+    unset($_SESSION['representante']);
+    // $mpdf->Output();
+    header('Location:http://localhost:8000/emailCliente');
+    // header("Location: http://localhost:8000/salvarProposta");
+    var_dump("DSDASDSADA");
+} else {
+    $mpdf->Output();
+}
+
+// var_dump($representante['nomeRepresentante']);
+
 // Em "adicionais" e "adicionais se necessário" será necessário criar um if no backend com as possibilidades, em caso de valor 0, dependendo do caso, usar "isento" "não aplicável" "sob consulta" "conferir legislação" ou isento comercialmente. 
 // Nesses dois, em caso de valor fixo, é importante acrescentar os sinais R$ - $ - % - € que não estarão no doc por conta das possibilidades acima.
 };

@@ -37,13 +37,13 @@
                         <div class="col-md-3 col-sm-12 col-12 mb-3">
                             <label>Filial ACL Group</label>
                             <select class="form-control" id="filialACL" name="filialACL">
-                                <option value="naoSelecionado">Selecione...</option>
-                                <option value="ACL Cargo Matriz-06.695.952/0001-53">ACL Cargo Matriz</option>
-                                <option value="ACL Cargo Anápolis-06.695.952/0004-04">ACL Cargo Anápolis</option>
-                                <option value="ACL Cargo Paranaguá-06.695.952/0005-87">ACL Cargo Paranaguá</option>
+                                <option value="naoSelecionado" disabled>Selecione...</option>
+                                <option value="ACL Cargo Matriz-06.695.952/0001-53" disabled>ACL Cargo Matriz</option>
+                                <option value="ACL Cargo Anápolis-06.695.952/0004-04" disabled>ACL Cargo Anápolis</option>
+                                <option value="ACL Cargo Paranaguá-06.695.952/0005-87" disabled>ACL Cargo Paranaguá</option>
                                 <option value="ACL Cargo Santos-06.695.952/0003-15">ACL Cargo Santos</option>
-                                <option value="ACL Cargo Rio de Janeiro-06.695.952/0002-34">ACL Cargo Rio de Janeiro</option>
-                                <option value="ACL Cargo São Vicente-06.695.952/0006-68">ACL Cargo São Vicente</option>
+                                <option value="ACL Cargo Rio de Janeiro-06.695.952/0002-34" disabled>ACL Cargo Rio de Janeiro</option>
+                                <option value="ACL Cargo São Vicente-06.695.952/0006-68" disabled>ACL Cargo São Vicente</option>
                             </select>
                         </div>
                         <div class="col-md-2 col-sm-12 col-12 mb-3">

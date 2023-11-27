@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\AssinarDigitalController;
 use App\Http\Controllers\CompassController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\PropostaController;
+use App\Http\Controllers\EmailController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,6 +41,8 @@ Route::get('/admconfig', [CompassController::class, 'admconfig'])->name('admconf
 Route::get('/impostos', [CompassController::class, 'impostos'])->name('impostos');
 
 Route::get('/assdigital', [CompassController::class, 'assdigital'])->name('assdigital');
+Route::get('/enviarConteudo', [AssinarDigitalController::class, 'enviarConteudo'])->name('enviarConteudo');
+Route::get('/emailCliente', [EmailController::class, 'EnviarEmail'])->name('EnviarEmail');
 
 Route::get('/acoesProposta', [PropostaController::class, 'escolherAcao'])->name('acoesProposta');
 Route::get('/salvarProposta', [PropostaController::class, 'salvarProposta'])->name('salvarProposta');
