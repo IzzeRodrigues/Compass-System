@@ -1,4 +1,4 @@
-create database db_compass1 character set = 'utf8' collate = 'utf8_general_ci';
+create database db_compass character set = 'utf8' collate = 'utf8_general_ci';
 
 use db_compass;
 

@@ -11,7 +11,7 @@
     <div>
             <p>Todas as informações estão corretas? </p>
             <button id="sim" onclick='exibeRepresentante()' class="btn-compass-color border border-0 rounded-4 px-4 =">Sim</button>
-            <button id="nao" class="btn-compass-color border border-0 rounded-4 px-4 =">Não</button>
+            <button id="nao" onclick='voltaPreencher()' class="btn-compass-color border border-0 rounded-4 px-4 =">Não</button>
        
         <div id="exibicao" class="d-none">
         <p class="pt-5" >Insira as informações necessárias para representar a ACL CARGO abaixo:</p>

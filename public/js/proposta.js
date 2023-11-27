@@ -528,7 +528,7 @@ function calcularImpostos()
         }
         else
         {
-            document.getElementById('valorMargemLucroBruto').value = "VOU DESCONTAR DA SUA COMISSÃO!";
+            document.getElementById('valorMargemLucroBruto').value = "MARGEM ABAIXO DO PADRÃO";
             document.getElementById('valorMargemLucroBruto').style.fontWeight = "bold";
             document.getElementById('valorMargemLucroBruto').style.color = "rgb(135, 4, 35)";
             document.getElementById('valorMargemLucroBruto').style.backgroundColor = "rgb(255, 199, 205)";
