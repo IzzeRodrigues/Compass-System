@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS tb_tipo_proposta (
     cd_tipo_proposta INT NOT NULL AUTO_INCREMENT,
     nm_tipo_proposta VARCHAR(100),
     cd_proposta INT,
-    CONSTRAINT pk_tipos_proposta PRIMARY KEY (cd_tipo_proposta)
+    CONSTRAINT pk_tipos_proposta PRIMARY KEY (cd_tipo_proposta),
     CONSTRAINT fk_tipos_proposta_proposta FOREIGN KEY (cd_proposta)
         REFERENCES tb_proposta (cd_proposta)
 );
@@ -109,11 +109,6 @@ CREATE TABLE IF NOT EXISTS tb_tipo_frete (
     CONSTRAINT fk_tipo_frete_proposta FOREIGN KEY (cd_proposta)
         REFERENCES tb_proposta (cd_proposta)
 );
-
-CREATE TABLE IF NOT EXISTS tb_rota (
-    cd_rota INT NOT NULL AUTO_INCREMENT,
-    
-)
 
 CREATE TABLE IF NOT EXISTS tb_uf_origem (
     cd_uf_origem INT NOT NULL AUTO_INCREMENT,

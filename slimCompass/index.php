@@ -22,7 +22,7 @@ $app->get('/getICMS/{estadosTransporte}','getICMS');
 
 function getConn()
 {
-    return new PDO('mysql:host=localhost:3306;dbname=db_compassv2',
+    return new PDO('mysql:host=localhost:3306;dbname=db_compass',
     'root',
     '',
     array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
@@ -60,7 +60,7 @@ function getICMS(Request $request, Response $response, array $args)
 {
     $estadosTransporte = $args['estadosTransporte'];
     $conn = getConn();
-    $sql = "SELECT * FROM tb_icms WHERE sg_icms=:estadosTransporte";
+    $sql = "SELECT * FROM tb_consulta_porc_icms WHERE nm_consulta_porc_icms=:estadosTransporte";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam("estadosTransporte",$estadosTransporte);
     $stmt->execute();

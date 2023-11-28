@@ -466,8 +466,8 @@ function calcularImpostos()
                         if (json != undefined)
                         {
                             puxouICMS = true; 
-                            document.getElementById('porcentagemICMS_operacao').value = json.pc_icms; 
-                            document.getElementById('porcentagemICMS_despesa').value = json.pc_icms; 
+                            document.getElementById('porcentagemICMS_operacao').value = json.vl_consulta_porc_icms; 
+                            document.getElementById('porcentagemICMS_despesa').value = json.vl_consulta_porc_icms; 
                             combinacaoICMS = estadosViagem;
                         }
                     })
