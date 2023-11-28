@@ -38,7 +38,11 @@ class PropostaController extends Controller
 
     function salvarProposta()
     {
-        var_dump($_SESSION['proposta']);
+        // var_dump($_SESSION['proposta']);
+        $usuario = DB::select("SELECT cd_usuario FROM tb_usuario WHERE nm_nome_completo = '" . $_SESSION['proposta']['nomeResponsavel'] . "'");
+        // $id = $usuario['cd_usuario'];
+        var_dump($usuario);
         // return redirect()->route('admindex');
+        // DB::insert("INSERT INTO tb_proposta (nm")
     }
 }
