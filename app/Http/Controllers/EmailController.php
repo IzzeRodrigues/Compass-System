@@ -13,9 +13,6 @@ class EmailController extends Controller
 
         $link = 'link.com.br';
         $token = '123456';
-        
-        // $nome = $_REQUEST['nome'];
-        // $nomeContrato = $_REQUEST['nomeContrato'];
 
         var_dump($sessao);  
 

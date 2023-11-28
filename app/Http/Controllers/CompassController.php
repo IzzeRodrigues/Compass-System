@@ -67,4 +67,7 @@ class CompassController extends Controller
     public function assdigital(){
         return view('assdigital');
     }
+    public function assinatura(){
+        return view('assinatura');
+    }
 }

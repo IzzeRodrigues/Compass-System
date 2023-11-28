@@ -1447,16 +1447,7 @@ $adicionais = '<table style="width:100%; border-spacing: 0; border-collapse:cola
          '. $valor_icms .' 
         </td>
     </tr>
-    <tr style="background-color:yellow;">
-        <td style="border: 0.5px solid black; border-left:0; border-right:0;">
-        </td>
-        <td  style="border: 0.5px solid black;  border-top:0; border-left:0;">
-        VALOR DA PROPOSTA (SEM ADICIONAIS SE NECESSÁRIO) 
-        </td>
-        <td style="border: 0.5px solid black; border-left:0;">
-        '. $valor_proposta .'
-        </td>
-    </tr>
+    
 </table>';
 $mpdf->WriteHTML($adicionais);
 //LUCAS FAZER CALCULO AQUI!!!!!!!!!!!!
