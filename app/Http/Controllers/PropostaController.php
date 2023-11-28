@@ -40,9 +40,43 @@ class PropostaController extends Controller
     {
         // var_dump($_SESSION['proposta']);
         $usuario = DB::select("SELECT cd_usuario FROM tb_usuario WHERE nm_nome_completo = '" . $_SESSION['proposta']['nomeResponsavel'] . "'");
-        // $id = $usuario['cd_usuario'];
-        var_dump($usuario);
+        $referenciaAcl = $_SESSION['proposta']['valorReferenciaProposta']."-". $_SESSION['proposta']['valorNumeroProposta'];
+        $id = $usuario[0]->cd_usuario;
+        $filial = $_SESSION['proposta']['filialACL'];
+        $filial = explode('-', $filial);
+        $nomeFilial = $filial[0];
+        $cnpjFilial = $filial[1];
+
+
+
+        $idProposta = DB::table('tb_proposta')->insertGetId(['dt_proposta' => $_SESSION['proposta']['valorDataProposta'],'nm_referencia_acl' => $referenciaAcl, 'nm_referencia_cliente' => $_SESSION['proposta']['valorReferenciaCliente'], 'nm_versao_proposta' => $_SESSION['proposta']['valorVersaoProposta'], 'dt_horario_recebimento' => $_SESSION['proposta']['valorHorarioRecebimento'], 'ds_metodo_transporte' => $_SESSION['proposta']['valorTipoFrete'], 'ds_status_proposta' => 'Não-Enviada', 'ds_tipo_assinatura' => 'Não-Selecionada', 'cd_usuario' => $id]);
+
+        $idProduto = DB::table('tb_produto')->insertGetId(['nm_produto' => $_SESSION['proposta']['valorNomeProduto'], 'qt_produto' => $_SESSION['proposta']['valorPallets'], 'qt_peso_produto' => $_SESSION['proposta']['valorPeso'], $idProposta]);
+
+        $idFilial = DB::table('tb_filial')->insertGetId(['nm_filial' => $nomeFilial, 'cd_cnpj' => $cnpjFilial]);
+
+        $idCliente = DB::table('tb_cliente')->insertGetId(['nm_empresa_cliente' => $_SESSION['proposta']['valorNomeCliente'], 'cd_proposta' => $idProposta]);
+
+        $idResponsavelCliente = DB::table('tb_responsavel_cliente')->insertGetId(['nm_responsavel_cliente' => $_SESSION['proposta']['valorNomeContatoCliente'], 'cd_cliente' => $idCliente]);
+
+        $idEmailResponsavelCliente = DB::table('tb_email_responsavel_cliente')->insertGetId(['nm_email_responsavel_cliente' => $_SESSION['proposta']['valorEmailContatoCliente'], 'cd_responsavel_cliente' => $idResponsavelCliente]);
+
+        // DB::insert("INSERT INTO tb_produto (nm_produto, qt_produto, qt_peso_produto, cd_proposta) VALUES (?, ?, ?, ?)", [$_SESSION['proposta']['valorNomeProduto'], $_SESSION['proposta']['valorPallets'], $_SESSION['proposta']['valorPeso'], $idProposta]);
+
+        // DB::insert("INSERT INTO tb_filial (nm_filial, cd_cnpj, cd_proposta) VALUES (?, ?, ?)", [$nomeFilial, $cnpjFilial, $idProposta]);
+
+        // DB::insert("INSERT INTO tb_cliente(nm_empresa_cliente, cd_proposta) VALUES (?, ?)", [$_SESSION['proposta']['valorNomeCliente'], $idProposta]);
+
+        // $idCliente = DB::select("SELECT cd_cliente FROM tb_cliente WHERE nm_empresa_cliente = '". $_SESSION['proposta']['valorNomeCliente']."'");
+
+        // DB::insert("INSERT INTO tb_responsavel_cliente (nm_responsavel_cliente, cd_cliente) VALUES (?, ?)", [$_SESSION['proposta']['valorNomeContatoCliente'], $idCliente]);
+
+        // $idResponsavelCliente = DB::select("SELECT cd_responsavel_cliente FROM tb_responsavel_cliente WHERE nm_responsavel_cliente")
+
+
+
+
+
         // return redirect()->route('admindex');
-        // DB::insert("INSERT INTO tb_proposta (nm")
     }
 }
