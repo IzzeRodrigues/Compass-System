@@ -44,6 +44,7 @@ Route::get('/assdigital', [CompassController::class, 'assdigital'])->name('assdi
 Route::get('/enviarConteudo', [AssinarDigitalController::class, 'enviarConteudo'])->name('enviarConteudo');
 Route::get('/emailCliente', [EmailController::class, 'EnviarEmail'])->name('EnviarEmail');
 Route::get('/assinatura', [CompassController::class, 'assinatura'])->name('assinatura');
+Route::get('/enviarErro', [EmailController::class, 'enviarErro'])->name('erroProposta');
 
 
 Route::get('/acoesProposta', [PropostaController::class, 'escolherAcao'])->name('acoesProposta');

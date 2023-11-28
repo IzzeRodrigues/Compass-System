@@ -921,6 +921,8 @@ $data_atual = $dataExibicao;
 $ref_cliente = $variaveis['valorReferenciaProposta'];
 $cliente = $variaveis['valorNomeCliente'];
 $contato_cliente = $variaveis['valorEmailContatoCliente'];
+
+
 $_SESSION['infos'] = [$contato_cliente, $cliente];
 if($variaveis['valorTotalImpostoSeguro'] != 0)
 {
@@ -1719,6 +1721,10 @@ $assinatura = '<div style=" border:0.5px solid black; border-top:none;">
 </table>
 </div>';
 $mpdf->WriteHTML($assinatura);
+
+$referencia = $variaveis['valorReferenciaCliente'];
+$_SESSION['dados'] = [$cliente, $email_criador, $referencia];
+
 
 if (isset($_SESSION['representante']))
 {
