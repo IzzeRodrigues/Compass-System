@@ -1647,11 +1647,11 @@ function assinaturaDigital($variaveis)
         $nome_assinante = $_SESSION['dadosAssinante']['nomeAssinante'];
         $doc_assinante = $_SESSION['dadosAssinante']['docAssinante'];
         $email_assinante = $_SESSION['dadosAssinante']['emailAssinante'];
-        // $token = 
-        // $hora= 
-        // $dia =
-        // $mes=
-        // $ano=
+        $token = "";
+        $hora= "";
+        $dia ="";
+        $mes= "";
+        $ano= "";
     }
     ;
     if (isset($_SESSION['dadosAssinante']) && $ip_assinante != 'UNKNOWN') {
