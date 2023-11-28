@@ -12,8 +12,8 @@ class EmailController extends Controller
         session_start();
         $sessao = $_SESSION['infos'];
 
-        $link = 'link.com.br';
-        $token = '123456';
+        $link = 'http://localhost:8000/assinatura';
+        $token = random_int(100000, 999999);;
 
         var_dump($sessao);
 
@@ -45,16 +45,17 @@ class EmailController extends Controller
         $nome_cliente = $dados[0];
         $email_criador = $dados[1];
         $ref = $dados[2];
+        $neg = $dados[3];
 
         require '../vendor/autoload.php';
 
         $email = new \SendGrid\Mail\Mail();
         $email->setFrom("compassalgoritimo@gmail.com", "Algoritmo - Compass");
-        $email->setSubject("ERRO NA PROPOSTA: O cliente $nome_cliente verificou um erro na proposta $ref.");
+        $email->setSubject("ERRO NA PROPOSTA: O cliente $nome_cliente verificou um erro na proposta $neg.");
         $email->addTo('isa.prates@booat.com.br', 'isa');
         $email->addContent(
             "text/html",
-            "O cliente $nome_cliente, apontou um erro na proposta com a seguinte referência: $ref. Verifique as inconsistências na proposta, e reenvie para assinar. Erro enviado: $Erro."
+            "O cliente $nome_cliente, apontou um erro na proposta de seguinte referência: $neg, negociada em conjunto com $ref. Verifique as inconsistências na proposta, e reenvie para assinar. Erro enviado: $Erro."
         );
 
         $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));

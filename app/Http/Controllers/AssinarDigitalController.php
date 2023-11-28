@@ -13,7 +13,15 @@ class AssinarDigitalController extends Controller
             $_SESSION['representante'] = $valores;
 
             return redirect()->away("http://localhost/Compass/criadorPDF");
-            
+        }
+    }
+    function pegarValorAssinante(Request $request){
+        session_start();
+        if ($request->envio){
+            $valores = $request->all();
+            $_SESSION['dadosAssinante'] = $valores;
+
+            return redirect()->away("http://localhost/Compass/criadorPDF");
         }
     }
 }

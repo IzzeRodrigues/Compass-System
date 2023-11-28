@@ -56,21 +56,21 @@
             <div id="exibicao" class="d-none">
                 <p class="pt-5">Insira as informações necessárias para assinar sua proposta comercial de acordo.</p>
                 <div>
-                    <form method="GET" action="/">
+                    <form method="GET" action="/pegarValorAssinante">
                         <div class="d-flex me-5">
                             <div>
                                 <label label for="nome">Nome completo</label>
-                                <input name="nomeRepresentante" id="nomeRepresentante" type="text"
+                                <input name="nomeAssinante" id="nomeAssinante" type="text"
                                     class="rounded-4 py-1" placeholder="João da Silva">
                             </div>
                             <div>
                                 <label for="documento">Documento de identidade (CPF)</label>
-                                <input name="docRepresentante" id="docRepresentante" type="text" class="rounded-4 py-1"
+                                <input name="docAssinante" id="docAssinante" type="text" class="rounded-4 py-1"
                                     placeholder="000.000.000-00">
                             </div>
                             <div>
                                 <label for="email">Email</label>
-                                <input name="emailRepresentante" id="emailRepresentante" type="text"
+                                <input name="emailAssinante" id="emailAssinante" type="text"
                                     class="rounded-4 py-1" placeholder="João.Representante@email.com">
                             </div>
                             <div>
