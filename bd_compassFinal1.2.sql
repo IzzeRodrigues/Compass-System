@@ -1,6 +1,6 @@
-create database db_compass1 character set = 'utf8' collate = 'utf8_general_ci';
+create database db_compass character set = 'utf8' collate = 'utf8_general_ci';
 
-use db_compass1;
+use db_compass;
 
 CREATE TABLE IF NOT EXISTS tb_usuario (
     cd_usuario INT NOT NULL AUTO_INCREMENT,
@@ -216,7 +216,7 @@ CREATE TABLE IF NOT EXISTS tb_valor_container_operacao (
 CREATE TABLE IF NOT EXISTS tb_frete_peso_operacao (
     cd_frete_peso_operacao INT NOT NULL AUTO_INCREMENT,
     vl_frete_peso_operacao DECIMAL(10 , 2 ),
-    cd_porposta INT,
+    cd_proposta INT,
     CONSTRAINT pk_frete_peso_operacao PRIMARY KEY (cd_frete_peso_operacao),
     CONSTRAINT fk_frete_peso_operacao_proposta FOREIGN KEY (cd_proposta)
         REFERENCES tb_proposta (cd_proposta)
@@ -232,7 +232,7 @@ CREATE TABLE IF NOT EXISTS tb_imp_operacao (
     vl_rcfdc_imp_operacao DECIMAL(10 , 2 ),
     pc_gris_imp_operacao DECIMAL(5 , 2 ),
     vl_gris_imp_operacao DECIMAL(10 , 2 ),
-    cd_porposta int,
+    cd_proposta int,
     CONSTRAINT pk_imp_operacao PRIMARY KEY (cd_imp_operacao),
     CONSTRAINT fk_imp_operacao_proposta FOREIGN KEY (cd_proposta)
         REFERENCES tb_proposta (cd_proposta)
