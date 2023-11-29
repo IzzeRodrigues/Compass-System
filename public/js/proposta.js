@@ -87,8 +87,33 @@ function inicioProposta()
     ano = datacao.getFullYear();
 
     document.getElementById('valorDataProposta').value = `${ano}-${mes}-${dia}`;
-    document.getElementById('valorNumeroProposta').value = "0001";
+    // document.getElementById('valorNumeroProposta').value = "0001";
+
+    fetch('http://localhost/Compass/slimCompass/getCabecalho')
+    .then((response) => response.json())
+    .then((json) => setNumeroProposta(json))
+
     document.getElementById('valorVersaoProposta').value = "Versão 01";
+}
+
+function setNumeroProposta(referencia)
+{
+    if (referencia.nm_referencia_acl)
+    {
+        var local = (referencia.nm_referencia_acl).split(" ");
+        if (local[2] <9)
+            document.getElementById('valorNumeroProposta').value = `000${parseInt(local[2]) + 1}`;
+        else if (local[2] <99)
+            document.getElementById('valorNumeroProposta').value = `00${parseInt(local[2] + 1)}`;
+        else if (local[2] <999)
+            document.getElementById('valorNumeroProposta').value = `0${parseInt(local[2] + 1)}`;
+        else
+            document.getElementById('valorNumeroProposta').value = `${parseInt(local[2] + 1)}`;
+    }
+    else
+    {
+        document.getElementById('valorNumeroProposta').value = "0001"
+    }
 }
 
 function setNome(nome)
@@ -364,6 +389,12 @@ function calcularImpostos()
     monitoramentoIsca = parseFloat(document.getElementById('valorMonitoramentoIsca').value);
     tipoEscoltaArmada = document.getElementById('valorTipoEscoltaArmada').value;
     escoltaArmada = parseFloat(document.getElementById('valorEscoltaArmada').value);
+    tipoDevolucaoMargemEsquerda = document.getElementById('valorTipoDevolucaoMargemEsquerda').value;
+    devolucaoMargemEsquerda = parseFloat(document.getElementById('valorDevolucaoMargemEsquerda').value);
+    tipoDevolucaoSV = document.getElementById('valorTipoDevolucaoSV').value;
+    devolucaoSV = parseFloat(document.getElementById('valorDevolucaoSV').value);
+    tipoAdicionalCargaAnvisa = document.getElementById('valorTipoAdicionalCargaAnvisa').value;
+    adicionalCargaAnvisa = parseFloat(document.getElementById('valorAdicionalCargaAnvisa').value);
     tipoAdicionalCargaIMO = document.getElementById('valorTipoAdicionalCargaIMO').value;
     adicionalCargaIMO = parseFloat(document.getElementById('valorAdicionalCargaIMO').value);
     tipoCarregamentoExpresso = document.getElementById('valorTipoCarregamentoExpresso').value;
@@ -374,9 +405,11 @@ function calcularImpostos()
     estadiaEspecial = parseFloat(document.getElementById('valorEstadiaEspecial').value);
     tipoSobrestadiaCarregamento = document.getElementById('valorTipoSobrestadiaCarregamento').value;
     sobrestadiaCarregamento = parseFloat(document.getElementById('valorSobrestadiaCarregamento').value);
-    //16
+    tipoSobrestadiaRetirada = document.getElementById('valorTipoSobrestadiaRetirada').value;
+    sobrestadiaRetirada = parseFloat(document.getElementById('valorSobrestadiaRetirada').value);
+    //24
 
-    //25 + 26 + 27 + 17 + 2 + 11 + 6 + 16
+    //25 + 26 + 27 + 17 + 2 + 11 + 6 + 24
 
     /*
     -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1314,6 +1347,51 @@ function calcularImpostos()
         }
     }
 
+    //Colocando valor no adicional de devolucao margem esquerda
+    if (tipoDevolucaoMargemEsquerda == "nao")
+    {
+        document.getElementById('valorDevolucaoMargemEsquerda').value = "ISENTO";
+        document.getElementById('valorDevolucaoMargemEsquerda').readOnly = true;
+    }
+    else
+    {
+        if (tipoDevolucaoMargemEsquerda == "sim")
+        {
+            document.getElementById('valorDevolucaoMargemEsquerda').value = 590;
+            document.getElementById('valorDevolucaoMargemEsquerda').readOnly = true;
+        }
+    }
+
+    //Colocando valor no adicional de devolucao SV/PG/CB
+    if (tipoDevolucaoSV == "nao")
+    {
+        document.getElementById('valorDevolucaoSV').value = "ISENTO";
+        document.getElementById('valorDevolucaoSV').readOnly = true;
+    }
+    else
+    {
+        if (tipoDevolucaoSV == "sim")
+        {
+            document.getElementById('valorDevolucaoSV').value = 450;
+            document.getElementById('valorDevolucaoSV').readOnly = true;
+        }
+    }
+
+    //Colocando valor no adicional de carga anvisa
+    if (tipoAdicionalCargaAnvisa == "nao")
+    {
+        document.getElementById('valorAdicionalCargaAnvisa').value = "NÃO APLICÁVEL";
+        document.getElementById('valorAdicionalCargaAnvisa').readOnly = true;
+    }
+    else
+    {
+        if (tipoAdicionalCargaAnvisa == "sim")
+        {
+            document.getElementById('valorAdicionalCargaAnvisa').value = 400;
+            document.getElementById('valorAdicionalCargaAnvisa').readOnly = true;
+        }
+    }
+
     //Colocando valor no adicional de carga IMO
     if (tipoAdicionalCargaIMO == "nao")
     {
@@ -1322,7 +1400,7 @@ function calcularImpostos()
     }
     else
     {
-        (tipoAdicionalCargaIMO == "sim")
+        if (tipoAdicionalCargaIMO == "sim")
         {
             document.getElementById('valorAdicionalCargaIMO').value = 600;
             document.getElementById('valorAdicionalCargaIMO').readOnly = true;
@@ -1346,7 +1424,7 @@ function calcularImpostos()
         {
             if (tipoCarregamentoExpresso == "isento")
             {
-                document.getElementById('valorCarregamentoExpresso').value = "INSENTO COMERCIALMENTE";
+                document.getElementById('valorCarregamentoExpresso').value = "ISENTO COMERCIALMENTE";
                 document.getElementById('valorCarregamentoExpresso').readOnly = true;
             }
         }
@@ -1396,6 +1474,21 @@ function calcularImpostos()
             document.getElementById('valorSobrestadiaCarregamento').readOnly = true;
         }
     }
+
+    //Colocando valor no adicional de sobrestadia de retirada
+    if (tipoSobrestadiaRetirada == "nao")
+    {
+        document.getElementById('valorSobrestadiaRetirada').value = "ISENTO";
+        document.getElementById('valorSobrestadiaRetirada').readOnly = true;
+    }
+    else
+    {
+        if (tipoSobrestadiaRetirada == "sim")
+        {
+            document.getElementById('valorSobrestadiaRetirada').value = 45;
+            document.getElementById('valorSobrestadiaRetirada').readOnly = true;
+        }
+    }
 }
 
 function setMoeda(moeda)
@@ -1428,6 +1521,7 @@ function preencherInputs()
     // document.getElementById('emailResponsavel').value = ""
     // document.getElementById('cargoResponsavel').value = ""
     // document.getElementById('valorDataProposta').value = ""
+    document.getElementById('tipoProposta').value = "Padrão"
     document.getElementById('valorReferenciaProposta').value = "MM"
     // document.getElementById('valorNumeroProposta').value = ""
     // document.getElementById('valorVersaoProposta').value = ""
@@ -1566,6 +1660,12 @@ function preencherInputs()
     // document.getElementById('valorMonitoramentoIsca').value = ""
     document.getElementById('valorTipoEscoltaArmada').value = "nao"
     // document.getElementById('valorEscoltaArmada').value = ""
+    document.getElementById('valorTipoDevolucaoMargemEsquerda').value = "sim"
+    // document.getElementById('valorDevolucaoMargemEsquerda').value = ""
+    document.getElementById('valorTipoDevolucaoSV').value = "sim"
+    // document.getElementById('valorDevolucaoSV').value = ""
+    document.getElementById('valorTipoAdicionalCargaAnvisa').value = "sim"
+    // document.getElementById('valorAdicionalCargaAnvisa').value = ""
     document.getElementById('valorTipoAdicionalCargaIMO').value = "sim"
     // document.getElementById('valorAdicionalCargaIMO').value = ""
     document.getElementById('valorTipoCarregamentoExpresso').value = "sim"
@@ -1576,6 +1676,8 @@ function preencherInputs()
     // document.getElementById('valorEstadiaEspecial').value = ""
     document.getElementById('valorTipoSobrestadiaCarregamento').value = "sim"
     // document.getElementById('valorSobrestadiaCarregamento').value = ""
+    document.getElementById('valorTipoSobrestadiaRetirada').value = "sim"
+    // document.getElementById('valorSobrestadiaRetirada').value = ""
     calcularImpostos();
 }
 

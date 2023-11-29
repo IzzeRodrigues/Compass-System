@@ -544,70 +544,156 @@ function assinaturaFisica($variaveis)
     </tr>
 </table>';
     $mpdf->WriteHTML($adicionais);
-    //LUCAS FAZER CALCULO AQUI!!!!!!!!!!!! 2
-    $valor_sem_adicionais_soma = '<table style="width:100%; border-collapse:collapse;"> 
-    <tr style="background-color:yellow;">
-        <td style=" width: 76.3%; border: 0.5px solid black;  border-top:0;">
-        VALOR DA PROPOSTA (SEM ADICIONAIS SE NECESSÁRIO) 
-        </td>
-        <td style="border: 0.5px solid black; border-left:0;">
-        ' . $valor_proposta . '
-        </td>
-    </tr>
-</table>';
-    $mpdf->WriteHTML($valor_sem_adicionais_soma);
-
+    
     // VARIÁVEIS ADICIONAIS SE NECESSÁRIO:
-    $valor_ajudante = "R$ " . $variaveis['valorAjudantes_operacao'];
+    $valor_total_adicionais = 0;
+    if ($variaveis['valorAjudantes_operacao'] != 0)
+    {
+        $valor_ajudante = "R$ " . $variaveis['valorAjudantes_operacao'];
+        $valor_total_adicionais += $variaveis['valorAjudantes_operacao'];
+    }
+    else
+    {
+        $valor_ajudante = "ISENTO";
+    }
     $seguro_isca = $variaveis['valorUtilizacaoIsca'];
     $monitoramento_isca = $variaveis['valorMonitoramentoIsca'];
     $valor_escolta = $variaveis['valorEscoltaArmada'];
     if ($variaveis['valorTipoFrete'] == "freteAereo") {
         $devolucao_margem_esquerda = "NÃO APLICÁVEL";
     } else {
-        $devolucao_margem_esquerda = "R$ " . 590;
+        if ($variaveis['valorDevolucaoMargemEsquerda'] != "ISENTO")
+        {
+            $devolucao_margem_esquerda = "R$ " . $variaveis['valorDevolucaoMargemEsquerda'];
+            $valor_total_adicionais += $variaveis['valorDevolucaoMargemEsquerda'];
+        }
+        else
+        {
+            $devolucao_margem_esquerda = $variaveis['valorDevolucaoMargemEsquerda'];
+        }
     }
     if ($variaveis['valorTipoFrete'] == "freteAereo") {
         $devolucao_margem_direita = "NÃO APLICÁVEL";
     } else {
-        $devolucao_margem_direita = "R$ " . 450;
+        if ($variaveis['valorDevolucaoSV'] != "ISENTO")
+        {
+            $devolucao_margem_direita = "R$ " . $variaveis['valorDevolucaoSV'];
+            $valor_total_adicionais += $variaveis['valorDevolucaoSV'];
+        }
+        else
+        {
+            $devolucao_margem_direita = $variaveis['valorDevolucaoSV'];
+        }
     }
     if ($variaveis['valorTipoFrete'] == "freteAereo") {
         $adc_anvisa = "NÃO APLICÁVEL";
     } else {
-        $adc_anvisa = "R$ " . 400;
+        if ($variaveis['valorAdicionalCargaAnvisa'] != "NÃO APLICÁVEL")
+        {
+            $adc_anvisa = "R$ " . $variaveis['valorAdicionalCargaAnvisa'];
+            $valor_total_adicionais += $variaveis['valorAdicionalCargaAnvisa'];
+        }
+        else
+        {
+            $adc_anvisa = $variaveis['valorAdicionalCargaAnvisa'];
+        }
     }
-    $adc_imo = "R$ " . $variaveis['valorAdicionalCargaIMO'];
-    $carreg_expresso = "R$ " . $variaveis['valorCarregamentoExpresso'];
-    $valor_cavaloLS = "R$ " . $variaveis['valorUtilizacaoCavaloLS'];
-    $estadia_espec = "R$ " . $variaveis['valorEstadiaEspecial'];
-    $sobrestadia_carreg = "R$ " . $variaveis['valorSobrestadiaCarregamento'];
+    if ($variaveis['valorAdicionalCargaIMO'] != "NÃO APLICÁVEL")
+    {
+        $adc_imo = "R$ " . $variaveis['valorAdicionalCargaIMO'];
+        $valor_total_adicionais += $variaveis['valorAdicionalCargaIMO'];
+    }
+    else
+    {
+        $adc_imo = $variaveis['valorAdicionalCargaIMO'];
+    }
+    if ($variaveis['valorCarregamentoExpresso'] != "NÃO APLICÁVEL")
+    {
+        $carreg_expresso = "R$ " . $variaveis['valorCarregamentoExpresso'];
+        $valor_total_adicionais += $variaveis['valorCarregamentoExpresso'];
+    }
+    else
+    {
+        $carreg_expresso = $variaveis['valorCarregamentoExpresso'];
+    }
+    if ($variaveis['valorUtilizacaoCavaloLS'] != "NÃO APLICÁVEL")
+    {
+        $valor_cavaloLS = "R$ " . $variaveis['valorUtilizacaoCavaloLS'];
+        $valor_total_adicionais += $variaveis['valorUtilizacaoCavaloLS'];
+    }
+    else
+    {
+        $valor_cavaloLS = $variaveis['valorUtilizacaoCavaloLS'];
+    }
+    if ($variaveis['valorEstadiaEspecial'] != "NÃO APLICÁVEL")
+    {
+        $estadia_espec = "R$ " . $variaveis['valorEstadiaEspecial'];
+        $valor_total_adicionais += $variaveis['valorEstadiaEspecial'];
+    }
+    else
+    {
+        $estadia_espec = $variaveis['valorEstadiaEspecial'];
+    }
+    if ($variaveis['valorSobrestadiaCarregamento'] != "NÃO APLICÁVEL")
+    {
+        $sobrestadia_carreg = "R$ " . $variaveis['valorSobrestadiaCarregamento'];
+        $valor_total_adicionais += $variaveis['valorSobrestadiaCarregamento'];
+    }
+    else
+    {
+        $sobrestadia_carreg = $variaveis['valorSobrestadiaCarregamento'];
+    }
     if ($variaveis['valorTipoFrete'] == "freteAereo") {
         $sobrestadia_retirada = "NÃO APLICÁVEL";
     } else {
-        $sobrestadia_retirada = "R$ " . 45;
+        if ($variaveis['valorSobrestadiaRetirada'] != "ISENTO")
+        {
+            $sobrestadia_retirada = "R$ " . $variaveis['valorSobrestadiaRetirada'];
+            $valor_total_adicionais += $variaveis['valorSobrestadiaRetirada'];
+        }
+        else
+        {
+            $sobrestadia_retirada = $variaveis['valorSobrestadiaRetirada'];
+        }
     }
+    if ($valor_ajudante == "ISENTO" && $seguro_isca == "ISENTO" && $monitoramento_isca == "ISENTO" && $valor_escolta == "ISENTO" && $devolucao_margem_esquerda == "ISENTO" && $devolucao_margem_direita == "ISENTO" && $adc_anvisa == "NÃO APLICÁVEL" && $adc_imo == "NÃO APLICÁVEL" && $carreg_expresso == "NÃO APLICÁVEL" && $valor_cavaloLS == "NÃO APLICÁVEL" && $estadia_espec == "NÃO APLICÁVEL" && $sobrestadia_carreg == "NÃO APLICÁVEL" && $sobrestadia_retirada == "ISENTO")
+    {
+        
+        //LUCAS FAZER CALCULO AQUI!!!!!!!!!!!! 2
+        $valor_sem_adicionais_soma = '<table style="width:100%; border-collapse:collapse;"> 
+        <tr style="background-color:yellow;">
+            <td style=" width: 76.3%; border: 0.5px solid black;  border-top:0;">
+            VALOR DA PROPOSTA (SEM ADICIONAIS SE NECESSÁRIO) 
+            </td>
+            <td style="border: 0.5px solid black; border-left:0;">
+            ' . $valor_proposta . '
+            </td>
+        </tr>
+    </table>';
+    $mpdf->WriteHTML($valor_sem_adicionais_soma);
+    }
+
     // CRIANDO TABLE ADICIONAIS SE NECESSÁRIO
     $adicionais_necessario = '<table style="width:100%; border-spacing: 0; border-collapse:colapse; background-color: red; ">
     <tr>
-        <td style="border: 0.5px solid black; font-size: 10px; text-align:center; font-weight:bold; color:white;">
-            ADICIONAIS ### SE NECESSÁRIO ###
-        </td>
+    <td style="border: 0.5px solid black; font-size: 10px; text-align:center; font-weight:bold; color:white;">
+    ADICIONAIS ### SE NECESSÁRIO ###
+    </td>
     </tr>
-</table>
-<table style="width:100%;  border-spacing: 0; border-collapse:colapse; border:0.5px solid black;">
+    </table>
+    <table style="width:100%;  border-spacing: 0; border-collapse:colapse; border:0.5px solid black;">
     <tr>
-        <td  colspan="2" style="border: 0.5px solid black;  border-top:0; border-left:0;">
-        Ajudantes - (por homem)					
-        </td>
-        <td  style="border: 0.5px solid black; border-top:0; border-left:0; width:20%;">
-        ' . $valor_ajudante . '
-        </td>
+    <td  colspan="2" style="border: 0.5px solid black;  border-top:0; border-left:0;">
+    Ajudantes - (por homem)					
+    </td>
+    <td  style="border: 0.5px solid black; border-top:0; border-left:0; width:20%;">
+    ' . $valor_ajudante . '
+    </td>
     </tr>
     <tr>
-        <td rowspan="2" style="width:10%; background-color:red; color:white; font-weight:bold; border: 0.5px solid black;  border-top:0; border-left:0;">
-        SEGURO <br/> ACL CARGO
-        </td>
+    <td rowspan="2" style="width:10%; background-color:red; color:white; font-weight:bold; border: 0.5px solid black;  border-top:0; border-left:0;">
+    SEGURO <br/> ACL CARGO
+    </td>
         <td  style="border: 0.5px solid black;  border-top:0; border-left:0; ">
         Utilização de " ISCA " - por container / veiculo (Até 3 milhões de reais)				
         </td>
@@ -704,21 +790,25 @@ function assinaturaFisica($variaveis)
         </td>
     </tr>
 </table>';
-    $mpdf->WriteHTML($adicionais_necessario);
+    if ($valor_ajudante != "ISENTO" || $seguro_isca != "ISENTO" || $monitoramento_isca != "ISENTO" || $valor_escolta != "ISENTO" || $devolucao_margem_esquerda != "ISENTO" || $devolucao_margem_direita != "ISENTO" || $adc_anvisa != "NÃO APLICÁVEL" || $adc_imo != "NÃO APLICÁVEL" || $carreg_expresso != "NÃO APLICÁVEL" || $valor_cavaloLS != "NÃO APLICÁVEL" || $estadia_espec != "NÃO APLICÁVEL" || $sobrestadia_carreg != "NÃO APLICÁVEL" || $sobrestadia_retirada != "ISENTO")
+    {
+        $mpdf->WriteHTML($adicionais_necessario);
 
-    $valor_proposta_completa = '90.000,00'; //LUCAS FAZER CALCULO AQUI!!!!!!!!!!!!
-    $valor_total = '<table style=" background-color:yellow; width:100%; border-spacing: 0; border-collapse:colapse; border:0.5px solid black;">
-    <tr>
-        <td style="width:80%; border-top:0; border-right: 0.5px solid black;  border-left: 0.5px solid black; font-weight:bold;">
-            Valor total da proposta
-        </td>
-        <td style="border-top:0; border-right: 0.5px solid black;  border-left: 0.5px solid black; font-weight:bold;">
-            R$' . $valor_proposta_completa . '
-        </td>
-    </tr>
-</table>
-';
-    $mpdf->WriteHTML($valor_total);
+        $valor_proposta_completa = round((floatval($variaveis['valorTotalPrest']) + floatval($valor_total_adicionais)), 2); //LUCAS FAZER CALCULO AQUI!!!!!!!!!!!!
+        $valor_total = '<table style=" background-color:yellow; width:100%; border-spacing: 0; border-collapse:colapse; border:0.5px solid black;">
+            <tr>
+                <td style="width:80%; border-top:0; border-right: 0.5px solid black;  border-left: 0.5px solid black; font-weight:bold;">
+                    Valor total da proposta
+                </td>
+                <td style="border-top:0; border-right: 0.5px solid black;  border-left: 0.5px solid black; font-weight:bold;">
+                    R$ ' . $valor_proposta_completa . '
+                </td>
+            </tr>
+        </table>
+        ';
+        $mpdf->WriteHTML($valor_total);
+    }
+
 
     // LOGOTIPOS PARCEIROS
     $parceiros = '<table style="border: 0.5px solid black; margin:0; padding:0; text-align:center;" width="100%">
@@ -1234,314 +1324,402 @@ function assinaturaDigital($variaveis)
         </table>';
     $mpdf->WriteHTML($carga);
 
-    // VARIÁVEIS ADICIONAIS:
-    if ($variaveis['valorRCFDC_operacao'] == 0) {
-        $porc_seguro = $variaveis['porcentagemRCFDC_operacao'] + $variaveis['porcentagemRCTRC_operacao'];
-    } else {
-        $porc_seguro = "R$ " . $variaveis['valorRCFDC_operacao'] + $variaveis['valorRCTRC_operacao'];
-    }
-    $valor_gris = 'INCLUSO';
-    $cobranca_dta_full = 'NÃO APLICÁVEL';
-    if ($variaveis['valorDTA_GVB'] == 0) {
-        $cobranca_dta_di_expo = "ISENTO OU NÃO APLICÁVEL";
-    } else {
-        $cobranca_dta_di_expo = "R$ " . $variaveis['valorDTA_GVB'];
-    }
-    if ($variaveis['valorTipoFrete'] == "freteAereo") {
-        $cobranca_estacionamento = "INSENTO";
-    } else {
-        $cobranca_estacionamento = "R$ " . $variaveis['valorEstacionamento_operacao'];
-    }
-    $taxa_dacte = 'ISENTO';
-    if ($variaveis['valorICMS_operacao'] == 0) {
-        $valor_icms = "CONF. LEGISLAÇÃO";
-    } else {
-        $valor_icms = "R$ " . $variaveis['valorICMS_operacao'];
-    }
-    if ($variaveis['valorTotalImpostoSeguro'] == 0) {
-        $valor_proposta = "Frete+ICMS+Pedágio+Seguros";
-    } else {
-        $valor_proposta = "R$ " . $variaveis['valorTotalPrest'];
-    }
-    // CRIANDO TABLE ADICIONAIS:
-    $adicionais = '<table style="width:100%; border-spacing: 0; border-collapse:colapse; background-color: red; ">
-    <tr>
-        <td style="border: 0.5px solid black; font-size: 10px; text-align:center; font-weight:bold; color:white;">
-            ADICIONAIS
-        </td>
-    </tr>
-</table>
-<table style="width:100%;  border-spacing: 0; border-collapse:colapse; border:0.5px solid black;">
-    <tr>
-        <td rowspan="2" style="width:10%; background-color:red; color:white; font-weight:bold; border: 0.5px solid black;  border-top:0; border-left:0;">
-        SEGURO <br/> ACL CARGO
-        </td>
-        <td  style="border: 0.5px solid black;  border-top:0; border-left:0; ">
-        Seguro  - 0,11% Cálc. s/Vlr Carga + Impostos Susp. (DTA) + Container (*) - POR OPERAÇÃO (DTA/DI)				
-        </td>
-        <td  style="border: 0.5px solid black;  border-top:0; border-left:0;">
-        ' . $porc_seguro . '
-        </td>
-    </tr>
-    <tr>
-        <td  style="border: 0.5px solid black;  border-top:0; border-left:0;">
-            GRIS - Cálc. s/Vlr Carga + Impostos Suspensos (DTA) + Casco do Container				
-        </td>
-        <td  style="border: 0.5px solid black; border-top:0; border-left:0;">
-        ' . $valor_gris . '
-        </td>
-    </tr>
-    <tr>
-        <td>
-        </td>
-        <td  style="border: 0.5px solid black;  border-top:0; border-left:0;">
-        Cobrança de DTA FULL CONTAINER				
-        </td>
-        <td  style="border: 0.5px solid black; border-top:0; border-left:0;">
-       ' . $cobranca_dta_full . '
-        </td>
-    </tr>
-    <tr>
-        <td>
-        </td>
-        <td  style="border: 0.5px solid black;  border-top:0; border-left:0;">
-        Cobrança de DTA/DI/EXPO LCL em GRU/VCP/GYN/BSB/CFN/GIG/CWB (Por Processo)				
-        </td>
-        <td  style="border: 0.5px solid black; border-top:0; border-left:0;">
-        ' . $cobranca_dta_di_expo . '
-        </td>
-    </tr>
-    <tr>
-        <td>
-        </td>
-        <td  style="border: 0.5px solid black;  border-top:0; border-left:0;">
-        Estacionamento em GRU/VCP/GYN/BSB/CFN/GIG/CWB por período de 03 Horas  				
-        </td>
-        <td  style="border: 0.5px solid black; border-top:0; border-left:0;">
-        ' . $cobranca_estacionamento . '
-        </td>
-    </tr>
-    <tr>
-        <td>
-        </td>
-        <td  style="border: 0.5px solid black;  border-top:0; border-left:0;">
-        Taxa de emissão de DACTE				
-        </td>
-        <td  style="border: 0.5px solid black; border-top:0; border-left:0;">
-        ' . $taxa_dacte . ' 
-        </td>
-    </tr>
-    <tr>
-        <td>
-        </td>
-        <td  style="border: 0.5px solid black;  border-top:0; border-left:0;">
-        ICMS (7%) - Repasse Oficial			
-        </td>
-        <td>
-         ' . $valor_icms . ' 
-        </td>
-    </tr>
+        // VARIÁVEIS ADICIONAIS:
+        if ($variaveis['valorRCFDC_operacao'] == 0) {
+            $porc_seguro = $variaveis['porcentagemRCFDC_operacao'] + $variaveis['porcentagemRCTRC_operacao'];
+        } else {
+            $porc_seguro = "R$ " . $variaveis['valorRCFDC_operacao'] + $variaveis['valorRCTRC_operacao'];
+        }
+        $valor_gris = 'INCLUSO';
+        $cobranca_dta_full = 'NÃO APLICÁVEL';
+        if ($variaveis['valorDTA_GVB'] == 0) {
+            $cobranca_dta_di_expo = "ISENTO OU NÃO APLICÁVEL";
+        } else {
+            $cobranca_dta_di_expo = "R$ " . $variaveis['valorDTA_GVB'];
+        }
+        if ($variaveis['valorTipoFrete'] == "freteAereo") {
+            $cobranca_estacionamento = "INSENTO";
+        } else {
+            $cobranca_estacionamento = "R$ " . $variaveis['valorEstacionamento_operacao'];
+        }
+        $taxa_dacte = 'ISENTO';
+        if ($variaveis['valorICMS_operacao'] == 0) {
+            $valor_icms = "CONF. LEGISLAÇÃO";
+        } else {
+            $valor_icms = "R$ " . $variaveis['valorICMS_operacao'];
+        }
+        if ($variaveis['valorTotalImpostoSeguro'] == 0) {
+            $valor_proposta = "Frete+ICMS+Pedágio+Seguros";
+        } else {
+            $valor_proposta = "R$ " . $variaveis['valorTotalPrest'];
+        }
+        // CRIANDO TABLE ADICIONAIS:
+        $adicionais = '<table style="width:100%; border-spacing: 0; border-collapse:colapse; background-color: red; ">
+        <tr>
+            <td style="border: 0.5px solid black; font-size: 10px; text-align:center; font-weight:bold; color:white;">
+                ADICIONAIS
+            </td>
+        </tr>
+    </table>
+    <table style="width:100%;  border-spacing: 0; border-collapse:colapse; border:0.5px solid black;">
+        <tr>
+            <td rowspan="2" style="width:10%; background-color:red; color:white; font-weight:bold; border: 0.5px solid black;  border-top:0; border-left:0;">
+            SEGURO <br/> ACL CARGO
+            </td>
+            <td  style="border: 0.5px solid black;  border-top:0; border-left:0; ">
+            Seguro  - 0,11% Cálc. s/Vlr Carga + Impostos Susp. (DTA) + Container (*) - POR OPERAÇÃO (DTA/DI)				
+            </td>
+            <td  style="border: 0.5px solid black;  border-top:0; border-left:0;">
+            ' . $porc_seguro . '
+            </td>
+        </tr>
+        <tr>
+            <td  style="border: 0.5px solid black;  border-top:0; border-left:0;">
+                GRIS - Cálc. s/Vlr Carga + Impostos Suspensos (DTA) + Casco do Container				
+            </td>
+            <td  style="border: 0.5px solid black; border-top:0; border-left:0;">
+            ' . $valor_gris . '
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td  style="border: 0.5px solid black;  border-top:0; border-left:0;">
+            Cobrança de DTA FULL CONTAINER				
+            </td>
+            <td  style="border: 0.5px solid black; border-top:0; border-left:0;">
+           ' . $cobranca_dta_full . '
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td  style="border: 0.5px solid black;  border-top:0; border-left:0;">
+            Cobrança de DTA/DI/EXPO LCL em GRU/VCP/GYN/BSB/CFN/GIG/CWB (Por Processo)				
+            </td>
+            <td  style="border: 0.5px solid black; border-top:0; border-left:0;">
+            ' . $cobranca_dta_di_expo . '
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td  style="border: 0.5px solid black;  border-top:0; border-left:0;">
+            Estacionamento em GRU/VCP/GYN/BSB/CFN/GIG/CWB por período de 03 Horas  				
+            </td>
+            <td  style="border: 0.5px solid black; border-top:0; border-left:0;">
+            ' . $cobranca_estacionamento . '
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td  style="border: 0.5px solid black;  border-top:0; border-left:0;">
+            Taxa de emissão de DACTE				
+            </td>
+            <td  style="border: 0.5px solid black; border-top:0; border-left:0;">
+            ' . $taxa_dacte . ' 
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td  style="border: 0.5px solid black;  border-top:0; border-left:0;">
+            ICMS (7%) - Repasse Oficial			
+            </td>
+            <td>
+             ' . $valor_icms . ' 
+            </td>
+        </tr>
+    </table>';
+        $mpdf->WriteHTML($adicionais);
+        
+        // VARIÁVEIS ADICIONAIS SE NECESSÁRIO:
+        $valor_total_adicionais = 0;
+        if ($variaveis['valorAjudantes_operacao'] != 0)
+        {
+            $valor_ajudante = "R$ " . $variaveis['valorAjudantes_operacao'];
+            $valor_total_adicionais += $variaveis['valorAjudantes_operacao'];
+        }
+        else
+        {
+            $valor_ajudante = "ISENTO";
+        }
+        $seguro_isca = $variaveis['valorUtilizacaoIsca'];
+        $monitoramento_isca = $variaveis['valorMonitoramentoIsca'];
+        $valor_escolta = $variaveis['valorEscoltaArmada'];
+        if ($variaveis['valorTipoFrete'] == "freteAereo") {
+            $devolucao_margem_esquerda = "NÃO APLICÁVEL";
+        } else {
+            if ($variaveis['valorDevolucaoMargemEsquerda'] != "ISENTO")
+            {
+                $devolucao_margem_esquerda = "R$ " . $variaveis['valorDevolucaoMargemEsquerda'];
+                $valor_total_adicionais += $variaveis['valorDevolucaoMargemEsquerda'];
+            }
+            else
+            {
+                $devolucao_margem_esquerda = $variaveis['valorDevolucaoMargemEsquerda'];
+            }
+        }
+        if ($variaveis['valorTipoFrete'] == "freteAereo") {
+            $devolucao_margem_direita = "NÃO APLICÁVEL";
+        } else {
+            if ($variaveis['valorDevolucaoSV'] != "ISENTO")
+            {
+                $devolucao_margem_direita = "R$ " . $variaveis['valorDevolucaoSV'];
+                $valor_total_adicionais += $variaveis['valorDevolucaoSV'];
+            }
+            else
+            {
+                $devolucao_margem_direita = $variaveis['valorDevolucaoSV'];
+            }
+        }
+        if ($variaveis['valorTipoFrete'] == "freteAereo") {
+            $adc_anvisa = "NÃO APLICÁVEL";
+        } else {
+            if ($variaveis['valorAdicionalCargaAnvisa'] != "NÃO APLICÁVEL")
+            {
+                $adc_anvisa = "R$ " . $variaveis['valorAdicionalCargaAnvisa'];
+                $valor_total_adicionais += $variaveis['valorAdicionalCargaAnvisa'];
+            }
+            else
+            {
+                $adc_anvisa = $variaveis['valorAdicionalCargaAnvisa'];
+            }
+        }
+        if ($variaveis['valorAdicionalCargaIMO'] != "NÃO APLICÁVEL")
+        {
+            $adc_imo = "R$ " . $variaveis['valorAdicionalCargaIMO'];
+            $valor_total_adicionais += $variaveis['valorAdicionalCargaIMO'];
+        }
+        else
+        {
+            $adc_imo = $variaveis['valorAdicionalCargaIMO'];
+        }
+        if ($variaveis['valorCarregamentoExpresso'] != "NÃO APLICÁVEL")
+        {
+            $carreg_expresso = "R$ " . $variaveis['valorCarregamentoExpresso'];
+            $valor_total_adicionais += $variaveis['valorCarregamentoExpresso'];
+        }
+        else
+        {
+            $carreg_expresso = $variaveis['valorCarregamentoExpresso'];
+        }
+        if ($variaveis['valorUtilizacaoCavaloLS'] != "NÃO APLICÁVEL")
+        {
+            $valor_cavaloLS = "R$ " . $variaveis['valorUtilizacaoCavaloLS'];
+            $valor_total_adicionais += $variaveis['valorUtilizacaoCavaloLS'];
+        }
+        else
+        {
+            $valor_cavaloLS = $variaveis['valorUtilizacaoCavaloLS'];
+        }
+        if ($variaveis['valorEstadiaEspecial'] != "NÃO APLICÁVEL")
+        {
+            $estadia_espec = "R$ " . $variaveis['valorEstadiaEspecial'];
+            $valor_total_adicionais += $variaveis['valorEstadiaEspecial'];
+        }
+        else
+        {
+            $estadia_espec = $variaveis['valorEstadiaEspecial'];
+        }
+        if ($variaveis['valorSobrestadiaCarregamento'] != "NÃO APLICÁVEL")
+        {
+            $sobrestadia_carreg = "R$ " . $variaveis['valorSobrestadiaCarregamento'];
+            $valor_total_adicionais += $variaveis['valorSobrestadiaCarregamento'];
+        }
+        else
+        {
+            $sobrestadia_carreg = $variaveis['valorSobrestadiaCarregamento'];
+        }
+        if ($variaveis['valorTipoFrete'] == "freteAereo") {
+            $sobrestadia_retirada = "NÃO APLICÁVEL";
+        } else {
+            if ($variaveis['valorSobrestadiaRetirada'] != "ISENTO")
+            {
+                $sobrestadia_retirada = "R$ " . $variaveis['valorSobrestadiaRetirada'];
+                $valor_total_adicionais += $variaveis['valorSobrestadiaRetirada'];
+            }
+            else
+            {
+                $sobrestadia_retirada = $variaveis['valorSobrestadiaRetirada'];
+            }
+        }
+        if ($valor_ajudante == "ISENTO" && $seguro_isca == "ISENTO" && $monitoramento_isca == "ISENTO" && $valor_escolta == "ISENTO" && $devolucao_margem_esquerda == "ISENTO" && $devolucao_margem_direita == "ISENTO" && $adc_anvisa == "NÃO APLICÁVEL" && $adc_imo == "NÃO APLICÁVEL" && $carreg_expresso == "NÃO APLICÁVEL" && $valor_cavaloLS == "NÃO APLICÁVEL" && $estadia_espec == "NÃO APLICÁVEL" && $sobrestadia_carreg == "NÃO APLICÁVEL" && $sobrestadia_retirada == "ISENTO")
+        {
+            
+            //LUCAS FAZER CALCULO AQUI!!!!!!!!!!!! 2
+            $valor_sem_adicionais_soma = '<table style="width:100%; border-collapse:collapse;"> 
+            <tr style="background-color:yellow;">
+                <td style=" width: 76.3%; border: 0.5px solid black;  border-top:0;">
+                VALOR DA PROPOSTA (SEM ADICIONAIS SE NECESSÁRIO) 
+                </td>
+                <td style="border: 0.5px solid black; border-left:0;">
+                ' . $valor_proposta . '
+                </td>
+            </tr>
+        </table>';
+        $mpdf->WriteHTML($valor_sem_adicionais_soma);
+        }
     
-</table>';
-    $mpdf->WriteHTML($adicionais);
-    //LUCAS FAZER CALCULO AQUI!!!!!!!!!!!!
-    $valor_sem_adicionais_soma = '<table style="width:100%; border-collapse:collapse;">
-    <tr style="background-color:yellow;">
-        <td style=" width: 76.3%; border: 0.5px solid black;  border-top:0;">
-        VALOR DA PROPOSTA (SEM ADICIONAIS SE NECESSÁRIO) 
-        </td>
-        <td style="border: 0.5px solid black; border-left:0;">
-        ' . $valor_proposta . '
-        </td>
-    </tr>
-</table>';
-    $mpdf->WriteHTML($valor_sem_adicionais_soma);
-
-    // VARIÁVEIS ADICIONAIS SE NECESSÁRIO:
-    $valor_ajudante = "R$ " . $variaveis['valorAjudantes_operacao'];
-    $seguro_isca = $variaveis['valorUtilizacaoIsca'];
-    $monitoramento_isca = $variaveis['valorMonitoramentoIsca'];
-    $valor_escolta = $variaveis['valorEscoltaArmada'];
-    if ($variaveis['valorTipoFrete'] == "freteAereo") {
-        $devolucao_margem_esquerda = "NÃO APLICÁVEL";
-    } else {
-        $devolucao_margem_esquerda = "R$ " . 590;
-    }
-    if ($variaveis['valorTipoFrete'] == "freteAereo") {
-        $devolucao_margem_direita = "NÃO APLICÁVEL";
-    } else {
-        $devolucao_margem_direita = "R$ " . 450;
-    }
-    if ($variaveis['valorTipoFrete'] == "freteAereo") {
-        $adc_anvisa = "NÃO APLICÁVEL";
-    } else {
-        $adc_anvisa = "R$ " . 400;
-    }
-    $adc_imo = "R$ " . $variaveis['valorAdicionalCargaIMO'];
-    $carreg_expresso = "R$ " . $variaveis['valorCarregamentoExpresso'];
-    $valor_cavaloLS = "R$ " . $variaveis['valorUtilizacaoCavaloLS'];
-    $estadia_espec = "R$ " . $variaveis['valorEstadiaEspecial'];
-    $sobrestadia_carreg = "R$ " . $variaveis['valorSobrestadiaCarregamento'];
-    if ($variaveis['valorTipoFrete'] == "freteAereo") {
-        $sobrestadia_retirada = "NÃO APLICÁVEL";
-    } else {
-        $sobrestadia_retirada = "R$ " . 45;
-    }
-    // CRIANDO TABLE ADICIONAIS SE NECESSÁRIO
-    $adicionais_necessario = '<table style="width:100%; border-spacing: 0; border-collapse:colapse; background-color: red; ">
-    <tr>
+        // CRIANDO TABLE ADICIONAIS SE NECESSÁRIO
+        $adicionais_necessario = '<table style="width:100%; border-spacing: 0; border-collapse:colapse; background-color: red; ">
+        <tr>
         <td style="border: 0.5px solid black; font-size: 10px; text-align:center; font-weight:bold; color:white;">
-            ADICIONAIS ### SE NECESSÁRIO ###
+        ADICIONAIS ### SE NECESSÁRIO ###
         </td>
-    </tr>
-</table>
-<table style="width:100%;  border-spacing: 0; border-collapse:colapse; border:0.5px solid black;">
-    <tr>
+        </tr>
+        </table>
+        <table style="width:100%;  border-spacing: 0; border-collapse:colapse; border:0.5px solid black;">
+        <tr>
         <td  colspan="2" style="border: 0.5px solid black;  border-top:0; border-left:0;">
         Ajudantes - (por homem)					
         </td>
         <td  style="border: 0.5px solid black; border-top:0; border-left:0; width:20%;">
         ' . $valor_ajudante . '
         </td>
-    </tr>
-    <tr>
+        </tr>
+        <tr>
         <td rowspan="2" style="width:10%; background-color:red; color:white; font-weight:bold; border: 0.5px solid black;  border-top:0; border-left:0;">
         SEGURO <br/> ACL CARGO
         </td>
-        <td  style="border: 0.5px solid black;  border-top:0; border-left:0; ">
-        Utilização de " ISCA " - por container / veiculo (Até 3 milhões de reais)				
-        </td>
-        <td  style="border: 0.5px solid black;  border-top:0; border-left:0;">
-        ' . $seguro_isca . '
-        </td>
-    </tr>
-    <tr>
-        <td  style="border: 0.5px solid black;  border-top:0; border-left:0;">
-        Monitoramento de " ISCA " - por container/veiculo  (Até 3 milhões de reais)
-        </td>
-        <td  style="border: 0.5px solid black; border-top:0; border-left:0;">
-        ' . $monitoramento_isca . '
-        </td>
-    </tr>
-    <tr>
-        <td  colspan="2" style="border: 0.5px solid black;  border-top:0; border-left:0;">
-        Escolta armada de carga (Padrão: 01 escolta armada para até 02 caminhões): 					
-        </td>
-        <td  style="border: 0.5px solid black; border-top:0; border-left:0; ">
-        ' . $valor_escolta . ' 
-        </td>
-    </tr>
-    <tr>
-        <td  colspan="2" style="border: 0.5px solid black;  border-top:0; border-left:0;">
-        Adic. de devolução/coleta/carregamento (por operaçao) no Guarujá (Margem Esquerda) ou Itaguaí					
-        </td>
-        <td  style="border: 0.5px solid black; border-top:0; border-left:0; ">
-        ' . $devolucao_margem_esquerda . ' 
-        </td>
-    </tr>
-    <tr>
-        <td  colspan="2" style="border: 0.5px solid black;  border-top:0; border-left:0;">
-        Adic. de devolução/coleta/carregamento (por operação) de containers em Cubatão, São Vicente ou Praia Grande					
-        </td>
-        <td  style="border: 0.5px solid black; border-top:0; border-left:0; ">
-        ' . $devolucao_margem_direita . ' 
-        </td>
-    </tr>
-    <tr>
-        <td  colspan="2" style="border: 0.5px solid black;  border-top:0; border-left:0;">
-        Adicional para cargas ANVISA (por veículo)					
-        </td>
-        <td  style="border: 0.5px solid black; border-top:0; border-left:0; ">
-        ' . $adc_anvisa . '
-        </td>
-    </tr>
-    <tr>
-        <td  colspan="2" style="border: 0.5px solid black;  border-top:0; border-left:0;">
-        Adicional para cargo IMO (Por processo)					
-        </td>
-        <td  style="border: 0.5px solid black; border-top:0; border-left:0; ">
-        ' . $adc_imo . '
-        </td>
-    </tr>
-    <tr>
-        <td  colspan="2" style="border: 0.5px solid black;  border-top:0; border-left:0;">
-        Carregamento Expresso (com antecedência menor do que 24h conf. item 9 de observações gerais)					
-        </td>
-        <td  style="border: 0.5px solid black; border-top:0; border-left:0; ">
-        ' . $carreg_expresso . '
-        </td>
-    </tr>
-    <tr>
-        <td  colspan="2" style="border: 0.5px solid black;  border-top:0; border-left:0;">
-        Cavalo LS (p/ container 20 e 40` de 25 Acima de 30 tons até 32 tons					
-        </td>
-        <td  style="border: 0.5px solid black; border-top:0; border-left:0; ">
-        ' . $valor_cavaloLS . ' 
-        </td>
-    </tr>
-    <tr>
-        <td  colspan="2" style="border: 0.5px solid black;  border-top:0; border-left:0;">
-        Estadia especial  (período de 24h) para desembaraço sobre rodas 					
-        </td>
-        <td  style="border: 0.5px solid black; border-top:0; border-left:0; ">
-        ' . $estadia_espec . '
-        </td>
-    </tr>
-    <tr>
-        <td  colspan="2" style="border: 0.5px solid black;  border-top:0; border-left:0; ">
-        Sobrestadia no carregamento, desova, descarga ou estufagem  - Livre por 6hs - após será cobrado o seguinte valor a cada hora
-        </td>
-        <td  style="border: 0.5px solid black; border-top:0; border-left:0; ">
-        ' . $sobrestadia_carreg . '
-        </td>
-    </tr>
-    <tr>
-        <td  colspan="2" style="border: 0.5px solid black;  border-top:0; border-left:0;">
-        Sobrestadia na retirada/devol. de container vazio devido falta de autorização para limpeza ou reparo - Livre por 4 horas - após (por hora)					
-        </td>
-        <td  style="border: 0.5px solid black; border-top:0; border-left:0; ">
-        ' . $sobrestadia_retirada . ' 
-        </td>
-    </tr>
-</table>';
-    $mpdf->WriteHTML($adicionais_necessario);
-
-    $valor_proposta_completa = '90.000,00'; //LUCAS FAZER CALCULO AQUI!!!!!!!!!!!!
-    $valor_total = '<table style=" background-color:yellow; width:100%; border-spacing: 0; border-collapse:colapse; border:0.5px solid black;">
-    <tr>
-        <td style="width:80%; border-top:0; border-right: 0.5px solid black;  border-left: 0.5px solid black; font-weight:bold;">
-            Valor total da proposta
-        </td>
-        <td style="border-top:0; border-right: 0.5px solid black;  border-left: 0.5px solid black; font-weight:bold;">
-            R$' . $valor_proposta_completa . '
-        </td>
-    </tr>
-</table>
-';
-    $mpdf->WriteHTML($valor_total);
-
-
-    // LOGOTIPOS PARCEIROS
-    $parceiros = '<table style="border: 0.5px solid black; margin:0; padding:0; text-align:center;" width="100%">
-    <tr>
-        <td style="margin:0; padding:0;">
-            <img width="8%" src="./anvisa.jpg"/>
-        </td>
-        <td style="margin:0; padding:0;"> 
-            <img width="8%" src="./eb.jpg"/>
-        </td>
-        <td style="margin:0; padding:0;">
-            <img width="18%" src="./sompo.jpg"/>
-        </td>
-        <td style="margin:0; padding:0;">
-            <img width="8%" src="./ibama.jpg"/>
-        </td>
-        <td style="margin:0; padding:0;">
-            <img width="7%" src="./pf.jpg"/>
-        </td>
-    </tr>
-</table>';
-    $mpdf->WriteHTML($parceiros);
+            <td  style="border: 0.5px solid black;  border-top:0; border-left:0; ">
+            Utilização de " ISCA " - por container / veiculo (Até 3 milhões de reais)				
+            </td>
+            <td  style="border: 0.5px solid black;  border-top:0; border-left:0;">
+            ' . $seguro_isca . '
+            </td>
+        </tr>
+        <tr>
+            <td  style="border: 0.5px solid black;  border-top:0; border-left:0;">
+            Monitoramento de " ISCA " - por container/veiculo  (Até 3 milhões de reais)
+            </td>
+            <td  style="border: 0.5px solid black; border-top:0; border-left:0;">
+            ' . $monitoramento_isca . '
+            </td>
+        </tr>
+        <tr>
+            <td  colspan="2" style="border: 0.5px solid black;  border-top:0; border-left:0;">
+            Escolta armada de carga (Padrão: 01 escolta armada para até 02 caminhões): 					
+            </td>
+            <td  style="border: 0.5px solid black; border-top:0; border-left:0; ">
+            ' . $valor_escolta . ' 
+            </td>
+        </tr>
+        <tr>
+            <td  colspan="2" style="border: 0.5px solid black;  border-top:0; border-left:0;">
+            Adic. de devolução/coleta/carregamento (por operaçao) no Guarujá (Margem Esquerda) ou Itaguaí					
+            </td>
+            <td  style="border: 0.5px solid black; border-top:0; border-left:0; ">
+            ' . $devolucao_margem_esquerda . ' 
+            </td>
+        </tr>
+        <tr>
+            <td  colspan="2" style="border: 0.5px solid black;  border-top:0; border-left:0;">
+            Adic. de devolução/coleta/carregamento (por operação) de containers em Cubatão, São Vicente ou Praia Grande					
+            </td>
+            <td  style="border: 0.5px solid black; border-top:0; border-left:0; ">
+            ' . $devolucao_margem_direita . ' 
+            </td>
+        </tr>
+        <tr>
+            <td  colspan="2" style="border: 0.5px solid black;  border-top:0; border-left:0;">
+            Adicional para cargas ANVISA (por veículo)					
+            </td>
+            <td  style="border: 0.5px solid black; border-top:0; border-left:0; ">
+            ' . $adc_anvisa . '
+            </td>
+        </tr>
+        <tr>
+            <td  colspan="2" style="border: 0.5px solid black;  border-top:0; border-left:0;">
+            Adicional para cargo IMO (Por processo)					
+            </td>
+            <td  style="border: 0.5px solid black; border-top:0; border-left:0; ">
+            ' . $adc_imo . '
+            </td>
+        </tr>
+        <tr>
+            <td  colspan="2" style="border: 0.5px solid black;  border-top:0; border-left:0;">
+            Carregamento Expresso (com antecedência menor do que 24h conf. item 9 de observações gerais)					
+            </td>
+            <td  style="border: 0.5px solid black; border-top:0; border-left:0; ">
+            ' . $carreg_expresso . '
+            </td>
+        </tr>
+        <tr>
+            <td  colspan="2" style="border: 0.5px solid black;  border-top:0; border-left:0;">
+            Cavalo LS (p/ container 20 e 40` de 25 Acima de 30 tons até 32 tons					
+            </td>
+            <td  style="border: 0.5px solid black; border-top:0; border-left:0; ">
+            ' . $valor_cavaloLS . ' 
+            </td>
+        </tr>
+        <tr>
+            <td  colspan="2" style="border: 0.5px solid black;  border-top:0; border-left:0;">
+            Estadia especial  (período de 24h) para desembaraço sobre rodas 					
+            </td>
+            <td  style="border: 0.5px solid black; border-top:0; border-left:0; ">
+            ' . $estadia_espec . '
+            </td>
+        </tr>
+        <tr>
+            <td  colspan="2" style="border: 0.5px solid black;  border-top:0; border-left:0; ">
+            Sobrestadia no carregamento, desova, descarga ou estufagem  - Livre por 6hs - após será cobrado o seguinte valor a cada hora
+            </td>
+            <td  style="border: 0.5px solid black; border-top:0; border-left:0; ">
+            ' . $sobrestadia_carreg . '
+            </td>
+        </tr>
+        <tr>
+            <td  colspan="2" style="border: 0.5px solid black;  border-top:0; border-left:0;">
+            Sobrestadia na retirada/devol. de container vazio devido falta de autorização para limpeza ou reparo - Livre por 4 horas - após (por hora)					
+            </td>
+            <td  style="border: 0.5px solid black; border-top:0; border-left:0; ">
+            ' . $sobrestadia_retirada . ' 
+            </td>
+        </tr>
+    </table>';
+        if ($valor_ajudante != "ISENTO" || $seguro_isca != "ISENTO" || $monitoramento_isca != "ISENTO" || $valor_escolta != "ISENTO" || $devolucao_margem_esquerda != "ISENTO" || $devolucao_margem_direita != "ISENTO" || $adc_anvisa != "NÃO APLICÁVEL" || $adc_imo != "NÃO APLICÁVEL" || $carreg_expresso != "NÃO APLICÁVEL" || $valor_cavaloLS != "NÃO APLICÁVEL" || $estadia_espec != "NÃO APLICÁVEL" || $sobrestadia_carreg != "NÃO APLICÁVEL" || $sobrestadia_retirada != "ISENTO")
+        {
+            $mpdf->WriteHTML($adicionais_necessario);
+    
+            $valor_proposta_completa = round((floatval($variaveis['valorTotalPrest']) + floatval($valor_total_adicionais)), 2); //LUCAS FAZER CALCULO AQUI!!!!!!!!!!!!
+            $valor_total = '<table style=" background-color:yellow; width:100%; border-spacing: 0; border-collapse:colapse; border:0.5px solid black;">
+                <tr>
+                    <td style="width:80%; border-top:0; border-right: 0.5px solid black;  border-left: 0.5px solid black; font-weight:bold;">
+                        Valor total da proposta
+                    </td>
+                    <td style="border-top:0; border-right: 0.5px solid black;  border-left: 0.5px solid black; font-weight:bold;">
+                        R$ ' . $valor_proposta_completa . '
+                    </td>
+                </tr>
+            </table>
+            ';
+            $mpdf->WriteHTML($valor_total);
+        }
+    
+    
+        // LOGOTIPOS PARCEIROS
+        $parceiros = '<table style="border: 0.5px solid black; margin:0; padding:0; text-align:center;" width="100%">
+        <tr>
+            <td style="margin:0; padding:0;">
+                <img width="8%" src="./anvisa.jpg"/>
+            </td>
+            <td style="margin:0; padding:0;"> 
+                <img width="8%" src="./eb.jpg"/>
+            </td>
+            <td style="margin:0; padding:0;">
+                <img width="18%" src="./sompo.jpg"/>
+            </td>
+            <td style="margin:0; padding:0;">
+                <img width="8%" src="./ibama.jpg"/>
+            </td>
+            <td style="margin:0; padding:0;">
+                <img width="7%" src="./pf.jpg"/>
+            </td>
+        </tr>
+    </table>';
+        $mpdf->WriteHTML($parceiros);
     // OBSERVAÇÕES DEFAULT
     $observacoes = '<table style="border: 0.5px solid black; border-collapse:collapse; " width="100%">
     <tr>

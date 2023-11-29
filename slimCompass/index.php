@@ -18,6 +18,7 @@ $app->get('/','padrao');
 $app->get('/getNome/{usuario}','getNome');
 $app->get('/getEmail/{usuario}','getEmail');
 $app->get('/getICMS/{estadosTransporte}','getICMS');
+$app->get('/getCabecalho', 'getCabecalho');
 
 
 function getConn()
@@ -70,9 +71,16 @@ function getICMS(Request $request, Response $response, array $args)
     return $response;
 }
 
-function pegarCabecalho(Request $request, Response $response, array $args)
+function getCabecalho(Request $request, Response $response, array $args)
 {
-    
+    $conn = getConn();
+    $sql = "SELECT MAX(nm_referencia_acl) AS nm_referencia_acl FROM tb_proposta";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $documentoAtual = $stmt->fetchObject();
+
+    $response->getBody()->write(json_encode($documentoAtual));
+    return $response;
 }
 
 $app->run();
