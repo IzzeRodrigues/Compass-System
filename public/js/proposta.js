@@ -1439,7 +1439,7 @@ function preencherInputs()
     document.getElementById('valorNomeCliente').value = "Drogaria São Paulo"
     document.getElementById('valorNomeContatoCliente').value = "José"
     document.getElementById('valorEmailContatoCliente').value = "jose@drogariaSP.com.br"
-    document.getElementById('valorTipoFrete').value = "freteInterno"
+    document.getElementById('valorTipoFrete').value = "FRETE INTERNO"
     document.getElementById('valorEstadoOrigem').value = "SP"
     document.getElementById('valorCidadeOrigem').value = "São Paulo"
     document.getElementById('valorEstadoDestino').value = "SP"

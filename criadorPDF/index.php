@@ -168,13 +168,13 @@ function assinaturaFisica($variaveis)
     $mpdf->WriteHTML($transporte);
 
     // VARIÁVEIS CONTAINER: 
-    if ($variaveis['valorTipoFrete'] == "freteMaritimo") {
+    if ($variaveis['valorTipoFrete'] == "FRETE MARÍTIMO") {
         $tipo_transporte_carga = "FRETE MARÍTIMO";
     } else {
-        if ($variaveis['valorTipoFrete'] == "freteAereo") {
+        if ($variaveis['valorTipoFrete'] == "FRETE MARÍTIMO") {
             $tipo_transporte_carga = "FRETE AÉREO";
         } else {
-            if ($variaveis['valorTipoFrete'] == "freteInterno") {
+            if ($variaveis['valorTipoFrete'] == "FRETE INTERNO") {
                 $tipo_transporte_carga = "FRETE INTERNO";
             }
         }
@@ -967,13 +967,13 @@ function assinaturaDigital($variaveis)
     $mpdf->WriteHTML($transporte);
 
     // VARIÁVEIS CONTAINER: 
-    if ($variaveis['valorTipoFrete'] == "freteMaritimo") {
+    if ($variaveis['valorTipoFrete'] == "FRETE MARÍTIMO") {
         $tipo_transporte_carga = "FRETE MARÍTIMO";
     } else {
-        if ($variaveis['valorTipoFrete'] == "freteAereo") {
+        if ($variaveis['valorTipoFrete'] == "FRETE MARÍTIMO") {
             $tipo_transporte_carga = "FRETE AÉREO";
         } else {
-            if ($variaveis['valorTipoFrete'] == "freteInterno") {
+            if ($variaveis['valorTipoFrete'] == "FRETE INTERNO") {
                 $tipo_transporte_carga = "FRETE INTERNO";
             }
         }

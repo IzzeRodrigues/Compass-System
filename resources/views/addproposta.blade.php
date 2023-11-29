@@ -22,10 +22,10 @@
                     <div class="row">
                         <div class="col-md-3 col-sm-6 col-4 mb-3">
                             <label>Tipo Proposta</label>
-                            <select class="form-control">
+                            <select class="form-control" id="tipoProposta" name="tipoProposta">
                                 <option value="naoSelecionado" selected disabled>Selecione...</option>
-                                <option value="tipoPadrao">Padrão</option>
-                                <option value="tipoEstudo">Estudo</option>
+                                <option value="Padrão">Padrão</option>
+                                <option value="Estudo">Estudo</option>
                             </select>
                         </div>
                         <div class="col-md-3 col-sm-6 col-4 mb-3 d-flex justify align-items-end">
@@ -130,9 +130,9 @@
                             <label>Tipo de Frete</label>
                             <select class="form-control" id="valorTipoFrete" name="valorTipoFrete" onblur="calcularImpostos()" onchange="calcularImpostos()">
                                 <option value="naoSelecionado" selected disabled>Selecione...</option>
-                                <option value="FRETE MAR">Marítimo</option>
-                                <option value="freteAereo">Aéreo</option>
-                                <option value="freteInterno">Frete Interno</option>
+                                <option value="FRETE MARÍTIMO">Marítimo</option>
+                                <option value="FRETE AÉREO">Aéreo</option>
+                                <option value="FRETE INTERNO">Frete Interno</option>
                             </select>
                         </div>
                     </div>

@@ -47,6 +47,24 @@
                                 </tr>
                             </tfoot>
                             <tbody>
+                                <?php 
+                                    
+                                    $propostas = DB::table('tb_proposta')->join('tb_cliente', 'tb_proposta.cd_proposta', '=', 'tb_cliente.cd_proposta')->join('tb_rota', 'tb_proposta.cd_proposta', '=', 'tb_rota.cd_proposta')->join('tb_veiculo', 'tb_proposta.cd_proposta', '=', 'tb_veiculo.cd_proposta')->join('tb_operacao', 'tb_proposta.cd_proposta', '=', 'tb_operacao.cd_proposta')->get();
+                                    // var_dump($propostas);
+                                    foreach ($propostas as $proposta) {
+                                        echo("<tr>
+                                                <td>$proposta->nm_referencia_acl</td>
+                                                <td>$proposta->ds_tipo_proposta</td>
+                                                <td>$proposta->nm_empresa_cliente</td>
+                                                <td>$proposta->nm_cidade_origem_rota</td>
+                                                <td>$proposta->nm_cidade_destino_rota</td>
+                                                <td>$proposta->nm_veiculo</td>
+                                                <td>$proposta->nm_tipo_operacao</td>
+                                                <td><a href='/verproposta'><button type='button' class='btn btn-compass-color mx-1 btnhv'>Ver/Editar</button></a><button type='button' class='btn btn-danger me-1 btnhv'>Excluir</button></td>
+                                            </tr>");
+                                    }
+                                    
+                                ?>
                                 <tr>
                                     <td>ACL MM 2341</td>
                                     <td>Padrão</td>

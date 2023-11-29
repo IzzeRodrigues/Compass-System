@@ -70,4 +70,9 @@ function getICMS(Request $request, Response $response, array $args)
     return $response;
 }
 
+function pegarCabecalho(Request $request, Response $response, array $args)
+{
+    
+}
+
 $app->run();

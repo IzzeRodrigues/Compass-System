@@ -36,11 +36,17 @@ class PropostaController extends Controller
         session_destroy();
     }
 
+    function pegarCabecalho()
+    {
+        $proposta = DB::table('tb_proposta')->get();
+        return $proposta;
+    }
+
     function salvarProposta()
     {
         // var_dump($_SESSION['proposta']);
         $usuario = DB::select("SELECT cd_usuario FROM tb_usuario WHERE nm_nome_completo = '" . $_SESSION['proposta']['nomeResponsavel'] . "'");
-        $referenciaAcl = $_SESSION['proposta']['valorReferenciaProposta']."-". $_SESSION['proposta']['valorNumeroProposta'];
+        $referenciaAcl = "ACL " . $_SESSION['proposta']['valorReferenciaProposta']." ". $_SESSION['proposta']['valorNumeroProposta'];
         $id = $usuario[0]->cd_usuario;
         $filial = $_SESSION['proposta']['filialACL'];
         $filial = explode('-', $filial);
@@ -49,7 +55,7 @@ class PropostaController extends Controller
 
 
 
-        $idProposta = DB::table('tb_proposta')->insertGetId(['dt_proposta' => $_SESSION['proposta']['valorDataProposta'],'nm_referencia_acl' => $referenciaAcl, 'nm_referencia_cliente' => $_SESSION['proposta']['valorReferenciaCliente'], 'nm_versao_proposta' => $_SESSION['proposta']['valorVersaoProposta'], 'dt_horario_recebimento' => $_SESSION['proposta']['valorHorarioRecebimento'], 'ds_metodo_transporte' => $_SESSION['proposta']['valorTipoFrete'], 'ds_status_proposta' => 'Não-Enviada', 'ds_tipo_assinatura' => 'Não-Selecionada', 'cd_usuario' => $id]);
+        $idProposta = DB::table('tb_proposta')->insertGetId(['ds_tipo_proposta' => $_SESSION['proposta']['tipoProposta'],'dt_proposta' => $_SESSION['proposta']['valorDataProposta'],'nm_referencia_acl' => $referenciaAcl, 'nm_referencia_cliente' => $_SESSION['proposta']['valorReferenciaCliente'], 'nm_versao_proposta' => $_SESSION['proposta']['valorVersaoProposta'], 'dt_horario_recebimento' => $_SESSION['proposta']['valorHorarioRecebimento'], 'ds_metodo_transporte' => $_SESSION['proposta']['valorTipoFrete'], 'ds_status_proposta' => 'Não-Enviada', 'ds_tipo_assinatura' => 'Não-Selecionada', 'cd_usuario' => $id]);
 
         $idProduto = DB::table('tb_produto')->insertGetId(['nm_produto' => $_SESSION['proposta']['valorNomeProduto'], 'qt_produto' => $_SESSION['proposta']['valorPallets'], 'qt_peso_produto' => $_SESSION['proposta']['valorPeso'], 'cd_proposta' => $idProposta]);
 
@@ -95,22 +101,8 @@ class PropostaController extends Controller
 
         $idAdicionaisProposta = DB::table('tb_adicionais')->insertGetId(['id_isca_adicionais' => $_SESSION['proposta']['valorTipoUtilizacaoIsca'], 'vl_isca_adicionais' => $_SESSION['proposta']['valorUtilizacaoIsca'], 'id_monitoramento_isca_adicionais' => $_SESSION['proposta']['valorTipoMonitoramentoIsca'], 'vl_monitoramento_isca_adicionais' => $_SESSION['proposta']['valorMonitoramentoIsca'], 'id_escolta_armada_adicionais' => $_SESSION['proposta']['valorTipoEscoltaArmada'], 'vl_escolta_armada_adicionais' => $_SESSION['proposta']['valorEscoltaArmada'], 'id_adic_carga_imo_adicionais' => $_SESSION['proposta']['valorTipoAdicionalCargaIMO'], 'vl_adic_carga_imo_adicionais' => $_SESSION['proposta']['valorAdicionalCargaIMO'], 'id_carregamento_expr_adicionais' => $_SESSION['proposta']['valorTipoCarregamentoExpresso'], 'vl_carregamento_expr_adicionais' => $_SESSION['proposta']['valorCarregamentoExpresso'], 'id_util_cav_ls_adicionais' => $_SESSION['proposta']['valorTipoUtilizacaoCavaloLS'], 'vl_util_cav_ls_adicionais' => $_SESSION['proposta']['valorUtilizacaoCavaloLS'], 'id_estadia_especial_adicionais' => $_SESSION['proposta']['valorTipoEstadiaEspecial'], 'vl_estadia_especial_adicionais' => $_SESSION['proposta']['valorEstadiaEspecial'], 'id_sobrestadia_carreg_adicionais' => $_SESSION['proposta']['valorTipoSobrestadiaCarregamento'], 'vl_sobrestadia_carreg_adicionais' => $_SESSION['proposta']['valorSobrestadiaCarregamento'], 'cd_proposta' => $idProposta]);
         
-        // DB::insert("INSERT INTO tb_produto (nm_produto, qt_produto, qt_peso_produto, cd_proposta) VALUES (?, ?, ?, ?)", [$_SESSION['proposta']['valorNomeProduto'], $_SESSION['proposta']['valorPallets'], $_SESSION['proposta']['valorPeso'], $idProposta]);
+        // $propostaVinda = DB::table('tb_proposta')->where('tb_proposta.cd_proposta', '=', 1)->join('tb_produto', 'tb_proposta.cd_proposta', '=', 'tb_produto.cd_proposta')->get();
 
-        // DB::insert("INSERT INTO tb_filial (nm_filial, cd_cnpj, cd_proposta) VALUES (?, ?, ?)", [$nomeFilial, $cnpjFilial, $idProposta]);
-
-        // DB::insert("INSERT INTO tb_cliente(nm_empresa_cliente, cd_proposta) VALUES (?, ?)", [$_SESSION['proposta']['valorNomeCliente'], $idProposta]);
-
-        // $idCliente = DB::select("SELECT cd_cliente FROM tb_cliente WHERE nm_empresa_cliente = '". $_SESSION['proposta']['valorNomeCliente']."'");
-
-        // DB::insert("INSERT INTO tb_responsavel_cliente (nm_responsavel_cliente, cd_cliente) VALUES (?, ?)", [$_SESSION['proposta']['valorNomeContatoCliente'], $idCliente]);
-
-        // $idResponsavelCliente = DB::select("SELECT cd_responsavel_cliente FROM tb_responsavel_cliente WHERE nm_responsavel_cliente")
-
-
-
-
-
-        // return redirect()->route('admindex');
+        // var_dump($propostaVinda);
     }
 }
