@@ -61,7 +61,11 @@ class PropostaController extends Controller
 
         $idEmailResponsavelCliente = DB::table('tb_email_responsavel_cliente')->insertGetId(['nm_email_responsavel_cliente' => $_SESSION['proposta']['valorEmailContatoCliente'], 'cd_responsavel_cliente' => $idResponsavelCliente]);
 
-        $idRota = DB::table('tb_rota')->insertGetId(['nm_cidade_origem' => $_SESSION['proposta']['valorCidadeOrigem'], 'sg_uf_origem' => $_SESSION['proposta']['valorEstadoOrigem'], 'nm_cidade_destino' => $_SESSION['proposta']['valorCidadeDestino'], 'sg_uf_destino' => $_SESSION['proposta']['valorEstadoDestino'], 'cd_proposta' => $idProposta]);
+        $idRota = DB::table('tb_rota')->insertGetId(['nm_cidade_origem_rota' => $_SESSION['proposta']['valorCidadeOrigem'], 'sg_uf_origem_rota' => $_SESSION['proposta']['valorEstadoOrigem'], 'nm_cidade_destino_rota' => $_SESSION['proposta']['valorCidadeDestino'], 'sg_uf_destino_rota' => $_SESSION['proposta']['valorEstadoDestino'], 'cd_proposta' => $idProposta]);
+
+        $idVeiculo = DB::table('tb_veiculo')->insertGetId((['nm_veiculo' => $_SESSION['proposta']['valorTipoVeiculo'], 'qt_eixos_veiculo' => $_SESSION['proposta']['valorEixos_cabecalho'], 'ds_carga_veiculo' => $_SESSION['proposta']['valorTipoContainer'], 'cd_proposta' => $idProposta]));
+
+        $idOperacao = "";
 
         // DB::insert("INSERT INTO tb_produto (nm_produto, qt_produto, qt_peso_produto, cd_proposta) VALUES (?, ?, ?, ?)", [$_SESSION['proposta']['valorNomeProduto'], $_SESSION['proposta']['valorPallets'], $_SESSION['proposta']['valorPeso'], $idProposta]);
 
