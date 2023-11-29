@@ -59,7 +59,7 @@ class PropostaController extends Controller
 
         $idProduto = DB::table('tb_produto')->insertGetId(['nm_produto' => $_SESSION['proposta']['valorNomeProduto'], 'qt_produto' => $_SESSION['proposta']['valorPallets'], 'qt_peso_produto' => $_SESSION['proposta']['valorPeso'], 'cd_proposta' => $idProposta]);
 
-        $idFilial = DB::table('tb_filial')->insertGetId(['nm_filial' => $nomeFilial, 'cd_cnpj' => $cnpjFilial]);
+        $idFilial = DB::table('tb_filial')->insertGetId(['nm_filial' => $nomeFilial, 'cd_cnpj' => $cnpjFilial, 'cd_proposta' => $idProposta]);
 
         $idCliente = DB::table('tb_cliente')->insertGetId(['nm_empresa_cliente' => $_SESSION['proposta']['valorNomeCliente'], 'cd_proposta' => $idProposta]);
 
@@ -104,5 +104,35 @@ class PropostaController extends Controller
         // $propostaVinda = DB::table('tb_proposta')->where('tb_proposta.cd_proposta', '=', 1)->join('tb_produto', 'tb_proposta.cd_proposta', '=', 'tb_produto.cd_proposta')->get();
 
         // var_dump($propostaVinda);
+    }
+
+    function pegarPropostaCompleta(Request $request)
+    {
+        // $proposta = DB::table('tb_proposta')
+        // ->join('tb_produto', 'tb_proposta.cd_proposta', '=', 'tb_produto.cd_proposta')
+        // ->join('tb_filial', 'tb_proposta.cd_proposta', '=', 'tb_filial.cd_proposta')
+        // ->join('tb_cliente', 'tb_proposta.cd_proposta', '=', 'tb_cliente.cd_proposta')
+        // ->join('tb_responsavel_cliente', 'tb_cliente.cd_cliente', '=', 'tb_responsavel_cliente.cd_cliente')
+        // ->join('tb_email_responsavel_cliente', 'tb_responsavel_cliente.cd_responsavel_cliente', '=', 'tb_email_responsavel_cliente.cd_responsavel_cliente')
+        // ->join('tb_rota', 'tb_proposta.cd_proposta', '=', 'tb_rota.cd_proposta')
+        // ->join('tb_veiculo', 'tb_proposta.cd_proposta', '=', 'tb_veiculo.cd_proposta')
+        // ->join('tb_operacao', 'tb_proposta.cd_proposta', '=', 'tb_operacao.cd_proposta')
+        // ->join('tb_imp_operacao', 'tb_operacao.cd_operacao', '=', 'tb_imp_operacao.cd_operacao')
+        // ->join('tb_adic_operacao', 'tb_operacao.cd_operacao', '=', 'tb_adic_operacao.cd_operacao')
+        // ->join('tb_despesas', 'tb_proposta.cd_proposta', '=', 'tb_despesas.cd_proposta')
+        // ->join('tb_imp_despesas', 'tb_despesas.cd_despesas', '=', 'tb_imp_despesas.cd_despesas')
+        // ->join('tb_adic_despesas', 'tb_despesas.cd_despesas', '=', 'tb_adic_despesas.cd_despesas')
+        // ->join('tb_carga', 'tb_proposta.cd_proposta', '=', 'tb_carga.cd_proposta')
+        // ->join('tb_km_rota_carga', 'tb_carga.cd_carga', '=', 'tb_km_rota_carga.cd_carga')
+        // ->join('tb_pedagio_rota_carga', 'tb_carga.cd_carga', '=', 'tb_pedagio_rota_carga.cd_carga')
+        // ->join('tb_valor_carga', 'tb_carga.cd_carga', '=', 'tb_valor_carga.cd_carga')
+        // ->join('tb_frete_peso', 'tb_proposta.cd_proposta', '=', 'tb_frete_peso.cd_proposta')
+        // ->join('tb_motorista', 'tb_proposta.cd_proposta', '=', 'tb_motorista.cd_proposta')
+        // ->join('tb_cot_aut', 'tb_proposta.cd_proposta', '=', 'tb_cot_aut.cd_proposta')
+        // ->join('tb_adicionais', 'tb_proposta.cd_proposta', '=', 'tb_adicionais.cd_proposta')
+        // ->where('tb_proposta.cd_proposta', '=', $request['ID'])->get();
+        // var_dump($proposta);
+        // $response = json_encode($proposta);
+        // return $response;
     }
 }

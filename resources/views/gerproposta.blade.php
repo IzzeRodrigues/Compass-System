@@ -60,7 +60,7 @@
                                                 <td>$proposta->nm_cidade_destino_rota</td>
                                                 <td>$proposta->nm_veiculo</td>
                                                 <td>$proposta->nm_tipo_operacao</td>
-                                                <td><a href='/verproposta'><button type='button' class='btn btn-compass-color mx-1 btnhv'>Ver/Editar</button></a><button type='button' class='btn btn-danger me-1 btnhv'>Excluir</button></td>
+                                                <td><a href='/verproposta?ID=$proposta->cd_proposta'><button type='button' class='btn btn-compass-color mx-1 btnhv'>Ver/Editar</button></a><button type='button' class='btn btn-danger me-1 btnhv'>Excluir</button></td>
                                             </tr>");
                                     }
                                     

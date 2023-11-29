@@ -238,7 +238,7 @@ function calcularImpostos()
     -------------------------------------------------------------------------  Declaração de variáveis  ---------------------------------------------------------------------------
     -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     */
-
+    
     //Cabecalho
     nomeUsuario = document.getElementById('nomeResponsavel').value;
     emailUsuario = document.getElementById('emailResponsavel').value;
@@ -268,15 +268,7 @@ function calcularImpostos()
     //25
 
     //Operacao
-    valorMercadoria = parseFloat((document.getElementById('valorMercadoria').value).replaceAll(["R$",".",","], ""));
-    valorMercadoriaPontuado = "";
-    function numberToReal(numero) {
-        var numero = numero.toFixed(2).split('.');
-        numero[0] = "R$ " + numero[0].split(/(?=(?:...)*$)/).join('.');
-        valorMercadoriaPontuado = numero.join(',');
-    }
-    numberToReal(valorMercadoria);
-    valorMercadoriaPontuadoSemPonto = valorMercadoriaPontuado.replaceAll(["R$",".",","], "");
+    valorMercadoria = parseFloat(document.getElementById('valorMercadoria').value);
     container = parseFloat(document.getElementById('container').value);
     porcentSusp = parseFloat(document.getElementById('porcentagemSusp').value);
     tipoOperacao = document.getElementById("tipoOperacao").value;
@@ -461,7 +453,7 @@ function calcularImpostos()
     }
 
     //Calculando GRIS
-    if (checkGRIS == "sim" && !isNaN(porcentGRIS))
+    if (checkGRIS == "sim" && !isNaN(porcentGRIS) && !isNaN(totalImpostoSeguro))
     {
         GRIS = Math.fround(totalImpostoSeguro * (porcentGRIS / 100)).toFixed(2);
         document.getElementById('valorGRIS').value = GRIS;
@@ -1679,6 +1671,11 @@ function preencherInputs()
     document.getElementById('valorTipoSobrestadiaRetirada').value = "sim"
     // document.getElementById('valorSobrestadiaRetirada').value = ""
     calcularImpostos();
+}
+
+function preencherInputsVerProposta()
+{
+    
 }
 
 var intervalId = window.setInterval(function(){

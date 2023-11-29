@@ -53,6 +53,7 @@ Route::get('/acoesProposta', [PropostaController::class, 'escolherAcao'])->name(
 Route::get('/salvarProposta', [PropostaController::class, 'salvarProposta'])->name('salvarProposta');
 Route::get('/gerarProposta', [PropostaController::class, 'gerarPDF'])->name('gerarPDF');
 Route::get('/pegarCabecalho', [PropostaController::class, 'pegarCabecalho'])->name('pegarCabecalho');
+Route::get('/pegarProposta', [PropostaController::class, 'pegarPropostaCompleta'])->name('pegarProposta');
 
 Route::get('/verificarUsuario', [UsuarioController::class, 'verificarUsuario'])->name('verificarUsuario');
 Route::get('/adicionarUsuario', [UsuarioController::class, 'adicionarUsuario'])->name('adicionarUsuario');

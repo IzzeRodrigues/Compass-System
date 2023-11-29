@@ -865,6 +865,7 @@ function assinaturaFisica($variaveis)
 
     // VARIÁVEIS ASSINATURAS
     $nome_proposta = "PROP $cliente" . "_" . $variaveis['valorNumeroProposta'];
+    $nomeProposta = "ACL " . $variaveis['valorReferenciaProposta'] . " " . $variaveis['valorNumeroProposta'];
 
     // VARIÁVEIS PUXANDO VALORES DE CIMA: $ref_cliente, $contato_cliente, $data_atual.
 
@@ -877,7 +878,7 @@ function assinaturaFisica($variaveis)
     </tr>
     <tr>
         <td style="font-weight:bold; border-top:1px solid black;">De Acordo</td>
-        <td>' . $nome_proposta . ' / ' . $ref_cliente . ' / ' . $anoExibicao . '</td>
+        <td>' . $nomeProposta . '</td>
     </tr>
     <tr>
         <td style="color:blue; text-decoration:underline;">' . $contato_cliente . '</td>
@@ -1753,7 +1754,7 @@ function assinaturaDigital($variaveis)
     $mpdf->WriteHTML($observacoes);
 
     // VARIÁVEIS ASSINATURAS
-    $nome_proposta = "PROP $cliente" . "_" . $variaveis['valorNumeroProposta'];
+    $nomeProposta = "ACL " . $variaveis['valorReferenciaProposta'] . " " . $variaveis['valorNumeroProposta'];
 
     // VARIÁVEIS PUXANDO VALORES DE CIMA: $ref_cliente, $contato_cliente, $data_atual.
 
@@ -1766,7 +1767,7 @@ function assinaturaDigital($variaveis)
     </tr>
     <tr>
         <td style="font-weight:bold; border-bottom:1px solid black;">Assinado Digitalmente</td>
-        <td>' . $nome_proposta . ' / ' . $ref_cliente . ' / ' . $anoExibicao . '</td>
+        <td>' . $nomeProposta . '</td>
     </tr>
     <tr>
         <td style="color:blue; text-decoration:underline;">' . $contato_cliente . '</td>
