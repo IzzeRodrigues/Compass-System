@@ -1799,7 +1799,7 @@ function assinaturaDigital($variaveis)
             </div>';
         $mpdf->WriteHTML($clausulaDigital);
         // unset($_SESSION['representante']);
-        header('Location:http://localhost:8000/emailCliente');
+        // header('Location:http://localhost:8000/emailCliente');
     }
 
     function get_client_ip()
