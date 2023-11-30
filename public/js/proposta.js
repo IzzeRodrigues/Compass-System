@@ -1673,12 +1673,200 @@ function preencherInputs()
     calcularImpostos();
 }
 
-function preencherInputsVerProposta()
+var pegouProposta = 0;
+
+function pegarProposta()
 {
-    
+    if (pegouProposta == 0)
+    {
+        var parametros = new URLSearchParams(window.location.search);
+        var parametros = parametros.get('ID');
+        // console.log('pegandoproposta')
+        // console.log(parametros)
+        fetch(`http://localhost:8000/pegarProposta?ID=${parametros}`)
+        .then((response) => response.json())
+        .then((json) => {proposta = (json['resposta'][0]), usuario = (json['usuario'][0])})
+
+        document.getElementById('nomeResponsavel').value = usuario.nm_nome_completo 
+        document.getElementById('emailResponsavel').value = usuario.nm_email_usuario
+        document.getElementById('cargoResponsavel').value = usuario.nm_cargo_usuario
+        document.getElementById('valorDataProposta').value = proposta.dt_proposta
+        document.getElementById('tipoProposta').value = proposta.ds_tipo_proposta
+        var referenciaVerProposta = (proposta.nm_referencia_acl).split(" ");
+        document.getElementById('valorReferenciaProposta').value = referenciaVerProposta[1]
+        document.getElementById('valorNumeroProposta').value = referenciaVerProposta[2]
+        document.getElementById('valorVersaoProposta').value = proposta.nm_versao_proposta
+        document.getElementById('valorReferenciaCliente').value = proposta.nm_referencia_cliente
+        document.getElementById('valorHorarioRecebimento').value = proposta.dt_horario_recebimento
+        document.getElementById('valorNomeProduto').value = proposta.nm_produto
+        document.getElementById('valorPallets').value = proposta.qt_produto
+        document.getElementById('valorPeso').value = proposta.qt_peso_produto
+        document.getElementById('valorNomeCliente').value = proposta.nm_empresa_cliente
+        document.getElementById('valorNomeContatoCliente').value = proposta.nm_responsavel_cliente
+        document.getElementById('valorEmailContatoCliente').value = proposta.nm_email_responsavel_cliente
+        document.getElementById('valorTipoFrete').value = proposta.ds_metodo_transporte
+        document.getElementById('valorEstadoOrigem').value = proposta.sg_uf_origem_rota
+        document.getElementById('valorCidadeOrigem').value = proposta.nm_cidade_origem_rota
+        document.getElementById('valorEstadoDestino').value = proposta.sg_uf_destino_rota
+        document.getElementById('valorCidadeDestino').value = proposta.nm_cidade_destino_rota
+        // estadosViagem = "" `${estadoOrigem}_${estadoDestino}`
+        document.getElementById('valorLocalDevolucao').value = proposta.nm_local_devolucao_container_rota
+        document.getElementById('valorTipoContainer').value = proposta.ds_carga_veiculo
+        document.getElementById('valorTipoVeiculo').value = proposta.nm_veiculo
+        document.getElementById('valorEixos_cabecalho').value = proposta.qt_eixos_veiculo
+        //25
+
+        //Operacao
+        document.getElementById('tipoOperacao').value = proposta.nm_tipo_operacao
+        document.getElementById('tipoImpostos').value = proposta.nm_tipo_imposto_operacao
+        document.getElementById('valorMercadoria').value = proposta.vl_mercadoria_operacao
+        document.getElementById('container').value = proposta.vl_container_operacao
+        document.getElementById('porcentagemSusp').value = proposta.pc_imp_susp_imp_operacao
+        document.getElementById('valorImpostoSuspenso').value = proposta.vl_imp_susp_imp_operacao
+        document.getElementById('valorTotalImpostoSeguro').value = proposta.vl_total_imposto_seguro_operacao
+        document.getElementById('valorFretePeso_operacao').value = proposta.vl_frete_peso_operacao
+        document.getElementById('porcentagemRCTRC_operacao').value = proposta.pc_rctrc_imp_operacao
+        document.getElementById('valorRCTRC_operacao').value = proposta.vl_rctrc_imp_operacao
+        document.getElementById('porcentagemRCFDC_operacao').value = proposta.pc_rcfdc_imp_operacao
+        document.getElementById('valorRCFDC_operacao').value = proposta.vl_rcfdc_imp_operacao
+        document.getElementById('valorCheckGRIS').value = proposta.ds_tipo_gris_imp_operacao
+        document.getElementById('porcentagemGRIS').value = proposta.pc_gris_imp_operacao
+        document.getElementById('valorGRIS').value = proposta.vl_gris_imp_operacao
+        document.getElementById('porcentagemICMS_operacao').value = proposta.pc_icms_operacao
+        document.getElementById('valorICMS_operacao').value = proposta.vl_valor_icms_operacao
+        document.getElementById('valorEstacionamento_operacao').value = proposta.vl_estacionamento
+        document.getElementById('valorIMO').value = proposta.vl_imo
+        document.getElementById('valorDTA_GVB').value = proposta.vl_dta
+        document.getElementById('valorAjudantes_operacao').value = proposta.vl_ajudantes
+        document.getElementById('valorPedagio_operacao').value = proposta.vl_pedagio
+        document.getElementById('valorTotalPrest').value = proposta.vl_total_prest_operacao
+        document.getElementById('valorPorcentagemTotalPrest').value = proposta.pc_total_prest_operacao
+        document.getElementById('valorDespesas_operacao').value = proposta.vl_despesas_operacao
+        document.getElementById('valorLucroBruto').value = proposta.vl_lucro_bruto_operacao
+        document.getElementById('porcentagemLucroBruto').value = proposta.pc_lucro_bruto_operacao
+        document.getElementById('valorMargemLucroBruto').value = proposta.vl_margem_operacao
+        //26
+
+        //Despesa
+        document.getElementById('valorMotoristaAutonomo').value = ""
+        document.getElementById('valorPedagio_despesa').value = ""
+        document.getElementById('porcentagemRCFDC_despesa').value = ""
+        document.getElementById('valorRCFDC_despesa').value = ""
+        document.getElementById('porcentagemRCTRC_despesa').value = ""
+        document.getElementById('valorRCTRC_despesa').value = ""
+        document.getElementById('porcentagemSimplesNAC').value = ""
+        document.getElementById('valorSimplesNAC').value = ""
+        document.getElementById('porcentagemIRPJ').value = ""
+        document.getElementById('valorIRPJ').value = ""
+        document.getElementById('porcentagemAdicionalIRPJ').value = ""
+        document.getElementById('valorAdicionalIRPJ').value = ""
+        document.getElementById('porcentagemPIS').value = ""
+        document.getElementById('valorPIS').value = ""
+        document.getElementById('porcentagemCOFINS').value = ""
+        document.getElementById('valorCOFINS').value = ""
+        document.getElementById('porcentagemICMS_despesa').value = ""
+        document.getElementById('valorICMS_despesa').value = ""
+        document.getElementById('valorBuonnyCadastro').value = ""
+        document.getElementById('valorGRISRastreamento').value = ""
+        document.getElementById('valorDTA_DI').value = ""
+        document.getElementById('valorEstacionamento_despesa').value = ""
+        document.getElementById('valorAjudantes_despesa').value = ""
+        document.getElementById('valorProfit').value = ""
+        document.getElementById('valorComissao').value = ""
+        document.getElementById('porcentagemComissao').value = ""
+        document.getElementById('valorDespesas_despesa').value = ""
+        //27
+
+        //Carga
+        document.getElementById('valorTipoCarga').value = ""
+        document.getElementById('valorQuilometragemIda').value = ""
+        document.getElementById('valorQuilometragemVolta').value = ""
+        document.getElementById('valorQuilometragemTotal').value = ""
+        document.getElementById('valorPedagioEixoIda').value = ""
+        document.getElementById('valorPedagioEixoVolta').value = ""
+        document.getElementById('valorEixos_carga').value = ""
+        document.getElementById('valorPedagio_carga').value = ""
+        document.getElementById('valorConsumoMedioQuilometroLitro').value = ""
+        document.getElementById('valorPrecoCombustivelLitro').value = ""
+        document.getElementById('valorTotalCombustivelLitros').value = ""
+        document.getElementById('valorTotalCombustivel').value = ""
+        document.getElementById('valorTotalDespesaViagem').value = ""
+        document.getElementById('tipoMoedaEstrangeira').value = ""
+        document.getElementById('valorMoedaEstrangeira').value = ""
+        document.getElementById('valorCargaUSD_EUR').value = ""
+        document.getElementById('valorCargaBRL').value = ""
+        //17
+
+        //Frete peso
+        document.getElementById('valorFretePeso_fretePeso').value = ""
+        document.getElementById('porcentagemPercentualFretePeso').value = ""
+        //2
+
+        //Motorista
+        // precoQuilometragemMotorista = NaN
+        // precoMinimoMotorista = NaN
+        document.getElementById('valorValores').value = ""
+        document.getElementById('valorFreteANTT').value = ""
+        document.getElementById('valorPedagio_motorista').value = ""
+        document.getElementById('valorTotalAutonomo').value = ""
+        document.getElementById('valorLucroTotalAutonomo').value = ""
+        document.getElementById('valorFreteAllFechado').value = ""
+        document.getElementById('valorLucroFreteAllFechado').value = ""
+        document.getElementById('valorFreteFecharEm').value = ""
+        document.getElementById('valorLucroFreteFecharEm').value = ""
+        //11
+
+        //Cotacao
+        document.getElementById('motoristaCotado1').value = ""
+        document.getElementById('dataCotacaoMotorista1').value = ""
+        document.getElementById('valorMotoristaCotado1').value = ""
+        document.getElementById('motoristaCotado2').value = ""
+        document.getElementById('dataCotacaoMotorista2').value = ""
+        document.getElementById('valorMotoristaCotado2').value = ""
+        //6
+
+        //Adicionais
+        document.getElementById('valorTipoUtilizacaoIsca').value = ""
+        document.getElementById('valorUtilizacaoIsca').value = ""
+        document.getElementById('valorTipoMonitoramentoIsca').value = ""
+        document.getElementById('valorMonitoramentoIsca').value = ""
+        document.getElementById('valorTipoEscoltaArmada').value = ""
+        document.getElementById('valorEscoltaArmada').value = ""
+        document.getElementById('valorTipoDevolucaoMargemEsquerda').value = ""
+        document.getElementById('valorDevolucaoMargemEsquerda').value = ""
+        document.getElementById('valorTipoDevolucaoSV').value = ""
+        document.getElementById('valorDevolucaoSV').value = ""
+        document.getElementById('valorTipoAdicionalCargaAnvisa').value = ""
+        document.getElementById('valorAdicionalCargaAnvisa').value = ""
+        document.getElementById('valorTipoAdicionalCargaIMO').value = ""
+        document.getElementById('valorAdicionalCargaIMO').value = ""
+        document.getElementById('valorTipoCarregamentoExpresso').value = ""
+        document.getElementById('valorCarregamentoExpresso').value = ""
+        document.getElementById('valorTipoUtilizacaoCavaloLS').value = ""
+        document.getElementById('valorUtilizacaoCavaloLS').value = ""
+        document.getElementById('valorTipoEstadiaEspecial').value = ""
+        document.getElementById('valorEstadiaEspecial').value = ""
+        document.getElementById('valorTipoSobrestadiaCarregamento').value = ""
+        document.getElementById('valorSobrestadiaCarregamento').value = ""
+        document.getElementById('valorTipoSobrestadiaRetirada').value = ""
+        document.getElementById('valorSobrestadiaRetirada').value = ""
+
+    }
+    pegouProposta = 1;
 }
 
 var intervalId = window.setInterval(function(){
-    calcularImpostos();
-    setMoeda(valoresMoedas);
+    if(window.location.pathname == "/addproposta")
+    {
+        calcularImpostos();
+        setMoeda(valoresMoedas);
+    }
+    // console.log(window.location.hostname)
+    // console.log(window.location.host)
+    // console.log(window.location.pathname)
+    // console.log(window.location.href)
+    if(window.location.pathname == "/verproposta")
+    {   
+        pegarProposta();
+    }
 }, 100);
