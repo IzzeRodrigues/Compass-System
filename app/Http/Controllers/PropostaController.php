@@ -123,49 +123,60 @@ class PropostaController extends Controller
         ->where('tb_proposta.cd_proposta', '=', $request['ID'])
         ->get();
 
-        $operacao = DB::table('tb_operacao')
-        ->join('tb_mercadoria_operacao', 'tb_operacao.cd_operacao', '=', 'tb_mercadoria_operacao.cd_operacao')
-        ->join('tb_imp_operacao', 'tb_operacao.cd_operacao', '=', 'tb_imp_operacao.cd_operacao')
-        ->join('tb_adic_operacao', 'tb_operacao.cd_operacao', '=', 'tb_adic_operacao.cd_operacao')
-        ->where('tb_operacao.cd_proposta', '=', $request['ID'])
-        ->get();
-
-        $despesa = DB::table('tb_despesas')
-        ->join('tb_imp_despesas', 'tb_despesas.cd_despesas', '=', 'tb_imp_despesas.cd_despesas')
-        ->join('tb_adic_despesas', 'tb_despesas.cd_despesas', '=', 'tb_adic_despesas.cd_despesas')
-        ->where('tb_despesas.cd_proposta', '=', $request['ID'])
-        ->get();
-
-        $carga = DB::table('tb_carga')
-        ->join('tb_km_rota_carga', 'tb_carga.cd_carga', '=', 'tb_km_rota_carga.cd_carga')
-        ->join('tb_pedagio_rota_carga', 'tb_carga.cd_carga', '=', 'tb_pedagio_rota_carga.cd_carga')
-        ->join('tb_combustivel_carga', 'tb_carga.cd_carga', '=', 'tb_combustivel_carga.cd_carga')
-        ->join('tb_valor_carga', 'tb_carga.cd_carga', '=', 'tb_valor_carga.cd_carga')
-        ->where('tb_carga.cd_proposta', '=', $request['ID'])
-        ->get();
-
-        $fretePeso = DB::table('tb_frete_peso')
-        ->where('tb_frete_peso.cd_proposta', '=', $request['ID'])
-        ->get();
-
-        $motorista = DB::table('tb_motorista')
-        ->where('tb_motorista.cd_proposta', '=', $request['ID'])
-        ->get();
-
-        $cotacaoMotorista = DB::table('tb_cot_aut')
-        ->where('tb_cot_aut.cd_proposta', '=', $request['ID'])
-        ->get();
-
-        $adicionais = DB::table('tb_adicionais')
-        ->where('tb_adicionais.cd_proposta', '=', $request['ID'])
-        ->get();
-
         $usuario = DB::table('tb_usuario')
         ->join('tb_email_usuario', 'tb_usuario.cd_usuario', '=', 'tb_email_usuario.cd_usuario')
         ->select('nm_nome_completo', 'nm_cargo_usuario', 'nm_email_usuario')
         ->where('tb_usuario.cd_usuario', '=', $cabecalho[0]->cd_usuario)
         ->get();
-   
-        return ["proposta" => ["cabecalho" => $cabecalho, "operacao" => $operacao, "despesa" => $despesa, "carga" => $carga, "fretePeso" => $fretePeso, 'motorista' => $motorista, 'cotacoes' => $cotacaoMotorista , 'adicionais' => $adicionais], "usuario" => $usuario];
+
+        
+
+        if($usuario[0]->nm_email_usuario == $_COOKIE['emailUsuario'] || $_COOKIE['privilegioUsuario'] == "administrador")
+        {
+            $operacao = DB::table('tb_operacao')
+            ->join('tb_mercadoria_operacao', 'tb_operacao.cd_operacao', '=', 'tb_mercadoria_operacao.cd_operacao')
+            ->join('tb_imp_operacao', 'tb_operacao.cd_operacao', '=', 'tb_imp_operacao.cd_operacao')
+            ->join('tb_adic_operacao', 'tb_operacao.cd_operacao', '=', 'tb_adic_operacao.cd_operacao')
+            ->where('tb_operacao.cd_proposta', '=', $request['ID'])
+            ->get();
+
+            $despesa = DB::table('tb_despesas')
+            ->join('tb_imp_despesas', 'tb_despesas.cd_despesas', '=', 'tb_imp_despesas.cd_despesas')
+            ->join('tb_adic_despesas', 'tb_despesas.cd_despesas', '=', 'tb_adic_despesas.cd_despesas')
+            ->where('tb_despesas.cd_proposta', '=', $request['ID'])
+            ->get();
+
+            $carga = DB::table('tb_carga')
+            ->join('tb_km_rota_carga', 'tb_carga.cd_carga', '=', 'tb_km_rota_carga.cd_carga')
+            ->join('tb_pedagio_rota_carga', 'tb_carga.cd_carga', '=', 'tb_pedagio_rota_carga.cd_carga')
+            ->join('tb_combustivel_carga', 'tb_carga.cd_carga', '=', 'tb_combustivel_carga.cd_carga')
+            ->join('tb_valor_carga', 'tb_carga.cd_carga', '=', 'tb_valor_carga.cd_carga')
+            ->where('tb_carga.cd_proposta', '=', $request['ID'])
+            ->get();
+
+            $fretePeso = DB::table('tb_frete_peso')
+            ->where('tb_frete_peso.cd_proposta', '=', $request['ID'])
+            ->get();
+
+            $motorista = DB::table('tb_motorista')
+            ->where('tb_motorista.cd_proposta', '=', $request['ID'])
+            ->get();
+
+            $cotacaoMotorista = DB::table('tb_cot_aut')
+            ->where('tb_cot_aut.cd_proposta', '=', $request['ID'])
+            ->get();
+
+            $adicionais = DB::table('tb_adicionais')
+            ->where('tb_adicionais.cd_proposta', '=', $request['ID'])
+            ->get();
+    
+            return ["proposta" => ["cabecalho" => $cabecalho, "operacao" => $operacao, "despesa" => $despesa, "carga" => $carga, "fretePeso" => $fretePeso, 'motorista' => $motorista, 'cotacoes' => $cotacaoMotorista , 'adicionais' => $adicionais], "usuario" => $usuario];
+        }
+        else
+        {
+            return ["resposta" => "Você não tem acesso"];
+        }
+
+        
     }
 }
