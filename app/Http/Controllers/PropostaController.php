@@ -91,7 +91,7 @@ class PropostaController extends Controller
 
         $idPedagioCarga = DB::table('tb_pedagio_rota_carga')->insertGetId(['qtd_eixos_pedagio_rota_carga' => $_SESSION['proposta']['valorEixos_carga'], 'vl_ida_pedagio_rota_carga' => $_SESSION['proposta']['valorPedagioEixoIda'], 'vl_volta_pedagio_rota_carga' => $_SESSION['proposta']['valorPedagioEixoVolta'], 'vl_total_pedagio_rota_carga' => $_SESSION['proposta']['valorPedagio_carga'], 'cd_carga' => $idCarga]);
 
-        // $idCombustivelCarga = DB::table('tb_combustivel_carga')->insertGetId(['vl_quantidade_combustivel_carga' => $_SESSION['proposta']['valorTotalCombustivelLitros'], 'vl_consumo_combustivel_carga' => $_SESSION['proposta']['valorConsumoMedioQuilometroLitro'],  'vl_preco_combustivel_carga' => $_SESSION['proposta']['valorPrecoCombustivelLitro'], 'vl_total_preco_combustivel_carga' => $_SESSION['proposta']['valorTotalCombustivel']]);
+        $idCombustivelCarga = DB::table('tb_combustivel_carga')->insertGetId(['vl_quantidade_combustivel_carga' => $_SESSION['proposta']['valorTotalCombustivelLitros'], 'vl_consumo_combustivel_carga' => $_SESSION['proposta']['valorConsumoMedioQuilometroLitro'],  'vl_preco_combustivel_carga' => $_SESSION['proposta']['valorPrecoCombustivelLitro'], 'vl_total_preco_combustivel_carga' => $_SESSION['proposta']['valorTotalCombustivel'], 'cd_carga' => $idCarga]);
 
         $idValorCarga = DB::table('tb_valor_carga')->insertGetId(['vl_preco_carga' => $_SESSION['proposta']['valorCargaUSD_EUR'], 'nm_tipo_moeda_valor_carga' => $_SESSION['proposta']['tipoMoedaEstrangeira'], 'vl_cotacao_valor_carga' => $_SESSION['proposta']['valorMoedaEstrangeira'], 'vl_brl_valor_carga' => $_SESSION['proposta']['valorCargaBRL'], 'cd_carga' => $idCarga]);
 
