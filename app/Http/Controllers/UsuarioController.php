@@ -12,7 +12,7 @@ class UsuarioController extends Controller
 {
     public function verificarUsuario(Request $request)
     {
-
+        session_start();
         if (isset($_COOKIE['statusLogin']))
         {
             $resultado = DB::select("select * from tb_usuario where nm_nome_completo = '" . $_COOKIE['nomeUsuario'].  "'");
@@ -134,6 +134,21 @@ class UsuarioController extends Controller
             return redirect()->route('inicio', ['situacao' => 'Erro encontrado']);
         }
 
+        // Novo login
+
+        $usuario = $request->usuario;
+        $senha = $request->senha;
+
+        $usuario = DB::table('tb_email_usuario')->join('tb_usuario', 'tb_email_usuario.cd_usuario', '=', 'tb_email_usuario.cd_usuario')->join('tb_privilegio', 'tb_email_usuario.cd_usuario', '=', 'tb_privilegio.cd_usuario')->where(['tb_email_usuario.nm_email_usuario', '=', $usuario], ['tb_usuario.cd_senha', "=", $senha])->get();
+
+        if ($usuario)
+        {
+            $_SESSION['Usuario'] = ['logado' => true, 'nome' => $usuario[0]->nm_nome_completo, 'cargo' => $usuario[0]->nm_cargo_usuario, 'privilegio' => $usuario[0]->nm_privilegio];
+        }
+        else
+        {
+            $_SESSION['Erro'] = "Email e/ou senha incorretos";
+        }
         
     }
 

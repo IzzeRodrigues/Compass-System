@@ -52,7 +52,7 @@
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 mb-3">
                             <label>E-mail Responsável</label>
-                            <input type="text" class="form-control" readonly placeholder="Email@aclcargo.com.br" id="emailResponsavel" name="emailResponsavel">
+                            <input type="text" class="form-control" placeholder="Email@aclcargo.com.br" id="emailResponsavel" name="emailResponsavel">
                         </div>
                         <div class="col-md-2 col-sm-6 col-12 mb-3">
                             <label>CPF Responsável</label>

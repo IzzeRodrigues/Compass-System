@@ -67,11 +67,13 @@ class PropostaController extends Controller
 
         $idEmailResponsavelCliente = DB::table('tb_email_responsavel_cliente')->insertGetId(['nm_email_responsavel_cliente' => $_SESSION['proposta']['valorEmailContatoCliente'], 'cd_responsavel_cliente' => $idResponsavelCliente]);
 
-        $idRota = DB::table('tb_rota')->insertGetId(['nm_cidade_origem_rota' => $_SESSION['proposta']['valorCidadeOrigem'], 'sg_uf_origem_rota' => $_SESSION['proposta']['valorEstadoOrigem'], 'nm_cidade_destino_rota' => $_SESSION['proposta']['valorCidadeDestino'], 'sg_uf_destino_rota' => $_SESSION['proposta']['valorEstadoDestino'], 'cd_proposta' => $idProposta]);
+        $idRota = DB::table('tb_rota')->insertGetId(['nm_cidade_origem_rota' => $_SESSION['proposta']['valorCidadeOrigem'], 'sg_uf_origem_rota' => $_SESSION['proposta']['valorEstadoOrigem'], 'nm_cidade_destino_rota' => $_SESSION['proposta']['valorCidadeDestino'], 'sg_uf_destino_rota' => $_SESSION['proposta']['valorEstadoDestino'], 'nm_local_devolucao_container_rota' => $_SESSION['proposta']['valorLocalDevolucao'] , 'cd_proposta' => $idProposta]);
 
         $idVeiculo = DB::table('tb_veiculo')->insertGetId(['nm_veiculo' => $_SESSION['proposta']['valorTipoVeiculo'], 'qt_eixos_veiculo' => $_SESSION['proposta']['valorEixos_cabecalho'], 'ds_carga_veiculo' => $_SESSION['proposta']['valorTipoContainer'], 'cd_proposta' => $idProposta]);
 
         $idOperacao = DB::table('tb_operacao')->insertGetId(['nm_tipo_operacao' => $_SESSION['proposta']['tipoOperacao'], 'nm_tipo_imposto_operacao' => $_SESSION['proposta']['tipoImpostos'],'vl_frete_peso_operacao' => $_SESSION['proposta']['valorFretePeso_operacao'], 'vl_subtotal_operacao' => $_SESSION['proposta']['subTotal'], 'pc_total_prest_operacao' => $_SESSION['proposta']['porcentagemTotalPrest'], 'vl_total_prest_operacao' => $_SESSION['proposta']['valorTotalPrest'], 'vl_despesas_operacao' => $_SESSION['proposta']['valorDespesas_operacao'], 'pc_lucro_bruto_operacao' => $_SESSION['proposta']['porcentagemLucroBruto'], 'vl_lucro_bruto_operacao' => $_SESSION['proposta']['valorLucroBruto'], 'vl_margem_operacao' => $_SESSION['proposta']['valorMargemLucroBruto'], 'cd_proposta' => $idProposta]);
+
+        $idMercadoriaOperacao = DB::table('tb_mercadoria_operacao')->insertGetId(['vl_mercadoria_operacao' => $_SESSION['proposta']['valorMercadoria'], 'vl_container_operacao' => $_SESSION['proposta']['container'], 'cd_operacao' => $idOperacao]);
 
         $idImpostoOperacao = DB::table('tb_imp_operacao')->insertGetId(['pc_imp_susp_imp_operacao' => $_SESSION['proposta']['porcentagemSusp'], 'vl_imp_susp_imp_operacao' => $_SESSION['proposta']['valorImpostoSuspenso'],'vl_total_imposto_seguro_operacao' => $_SESSION['proposta']['valorTotalImpostoSeguro'], 'pc_rctrc_imp_operacao' => $_SESSION['proposta']['porcentagemRCTRC_operacao'], 'vl_rctrc_imp_operacao' => $_SESSION['proposta']['valorRCTRC_operacao'], 'pc_rcfdc_imp_operacao' => $_SESSION['proposta']['porcentagemRCFDC_operacao'], 'vl_rcfdc_imp_operacao' => $_SESSION['proposta']['valorRCFDC_operacao'], 'ds_tipo_gris_imp_operacao' => $_SESSION['proposta']['valorCheckGRIS'], 'pc_gris_imp_operacao' => $_SESSION['proposta']['porcentagemGRIS'], 'vl_gris_imp_operacao' => $_SESSION['proposta']['valorGRIS'], 'vl_valor_icms_operacao' => $_SESSION['proposta']['valorICMS_operacao'], 'pc_icms_operacao' => $_SESSION['proposta']['porcentagemICMS_operacao'], 'cd_operacao' => $idOperacao]);
 
@@ -89,6 +91,8 @@ class PropostaController extends Controller
 
         $idPedagioCarga = DB::table('tb_pedagio_rota_carga')->insertGetId(['qtd_eixos_pedagio_rota_carga' => $_SESSION['proposta']['valorEixos_carga'], 'vl_ida_pedagio_rota_carga' => $_SESSION['proposta']['valorPedagioEixoIda'], 'vl_volta_pedagio_rota_carga' => $_SESSION['proposta']['valorPedagioEixoVolta'], 'vl_total_pedagio_rota_carga' => $_SESSION['proposta']['valorPedagio_carga'], 'cd_carga' => $idCarga]);
 
+        $idCombustivelCarga = DB::table('tb_combustivel_carga')->insertGetId(['vl_quantidade_combustivel_carga' => $_SESSION['proposta']['valorTotalCombustivelLitros'], 'vl_consumo_combustivel_carga' => $_SESSION['proposta']['valorConsumoMedioQuilometroLitro'],  'vl_preco_combustivel_carga' => $_SESSION['proposta']['valorPrecoCombustivelLitro'], 'vl_total_preco_combustivel_carga' => $_SESSION['proposta']['valorTotalCombustivel'], 'cd_carga' => $idCarga]);
+
         $idValorCarga = DB::table('tb_valor_carga')->insertGetId(['vl_preco_carga' => $_SESSION['proposta']['valorCargaUSD_EUR'], 'nm_tipo_moeda_valor_carga' => $_SESSION['proposta']['tipoMoedaEstrangeira'], 'vl_cotacao_valor_carga' => $_SESSION['proposta']['valorMoedaEstrangeira'], 'vl_brl_valor_carga' => $_SESSION['proposta']['valorCargaBRL'], 'cd_carga' => $idCarga]);
 
         $idFretePeso = DB::table('tb_frete_peso')->insertGetId(['vl_frete_peso' => $_SESSION['proposta']['valorFretePeso_fretePeso'], 'pc_frete_peso' => $_SESSION['proposta']['porcentagemPercentualFretePeso'], 'cd_proposta' => $idProposta]);
@@ -99,7 +103,7 @@ class PropostaController extends Controller
 
         $idCotacaoAutonomo2 = DB::table('tb_cot_aut')->insertGetId(['nm_cot_aut' => $_SESSION['proposta']['motoristaCotado2'], 'vl_cot_aut' => $_SESSION['proposta']['valorMotoristaCotado2'], 'dt_cot_aut' => $_SESSION['proposta']['dataCotacaoMotorista2'], 'cd_proposta' => $idProposta]);
 
-        $idAdicionaisProposta = DB::table('tb_adicionais')->insertGetId(['id_isca_adicionais' => $_SESSION['proposta']['valorTipoUtilizacaoIsca'], 'vl_isca_adicionais' => $_SESSION['proposta']['valorUtilizacaoIsca'], 'id_monitoramento_isca_adicionais' => $_SESSION['proposta']['valorTipoMonitoramentoIsca'], 'vl_monitoramento_isca_adicionais' => $_SESSION['proposta']['valorMonitoramentoIsca'], 'id_escolta_armada_adicionais' => $_SESSION['proposta']['valorTipoEscoltaArmada'], 'vl_escolta_armada_adicionais' => $_SESSION['proposta']['valorEscoltaArmada'], 'id_devolucao_margem_esquerda_adicionais' => $_SESSION['proposta']['valorTipoDevolucaoMargemEsquerda'], 'vl_devolucao_margem_esquerda_adicionais' => $_SESSION['proposta']['valorDevolucaoEsquerda'], 'id_devolucao_sv_adicionais' => $_SESSION['proposta']['valorTipoDevolucaoSV'], 'vl_devolucao_sv_adicionais' => $_SESSION['proposta']['valorDevolucaoSV'], 'id_adic_carga_anvisa_adicionais' => $_SESSION['proposta']['valorTipoAdicionalCargaAnvisa'], 'vl_adic_carga_anvisa_adicionais' => $_SESSION['proposta']['valorAdicionalCargaAnvisa'],'id_adic_carga_imo_adicionais' => $_SESSION['proposta']['valorTipoAdicionalCargaIMO'], 'vl_adic_carga_imo_adicionais' => $_SESSION['proposta']['valorAdicionalCargaIMO'], 'id_carregamento_expr_adicionais' => $_SESSION['proposta']['valorTipoCarregamentoExpresso'], 'vl_carregamento_expr_adicionais' => $_SESSION['proposta']['valorCarregamentoExpresso'], 'id_util_cav_ls_adicionais' => $_SESSION['proposta']['valorTipoUtilizacaoCavaloLS'], 'vl_util_cav_ls_adicionais' => $_SESSION['proposta']['valorUtilizacaoCavaloLS'], 'id_estadia_especial_adicionais' => $_SESSION['proposta']['valorTipoEstadiaEspecial'], 'vl_estadia_especial_adicionais' => $_SESSION['proposta']['valorEstadiaEspecial'], 'id_sobrestadia_carreg_adicionais' => $_SESSION['proposta']['valorTipoSobrestadiaCarregamento'], 'vl_sobrestadia_carreg_adicionais' => $_SESSION['proposta']['valorSobrestadiaCarregamento'], 'id_sobrestadia_retirada_adicionais' => $_SESSION['proposta']['valorTipoSobrestadiaRetirada'], 'vl_sobrestadia_retirada_adicionais' => $_SESSION['proposta']['valorSobrestadiaRetirada'], 'cd_proposta' => $idProposta]);
+        $idAdicionaisProposta = DB::table('tb_adicionais')->insertGetId(['id_isca_adicionais' => $_SESSION['proposta']['valorTipoUtilizacaoIsca'], 'vl_isca_adicionais' => $_SESSION['proposta']['valorUtilizacaoIsca'], 'id_monitoramento_isca_adicionais' => $_SESSION['proposta']['valorTipoMonitoramentoIsca'], 'vl_monitoramento_isca_adicionais' => $_SESSION['proposta']['valorMonitoramentoIsca'], 'id_escolta_armada_adicionais' => $_SESSION['proposta']['valorTipoEscoltaArmada'], 'vl_escolta_armada_adicionais' => $_SESSION['proposta']['valorEscoltaArmada'], 'id_devolucao_margem_esquerda_adicionais' => $_SESSION['proposta']['valorTipoDevolucaoMargemEsquerda'], 'vl_devolucao_margem_esquerda_adicionais' => $_SESSION['proposta']['valorDevolucaoMargemEsquerda'], 'id_devolucao_sv_adicionais' => $_SESSION['proposta']['valorTipoDevolucaoSV'], 'vl_devolucao_sv_adicionais' => $_SESSION['proposta']['valorDevolucaoSV'], 'id_adic_carga_anvisa_adicionais' => $_SESSION['proposta']['valorTipoAdicionalCargaAnvisa'], 'vl_adic_carga_anvisa_adicionais' => $_SESSION['proposta']['valorAdicionalCargaAnvisa'],'id_adic_carga_imo_adicionais' => $_SESSION['proposta']['valorTipoAdicionalCargaIMO'], 'vl_adic_carga_imo_adicionais' => $_SESSION['proposta']['valorAdicionalCargaIMO'], 'id_carregamento_expr_adicionais' => $_SESSION['proposta']['valorTipoCarregamentoExpresso'], 'vl_carregamento_expr_adicionais' => $_SESSION['proposta']['valorCarregamentoExpresso'], 'id_util_cav_ls_adicionais' => $_SESSION['proposta']['valorTipoUtilizacaoCavaloLS'], 'vl_util_cav_ls_adicionais' => $_SESSION['proposta']['valorUtilizacaoCavaloLS'], 'id_estadia_especial_adicionais' => $_SESSION['proposta']['valorTipoEstadiaEspecial'], 'vl_estadia_especial_adicionais' => $_SESSION['proposta']['valorEstadiaEspecial'], 'id_sobrestadia_carreg_adicionais' => $_SESSION['proposta']['valorTipoSobrestadiaCarregamento'], 'vl_sobrestadia_carreg_adicionais' => $_SESSION['proposta']['valorSobrestadiaCarregamento'], 'id_sobrestadia_retirada_adicionais' => $_SESSION['proposta']['valorTipoSobrestadiaRetirada'], 'vl_sobrestadia_retirada_adicionais' => $_SESSION['proposta']['valorSobrestadiaRetirada'], 'cd_proposta' => $idProposta]);
         
         // $propostaVinda = DB::table('tb_proposta')->where('tb_proposta.cd_proposta', '=', 1)->join('tb_produto', 'tb_proposta.cd_proposta', '=', 'tb_produto.cd_proposta')->get();
 
@@ -108,31 +112,71 @@ class PropostaController extends Controller
 
     function pegarPropostaCompleta(Request $request)
     {
-        // $proposta = DB::table('tb_proposta')
-        // ->join('tb_produto', 'tb_proposta.cd_proposta', '=', 'tb_produto.cd_proposta')
-        // ->join('tb_filial', 'tb_proposta.cd_proposta', '=', 'tb_filial.cd_proposta')
-        // ->join('tb_cliente', 'tb_proposta.cd_proposta', '=', 'tb_cliente.cd_proposta')
-        // ->join('tb_responsavel_cliente', 'tb_cliente.cd_cliente', '=', 'tb_responsavel_cliente.cd_cliente')
-        // ->join('tb_email_responsavel_cliente', 'tb_responsavel_cliente.cd_responsavel_cliente', '=', 'tb_email_responsavel_cliente.cd_responsavel_cliente')
-        // ->join('tb_rota', 'tb_proposta.cd_proposta', '=', 'tb_rota.cd_proposta')
-        // ->join('tb_veiculo', 'tb_proposta.cd_proposta', '=', 'tb_veiculo.cd_proposta')
-        // ->join('tb_operacao', 'tb_proposta.cd_proposta', '=', 'tb_operacao.cd_proposta')
-        // ->join('tb_imp_operacao', 'tb_operacao.cd_operacao', '=', 'tb_imp_operacao.cd_operacao')
-        // ->join('tb_adic_operacao', 'tb_operacao.cd_operacao', '=', 'tb_adic_operacao.cd_operacao')
-        // ->join('tb_despesas', 'tb_proposta.cd_proposta', '=', 'tb_despesas.cd_proposta')
-        // ->join('tb_imp_despesas', 'tb_despesas.cd_despesas', '=', 'tb_imp_despesas.cd_despesas')
-        // ->join('tb_adic_despesas', 'tb_despesas.cd_despesas', '=', 'tb_adic_despesas.cd_despesas')
-        // ->join('tb_carga', 'tb_proposta.cd_proposta', '=', 'tb_carga.cd_proposta')
-        // ->join('tb_km_rota_carga', 'tb_carga.cd_carga', '=', 'tb_km_rota_carga.cd_carga')
-        // ->join('tb_pedagio_rota_carga', 'tb_carga.cd_carga', '=', 'tb_pedagio_rota_carga.cd_carga')
-        // ->join('tb_valor_carga', 'tb_carga.cd_carga', '=', 'tb_valor_carga.cd_carga')
-        // ->join('tb_frete_peso', 'tb_proposta.cd_proposta', '=', 'tb_frete_peso.cd_proposta')
-        // ->join('tb_motorista', 'tb_proposta.cd_proposta', '=', 'tb_motorista.cd_proposta')
-        // ->join('tb_cot_aut', 'tb_proposta.cd_proposta', '=', 'tb_cot_aut.cd_proposta')
-        // ->join('tb_adicionais', 'tb_proposta.cd_proposta', '=', 'tb_adicionais.cd_proposta')
-        // ->where('tb_proposta.cd_proposta', '=', $request['ID'])->get();
-        // var_dump($proposta);
-        // $response = json_encode($proposta);
-        // return $response;
+        $cabecalho = DB::table('tb_proposta')
+        ->join('tb_produto', 'tb_proposta.cd_proposta', '=', 'tb_produto.cd_proposta')
+        ->join('tb_filial', 'tb_proposta.cd_proposta', '=', 'tb_filial.cd_proposta')
+        ->join('tb_cliente', 'tb_proposta.cd_proposta', '=', 'tb_cliente.cd_proposta')
+        ->join('tb_responsavel_cliente', 'tb_cliente.cd_cliente', '=', 'tb_responsavel_cliente.cd_cliente')
+        ->join('tb_email_responsavel_cliente', 'tb_responsavel_cliente.cd_responsavel_cliente', '=', 'tb_email_responsavel_cliente.cd_responsavel_cliente')
+        ->join('tb_rota', 'tb_proposta.cd_proposta', '=', 'tb_rota.cd_proposta')
+        ->join('tb_veiculo', 'tb_proposta.cd_proposta', '=', 'tb_veiculo.cd_proposta')
+        ->where('tb_proposta.cd_proposta', '=', $request['ID'])
+        ->get();
+
+        $usuario = DB::table('tb_usuario')
+        ->join('tb_email_usuario', 'tb_usuario.cd_usuario', '=', 'tb_email_usuario.cd_usuario')
+        ->select('nm_nome_completo', 'nm_cargo_usuario', 'nm_email_usuario')
+        ->where('tb_usuario.cd_usuario', '=', $cabecalho[0]->cd_usuario)
+        ->get();
+
+        
+
+        if($usuario[0]->nm_email_usuario == $_COOKIE['emailUsuario'] || $_COOKIE['privilegioUsuario'] == "administrador")
+        {
+            $operacao = DB::table('tb_operacao')
+            ->join('tb_mercadoria_operacao', 'tb_operacao.cd_operacao', '=', 'tb_mercadoria_operacao.cd_operacao')
+            ->join('tb_imp_operacao', 'tb_operacao.cd_operacao', '=', 'tb_imp_operacao.cd_operacao')
+            ->join('tb_adic_operacao', 'tb_operacao.cd_operacao', '=', 'tb_adic_operacao.cd_operacao')
+            ->where('tb_operacao.cd_proposta', '=', $request['ID'])
+            ->get();
+
+            $despesa = DB::table('tb_despesas')
+            ->join('tb_imp_despesas', 'tb_despesas.cd_despesas', '=', 'tb_imp_despesas.cd_despesas')
+            ->join('tb_adic_despesas', 'tb_despesas.cd_despesas', '=', 'tb_adic_despesas.cd_despesas')
+            ->where('tb_despesas.cd_proposta', '=', $request['ID'])
+            ->get();
+
+            $carga = DB::table('tb_carga')
+            ->join('tb_km_rota_carga', 'tb_carga.cd_carga', '=', 'tb_km_rota_carga.cd_carga')
+            ->join('tb_pedagio_rota_carga', 'tb_carga.cd_carga', '=', 'tb_pedagio_rota_carga.cd_carga')
+            ->join('tb_combustivel_carga', 'tb_carga.cd_carga', '=', 'tb_combustivel_carga.cd_carga')
+            ->join('tb_valor_carga', 'tb_carga.cd_carga', '=', 'tb_valor_carga.cd_carga')
+            ->where('tb_carga.cd_proposta', '=', $request['ID'])
+            ->get();
+
+            $fretePeso = DB::table('tb_frete_peso')
+            ->where('tb_frete_peso.cd_proposta', '=', $request['ID'])
+            ->get();
+
+            $motorista = DB::table('tb_motorista')
+            ->where('tb_motorista.cd_proposta', '=', $request['ID'])
+            ->get();
+
+            $cotacaoMotorista = DB::table('tb_cot_aut')
+            ->where('tb_cot_aut.cd_proposta', '=', $request['ID'])
+            ->get();
+
+            $adicionais = DB::table('tb_adicionais')
+            ->where('tb_adicionais.cd_proposta', '=', $request['ID'])
+            ->get();
+    
+            return ["proposta" => ["cabecalho" => $cabecalho, "operacao" => $operacao, "despesa" => $despesa, "carga" => $carga, "fretePeso" => $fretePeso, 'motorista' => $motorista, 'cotacoes' => $cotacaoMotorista , 'adicionais' => $adicionais], "usuario" => $usuario];
+        }
+        else
+        {
+            return ["resposta" => "Você não tem acesso"];
+        }
+
+        
     }
 }
