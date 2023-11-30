@@ -31,6 +31,7 @@ class EmailController extends Controller
             print $response->statusCode() . "\n";
             print_r($response->headers());
             print $response->body() . "\n";
+            
         } catch (Exception $e) {
             echo 'Caught exception: ' . $e->getMessage() . "\n";
         }
@@ -52,7 +53,7 @@ class EmailController extends Controller
         $email = new \SendGrid\Mail\Mail();
         $email->setFrom("compassalgoritimo@gmail.com", "Algoritmo - Compass");
         $email->setSubject("ERRO NA PROPOSTA: O cliente $nome_cliente verificou um erro na proposta $neg.");
-        $email->addTo('isa.prates@booat.com.br', 'isa');
+        $email->addTo($email_criador, 'isa');
         $email->addContent(
             "text/html",
             "O cliente $nome_cliente, apontou um erro na proposta de seguinte referência: $neg, negociada em conjunto com $ref. Verifique as inconsistências na proposta, e reenvie para assinar. Erro enviado: $Erro."
