@@ -1674,6 +1674,7 @@ function preencherInputs()
 }
 
 var pegouProposta = 0;
+var pegouDados = 0;
 
 function pegarProposta()
 {
@@ -1683,9 +1684,9 @@ function pegarProposta()
         var parametros = parametros.get('ID');
         // console.log('pegandoproposta')
         // console.log(parametros)
-        fetch(`http://localhost:8000/pegarProposta?ID=${parametros}`)
-        .then((response) => response.json())
-        .then((json) => {proposta = (json['resposta'][0]), usuario = (json['usuario'][0])})
+            fetch(`http://localhost:8000/pegarProposta?ID=${parametros}`)
+            .then((response) => response.json())
+            .then((json) => {proposta = (json['resposta'][0]), usuario = (json['usuario'][0])})
 
         document.getElementById('nomeResponsavel').value = usuario.nm_nome_completo 
         document.getElementById('emailResponsavel').value = usuario.nm_email_usuario
