@@ -20,7 +20,7 @@
             @session_start(); 
             if (isset($_SESSION['Usuario']))
             {
-                if ($_SESSION['Usuario']['logado'])
+                if ($_SESSION['Usuario']['logado'] == "true")
                 {
 
                 }

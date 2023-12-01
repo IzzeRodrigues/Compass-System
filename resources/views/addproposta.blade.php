@@ -124,7 +124,7 @@
                                     $clientes = DB::table('tb_cliente')->get();
                                     foreach($clientes as $cliente)
                                     {
-                                        echo("<option value=$cliente->nm_empresa_cliente>$cliente->nm_empresa_cliente</option>");
+                                        echo("<option value='$cliente->nm_empresa_cliente'>$cliente->nm_empresa_cliente</option>");
                                     }
                                 ?>
                             </select>
