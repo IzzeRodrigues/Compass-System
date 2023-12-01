@@ -77,9 +77,9 @@ function inicioProposta(usuario,email,cargo)
     // console.log(resposta2);
     // console.log("Essa é a resposta da variável: "+ resposta2.nm_nome_completo);
 
-    console.log(usuario);
-    console.log(cargo);
-    console.log(email);
+    // console.log(usuario);
+    // console.log(cargo);
+    // console.log(email);
 
     document.getElementById('nomeResponsavel').value = usuario;
     document.getElementById('cargoResponsavel').value = cargo;

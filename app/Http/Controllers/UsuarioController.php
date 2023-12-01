@@ -12,7 +12,7 @@ class UsuarioController extends Controller
 {
     public function verificarUsuario(Request $request)
     {
-        session_start();
+        @session_start();
         // if (isset($_COOKIE['statusLogin']))
         // {
         //     $resultado = DB::select("select * from tb_usuario where nm_nome_completo = '" . $_COOKIE['nomeUsuario'].  "'");
@@ -136,25 +136,25 @@ class UsuarioController extends Controller
 
         // Novo login
 
-        // if(isset($_SESSION['Usuario']))
-        // {
-            // if($_SESSION['Usuario']['logado'])
-            // {
-            //     if($_SESSION['Usuario']['privilegio'] == "Adm")
-            //     {
-            //         return redirect()->route('admindex');
-            //     }
-            //     else
-            //     {
-            //         if($_SESSION['Usuario']['privilegio'] == "Usuario")
-            //         {
-            //             return redirect()->route('comercial');
-            //         }
-            //     }
-            // }
-        // }
-        // else
-        // {
+        if(isset($_SESSION['Usuario']))
+        {
+            if($_SESSION['Usuario']['logado'])
+            {
+                if($_SESSION['Usuario']['privilegio'] == "Adm")
+                {
+                    echo("<script>window.location.href = 'http://localhost:8000/admindex'</script>");
+                }
+                else
+                {
+                    if($_SESSION['Usuario']['privilegio'] == "Usuario")
+                    {
+                        echo("<script>window.location.href = 'http://localhost:8000/comercial'</script>");
+                    }
+                }
+            }
+        }
+        else
+        {
             $usuario = $request->usuario;
             $senha = $request->senha;
 
@@ -190,34 +190,15 @@ class UsuarioController extends Controller
                 $_SESSION['Erro'] = "Email e/ou senha incorretos";
                 return redirect()->route('login');
             }
-        // }
+        }
 
         
     }
 
     public function deslogar()
     {
-        setcookie(
-            "nomeUsuario",
-            '',
-            0,
-        );
-        setcookie(
-            "cargoUsuario",
-            '',
-            0,
-        );
-        setcookie(
-            "statusLogin",
-            false,
-            0,
-        );
-        setcookie(
-            "privilegioUsuario",
-            '',
-            0,
-        );
-        
+        @session_start();
+        unset($_SESSION['Usuario']);
         return redirect()->route('inicio');
     }
 
