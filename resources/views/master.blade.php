@@ -14,8 +14,8 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     </head>
     <body class="sb-nav-fixed dashboardTxt">
-        <script src="/js/verificarLogin.js"></script>
-        <script>verificarLoginPaginas()</script>
+        {{-- <script src="/js/verificarLogin.js"></script> --}}
+        {{-- <script>verificarLoginPaginas()</script> --}}
 
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark bg-perso">
             <!-- Navbar Brand-->

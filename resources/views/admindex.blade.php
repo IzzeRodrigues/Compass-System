@@ -12,8 +12,19 @@
         <main>
     @section('master')
     @section('conteudo')
-        <script src="js/verificarPrivilegio.js" type="text/javascript"></script>
-        <script>verificarPrivilegio("administrador")</script>
+        <?php
+
+            if(isset($_SESSION['Usuario']))
+            {
+                if($_SESSION['Usuario']['privilegio'] != "Adm")
+                {
+                    return redirect()->route('comercial');
+                }
+            }
+
+        ?>
+        {{-- <script src="js/verificarPrivilegio.js" type="text/javascript"></script> --}}
+        {{-- <script>verificarPrivilegio("administrador")</script> --}}
             <div class="container-fluid px-4">
                 <h1 class="mt-4">Compass</h1>
                 <ol class="breadcrumb mb-4">
@@ -112,6 +123,8 @@
                             </tfoot>
                             <tbody>
                                     <?php 
+                                        session_start();
+                                        var_dump($_SESSION['Usuario']['privilegio']);
                                         $propostas = DB::table('tb_proposta')->join('tb_operacao', 'tb_proposta.cd_proposta', '=', 'tb_operacao.cd_proposta')->join('tb_cliente', 'tb_proposta.cd_proposta', '=', 'tb_cliente.cd_proposta')->join('tb_usuario', 'tb_proposta.cd_usuario', '=', 'tb_usuario.cd_usuario')->select('nm_nome_completo', 'nm_tipo_operacao', 'nm_empresa_cliente', 'nm_referencia_acl', 'dt_proposta', 'vl_lucro_bruto_operacao')->get();
                                         foreach ($propostas as $proposta)
                                         {

@@ -12,8 +12,19 @@
         <main>
     @section('master')
     @section('conteudo')
-        <script src="js/verificarPrivilegio.js" type="text/javascript"></script>
-        <script>verificarPrivilegio("comercial")</script>
+        <?php
+
+        if(isset($_SESSION['Usuario']))
+        {
+            if($_SESSION['Usuario']['privilegio'] != "Usuario")
+            {
+                return redirect()->route('admindex');
+            }
+        }
+
+        ?>
+        {{-- <script src="js/verificarPrivilegio.js" type="text/javascript"></script> --}}
+        {{-- <script>verificarPrivilegio("comercial")</script> --}}
             <div class="container-fluid px-4">
                 <h1 class="mt-4">Compass</h1>
                 <ol class="breadcrumb mb-4">

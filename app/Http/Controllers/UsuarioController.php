@@ -136,47 +136,54 @@ class UsuarioController extends Controller
 
         // Novo login
 
-        if(isset($_SESSION['Usuario']))
-        {
-            if($_SESSION['Usuario']['logado'])
-            {
-                if($_SESSION['Usuario']['privilegio'] == "Adm")
-                {
-                    return redirect()->route('admindex');
-                }
-                else
-                {
-                    if($_SESSION['Usuario']['privilegio'] == "Usuario")
-                    {
-                        return redirect()->route('comercial');
-                    }
-                }
-            }
-        }
-        else
-        {
+        // if(isset($_SESSION['Usuario']))
+        // {
+            // if($_SESSION['Usuario']['logado'])
+            // {
+            //     if($_SESSION['Usuario']['privilegio'] == "Adm")
+            //     {
+            //         return redirect()->route('admindex');
+            //     }
+            //     else
+            //     {
+            //         if($_SESSION['Usuario']['privilegio'] == "Usuario")
+            //         {
+            //             return redirect()->route('comercial');
+            //         }
+            //     }
+            // }
+        // }
+        // else
+        // {
             $usuario = $request->usuario;
             $senha = $request->senha;
-    
-            $usuario = DB::table('tb_email_usuario')->join('tb_usuario', 'tb_email_usuario.cd_usuario', '=', 'tb_email_usuario.cd_usuario')->join('tb_privilegio', 'tb_email_usuario.cd_usuario', '=', 'tb_privilegio.cd_usuario')->where(['tb_email_usuario.nm_email_usuario', '=', $usuario], ['tb_usuario.cd_senha', "=", $senha])->get();
-    
+            // dd($usuario);
+            // dd($senha);
+
+            $usuario = DB::table('tb_email_usuario')->join('tb_usuario', 'tb_email_usuario.cd_usuario', '=', 'tb_email_usuario.cd_usuario')
+            ->join('tb_privilegio', 'tb_email_usuario.cd_usuario', '=', 'tb_privilegio.cd_usuario')
+            // ->where('tb_email_usuario.nm_email_usuario', '=', $usuario)
+            ->get();
+            dd($usuario);
             if ($usuario)
             {
                 $_SESSION['Usuario'] = ['logado' => true, 'nome' => $usuario[0]->nm_nome_completo, 'email' => $usuario[0]->nm_email_usuario, 'cargo' => $usuario[0]->nm_cargo_usuario, 'privilegio' => $usuario[0]->nm_privilegio];
-                if ($usuario->nm_privilegio == "Adm")
+                if ($usuario[0]->nm_privilegio == "Adm")
                 {
-                    return redirect()->route('admindex');
+                    // return redirect()->route('admindex');
+                    // dd($_SESSION['Usuario']);
                 }
                 else
                 {
-                    if ($usuario->nm_privilegio == "Usuario")
+                    if ($usuario[0]->nm_privilegio == "Usuario")
                     {
-                        return redirect()->route('comercial');
+                        // return redirect()->route('comercial');
+                        // dd($_SESSION['Usuario']);
                     }
                     else
                     {
-                        $_SESSION['Erro'] = "Email e/ou senha incorretos";
-                        return redirect()->route('login');
+                        // $_SESSION['Erro'] = "Email e/ou senha incorretos";
+                        // return redirect()->route('login');
                     }
                 }
             }
@@ -185,7 +192,7 @@ class UsuarioController extends Controller
                 $_SESSION['Erro'] = "Email e/ou senha incorretos";
                 return redirect()->route('login');
             }
-        }
+        // }
 
         
     }
