@@ -116,7 +116,18 @@
                     <div class="row justify-content-between">
                         <div class="col-md-3 col-sm-4 col-12 mb-3">
                             <label>Nome da Empresa</label>
-                            <input type="text" class="form-control" placeholder="Ex:Copa Logística" id="valorNomeCliente" name="valorNomeCliente">
+                            {{-- <input type="text" class="form-control" placeholder="Ex:Copa Logística" id="valorNomeCliente" name="valorNomeCliente"> --}}
+                            <select class="form-control" placeholder="Ex:Copa Logística" id="valorNomeCliente" name="valorNomeCliente">
+                                <option value="naoSelecionado" selected disabled>Selecione...</option>
+                                <?php 
+                                    @session_start();
+                                    $clientes = DB::table('tb_cliente')->get();
+                                    foreach($clientes as $cliente)
+                                    {
+                                        echo("<option value=$cliente->nm_empresa_cliente>$cliente->nm_empresa_cliente</option>");
+                                    }
+                                ?>
+                            </select>
                         </div>
                         <div class="col-md-3 col-sm-4 col-12 mb-3">
                             <label>Contato</label>
