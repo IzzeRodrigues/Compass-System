@@ -5,6 +5,7 @@ use App\Http\Controllers\CompassController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\PropostaController;
 use App\Http\Controllers\EmailController;
+use App\Http\Controllers\ClienteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,6 +48,10 @@ Route::get('/assinatura', [CompassController::class, 'assinatura'])->name('assin
 Route::get('/enviarErro', [EmailController::class, 'enviarErro'])->name('erroProposta');
 Route::get('/pegarValorAssinante', [AssinarDigitalController::class, 'pegarValorAssinante'])->name('pegarValorAssinante');
 
+Route::get('/acoesCliente', [ClienteController::class, 'acoesCliente'])->name('acoesCliente');
+Route::get('/pegarCliente', [ClienteController::class, 'pegarCliente'])->name('pegarCliente');
+Route::get('/alterarCliente', [ClienteController::class, 'atualizarCliente'])->name('atualizarCliente');
+Route::get('/deletarCliente', [ClienteController::class, 'deletarCliente'])->name('deletarCliente');
 
 
 Route::get('/acoesProposta', [PropostaController::class, 'escolherAcao'])->name('acoesProposta');

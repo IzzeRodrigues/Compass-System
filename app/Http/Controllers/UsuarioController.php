@@ -136,6 +136,7 @@ class UsuarioController extends Controller
 
         // Novo login
 
+        
         if(isset($_SESSION['Usuario']))
         {
             if($_SESSION['Usuario']['logado'])
@@ -157,15 +158,16 @@ class UsuarioController extends Controller
         {
             $usuario = $request->usuario;
             $senha = $request->senha;
-
+            
             $usuario = DB::table('tb_email_usuario')
             ->join('tb_usuario', 'tb_email_usuario.cd_usuario', '=', 'tb_usuario.cd_usuario')
             ->join('tb_privilegio', 'tb_email_usuario.cd_usuario', '=', 'tb_privilegio.cd_usuario')
             ->where('nm_email_usuario', '=', $usuario)
             ->where('cd_senha', '=', $senha)
             ->get();
-
-            if ($usuario)
+            
+            // dd($usuario);
+            if (isset($usuario[0]))
             {
                 $_SESSION['Usuario'] = ['logado' => true, 'nome' => $usuario[0]->nm_nome_completo, 'email' => $usuario[0]->nm_email_usuario, 'cargo' => $usuario[0]->nm_cargo_usuario, 'privilegio' => $usuario[0]->nm_privilegio];
                 if ($usuario[0]->nm_privilegio == "Adm")

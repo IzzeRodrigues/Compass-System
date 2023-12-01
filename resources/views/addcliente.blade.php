@@ -17,99 +17,45 @@
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">Adicionar Cliente</li>
                 </ol>
-                <div class="row">
-                    <div class="col-md-4 col-sm-6 col-12 mb-3">
-                        <label>Nome da Empresa</label>
-                        <input type="text" class="form-control" placeholder="Danone Ltda">
+                <form action="/acoesCliente" method="GET">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 col-12 mb-3">
+                            <label>Nome da Empresa</label>
+                            <input id="nomeEmpresa" name="nomeEmpresa" type="text" class="form-control" placeholder="Danone Ltda">
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-12 mb-3">
+                            <label>ACL</label>
+                            <select id="tipoEmpresa" name="tipoEmpresa" class="form-control">
+                                <option selected disabled>Selecione...</option>
+                                <option value="Cliente Cargo">Cliente Cargo</option>
+                                <option value="Cliente Multi">Cliente Multi</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="col-md-4 col-sm-6 col-12 mb-3">
-                        <label>ACL</label>
-                        <select class="form-control">
-                            <option selected disabled>Selecione...</option>
-                            <option>Cliente Cargo</option>
-                            <option>Cliente Multi</option>
-                        </select>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 col-12 mb-3">
+                            <label>Responsável</label>
+                            <input id="nomeResponsavelEmpresa" name="nomeResponsavelEmpresa" type="text" class="form-control" placeholder="João">
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-12 mb-3">
+                            <label>E-mail Responsável</label>
+                            <input id="emailResponsavelEmpresa" name="emailResponsavelEmpresa" type="text" class="form-control" placeholder="exemplo@email.com.br">
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-12 mb-3">
+                            <label>Contato Responsável</label>
+                            <input id="contatoResponsavelEmpresa" name="contatoResponsavelEmpresa" type="tel" class="form-control" placeholder="(13)99123-4567" maxlength="15">
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 col-sm-6 col-12 mb-3">
-                        <label>Responsável</label>
-                        <input type="text" class="form-control" placeholder="João">
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-12 mb-3">
-                        <label>E-mail Responsável</label>
-                        <input type="text" class="form-control" placeholder="exemplo@email.com.br">
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-12 mb-3">
-                        <label>Contato Responsável</label>
-                        <input type="tel" class="form-control" placeholder="(13)99123-4567">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 col-sm-6 col-12 mb-3">
-                        <label>Responsável 2</label>
-                        <input type="text" class="form-control" placeholder="João">
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-12 mb-3">
-                        <label>E-mail Responsável 2</label>
-                        <input type="text" class="form-control" placeholder="exemplo@email.com.br">
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-12 mb-3">
-                        <label>Contato Responsável 2</label>
-                        <input type="tel" class="form-control" placeholder="(13)99123-4567">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 col-sm-6 col-12 mb-3">
-                        <label>Responsável 3</label>
-                        <input type="text" class="form-control" placeholder="João">
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-12 mb-3">
-                        <label>E-mail Responsável 3</label>
-                        <input type="text" class="form-control" placeholder="exemplo@email.com.br">
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-12 mb-3">
-                        <label>Contato Responsável 3</label>
-                        <input type="tel" class="form-control" placeholder="(13)99123-4567">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 col-sm-6 col-12 mb-3">
-                        <label>Responsável 4</label>
-                        <input type="text" class="form-control" placeholder="João">
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-12 mb-3">
-                        <label>E-mail Responsável 4</label>
-                        <input type="text" class="form-control" placeholder="exemplo@email.com.br">
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-12 mb-3">
-                        <label>Contato Responsável 4</label>
-                        <input type="tel" class="form-control" placeholder="(13)99123-4567">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 col-sm-6 col-12 mb-3">
-                        <label>Responsável 5</label>
-                        <input type="text" class="form-control" placeholder="João">
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-12 mb-3">
-                        <label>E-mail Responsável 5</label>
-                        <input type="text" class="form-control" placeholder="exemplo@email.com.br">
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-12 mb-3">
-                        <label>Contato Responsável 5</label>
-                        <input type="tel" class="form-control" placeholder="(13)99123-4567">
-                    </div>
-                </div>
                     <div class="row justify-content-end mt-1">
 
                         <div class="pt-1 mb-4 d-grid gap-2 col-md-3 col-sm-6">
-                            <a href="#"><button class="btn btn-info btn-lg btn-block shadow-sm corpadrao larg-btn" role="button" type="submit">Salvar</button></a>
+                            <a href="#"><button class="btn btn-info btn-lg btn-block shadow-sm corpadrao larg-btn" role="button" type="submit" name="botaoSalvar" value="botaoSalvar">Salvar</button></a>
                         </div>
                         <div class="pt-1 mb-4 d-grid gap-2 col-md-3 col-sm-6">
                             <a href="#"><button class="btn btn-info btn-lg btn-block shadow-sm corpadrao larg-btn" role="button" type="button">Cancelar</button></a>
                         </div>
                     </div>
+                </form>
             </div>
         </main>
             @stop

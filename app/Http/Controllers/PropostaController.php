@@ -59,19 +59,17 @@ class PropostaController extends Controller
         $nomeFilial = $filial[0];
         $cnpjFilial = $filial[1];
 
-
-
         $idProposta = DB::table('tb_proposta')->insertGetId(['ds_tipo_proposta' => $_SESSION['proposta']['tipoProposta'],'dt_proposta' => $_SESSION['proposta']['valorDataProposta'],'nm_referencia_acl' => $referenciaAcl, 'nm_referencia_cliente' => $_SESSION['proposta']['valorReferenciaCliente'], 'nm_versao_proposta' => $_SESSION['proposta']['valorVersaoProposta'], 'dt_horario_recebimento' => $_SESSION['proposta']['valorHorarioRecebimento'], 'ds_metodo_transporte' => $_SESSION['proposta']['valorTipoFrete'], 'ds_status_proposta' => 'Não-Enviada', 'ds_tipo_assinatura' => 'Não-Selecionada', 'cd_usuario' => $id]);
 
         $idProduto = DB::table('tb_produto')->insertGetId(['nm_produto' => $_SESSION['proposta']['valorNomeProduto'], 'qt_produto' => $_SESSION['proposta']['valorPallets'], 'qt_peso_produto' => $_SESSION['proposta']['valorPeso'], 'cd_proposta' => $idProposta]);
 
         $idFilial = DB::table('tb_filial')->insertGetId(['nm_filial' => $nomeFilial, 'cd_cnpj' => $cnpjFilial, 'cd_proposta' => $idProposta]);
 
-        $idCliente = DB::table('tb_cliente')->insertGetId(['nm_empresa_cliente' => $_SESSION['proposta']['valorNomeCliente'], 'cd_proposta' => $idProposta]);
+        $idCliente = DB::table('tb_cliente_proposta')->insertGetId(['nm_empresa_cliente' => $_SESSION['proposta']['valorNomeCliente'], 'cd_proposta' => $idProposta]);
 
-        $idResponsavelCliente = DB::table('tb_responsavel_cliente')->insertGetId(['nm_responsavel_cliente' => $_SESSION['proposta']['valorNomeContatoCliente'], 'cd_cliente' => $idCliente]);
+        $idResponsavelCliente = DB::table('tb_responsavel_cliente_proposta')->insertGetId(['nm_responsavel_cliente' => $_SESSION['proposta']['valorNomeContatoCliente'], 'cd_cliente' => $idCliente]);
 
-        $idEmailResponsavelCliente = DB::table('tb_email_responsavel_cliente')->insertGetId(['nm_email_responsavel_cliente' => $_SESSION['proposta']['valorEmailContatoCliente'], 'cd_responsavel_cliente' => $idResponsavelCliente]);
+        $idEmailResponsavelCliente = DB::table('tb_email_responsavel_cliente_proposta')->insertGetId(['nm_email_responsavel_cliente' => $_SESSION['proposta']['valorEmailContatoCliente'], 'cd_responsavel_cliente' => $idResponsavelCliente]);
 
         $idRota = DB::table('tb_rota')->insertGetId(['nm_cidade_origem_rota' => $_SESSION['proposta']['valorCidadeOrigem'], 'sg_uf_origem_rota' => $_SESSION['proposta']['valorEstadoOrigem'], 'nm_cidade_destino_rota' => $_SESSION['proposta']['valorCidadeDestino'], 'sg_uf_destino_rota' => $_SESSION['proposta']['valorEstadoDestino'], 'nm_local_devolucao_container_rota' => $_SESSION['proposta']['valorLocalDevolucao'] , 'cd_proposta' => $idProposta]);
 
@@ -122,9 +120,9 @@ class PropostaController extends Controller
         $cabecalho = DB::table('tb_proposta')
         ->join('tb_produto', 'tb_proposta.cd_proposta', '=', 'tb_produto.cd_proposta')
         ->join('tb_filial', 'tb_proposta.cd_proposta', '=', 'tb_filial.cd_proposta')
-        ->join('tb_cliente', 'tb_proposta.cd_proposta', '=', 'tb_cliente.cd_proposta')
-        ->join('tb_responsavel_cliente', 'tb_cliente.cd_cliente', '=', 'tb_responsavel_cliente.cd_cliente')
-        ->join('tb_email_responsavel_cliente', 'tb_responsavel_cliente.cd_responsavel_cliente', '=', 'tb_email_responsavel_cliente.cd_responsavel_cliente')
+        ->join('tb_cliente_proposta', 'tb_proposta.cd_proposta', '=', 'tb_cliente_proposta.cd_proposta')
+        ->join('tb_responsavel_cliente_proposta', 'tb_cliente_proposta.cd_cliente', '=', 'tb_responsavel_cliente_proposta.cd_cliente')
+        ->join('tb_email_responsavel_cliente_proposta', 'tb_responsavel_cliente_proposta.cd_responsavel_cliente', '=', 'tb_email_responsavel_cliente_proposta.cd_responsavel_cliente')
         ->join('tb_rota', 'tb_proposta.cd_proposta', '=', 'tb_rota.cd_proposta')
         ->join('tb_veiculo', 'tb_proposta.cd_proposta', '=', 'tb_veiculo.cd_proposta')
         ->where('tb_proposta.cd_proposta', '=', $request['ID'])
@@ -201,9 +199,9 @@ class PropostaController extends Controller
         $idsCabecalho = DB::table('tb_proposta')
         ->join('tb_produto', 'tb_proposta.cd_proposta', 'tb_produto.cd_proposta')
         ->join('tb_filial', 'tb_proposta.cd_proposta', 'tb_filial.cd_proposta')
-        ->join('tb_cliente', 'tb_proposta.cd_proposta', 'tb_cliente.cd_proposta')
-        ->join('tb_responsavel_cliente', 'tb_cliente.cd_cliente', 'tb_responsavel_cliente.cd_cliente')
-        ->join('tb_email_responsavel_cliente', 'tb_responsavel_cliente.cd_responsavel_cliente', 'tb_email_responsavel_cliente.cd_responsavel_cliente')
+        ->join('tb_cliente_proposta', 'tb_proposta.cd_proposta', 'tb_cliente_proposta.cd_proposta')
+        ->join('tb_responsavel_cliente_proposta', 'tb_cliente_proposta.cd_cliente', 'tb_responsavel_cliente_proposta.cd_cliente')
+        ->join('tb_email_responsavel_cliente_proposta', 'tb_responsavel_cliente_proposta.cd_responsavel_cliente', 'tb_email_responsavel_cliente_proposta.cd_responsavel_cliente')
         ->join('tb_rota', 'tb_proposta.cd_proposta', 'tb_rota.cd_proposta')
         ->join('tb_veiculo', 'tb_proposta.cd_proposta', 'tb_veiculo.cd_proposta')
         ->where('tb_proposta.cd_usuario', $EmailResponsavel[0]->cd_usuario)
@@ -247,9 +245,9 @@ class PropostaController extends Controller
 
         $idFilial = DB::table('tb_filial')->where('tb_filial.cd_proposta', '=', $ids[0][0]->cd_proposta)->update(['nm_filial' => $nomeFilial, 'cd_cnpj' => $cnpjFilial, 'cd_proposta' => $ids[0][0]->cd_proposta]);
 
-        $idCliente = DB::table('tb_cliente')->where('tb_cliente.cd_proposta', '=', $ids[0][0]->cd_proposta)->update(['nm_empresa_cliente' => $_SESSION['proposta']['valorNomeCliente'], 'cd_proposta' => $ids[0][0]->cd_proposta]);
+        $idCliente = DB::table('tb_cliente_proposta')->where('tb_cliente_proposta.cd_proposta', '=', $ids[0][0]->cd_proposta)->update(['nm_empresa_cliente' => $_SESSION['proposta']['valorNomeCliente'], 'cd_proposta' => $ids[0][0]->cd_proposta]);
 
-        $idResponsavelCliente = DB::table('tb_responsavel_cliente')->where('tb_responsavel_cliente.cd_cliente', '=', $ids[0][0]->cd_cliente)->update(['nm_responsavel_cliente' => $_SESSION['proposta']['valorNomeContatoCliente'], 'cd_cliente' => $ids[0][0]->cd_cliente]);
+        $idResponsavelCliente = DB::table('tb_responsavel_cliente_proposta')->where('tb_responsavel_cliente_proposta.cd_cliente', '=', $ids[0][0]->cd_cliente)->update(['nm_responsavel_cliente' => $_SESSION['proposta']['valorNomeContatoCliente'], 'cd_cliente' => $ids[0][0]->cd_cliente]);
 
         $idEmailResponsavelCliente = DB::table('tb_email_responsavel_cliente')->where('tb_email_responsavel_cliente.cd_responsavel_cliente', '=', $ids[0][0]->cd_responsavel_cliente)->update(['nm_email_responsavel_cliente' => $_SESSION['proposta']['valorEmailContatoCliente'], 'cd_responsavel_cliente' => $ids[0][0]->cd_responsavel_cliente]);
 
