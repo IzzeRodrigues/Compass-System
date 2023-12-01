@@ -75,7 +75,19 @@
                                                 <td>$proposta->nm_cidade_destino_rota</td>
                                                 <td>$proposta->nm_veiculo</td>
                                                 <td>$proposta->nm_tipo_operacao</td>
-                                                <td><a href='/verproposta?ID=$proposta->cd_proposta'><button type='button' class='btn btn-compass-color mx-1 btnhv'>Ver/Editar</button></a><button type='button' class='btn btn-danger me-1 btnhv'>Excluir</button></td>
+                                                <td>
+                                                    <div class='d-flex justify-content-center'>
+                                                        <a href='/verproposta?ID=$proposta->cd_proposta'><button type='button' class='btn btn-compass-color mx-1 btnhv'>Ver/Editar</button></a>
+                                                        ");
+                                                        if ($_SESSION['Usuario']['privilegio'] == "Adm")
+                                                        {
+                                                            echo("
+                                                            <a href='/deletarProposta?ID=$proposta->cd_proposta'><button type='button' class='btn btn-danger me-1 btnhv'>Excluir</button></a>
+                                                            ");
+                                                        }
+                                                        echo("
+                                                        </div>
+                                                </td>
                                             </tr>");
                                     }
                                     
@@ -83,6 +95,7 @@
                             </tbody>
                         </table>
                     </div>
+                    <script src="js/modais.js" type="text/javascript"></script>
         </main>
         @stop
         @stop

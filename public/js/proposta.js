@@ -493,21 +493,17 @@ function calcularImpostos()
                 }
                 if (puxouICMS == false)
                 {
-                    if(window.location.pathname = "/addproposta")
-                    {
-                        fetch('http://localhost/Compass/slimCompass/getICMS/'+estadosViagem)
-                        .then((response) => response.json())
-                        .then((json) => {
-                        if (json != undefined)
-                            {
-                                puxouICMS = true; 
-                                document.getElementById('porcentagemICMS_operacao').value = json.vl_consulta_porc_icms; 
-                                document.getElementById('porcentagemICMS_despesa').value = json.vl_consulta_porc_icms; 
-                                combinacaoICMS = estadosViagem;
-                            }
-                        })
-                    }
-                    
+                    fetch('http://localhost/Compass/slimCompass/getICMS/'+estadosViagem)
+                    .then((response) => response.json())
+                    .then((json) => {
+                    if (json != undefined)
+                        {
+                            puxouICMS = true; 
+                            document.getElementById('porcentagemICMS_operacao').value = json.vl_consulta_porc_icms; 
+                            document.getElementById('porcentagemICMS_despesa').value = json.vl_consulta_porc_icms; 
+                            combinacaoICMS = estadosViagem;
+                        }
+                    })
                 }
             }
         }
