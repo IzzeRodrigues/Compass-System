@@ -16,7 +16,25 @@
     <body class="sb-nav-fixed dashboardTxt">
         {{-- <script src="/js/verificarLogin.js"></script> --}}
         {{-- <script>verificarLoginPaginas()</script> --}}
-        <?php @session_start(); ?>
+        <?php 
+            @session_start(); 
+            if (isset($_SESSION['Usuario']))
+            {
+                if ($_SESSION['Usuario']['logado'])
+                {
+
+                }
+                else
+                {
+                    echo("<script>window.location.href = 'http://localhost:8000/deslogar'</script>");
+                }
+            }
+            else 
+            {
+                echo("<script>window.location.href = 'http://localhost:8000/deslogar'</script>");
+            }
+        ?>
+        
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark bg-perso">
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3 fs-5" href="/admindex">ACL Cargo</a>

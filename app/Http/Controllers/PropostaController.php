@@ -14,7 +14,7 @@ class PropostaController extends Controller
 {
     function escolherAcao(Request $request)
     {
-        session_start();
+        @session_start();
         if($request->botaoSalvar)
         {
             $_SESSION['proposta'] = $request->all();

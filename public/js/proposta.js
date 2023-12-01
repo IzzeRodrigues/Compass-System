@@ -493,17 +493,21 @@ function calcularImpostos()
                 }
                 if (puxouICMS == false)
                 {
-                    fetch('http://localhost/Compass/slimCompass/getICMS/'+estadosViagem)
-                    .then((response) => response.json())
-                    .then((json) => {
+                    if(window.location.pathname = "/addproposta")
+                    {
+                        fetch('http://localhost/Compass/slimCompass/getICMS/'+estadosViagem)
+                        .then((response) => response.json())
+                        .then((json) => {
                         if (json != undefined)
-                        {
-                            puxouICMS = true; 
-                            document.getElementById('porcentagemICMS_operacao').value = json.vl_consulta_porc_icms; 
-                            document.getElementById('porcentagemICMS_despesa').value = json.vl_consulta_porc_icms; 
-                            combinacaoICMS = estadosViagem;
-                        }
-                    })
+                            {
+                                puxouICMS = true; 
+                                document.getElementById('porcentagemICMS_operacao').value = json.vl_consulta_porc_icms; 
+                                document.getElementById('porcentagemICMS_despesa').value = json.vl_consulta_porc_icms; 
+                                combinacaoICMS = estadosViagem;
+                            }
+                        })
+                    }
+                    
                 }
             }
         }
@@ -704,9 +708,12 @@ function calcularImpostos()
     //Puxando e definindo moeda
     if(!puxouMoeda)
     {
-        fetch('https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL')
-        .then((response) => response.json())
-        .then((json) => setMoeda(json))
+        if (window.location.pathname == "/addproposta")
+        {
+            fetch('https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL')
+            .then((response) => response.json())
+            .then((json) => setMoeda(json))
+        }
     }
 
     /*
