@@ -59,7 +59,7 @@ class PropostaController extends Controller
         $nomeFilial = $filial[0];
         $cnpjFilial = $filial[1];
 
-        dd($_SESSION['proposta']);
+        // dd($_SESSION['proposta']);
 
         $idProposta = DB::table('tb_proposta')->insertGetId(['ds_tipo_proposta' => $_SESSION['proposta']['tipoProposta'],'dt_proposta' => $_SESSION['proposta']['valorDataProposta'],'nm_referencia_acl' => $referenciaAcl, 'nm_referencia_cliente' => $_SESSION['proposta']['valorReferenciaCliente'], 'nm_versao_proposta' => $_SESSION['proposta']['valorVersaoProposta'], 'dt_horario_recebimento' => $_SESSION['proposta']['valorHorarioRecebimento'], 'ds_metodo_transporte' => $_SESSION['proposta']['valorTipoFrete'], 'ds_status_proposta' => 'Não-Enviada', 'ds_tipo_assinatura' => 'Não-Selecionada', 'cd_usuario' => $id]);
 
