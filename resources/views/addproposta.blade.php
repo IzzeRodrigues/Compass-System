@@ -66,7 +66,7 @@
                     <div class="row">
                         <div class="col-md-3 col-sm-6 col-12 mb-3">
                             <label>Data da Proposta</label>
-                            <input type="date" class="form-control data" id="valorDataProposta" name="valorDataProposta" readonly>
+                            <input type="date" class="form-control data" id="valorDataProposta" name="valorDataProposta">
                         </div>
                         <div class="col-md-6 col-sm-6 col-12 mb-3">
                             <label>Referência ACL</label>
