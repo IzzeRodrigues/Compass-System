@@ -20,6 +20,7 @@
                     <li class="breadcrumb-item active">Ver/Editar Proposta</li>
                 </ol>
                 <form class="proposta" method="GET" action="http://localhost:8000/acoesProposta" target="_blank">
+                    <input type="hidden" id="idProposta" name="idProposta">
                     <div class="row">
                         <div class="col-md-3 col-sm-6 col-4 mb-3">
                             <label>Tipo Proposta</label>
@@ -852,7 +853,7 @@
                     </div>
                     <div class="row justify-content-end mt-1">
                         <div class="pt-1 mb-4 d-grid gap-2 col-md-3 col-sm-6">
-                            <input class="btn btn-info btn-block shadow-sm corpadrao larg-btn col-12 py-2" type="submit" value="Salvar" name="botaoSalvar">
+                            <input class="btn btn-info btn-block shadow-sm corpadrao larg-btn col-12 py-2" type="submit" value="Atualizar" name="botaoAtualizar">
                         </div>
                         <div class="pt-1 mb-4 d-grid gap-2 col-md-3 col-sm-6">
                             <input class="btn btn-info btn-block shadow-sm corpadrao larg-btn col-12 py-2" type="submit" value="Usar" name="botaoUsar">
@@ -870,7 +871,7 @@
                 </form>
             </div>
         </main>
-        <script>preencherInputsVerProposta()</script>
+        <script src="js/proposta.js"></script>
         {{-- <script>inicioProposta()</script> --}}
         @stop
         @stop

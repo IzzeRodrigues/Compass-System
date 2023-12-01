@@ -49,6 +49,11 @@
                             <tbody>
                                 <?php
                                     @session_start();
+                                    if (isset($_SESSION['Erros']['ErroVerProposta']))
+                                    {
+                                        $erro = $_SESSION['Erros']['ErroVerProposta'];
+                                        echo("<script>alert($erro)</script>");
+                                    }
                                     $usuario = DB::table('tb_email_usuario')->join('tb_usuario', 'tb_email_usuario.cd_usuario', '=', 'tb_usuario.cd_usuario')->where('tb_email_usuario.nm_email_usuario', '=', $_SESSION['Usuario']['email'])->get();
                                     $usuario = $usuario[0]->cd_usuario;
                                     if ($_SESSION['Usuario']['privilegio'] == 'Adm')

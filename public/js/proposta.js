@@ -1697,9 +1697,10 @@ function pegarProposta()
             .then((json) => {proposta = (json['proposta']), usuario = (json['usuario'][0])})
 
         // console.log(json)
-        console.log(usuario)
-        console.log(proposta)
+        // console.log(usuario)
+        // console.log(proposta)
 
+        document.getElementById('idProposta').value = proposta['cabecalho'][0].cd_proposta
         document.getElementById('nomeResponsavel').value = usuario.nm_nome_completo 
         document.getElementById('emailResponsavel').value = usuario.nm_email_usuario
         document.getElementById('cargoResponsavel').value = usuario.nm_cargo_usuario
@@ -1708,7 +1709,11 @@ function pegarProposta()
         var referenciaVerProposta = (proposta['cabecalho'][0].nm_referencia_acl).split(" ");
         document.getElementById('valorReferenciaProposta').value = referenciaVerProposta[1]
         document.getElementById('valorNumeroProposta').value = referenciaVerProposta[2]
-        document.getElementById('valorVersaoProposta').value = proposta['cabecalho'][0].nm_versao_proposta
+        var versao = proposta['cabecalho'][0].nm_versao_proposta;
+        versao = versao.split(' ');
+        versao[1] = parseFloat(versao[1]) + 1;
+        var versaoProposta = `Versão ${versao[1]}`;
+        document.getElementById('valorVersaoProposta').value = versaoProposta;
         document.getElementById('valorReferenciaCliente').value = proposta['cabecalho'][0].nm_referencia_cliente
         document.getElementById('valorHorarioRecebimento').value = proposta['cabecalho'][0].dt_horario_recebimento
         document.getElementById('valorNomeProduto').value = proposta['cabecalho'][0].nm_produto
