@@ -14,11 +14,12 @@
     @section('conteudo')
         <?php
 
+            @session_start();
             if(isset($_SESSION['Usuario']))
             {
                 if($_SESSION['Usuario']['privilegio'] != "Adm")
                 {
-                    return redirect()->route('comercial');
+                    echo("<script>window.location.href = 'http://localhost:8000/comercial'</script>");
                 }
             }
 
@@ -123,8 +124,8 @@
                             </tfoot>
                             <tbody>
                                     <?php 
-                                        session_start();
-                                        var_dump($_SESSION['Usuario']['privilegio']);
+                                        @session_start();
+                                        // var_dump($_SESSION['Usuario']['privilegio']);
                                         $propostas = DB::table('tb_proposta')->join('tb_operacao', 'tb_proposta.cd_proposta', '=', 'tb_operacao.cd_proposta')->join('tb_cliente', 'tb_proposta.cd_proposta', '=', 'tb_cliente.cd_proposta')->join('tb_usuario', 'tb_proposta.cd_usuario', '=', 'tb_usuario.cd_usuario')->select('nm_nome_completo', 'nm_tipo_operacao', 'nm_empresa_cliente', 'nm_referencia_acl', 'dt_proposta', 'vl_lucro_bruto_operacao')->get();
                                         foreach ($propostas as $proposta)
                                         {

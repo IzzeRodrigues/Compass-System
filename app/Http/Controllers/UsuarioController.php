@@ -157,33 +157,31 @@ class UsuarioController extends Controller
         // {
             $usuario = $request->usuario;
             $senha = $request->senha;
-            // dd($usuario);
-            // dd($senha);
 
-            $usuario = DB::table('tb_email_usuario')->join('tb_usuario', 'tb_email_usuario.cd_usuario', '=', 'tb_email_usuario.cd_usuario')
+            $usuario = DB::table('tb_email_usuario')
+            ->join('tb_usuario', 'tb_email_usuario.cd_usuario', '=', 'tb_usuario.cd_usuario')
             ->join('tb_privilegio', 'tb_email_usuario.cd_usuario', '=', 'tb_privilegio.cd_usuario')
-            // ->where('tb_email_usuario.nm_email_usuario', '=', $usuario)
+            ->where('nm_email_usuario', '=', $usuario)
+            ->where('cd_senha', '=', $senha)
             ->get();
-            dd($usuario);
+
             if ($usuario)
             {
                 $_SESSION['Usuario'] = ['logado' => true, 'nome' => $usuario[0]->nm_nome_completo, 'email' => $usuario[0]->nm_email_usuario, 'cargo' => $usuario[0]->nm_cargo_usuario, 'privilegio' => $usuario[0]->nm_privilegio];
                 if ($usuario[0]->nm_privilegio == "Adm")
                 {
-                    // return redirect()->route('admindex');
-                    // dd($_SESSION['Usuario']);
+                    return redirect()->route('admindex');
                 }
                 else
                 {
                     if ($usuario[0]->nm_privilegio == "Usuario")
                     {
-                        // return redirect()->route('comercial');
-                        // dd($_SESSION['Usuario']);
+                        return redirect()->route('comercial');
                     }
                     else
                     {
-                        // $_SESSION['Erro'] = "Email e/ou senha incorretos";
-                        // return redirect()->route('login');
+                        $_SESSION['Erro'] = "Email e/ou senha incorretos";
+                        return redirect()->route('login');
                     }
                 }
             }

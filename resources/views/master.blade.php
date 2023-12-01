@@ -16,7 +16,7 @@
     <body class="sb-nav-fixed dashboardTxt">
         {{-- <script src="/js/verificarLogin.js"></script> --}}
         {{-- <script>verificarLoginPaginas()</script> --}}
-
+        <?php @session_start(); ?>
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark bg-perso">
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3 fs-5" href="/admindex">ACL Cargo</a>
@@ -60,9 +60,9 @@
                                 Dashboard
                             </a>
                             <?php
-                            if (isset($_COOKIE['privilegioUsuario']))
+                            if (isset($_SESSION['Usuario']['privilegio']))
                             {
-                                if ($_COOKIE['privilegioUsuario'] == "administrador")
+                                if ($_SESSION['Usuario']['privilegio'] == "Adm")
                                 {
                                     echo("<div class='sb-sidenav-menu-heading side-title'>Admin</div>
                                     <a class='nav-link collapsed' href='#' data-bs-toggle='collapse' data-bs-target='#collapseLayouts' aria-expanded='false' aria-controls='collapseLayouts'>
@@ -113,8 +113,8 @@
                         </div>
                     </div>
                     <div class="sb-sidenav-footer bg-perso">
-                        <div class="small side-title">Olá,&nbsp; <?php if(isset($_COOKIE['cargoUsuario'])){echo($_COOKIE['cargoUsuario']);} ?></div>
-                        <div class="side-title"><?php if(isset($_COOKIE['nomeUsuario'])){echo($_COOKIE['nomeUsuario']);}?></div>
+                        <div class="small side-title">Olá,&nbsp; <?php if(isset($_SESSION['Usuario']['cargo'])){echo($_SESSION['Usuario']['cargo']);} ?></div>
+                        <div class="side-title"><?php if(isset($_SESSION['Usuario']['nome'])){echo($_SESSION['Usuario']['nome']);}?></div>
                     </div>
                 </nav>
             </div>

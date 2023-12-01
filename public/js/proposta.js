@@ -4,7 +4,7 @@ let valoresMoedas;
 let puxouICMS = false;
 let combinacaoICMS;
 
-function inicioProposta()
+function inicioProposta(usuario,email,cargo)
 {
     // let email = "emailUsuario=";
     // let nome = "nomeUsuario=";
@@ -42,13 +42,13 @@ function inicioProposta()
     //     document.getElementById('emailResponsavel').value = resultado;
     // }
 
-    valorDecodificado = decodeURIComponent(document.cookie);
-    valor = `; ${valorDecodificado}`;
-    partes = valor.split('; nomeUsuario=');
-    if (partes.length === 2)
-    {
-        resultado = partes.pop().split(';').shift();
-    }
+    // valorDecodificado = decodeURIComponent(document.cookie);
+    // valor = `; ${valorDecodificado}`;
+    // partes = valor.split('; nomeUsuario=');
+    // if (partes.length === 2)
+    // {
+    //     resultado = partes.pop().split(';').shift();
+    // }
     // if (resultado !== undefined)
     // {
     //     document.getElementById('nomeResponsavel').value = resultado;
@@ -60,9 +60,9 @@ function inicioProposta()
 
     // console.log("Tá rodando");
     
-    fetch('http://localhost/Compass/slimCompass/getNome/'+resultado)
-    .then((response) => response.json())
-    .then((json) => setNome(json))
+    // fetch('http://localhost/Compass/slimCompass/getNome/'+resultado)
+    // .then((response) => response.json())
+    // .then((json) => setNome(json))
     
     // let resposta2 = {};
 
@@ -76,6 +76,14 @@ function inicioProposta()
 
     // console.log(resposta2);
     // console.log("Essa é a resposta da variável: "+ resposta2.nm_nome_completo);
+
+    console.log(usuario);
+    console.log(cargo);
+    console.log(email);
+
+    document.getElementById('nomeResponsavel').value = usuario;
+    document.getElementById('cargoResponsavel').value = cargo;
+    document.getElementById('emailResponsavel').value = email;
 
     datacao = new Date();
     dia = datacao.getDate();

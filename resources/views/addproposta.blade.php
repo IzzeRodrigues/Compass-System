@@ -13,6 +13,14 @@
     @section('master')
     @section('conteudo')
             <script src="/js/proposta.js"></script>
+            <?php
+                @session_start();
+                $usuario = $_SESSION['Usuario']['nome'];
+                $email = $_SESSION['Usuario']['email'];
+                $cargo = $_SESSION['Usuario']['cargo'];
+                echo("$usuario,$email,$cargo");
+                echo("<script>inicioProposta('$usuario', '$email', '$cargo')</script>")
+            ?>
             <div class="container-fluid px-4 blue-compass">
                 <h1 class="mt-4">Proposta</h1>
                 <ol class="breadcrumb mb-4">
