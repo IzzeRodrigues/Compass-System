@@ -94,7 +94,7 @@
                             <label>Referência Cliente</label>
                             <input type="text" class="form-control" placeholder="Ex:INX-Rique/Guatemala" id="valorReferenciaCliente" name="valorReferenciaCliente">
                         </div>
-                        
+
                     </div>
                     <div class="row">
                         <div class="col-md-3 col-sm-4 col-12 mb-3">
@@ -113,7 +113,7 @@
                             <label>Peso Total em Kg./Cubagem</label>
                             <input type="text" class="form-control" placeholder="Ex:6161kg (6,656m3)" id="valorPeso" name="valorPeso">
                         </div>
-                        
+
                     </div>
                     <div class="row justify-content-between">
                         <div class="col-md-3 col-sm-4 col-12 mb-3">
@@ -255,10 +255,17 @@
                         </div>
                     </div>
                     <div class="row">
-                        
+
+                    </div>
+                    <div class="row mb-3">
+                        <h3 class="mb-4">Operação</h3>
+                        <div class="col-12 col-sm-6 col-md-4 col-xl-2">
+                        <a class="nav-link" href="https://qualp.com.br/#/" target="_blank">
+                            <button type="button" class="btn btn-info btn-block shadow-sm corpadrao larg-btn py-2">Roteirizador</button>
+                        </a>
+                        </div>
                     </div>
                     <div class="row">
-                        <h3 class="mb-4">Operação</h3>
                         <div class="col-md-2 col-sm-6 col-12 mb-3">
                             <label>Tipo de Operação</label>
                             <select class="form-control" id="tipoOperacao" name="tipoOperacao" onblur="calcularImpostos()" onchange="calcularImpostos()">
@@ -453,11 +460,11 @@
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>Adic. IRPJ</label>
                             <input type="number" step=0.01 min="0" class="form-control" id="valorAdicionalIRPJ" name="valorAdicionalIRPJ" readonly onblur="calcularImpostos()" onchange="calcularImpostos()">
-                        </div>       
+                        </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>% PIS</label>
                             <input type="number" step=0.01 min="0" class="form-control" id="porcentagemPIS" name="porcentagemPIS" onblur="calcularImpostos()" onchange="calcularImpostos()">
-                        </div>       
+                        </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>PIS</label>
                             <input type="number" step=0.01 min="0" class="form-control" id="valorPIS" name="valorPIS" readonly onblur="calcularImpostos()" onchange="calcularImpostos()">
@@ -469,7 +476,7 @@
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>COFINS</label>
                             <input type="number" step=0.01 min="0" class="form-control" id="valorCOFINS" name="valorCOFINS" readonly onblur="calcularImpostos()" onchange="calcularImpostos()">
-                        </div>                  
+                        </div>
                         <div class="col-md-2 col-sm-6 col-12 form-group mb-3">
                             <label>% ICMS</label>
                             <input type="number" step=0.01 min="0" class="form-control" id="porcentagemICMS_despesa" name="porcentagemICMS_despesa" onblur="calcularImpostos()" onchange="calcularImpostos()">
@@ -801,7 +808,7 @@
                         </div>
                     </div>
                     <div class="row justify-content-between">
-                        
+
                         <div class="col-md-3 col-sm-6 col-12 mb-3">
                             <label>Utilização Cavalo LS</label>
                             <select type="number" step=0.01 min="0" class="form-control" id="valorTipoUtilizacaoCavaloLS" name="valorTipoUtilizacaoCavaloLS" onblur="calcularImpostos()" onchange="calcularImpostos()">

@@ -16,8 +16,8 @@
     <body class="sb-nav-fixed dashboardTxt">
         {{-- <script src="/js/verificarLogin.js"></script> --}}
         {{-- <script>verificarLoginPaginas()</script> --}}
-        <?php 
-            @session_start(); 
+        <?php
+            @session_start();
             if (isset($_SESSION['Usuario']))
             {
                 if ($_SESSION['Usuario']['logado'] == "true")
@@ -29,12 +29,12 @@
                     echo("<script>window.location.href = 'http://localhost:8000/deslogar'</script>");
                 }
             }
-            else 
+            else
             {
                 echo("<script>window.location.href = 'http://localhost:8000/deslogar'</script>");
             }
         ?>
-        
+
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark bg-perso">
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3 fs-5" href="/admindex">ACL Cargo</a>
@@ -73,7 +73,7 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading side-title">Principal</div>
-                            
+
                             <?php
                             if (isset($_SESSION['Usuario']['privilegio']))
                             {
@@ -94,7 +94,7 @@
                                         Funcionários
                                         <div class='sb-sidenav-collapse-arrow'><i class='fas fa-angle-down'></i></div>
                                     </a>
-                                    
+
                                     <div class='collapse' id='collapseLayouts' aria-labelledby='headingOne' data-bs-parent='#sidenavAccordion'>
                                         <nav class='sb-sidenav-menu-nested nav'>
                                             <a class='nav-link' href='/addfuncionario'>Adicionar</a>
@@ -102,7 +102,7 @@
                                         </nav>
                                     </div>");
                                 }
-                                else 
+                                else
                                 {
                                     if ($_SESSION['Usuario']['privilegio'] == "Usuario")
                                     {
@@ -120,7 +120,7 @@
 
                             ?>
 
-                            
+
 
                             <div class="sb-sidenav-menu-heading side-title">Comercial</div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
