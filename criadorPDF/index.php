@@ -146,7 +146,7 @@ function assinaturaFisica($variaveis)
         Elaborado por:		
     </td>
     <td style="border: 0.5px solid black; border-right: none; ">
-        ' . $criador_proposta . ' - ' . $email_criador . '			
+        ' . $criador_proposta . '			
     </td>
     <td style="width:10%; border: 1px solid black;  font-weight:bold;">
         Depto.:
@@ -1036,7 +1036,7 @@ function assinaturaDigital($variaveis)
         Elaborado por:		
     </td>
     <td style="border: 0.5px solid black; border-right: none; ">
-        ' . $criador_proposta . ' - ' . $email_criador . '			
+        ' . $criador_proposta . ' 		
     </td>
     <td style="width:10%; border: 1px solid black;  font-weight:bold;">
         Depto.:
