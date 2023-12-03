@@ -31,6 +31,8 @@
                                     <th>Destino</th>
                                     <th>Tipo Veículo</th>
                                     <th>Tipo Operação</th>
+                                    <th>Tipo Assinatura</th>
+                                    <th>Status</th>
                                     <th>Ação</th>
                                 </tr>
                             </thead>
@@ -43,6 +45,8 @@
                                     <th>Destino</th>
                                     <th>Tipo Veículo</th>
                                     <th>Tipo Operação</th>
+                                    <th>Tipo Assinatura</th>
+                                    <th>Status</th>
                                     <th>Ação</th>
                                 </tr>
                             </tfoot>
@@ -75,6 +79,8 @@
                                                 <td>$proposta->nm_cidade_destino_rota</td>
                                                 <td>$proposta->nm_veiculo</td>
                                                 <td>$proposta->nm_tipo_operacao</td>
+                                                <td>$proposta->ds_tipo_assinatura</td>
+                                                <td>$proposta->ds_status_proposta</td>
                                                 <td>
                                                     <div class='d-flex justify-content-center'>
                                                         <a href='/verproposta?ID=$proposta->cd_proposta'><button type='button' class='btn btn-compass-color mx-1 btnhv'>Ver/Editar</button></a>

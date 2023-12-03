@@ -109,6 +109,8 @@
                                     <th>Cliente</th>
                                     <th>ID Proposta</th>
                                     <th>Data de Início</th>
+                                    <th>Tipo de Assinatura</th>
+                                    <th>Status</th>
                                     <th>Lucro</th>
                                 </tr>
                             </thead>
@@ -119,6 +121,8 @@
                                     <th>Cliente</th>
                                     <th>ID Proposta</th>
                                     <th>Data de Início</th>
+                                    <th>Tipo de Assinatura</th>
+                                    <th>Status</th>
                                     <th>Lucro</th>
                                 </tr>
                             </tfoot>
@@ -126,7 +130,7 @@
                                     <?php 
                                         @session_start();
                                         // var_dump($_SESSION['Usuario']['privilegio']);
-                                        $propostas = DB::table('tb_proposta')->join('tb_operacao', 'tb_proposta.cd_proposta', '=', 'tb_operacao.cd_proposta')->join('tb_cliente_proposta', 'tb_proposta.cd_proposta', '=', 'tb_cliente_proposta.cd_proposta')->join('tb_usuario', 'tb_proposta.cd_usuario', '=', 'tb_usuario.cd_usuario')->select('nm_nome_completo', 'nm_tipo_operacao', 'nm_empresa_cliente', 'nm_referencia_acl', 'dt_proposta', 'vl_lucro_bruto_operacao')->get();
+                                        $propostas = DB::table('tb_proposta')->join('tb_operacao', 'tb_proposta.cd_proposta', '=', 'tb_operacao.cd_proposta')->join('tb_cliente_proposta', 'tb_proposta.cd_proposta', '=', 'tb_cliente_proposta.cd_proposta')->join('tb_usuario', 'tb_proposta.cd_usuario', '=', 'tb_usuario.cd_usuario')->select('nm_nome_completo', 'nm_tipo_operacao', 'nm_empresa_cliente', 'nm_referencia_acl', 'dt_proposta', 'vl_lucro_bruto_operacao', 'ds_tipo_assinatura', 'ds_status_proposta')->get();
                                         foreach ($propostas as $proposta)
                                         {
                                             echo("<tr>
@@ -135,6 +139,8 @@
                                                     <td>$proposta->nm_empresa_cliente</td>
                                                     <td>$proposta->nm_referencia_acl</td>
                                                     <td>$proposta->dt_proposta</td>
+                                                    <td>$proposta->ds_tipo_assinatura</td>
+                                                    <td>$proposta->ds_status_proposta</td>
                                                     <td>$proposta->vl_lucro_bruto_operacao</td>
                                                 </tr>");
                                         }

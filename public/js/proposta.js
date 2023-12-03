@@ -1787,14 +1787,16 @@ function pegarProposta()
 
         // console.log(json)
         // console.log(usuario)
-        // console.log(proposta)
+        console.log(proposta['cabecalho'][0].ds_status_proposta)
 
+        document.getElementById('tipoProposta').value = proposta['cabecalho'][0].ds_tipo_proposta
+        document.getElementById('tipoAssinatura').value = proposta['cabecalho'][0].ds_tipo_assinatura
+        document.getElementById('statusProposta').value = proposta['cabecalho'][0].ds_status_proposta
         document.getElementById('idProposta').value = proposta['cabecalho'][0].cd_proposta
         document.getElementById('nomeResponsavel').value = usuario.nm_nome_completo 
         document.getElementById('emailResponsavel').value = usuario.nm_email_usuario
         document.getElementById('cargoResponsavel').value = usuario.nm_cargo_usuario
         document.getElementById('valorDataProposta').value = proposta['cabecalho'][0].dt_proposta
-        document.getElementById('tipoProposta').value = proposta['cabecalho'][0].ds_tipo_proposta
         var referenciaVerProposta = (proposta['cabecalho'][0].nm_referencia_acl).split(" ");
         document.getElementById('valorReferenciaProposta').value = referenciaVerProposta[1]
         document.getElementById('valorNumeroProposta').value = referenciaVerProposta[2]
@@ -1841,6 +1843,7 @@ function pegarProposta()
         document.getElementById('valorGRIS').value = proposta['operacao'][0].vl_gris_imp_operacao
         document.getElementById('porcentagemICMS_operacao').value = proposta['operacao'][0].pc_icms_operacao
         document.getElementById('valorICMS_operacao').value = proposta['operacao'][0].vl_valor_icms_operacao
+        document.getElementById('subTotal').value = proposta['operacao'][0].vl_subtotal_operacao
         document.getElementById('valorEstacionamento_operacao').value = proposta['operacao'][0].vl_estacionamento
         document.getElementById('valorIMO').value = proposta['operacao'][0].vl_imo
         document.getElementById('valorDTA_GVB').value = proposta['operacao'][0].vl_dta
@@ -1962,6 +1965,173 @@ function pegarProposta()
     pegouProposta = 1;
 }
 
+function preencherPropostaEmAndamento(propostaAndamento)
+{
+    document.getElementById('tipoProposta').value = propostaAndamento.tipoProposta
+        document.getElementById('tipoAssinatura').value = propostaAndamento.tipoAssinatura
+        document.getElementById('statusProposta').value = propostaAndamento.statusProposta
+        document.getElementById('idProposta').value = propostaAndamento.idProposta
+        document.getElementById('nomeResponsavel').value = usuario.nomeResponsavel
+        document.getElementById('emailResponsavel').value = usuario.emailResponsavel
+        document.getElementById('cargoResponsavel').value = usuario.cargoResponsavel
+        document.getElementById('valorDataProposta').value = propostaAndamento.valorDataProposta
+        document.getElementById('valorReferenciaProposta').value = propostaAndamento.valorReferenciaProposta
+        document.getElementById('valorNumeroProposta').value = propostaAndamento.valorNumeroProposta
+        document.getElementById('valorVersaoProposta').value = propostaAndamento.valorVersaoProposta
+        document.getElementById('valorReferenciaCliente').value = propostaAndamento.valorReferenciaCliente
+        document.getElementById('valorHorarioRecebimento').value = propostaAndamento.valorHorarioRecebimento
+        document.getElementById('valorNomeProduto').value = propostaAndamento.valorNomeProduto
+        document.getElementById('valorPallets').value = propostaAndamento.valorPallets
+        document.getElementById('valorPeso').value = propostaAndamento.valorPeso
+        document.getElementById('valorNomeCliente').value = propostaAndamento.valorNomeCliente
+        document.getElementById('valorNomeContatoCliente').value = propostaAndamento.valorNomeContatoCliente
+        document.getElementById('valorEmailContatoCliente').value = propostaAndamento.valorEMailContatoCliente
+        document.getElementById('valorTipoFrete').value = propostaAndamento.valorTipoFrete
+        document.getElementById('valorEstadoOrigem').value = propostaAndamento.valorEstadoOrigem
+        document.getElementById('valorCidadeOrigem').value = propostaAndamento.valorCidadeOrigem
+        document.getElementById('valorEstadoDestino').value = propostaAndamento.valorEstadoDestino
+        document.getElementById('valorCidadeDestino').value = propostaAndamento.valorCidadeDestino
+        document.getElementById('valorLocalDevolucao').value = propostaAndamento.valorLocalDevolucao
+        document.getElementById('valorTipoContainer').value = propostaAndamento.valorTipoContainer
+        document.getElementById('valorTipoVeiculo').value = propostaAndamento.valorTipoVeiculo
+        document.getElementById('valorEixos_cabecalho').value = propostaAndamento.valorEixos_cabecalho
+        // //25
+
+        // //Operacao
+        document.getElementById('tipoOperacao').value = propostaAndamento.tipoOperacao
+        document.getElementById('tipoImpostos').value = propostaAndamento.tipoImpostos
+        document.getElementById('valorMercadoria').value = propostaAndamento.valorMercadoria
+        document.getElementById('container').value = propostaAndamento.container
+        document.getElementById('porcentagemSusp').value = propostaAndamento.porcentagemSusp
+        document.getElementById('valorImpostoSuspenso').value = propostaAndamento.valorImpostoSuspenso
+        document.getElementById('valorTotalImpostoSeguro').value = propostaAndamento.valotTotalImpostoSeguro
+        document.getElementById('valorFretePeso_operacao').value = propostaAndamento.valorFretePeso_operacao
+        document.getElementById('porcentagemRCTRC_operacao').value = propostaAndamento.porcentagemRCTRC_operacao
+        document.getElementById('valorRCTRC_operacao').value = propostaAndamento.valorRCTRC_operacao
+        document.getElementById('porcentagemRCFDC_operacao').value = propostaAndamento.porcentagemRCFDC_operacao
+        document.getElementById('valorRCFDC_operacao').value = propostaAndamento.valorRCFDC_operacao
+        document.getElementById('valorCheckGRIS').value = propostaAndamento.valorCheckGRIS
+        document.getElementById('porcentagemGRIS').value = propostaAndamento.porcentagemGRIS
+        document.getElementById('valorGRIS').value = propostaAndamento.valorGRIS
+        document.getElementById('porcentagemICMS_operacao').value = propostaAndamento.porcentagemICMS_operacao
+        document.getElementById('valorICMS_operacao').value = propostaAndamento.valorICMS_operacao
+        document.getElementById('subTotal').value = propostaAndamento.subTotal
+        document.getElementById('valorEstacionamento_operacao').value = propostaAndamento.valorEstacionamento_operacao
+        document.getElementById('valorIMO').value = propostaAndamento.valorIMO
+        document.getElementById('valorDTA_GVB').value = propostaAndamento.valorDTA_GVB
+        document.getElementById('valorAjudantes_operacao').value = propostaAndamento.valorAjudantes_operacao
+        document.getElementById('valorPedagio_operacao').value = propostaAndamento.valorPedagio_operacao
+        document.getElementById('valorTotalPrest').value = propostaAndamento.valorTotalPrest
+        document.getElementById('porcentagemTotalPrest').value = propostaAndamento.porcentagemTotalPrest
+        document.getElementById('valorDespesas_operacao').value = propostaAndamento.valorDespesas_operacao
+        document.getElementById('valorLucroBruto').value = propostaAndamento.valorLucroBruto
+        document.getElementById('porcentagemLucroBruto').value = propostaAndamento.porcentagemLucroBruto
+        document.getElementById('valorMargemLucroBruto').value = propostaAndamento.valorMargemLucroBruto
+        // //26
+
+        // //Despesa
+        document.getElementById('valorMotoristaAutonomo').value = propostaAndamento.valorMotoristaAutonomo
+        document.getElementById('valorPedagio_despesa').value = propostaAndamento.valorPedagio_despesa
+        document.getElementById('porcentagemRCFDC_despesa').value = propostaAndamento.porcentagemRCFDC_despesa
+        document.getElementById('valorRCFDC_despesa').value = propostaAndamento.valorRCFDC_despesa
+        document.getElementById('porcentagemRCTRC_despesa').value = propostaAndamento.porcentagemRCTRC_despesa
+        document.getElementById('valorRCTRC_despesa').value = propostaAndamento.valorRCTRC_despesa
+        document.getElementById('porcentagemSimplesNAC').value = propostaAndamento.porcentagemSimplesNAC
+        document.getElementById('valorSimplesNAC').value = propostaAndamento.valorSimplesNAC
+        document.getElementById('porcentagemIRPJ').value = propostaAndamento.porcentagemIRPJ
+        document.getElementById('valorIRPJ').value = propostaAndamento.valorIRPJ
+        document.getElementById('porcentagemAdicionalIRPJ').value = propostaAndamento.porcentagemAdicionalIRPJ
+        document.getElementById('valorAdicionalIRPJ').value = propostaAndamento.valorAdicionalIRPJ
+        document.getElementById('porcentagemPIS').value = propostaAndamento.porcentagemPIS
+        document.getElementById('valorPIS').value = propostaAndamento.valorPIS
+        document.getElementById('porcentagemCOFINS').value = propostaAndamento.porcentagemCOFINS
+        document.getElementById('valorCOFINS').value = propostaAndamento.valorCOFINS
+        document.getElementById('porcentagemICMS_despesa').value = propostaAndamento.porcentagemICMS_despesa
+        document.getElementById('valorICMS_despesa').value = propostaAndamento.valorICMS_despesa
+        document.getElementById('valorBuonnyCadastro').value = propostaAndamento.valorBuonnyCadastro
+        document.getElementById('valorGRISRastreamento').value = propostaAndamento.valorGRISRastreamento
+        document.getElementById('valorDTA_DI').value = propostaAndamento.valorDTA_DI
+        document.getElementById('valorEstacionamento_despesa').value = propostaAndamento.valorEstacionamento_despesa
+        document.getElementById('valorAjudantes_despesa').value = propostaAndamento.valorAjudantes_despesa
+        document.getElementById('valorProfit').value = propostaAndamento.valorProfit
+        document.getElementById('valorComissao').value = propostaAndamento.valorComissao
+        document.getElementById('porcentagemComissao').value = propostaAndamento.porcentagemComissao
+        document.getElementById('valorDespesas_despesa').value = propostaAndamento.valorDespesas_despesa
+        // //27
+
+        // //Carga
+        document.getElementById('valorTipoCarga').value = propostaAndamento.valorTipoCarga
+        document.getElementById('valorQuilometragemIda').value = propostaAndamento.valorQuilometragemIda
+        document.getElementById('valorQuilometragemVolta').value = propostaAndamento.valorQuilometragemVolta
+        document.getElementById('valorQuilometragemTotal').value = propostaAndamento.valorQuilometragemTotal
+        document.getElementById('valorPedagioEixoIda').value = propostaAndamento.valorPedagioEixoIda
+        document.getElementById('valorPedagioEixoVolta').value = propostaAndamento.valorPedagioEixoVolta
+        document.getElementById('valorEixos_carga').value = propostaAndamento.valorEixos_carga
+        document.getElementById('valorPedagio_carga').value = propostaAndamento.valorPedagio_carga
+        document.getElementById('valorConsumoMedioQuilometroLitro').value = propostaAndamento.valorConsumoMedioQuilometroLitro
+        document.getElementById('valorPrecoCombustivelLitro').value = propostaAndamento.valorPrecoCombustivelLitro
+        document.getElementById('valorTotalCombustivelLitros').value = propostaAndamento.valorTotalCombustivelLitros
+        document.getElementById('valorTotalCombustivel').value = propostaAndamento.valorTotalCombustivel
+        document.getElementById('valorTotalDespesaViagem').value = propostaAndamento.valorTotalDespesaViagem
+        document.getElementById('tipoMoedaEstrangeira').value = propostaAndamento.tipoMoedaEstrangeira
+        document.getElementById('valorMoedaEstrangeira').value = propostaAndamento.valorMoedaEstrangeira
+        document.getElementById('valorCargaUSD_EUR').value = propostaAndamento.valorCargaUSD_EUR
+        document.getElementById('valorCargaBRL').value = propostaAndamento.valorCargaBRL
+        // //17
+
+        // //Frete peso
+        document.getElementById('valorFretePeso_fretePeso').value = propostaAndamento.valorFretePeso_fretePeso
+        document.getElementById('porcentagemPercentualFretePeso').value = propostaAndamento.porcentagemPercentualFretePeso
+        // //2
+
+        // //Motorista
+        document.getElementById('valorValores').value = propostaAndamento.valorValores
+        document.getElementById('valorFreteANTT').value = propostaAndamento.valorFreteANTT
+        document.getElementById('valorPedagio_motorista').value = propostaAndamento.valorPedagio_motorista
+        document.getElementById('valorTotalAutonomo').value = propostaAndamento.valorTotalAutonomo
+        document.getElementById('valorLucroTotalAutonomo').value = propostaAndamento.valorLucroTotalAutonomo
+        document.getElementById('valorFreteAllFechado').value = propostaAndamento.valorFreteAllFechado
+        document.getElementById('valorLucroFreteAllFechado').value = propostaAndamento.valorLucroFreteAllFechado
+        document.getElementById('valorFreteFecharEm').value = propostaAndamento.valorFreteFecharEm
+        document.getElementById('valorLucroFreteFecharEm').value = propostaAndamento.valorLucroFreteFecharEm
+        // //11
+
+        // //Cotacao
+        document.getElementById('motoristaCotado1').value = propostaAndamento.motoristaCotado1
+        document.getElementById('dataCotacaoMotorista1').value = propostaAndamento.dataCotacaoMotorista1
+        document.getElementById('valorMotoristaCotado1').value = propostaAndamento.valorMotoristaCotado1
+        document.getElementById('motoristaCotado2').value = propostaAndamento.motoristaCotado2
+        document.getElementById('dataCotacaoMotorista2').value = propostaAndamento.dataCotacaoMotorista2
+        document.getElementById('valorMotoristaCotado2').value = propostaAndamento.valorMotoristaCotado2
+        // //6
+
+        // //Adicionais
+        document.getElementById('valorTipoUtilizacaoIsca').value = propostaAndamento.valorTipoUtilizacaoIsca
+        document.getElementById('valorUtilizacaoIsca').value = propostaAndamento.valorUtilizacaoIsca
+        document.getElementById('valorTipoMonitoramentoIsca').value = propostaAndamento.valorTipoMonitoramentoIsca
+        document.getElementById('valorMonitoramentoIsca').value = propostaAndamento.valorMonitoramentoIsca
+        document.getElementById('valorTipoEscoltaArmada').value = propostaAndamento.valorTipoEscoltaArmada
+        document.getElementById('valorEscoltaArmada').value = propostaAndamento.valorEscoltaArmada
+        document.getElementById('valorTipoDevolucaoMargemEsquerda').value = propostaAndamento.valorTipoDevolucaoMargemEsquerda
+        document.getElementById('valorDevolucaoMargemEsquerda').value = propostaAndamento.valorDevolucaoMargemEsquerda
+        document.getElementById('valorTipoDevolucaoSV').value = propostaAndamento.valorTipoDevolucaoSV
+        document.getElementById('valorDevolucaoSV').value = propostaAndamento.valorDevolucaoSV
+        document.getElementById('valorTipoAdicionalCargaAnvisa').value = propostaAndamento.valorTipoAdicionalCargaAnvisa
+        document.getElementById('valorAdicionalCargaAnvisa').value = propostaAndamento.valorAdicionalCargaAnvisa
+        document.getElementById('valorTipoAdicionalCargaIMO').value = propostaAndamento.valorTipoAdicionalCargaIMO
+        document.getElementById('valorAdicionalCargaIMO').value = propostaAndamento.valorAdicionalCargaIMO
+        document.getElementById('valorTipoCarregamentoExpresso').value = propostaAndamento.valorTipoCarregamentoExpresso
+        document.getElementById('valorCarregamentoExpresso').value = propostaAndamento.valorCarregamentoExpresso
+        document.getElementById('valorTipoUtilizacaoCavaloLS').value = propostaAndamento.valorTipoUtilizacaoCavaloLS
+        document.getElementById('valorUtilizacaoCavaloLS').value = propostaAndamento.valorUtilizacaoCavaloLS
+        document.getElementById('valorTipoEstadiaEspecial').value = propostaAndamento.valorTipoEstadiaEspecial
+        document.getElementById('valorEstadiaEspecial').value = propostaAndamento.valorEstadiaEspecial
+        document.getElementById('valorTipoSobrestadiaCarregamento').value = propostaAndamento.valorTipoSobrestadiaCarregamento
+        document.getElementById('valorSobrestadiaCarregamento').value = propostaAndamento.valorSobrestadiaCarregamento
+        document.getElementById('valorTipoSobrestadiaRetirada').value = propostaAndamento.valorTipoSobrestadiaRetirada
+        document.getElementById('valorSobrestadiaRetirada').value = propostaAndamento.valorSobrestadiaRetirada
+}
+
 var intervalId = window.setInterval(function(){
     if(window.location.pathname == "/addproposta")
     {
@@ -1975,5 +2145,6 @@ var intervalId = window.setInterval(function(){
     if(window.location.pathname == "/verproposta")
     {   
         pegarProposta();
+        calcularImpostos();
     }
 }, 100);

@@ -30,8 +30,26 @@
                                 <option value="Estudo">Estudo</option>
                             </select>
                         </div>
-                        <div class="col-md-3 col-sm-6 col-4 mb-3 d-flex justify align-items-end">
-                            <button class="btn btn-info btn-block shadow-sm corpadrao col-12" onclick="preencherInputs()" type="button">Preencher proposta</button>
+                        <div class="col-md-3 col-sm-6 col-4 mb-3">
+                            <label>Tipo Assinatura</label>
+                            <select class="form-control" id="tipoAssinatura" name="tipoAssinatura">
+                                <option value="Nenhuma" selected disabled>Nenhuma</option>
+                                <option value="Assinatura Física">Assinatura Física</option>
+                                <option value="Assinatura Digital">Assinatura Digital</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-4 mb-3">
+                            <label>Status</label>
+                            <select class="form-control" id="statusProposta" name="statusProposta">
+                                <option value="Não Enviada" selected disabled>Selecione...</option>
+                                <option value="Salvo">Salvo</option>
+                                <option value="Aguardando Envio">Aguardando Envio</option>
+                                <option value="Enviado Digitalmente">Enviado Digitalmente</option>
+                                <option value="Enviado Fisicamente">Enviado Fisicamente</option>
+                                <option value="Aguardando Assinatura do Cliente">Aguardando Assinatura do Cliente</option>
+                                <option value="Devolvido">Devolvido</option>
+                                <option value="Assinado">Assinado</option>
+                            </select>
                         </div>
                     </div>
                     <div class="row">
