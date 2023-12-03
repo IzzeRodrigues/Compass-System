@@ -17,8 +17,6 @@
 </head>
 
 <body class="sb-nav-fixed dashboardTxt">
-    <script src="/js/verificarLogin.js"></script>
-    <script>verificarLoginPaginas()</script>
 
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark bg-perso">
         <!-- Navbar Brand-->

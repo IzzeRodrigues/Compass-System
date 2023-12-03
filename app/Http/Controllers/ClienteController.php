@@ -46,7 +46,7 @@ class ClienteController extends Controller
         $contato = DB::table('tb_representante_cliente')
         ->join('tb_email_respresentante_cliente', 'tb_representante_cliente.cd_representante_cliente', 'tb_email_representante_cliente.cd_representante_cliente')
         ->get();
-        var_dump($contato);
+        return ["Contatos" => $contato];
     }
 
     function deletarCliente()

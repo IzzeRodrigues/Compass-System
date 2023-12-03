@@ -83,21 +83,16 @@ function assinaturaFisica($variaveis)
     $filialSeparada = explode('-', $variaveis['filialACL'], 2);
     $nomeFilial = $filialSeparada[0];
     $cnpjFilial = $filialSeparada[1];
-    $cidadeOrigem = $variaveis['valorCidadeOrigem'];
-    $estadoOrigem = $variaveis['valorEstadoOrigem'];
-    $cidadeDestino = $variaveis['valorCidadeDestino'];
-    $estadoDestino = $variaveis['valorEstadoDestino'];
-    $tipoTransporte = $variaveis['tipoOperacao'];
     // CRIAÇÃO DA TABLE TRANSPORTE:
     $transporte = '<table style="width:100%; margin:0; padding:0; border-collapse: collapse;">
     <tr>
         <td style="width:10%; border: 1px solid black;  font-weight:bold;">
             Data:
         </td>
-        <td style="width:40%; border: 0.5px solid black; border-right: none; ">
+        <td style="width:20%; border: 0.5px solid black; border-right: none; ">
             ' . $data_atual . '	
         </td>
-        <td style="width:15%; border: 1px solid black;  font-weight:bold;">
+        <td style="width:30%; border: 1px solid black;  font-weight:bold;">
             Referência ACL:
         </td>
         <td style="width:40%; border: 0.5px solid black;">
@@ -108,10 +103,10 @@ function assinaturaFisica($variaveis)
         <td style="width:10%; border: 1px solid black;  font-weight:bold;">
         Cliente:
         </td>
-        <td style="width:40%; border: 0.5px solid black; border-right: none; ">
+        <td style="width:20%; border: 0.5px solid black; border-right: none; ">
            ' . $cliente . '	
         </td>
-        <td style="width:15%; border: 1px solid black;  font-weight:bold;">
+        <td style="width:30%; border: 1px solid black;  font-weight:bold;">
             Contato:
         </td>
         <td style="width:40%; border: 0.5px solid black;">
@@ -119,13 +114,13 @@ function assinaturaFisica($variaveis)
         </td>
         </tr>
     <tr>
-    <td style="width:10%; border: 1px solid black;  font-weight:bold;">
+    <td style="width:15%; border: 1px solid black;  font-weight:bold;">
         Vlr. Carga (*):		
     </td>
-    <td style="width:40%; border: 0.5px solid black; border-right: none; ">
+    <td style="width:20%; border: 0.5px solid black; border-right: none; ">
         ' . $valor_carga . '
     </td>
-    <td style="width:15%; border: 1px solid black;  font-weight:bold;">
+    <td style="width:30%; border: 1px solid black;  font-weight:bold;">
         Peso Total Bruto:
     </td>
     <td style="width:40%; border: 0.5px solid black;">
@@ -136,13 +131,13 @@ function assinaturaFisica($variaveis)
         <td style="width:10%; border: 1px solid black;  font-weight:bold;">
             Qtde/Tipo:			
         </td>
-        <td style="width:40%; border: 0.5px solid black;">
+        <td colspan="1" style="border: 0.5px solid black;">
             ' . $qtd_tipo_carga . '				
         </td>
-        <td style="width:15%; border: 1px solid black;  font-weight:bold;">
+        <td style="width:10%; border: 1px solid black;  font-weight:bold;">
             Filial:			
         </td>
-        <td style="width:40%; border: 0.5px solid black;">
+        <td colspan="3" style="border: 0.5px solid black;">
             ' . $nomeFilial . ' - ' . $cnpjFilial . '				
         </td>
     </tr>
@@ -150,13 +145,13 @@ function assinaturaFisica($variaveis)
     <td style="width:10%; border: 1px solid black;  font-weight:bold;">
         Elaborado por:		
     </td>
-    <td style="width:40%; border: 0.5px solid black; border-right: none; ">
-        ' . $criador_proposta . ' - ' . $email_criador . '			
+    <td style="border: 0.5px solid black; border-right: none; ">
+        ' . $criador_proposta . '			
     </td>
-    <td style="width:15%; border: 1px solid black;  font-weight:bold;">
+    <td style="width:10%; border: 1px solid black;  font-weight:bold;">
         Depto.:
     </td>
-    <td style="width:40%; border: 0.5px solid black;">
+    <td style="width:30%; border: 0.5px solid black;">
         ' . $depto_criador . '	
     </td>
     </tr>
@@ -166,7 +161,7 @@ function assinaturaFisica($variaveis)
     <td > 
         <tr> 
             <td style="color:white; text-align:center; font-size:10px; ">
-                TRAJETO: ' . $cidadeOrigem . ' - ' . $estadoOrigem . ' / ' . $cidadeDestino . ' - ' . $estadoDestino . ' (' . $tipoTransporte . ')
+                TRAJETO:Guarulhos (AeroportoP - SP / Anápolis (Porto Seco) - GO / Trânsito Aduaneiro (DTA)								
 			</td>
         </tr>
 </table>';
@@ -973,21 +968,21 @@ function assinaturaDigital($variaveis)
     $filialSeparada = explode('-', $variaveis['filialACL'], 2);
     $nomeFilial = $filialSeparada[0];
     $cnpjFilial = $filialSeparada[1];
-    $cidadeOrigem = $variaveis['valorCidadeOrigem'];
-    $estadoOrigem = $variaveis['valorEstadoOrigem'];
-    $cidadeDestino = $variaveis['valorCidadeDestino'];
-    $estadoDestino = $variaveis['valorEstadoDestino'];
-    $tipoTransporte = $variaveis['tipoOperacao'];
-    // CRIAÇÃO DA TABLE TRANSPORTE:
+
+    // var_dump($filialSeparada);
+// var_dump($nomeFilial);
+// var_dump($cnpjFilial);
+// var_dump($variaveis['filialACL']);
+// CRIAÇÃO DA TABLE TRANSPORTE:
     $transporte = '<table style="width:100%; margin:0; padding:0; border-collapse: collapse;">
     <tr>
         <td style="width:10%; border: 1px solid black;  font-weight:bold;">
             Data:
         </td>
-        <td style="width:40%; border: 0.5px solid black; border-right: none; ">
+        <td style="width:20%; border: 0.5px solid black; border-right: none; ">
             ' . $data_atual . '	
         </td>
-        <td style="width:15%; border: 1px solid black;  font-weight:bold;">
+        <td style="width:30%; border: 1px solid black;  font-weight:bold;">
             Referência ACL:
         </td>
         <td style="width:40%; border: 0.5px solid black;">
@@ -998,10 +993,10 @@ function assinaturaDigital($variaveis)
         <td style="width:10%; border: 1px solid black;  font-weight:bold;">
         Cliente:
         </td>
-        <td style="width:40%; border: 0.5px solid black; border-right: none; ">
+        <td style="width:20%; border: 0.5px solid black; border-right: none; ">
            ' . $cliente . '	
         </td>
-        <td style="width:15%; border: 1px solid black;  font-weight:bold;">
+        <td style="width:30%; border: 1px solid black;  font-weight:bold;">
             Contato:
         </td>
         <td style="width:40%; border: 0.5px solid black;">
@@ -1009,13 +1004,13 @@ function assinaturaDigital($variaveis)
         </td>
         </tr>
     <tr>
-    <td style="width:10%; border: 1px solid black;  font-weight:bold;">
+    <td style="width:15%; border: 1px solid black;  font-weight:bold;">
         Vlr. Carga (*):		
     </td>
-    <td style="width:40%; border: 0.5px solid black; border-right: none; ">
+    <td style="width:20%; border: 0.5px solid black; border-right: none; ">
         ' . $valor_carga . '
     </td>
-    <td style="width:15%; border: 1px solid black;  font-weight:bold;">
+    <td style="width:30%; border: 1px solid black;  font-weight:bold;">
         Peso Total Bruto:
     </td>
     <td style="width:40%; border: 0.5px solid black;">
@@ -1026,13 +1021,13 @@ function assinaturaDigital($variaveis)
         <td style="width:10%; border: 1px solid black;  font-weight:bold;">
             Qtde/Tipo:			
         </td>
-        <td style="width:40%; border: 0.5px solid black;">
+        <td colspan="1" style="border: 0.5px solid black;">
             ' . $qtd_tipo_carga . '				
         </td>
-        <td style="width:15%; border: 1px solid black;  font-weight:bold;">
+        <td style="width:10%; border: 1px solid black;  font-weight:bold;">
             Filial:			
         </td>
-        <td style="width:40%; border: 0.5px solid black;">
+        <td colspan="3" style="border: 0.5px solid black;">
             ' . $nomeFilial . ' - ' . $cnpjFilial . '				
         </td>
     </tr>
@@ -1040,13 +1035,13 @@ function assinaturaDigital($variaveis)
     <td style="width:10%; border: 1px solid black;  font-weight:bold;">
         Elaborado por:		
     </td>
-    <td style="width:40%; border: 0.5px solid black; border-right: none; ">
-        ' . $criador_proposta . ' - ' . $email_criador . '			
+    <td style="border: 0.5px solid black; border-right: none; ">
+        ' . $criador_proposta . ' 		
     </td>
-    <td style="width:15%; border: 1px solid black;  font-weight:bold;">
+    <td style="width:10%; border: 1px solid black;  font-weight:bold;">
         Depto.:
     </td>
-    <td style="width:40%; border: 0.5px solid black;">
+    <td style="width:30%; border: 0.5px solid black;">
         ' . $depto_criador . '	
     </td>
     </tr>
@@ -1056,7 +1051,7 @@ function assinaturaDigital($variaveis)
     <td > 
         <tr> 
             <td style="color:white; text-align:center; font-size:10px; ">
-                TRAJETO: ' . $cidadeOrigem . ' - ' . $estadoOrigem . ' / ' . $cidadeDestino . ' - ' . $estadoDestino . ' (' . $tipoTransporte . ')
+                TRAJETO:Guarulhos (AeroportoP - SP / Anápolis (Porto Seco) - GO / Trânsito Aduaneiro (DTA)								
 			</td>
         </tr>
 </table>';
@@ -1099,7 +1094,7 @@ function assinaturaDigital($variaveis)
     // CRIAÇÃO DA TABLE CONTAINER:
     $container = '<table style="border-collapse:colapse; width:100%;">
         <tr>
-            <td  style="text-align: center; color: yellow; font-weight:bold; font-size:9px; background-color:black; border: 0.5px solid black;">
+            <td  style="text-align: center; color: yellow; font-weight:bold; font-size:10px; background-color:black; border: 0.5px solid black;">
                 ' . $tipo_transporte_carga . '
             </td>
         </tr>

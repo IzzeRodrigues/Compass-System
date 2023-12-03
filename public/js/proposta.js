@@ -3,6 +3,7 @@ let puxouMoeda = false;
 let valoresMoedas;
 let puxouICMS = false;
 let combinacaoICMS;
+let puxouContato = false;
 
 function inicioProposta(usuario,email,cargo)
 {
@@ -421,9 +422,12 @@ function calcularImpostos()
 
     if (window.location.pathname == "/addproposta")
     {
-        fetch(`htpp://localhost:8000/pegarContato?Empresa=${nomeCliente}`)
-        .then((response) => response.json())
-        .then((json) => setNumeroProposta(json))
+        if(puxouContato)
+        {
+            fetch(`htpp://localhost:8000/pegarContato?Empresa=${nomeCliente}`)
+            .then((response) => response.json())
+            .then((json) => setNumeroProposta(json))
+        }
     }
 
     /*
