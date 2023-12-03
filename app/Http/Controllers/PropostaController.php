@@ -39,7 +39,6 @@ class PropostaController extends Controller
             $_SESSION['proposta'] = $variaveis;
             PropostaController::atualizarProposta();
         }
-        session_destroy();
     }
 
     function pegarCabecalho()
