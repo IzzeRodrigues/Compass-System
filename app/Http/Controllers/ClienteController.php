@@ -27,7 +27,7 @@ class ClienteController extends Controller
         echo("<script>window.location.href = 'http://localhost:8000/gercliente'</script>");
     }
 
-    function pegarCliente()
+    function pegarCliente(Request $request)
     {
         $cliente = DB::table('tb_cliente')
         ->join('tb_responsavel_cliente', 'tb_cliente.cd_cliente', 'tb_responsavel_cliente.cd_cliente')
@@ -35,6 +35,18 @@ class ClienteController extends Controller
         ->get();
 
         return ["Cliente" => $cliente];
+    }
+
+    function pegarContato(Request $request)
+    {
+        $empresa = $request->Empresa;
+        $cliente = DB::table('tb_cliente')->get();
+
+        $cliente = $cliente[0]->cd_cliente;
+        $contato = DB::table('tb_representante_cliente')
+        ->join('tb_email_respresentante_cliente', 'tb_representante_cliente.cd_representante_cliente', 'tb_email_representante_cliente.cd_representante_cliente')
+        ->get();
+        var_dump($contato);
     }
 
     function deletarCliente()

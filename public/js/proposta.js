@@ -109,14 +109,15 @@ function setNumeroProposta(referencia)
     if (referencia.nm_referencia_acl)
     {
         var local = (referencia.nm_referencia_acl).split(" ");
+        console.log(local);
         if (local[2] <9)
             document.getElementById('valorNumeroProposta').value = `000${parseInt(local[2]) + 1}`;
         else if (local[2] <99)
-            document.getElementById('valorNumeroProposta').value = `00${parseInt(local[2] + 1)}`;
+            document.getElementById('valorNumeroProposta').value = `00${parseInt(local[2]) + 1}`;
         else if (local[2] <999)
-            document.getElementById('valorNumeroProposta').value = `0${parseInt(local[2] + 1)}`;
+            document.getElementById('valorNumeroProposta').value = `0${parseInt(local[2]) + 1}`;
         else
-            document.getElementById('valorNumeroProposta').value = `${parseInt(local[2] + 1)}`;
+            document.getElementById('valorNumeroProposta').value = `${parseInt(local[2]) + 1}`;
     }
     else
     {
@@ -410,6 +411,20 @@ function calcularImpostos()
     //24
 
     //25 + 26 + 27 + 17 + 2 + 11 + 6 + 24
+
+
+    /*
+    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    ----------------------------------------------------------------------------  Parte do Cabeçalho  -----------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    */
+
+    if (window.location.pathname == "/addproposta")
+    {
+        fetch(`htpp://localhost:8000/pegarContato?Empresa=${nomeCliente}`)
+        .then((response) => response.json())
+        .then((json) => setNumeroProposta(json))
+    }
 
     /*
     -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
