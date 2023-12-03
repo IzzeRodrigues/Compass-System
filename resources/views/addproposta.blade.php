@@ -118,7 +118,7 @@
                         <div class="col-md-3 col-sm-4 col-12 mb-3">
                             <label>Nome da Empresa</label>
                             {{-- <input type="text" class="form-control" placeholder="Ex:Copa Logística" id="valorNomeCliente" name="valorNomeCliente"> --}}
-                            <select class="form-control" placeholder="Ex:Copa Logística" id="valorNomeCliente" name="valorNomeCliente">
+                            <select class="form-control" placeholder="Ex:Copa Logística" id="valorNomeCliente" name="valorNomeCliente" onchange="mudouCliente(); mudouResponsavel()">
                                 <option value="naoSelecionado" selected disabled>Selecione...</option>
                                 <?php
                                     @session_start();
@@ -132,11 +132,15 @@
                         </div>
                         <div class="col-md-3 col-sm-4 col-12 mb-3">
                             <label>Contato</label>
-                            <input type="text" class="form-control" placeholder="Ex:Amanda" id="valorNomeContatoCliente" name="valorNomeContatoCliente">
+                            <select class="form-control" placeholder="Ex:Amanda" id="valorNomeContatoCliente" name="valorNomeContatoCliente" onblur="mudouResponsavel()" onchange="mudouResponsavel()">
+                                <option value="naoSelecionado" selected disabled>Selecione...</option>
+                            </select>
                         </div>
                         <div class="col-md-3 col-sm-4 col-12 mb-3">
                             <label>E-mail Contato</label>
-                            <input type="text" class="form-control" placeholder="Ex:amanda@copalog.com.br" id="valorEmailContatoCliente" name="valorEmailContatoCliente">
+                            <select class="form-control" placeholder="Ex:amanda@copalog.com.br" id="valorEmailContatoCliente" name="valorEmailContatoCliente">
+                                <option value="naoSelecionado" selected disabled>Selecione...</option>
+                            </select>
                         </div>
                         <div class="col-md-3 col-sm-4 col-12 mb-3">
                             <label>Tipo de Frete</label>

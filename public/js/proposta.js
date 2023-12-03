@@ -4,6 +4,17 @@ let valoresMoedas;
 let puxouICMS = false;
 let combinacaoICMS;
 let puxouContato = false;
+let puxouResponsavel = false;
+
+function mudouCliente()
+{
+    puxouContato = false;
+}
+
+function mudouResponsavel()
+{
+    puxouResponsavel = false;
+}
 
 function inicioProposta(usuario,email,cargo)
 {
@@ -110,7 +121,6 @@ function setNumeroProposta(referencia)
     if (referencia.nm_referencia_acl)
     {
         var local = (referencia.nm_referencia_acl).split(" ");
-        console.log(local);
         if (local[2] <9)
             document.getElementById('valorNumeroProposta').value = `000${parseInt(local[2]) + 1}`;
         else if (local[2] <99)
@@ -422,11 +432,68 @@ function calcularImpostos()
 
     if (window.location.pathname == "/addproposta")
     {
-        if(puxouContato)
+        if(!puxouContato)
         {
-            fetch(`htpp://localhost:8000/pegarContato?Empresa=${nomeCliente}`)
-            .then((response) => response.json())
-            .then((json) => setNumeroProposta(json))
+            if (nomeCliente != "naoSelecionado")
+            {
+                fetch(`http://localhost:8000/pegarContato?Empresa=${nomeCliente}`)
+                .then((response) => response.json())
+                .then((json) => setRepresentante(json))
+                puxouContato = true;
+                function setRepresentante(json)
+                {
+                    representantes = json['Contatos'];
+                    localRepresentantes = document.getElementById('valorNomeContatoCliente');
+                    while (localRepresentantes.options.length > 0)
+                    {
+                        localRepresentantes.remove(0);
+                    }
+                    var novaOpcao = document.createElement('option');
+                    var textoOpcao = document.createTextNode("Selecione...");
+                    novaOpcao.appendChild(textoOpcao);
+                    novaOpcao.setAttribute('value', "naoSelecionado");
+                    localRepresentantes.appendChild(novaOpcao);
+                    representantes.forEach(element => {
+                        novaOpcao = document.createElement('option');
+                        textoOpcao = document.createTextNode(element.nm_responsavel_cliente);
+                        novaOpcao.appendChild(textoOpcao);
+                        novaOpcao.setAttribute('value', element.nm_responsavel_cliente);
+                        localRepresentantes.appendChild(novaOpcao);
+                    });
+                }
+            }
+        }
+        if(!puxouResponsavel)
+        {
+            if (nomeContatoCliente != "naoSelecionado")
+            {
+                fetch(`http://localhost:8000/pegarEmail?Responsavel=${nomeContatoCliente}&Empresa=${nomeCliente}`)
+                .then((response) => response.json())
+                .then((json) => setEmailRepresentante(json))
+                puxouResponsavel = true;
+                function setEmailRepresentante(json)
+                {
+                    console.log(json);
+                    emails = json['Emails'];
+                    localEmails = document.getElementById('valorEmailContatoCliente');
+                    while (localEmails.options.length > 0)
+                    {
+                        localEmails.remove(0);
+                    }
+                    var novaOpcao = document.createElement('option');
+                    var textoOpcao = document.createTextNode("Selecione...");
+                    novaOpcao.appendChild(textoOpcao);
+                    novaOpcao.setAttribute('value', "naoSelecionado");
+                    localEmails.appendChild(novaOpcao);
+                    emails.forEach(element => {
+                        var novaOpcao = document.createElement('option');
+                        var textoOpcao = document.createTextNode(element.nm_email_responsavel_cliente);
+                        novaOpcao.appendChild(textoOpcao);
+                        novaOpcao.setAttribute('value', element.nm_email_responsavel_cliente);
+                        localEmails.appendChild(novaOpcao);
+                    });
+                }
+            }
         }
     }
 

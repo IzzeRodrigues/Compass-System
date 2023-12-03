@@ -51,6 +51,7 @@ Route::get('/pegarValorAssinante', [AssinarDigitalController::class, 'pegarValor
 Route::get('/acoesCliente', [ClienteController::class, 'acoesCliente'])->name('acoesCliente');
 Route::get('/pegarCliente', [ClienteController::class, 'pegarCliente'])->name('pegarCliente');
 Route::get('/pegarContato', [ClienteController::class, 'pegarContato'])->name('pegarContato');
+Route::get('/pegarEmail', [ClienteController::class, 'pegarEmail'])->name('pegarEmail');
 Route::get('/alterarCliente', [ClienteController::class, 'atualizarCliente'])->name('atualizarCliente');
 Route::get('/deletarCliente', [ClienteController::class, 'deletarCliente'])->name('deletarCliente');
 

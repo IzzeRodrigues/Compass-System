@@ -40,13 +40,28 @@ class ClienteController extends Controller
     function pegarContato(Request $request)
     {
         $empresa = $request->Empresa;
-        $cliente = DB::table('tb_cliente')->get();
-
+        $cliente = DB::table('tb_cliente')->where('tb_cliente.nm_empresa_cliente', $empresa)->get();
+        // var_dump($cliente);
         $cliente = $cliente[0]->cd_cliente;
-        $contato = DB::table('tb_representante_cliente')
-        ->join('tb_email_respresentante_cliente', 'tb_representante_cliente.cd_representante_cliente', 'tb_email_representante_cliente.cd_representante_cliente')
+        $contato = DB::table('tb_responsavel_cliente')
+        ->join('tb_email_responsavel_cliente', 'tb_responsavel_cliente.cd_responsavel_cliente', 'tb_email_responsavel_cliente.cd_responsavel_cliente')
+        ->where('tb_responsavel_cliente.cd_cliente', $cliente)
         ->get();
         return ["Contatos" => $contato];
+    }
+
+    function pegarEmail(Request $request)
+    {
+        $responsavel = $request->Responsavel;
+        $empresa = $request->Empresa;
+        $cliente = DB::table('tb_cliente')->where('tb_cliente.nm_empresa_cliente', $empresa)->get();
+        $cliente = $cliente[0]->cd_cliente;
+        $email = DB::table('tb_email_responsavel_cliente')
+        ->join('tb_responsavel_cliente', 'tb_email_responsavel_cliente.cd_responsavel_cliente', 'tb_responsavel_cliente.cd_responsavel_cliente')
+        ->where('tb_responsavel_cliente.nm_responsavel_cliente', $responsavel)
+        ->where('tb_responsavel_cliente.cd_cliente', $cliente)
+        ->get();
+        return ["Emails" => $email];
     }
 
     function deletarCliente()
