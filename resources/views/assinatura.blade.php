@@ -93,8 +93,44 @@
                                         class="form-control" placeholder="000001">
                                 </div>
                             </div>
+                            <div>
+                                <p class="mt-3 text-center">Política de uso e privacidade – Assinatura digital Compass</p>
+                                    <textarea cols="60" rows="10"  style="resize: none" disabled>
+Definições:
+Cliente / Assinante: indivíduo solicitado a participar de um processo de assinaturas via plataforma Compass desenvolvido pela Algoritmo.
+Operador / Contratante: indivíduo com acesso à plataforma Compass, com poder de solicitar assinaturas via site e, dependendo do seu nível de acesso, pode criar documentos.
+Operador Compass: É o meio utilizado para disparar documentos para assinatura, acessar arquivos já enviados, enviar notificações, baixar cópias de contratos, entre outras ações.
+Dados: qualquer informação relativa a uma pessoa, empresa ou documento, identificada ou não.
+Documentos: arquivos em PDF anexado na plataforma via site para ser assinado via Compass.
+Legislação As assinaturas digitais estão previstas na MP 2.200-2/2001, e a plataforma Compass está amparado no artigo 10, § 2o:
+MP 2.200-2/2001 (http://www.planalto.gov.br/ccivil_03/mpv/antigas_2001/2200-2.htm)
+MEDIDA PROVISÓRIA No 2.200-2, DE 24 DE AGOSTO DE 2001.
+“Art. 10. Consideram-se documentos públicos ou particulares, para todos os fins legais, os documentos eletrônicos de que trata esta Medida Provisória.
+§ 2o O disposto nesta Medida Provisória não obsta a utilização de outro meio de comprovação da autoria e integridade de documentos em forma eletrônica, inclusive os que utilizem certificados não emitidos pela ICP-Brasil, desde que admitido pelas partes como válido ou aceito pela pessoa a quem for oposto o documento.”
+LEI Nº 14.063, DE 23 DE SETEMBRO DE 2020
+“Art. 4º Para efeitos desta Lei, as assinaturas eletrônicas são classificadas em:
+I - Assinatura eletrônica simples:
+a) a que permite identificar o seu signatário;
+b) a que anexa ou associa dados a outros dados em formato eletrônico do signatário;
+II - Assinatura eletrônica avançada: a que utiliza certificados não emitidos pela ICP-Brasil ou outro meio de comprovação da autoria e da integridade de documentos em forma eletrônica, desde que admitido pelas partes como válido ou aceito pela pessoa a quem for oposto o documento, com as seguintes características:
+a) está associada ao signatário de maneira unívoca;
+b) utiliza dados para a criação de assinatura eletrônica cujo signatário pode, com elevado nível de confiança, operar sob o seu controle exclusivo;
+c) está relacionada aos dados a ela associados de tal modo que qualquer modificação posterior é detectável;
+III - assinatura eletrônica qualificada: a que utiliza certificado digital, nos termos do § 1º do art. 10 da Medida Provisória nº 2.200-2, de 24 de agosto de 2001.
+§ 1º Os 3 (três) tipos de assinatura referidos nos incisos I, II e III do caput deste artigo caracterizam o nível de confiança sobre a identidade e a manifestação de vontade de seu titular, e a assinatura eletrônica qualificada é a que possui nível mais elevado de confiabilidade a partir de suas normas, de seus padrões e de seus procedimentos específicos.
+§ 2º Devem ser asseguradas formas de revogação ou de cancelamento definitivo do meio utilizado para as assinaturas previstas nesta Lei, sobretudo em casos de comprometimento de sua segurança ou de vazamento de dados.”
+Funcionamento e Confiabilidade da Plataforma:
+Todo cadastro de documentos e signatários inicia-se com uma proposta criada a partir da plataforma Compass. O operador insere os dados do cliente a serem assinados e as pessoas envolvidas na assinatura, os dados para identificar o indivíduo.
+Esses dados são: Nome completo, CPF, Email.
+Outros dados escolhidos para identificar os signatários (como RG, Passaporte etc.) Precisam ser informadas anteriormente ao operador.
+Cada pessoa envolvida para assinar um documento recebe uma notificação em seu e-mail com um código (token) temporário, e um link pessoal e intransferível.
+Com o link, o cliente visualizará o documento enviado para assinatura e, caso todas as informações estiverem corretas, para assinar, deverá confirmar seu e-mail, nome completo, CPF e um código (token) gerado com duração limitada para preencher na tela. Após o preenchimento, teremos a confirmação se o e-mail é realmente da pessoa.
+Solicitação de uso do token público emitido pelo ICP Brasil.
+As partes envolvidas poderão acompanhar quem já assinou e, ao final, o cliente recebe um e-mail com o documento assinado, já assinado e cadastrado com um código único, totalmente protegido de falsificações ou alterações do conteúdo. Já o operador, receberá o documento assinado dentro da dashboard do sistema Compass. Eles poderão copiar, guardar em pastas, na nuvem, no pen drive, entre outras possibilidades. A duração é eterna.
+</textarea>
+                                </div>
                             <button name='envio' value='envio' id='envio'
-                                class="col-2 btn-compass-color border border-0 rounded-4 mt-3">Assinar</button>
+                                class="col-2 btn-compass-color border border-0 rounded-4 mt-3 mb-5">Assinar</button>
                         </div>
                     </form>
                 </div>

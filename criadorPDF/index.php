@@ -2786,7 +2786,8 @@ function assinando($variaveis)
             </table>
             </div>';
         $mpdf->WriteHTML($clausulaDigital);
-        $mpdf->Output();
+       
+        // $mpdf->Output('mpdf.pdf', \Mpdf\Output\Destination::FILE);
         var_dump($variaveis);
         // unset($_SESSION['representante']);
         // header('Location:http://localhost:8000/emailCliente');
