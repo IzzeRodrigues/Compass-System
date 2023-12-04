@@ -12,8 +12,20 @@
         <main>
     @section('master')
     @section('conteudo')
-        <script src="js/verificarPrivilegio.js" type="text/javascript"></script>
-        <script>verificarPrivilegio("administrador")</script>
+        <?php
+
+            @session_start();
+            if(isset($_SESSION['Usuario']))
+            {
+                if($_SESSION['Usuario']['privilegio'] != "Adm")
+                {
+                    echo("<script>window.location.href = 'http://localhost:8000/comercial'</script>");
+                }
+            }
+
+        ?>
+        {{-- <script src="js/verificarPrivilegio.js" type="text/javascript"></script> --}}
+        {{-- <script>verificarPrivilegio("administrador")</script> --}}
             <div class="container-fluid px-4">
                 <h1 class="mt-4">Compass</h1>
                 <ol class="breadcrumb mb-4">
@@ -97,6 +109,8 @@
                                     <th>Cliente</th>
                                     <th>ID Proposta</th>
                                     <th>Data de Início</th>
+                                    <th>Tipo de Assinatura</th>
+                                    <th>Status</th>
                                     <th>Lucro</th>
                                 </tr>
                             </thead>
@@ -107,12 +121,16 @@
                                     <th>Cliente</th>
                                     <th>ID Proposta</th>
                                     <th>Data de Início</th>
+                                    <th>Tipo de Assinatura</th>
+                                    <th>Status</th>
                                     <th>Lucro</th>
                                 </tr>
                             </tfoot>
                             <tbody>
                                     <?php 
-                                        $propostas = DB::table('tb_proposta')->join('tb_operacao', 'tb_proposta.cd_proposta', '=', 'tb_operacao.cd_proposta')->join('tb_cliente', 'tb_proposta.cd_proposta', '=', 'tb_cliente.cd_proposta')->join('tb_usuario', 'tb_proposta.cd_usuario', '=', 'tb_usuario.cd_usuario')->select('nm_nome_completo', 'nm_tipo_operacao', 'nm_empresa_cliente', 'nm_referencia_acl', 'dt_proposta', 'vl_lucro_bruto_operacao')->get();
+                                        @session_start();
+                                        // var_dump($_SESSION['Usuario']['privilegio']);
+                                        $propostas = DB::table('tb_proposta')->join('tb_operacao', 'tb_proposta.cd_proposta', '=', 'tb_operacao.cd_proposta')->join('tb_cliente_proposta', 'tb_proposta.cd_proposta', '=', 'tb_cliente_proposta.cd_proposta')->join('tb_usuario', 'tb_proposta.cd_usuario', '=', 'tb_usuario.cd_usuario')->select('nm_nome_completo', 'nm_tipo_operacao', 'nm_empresa_cliente', 'nm_referencia_acl', 'dt_proposta', 'vl_lucro_bruto_operacao', 'ds_tipo_assinatura', 'ds_status_proposta')->get();
                                         foreach ($propostas as $proposta)
                                         {
                                             echo("<tr>
@@ -121,6 +139,8 @@
                                                     <td>$proposta->nm_empresa_cliente</td>
                                                     <td>$proposta->nm_referencia_acl</td>
                                                     <td>$proposta->dt_proposta</td>
+                                                    <td>$proposta->ds_tipo_assinatura</td>
+                                                    <td>$proposta->ds_status_proposta</td>
                                                     <td>$proposta->vl_lucro_bruto_operacao</td>
                                                 </tr>");
                                         }

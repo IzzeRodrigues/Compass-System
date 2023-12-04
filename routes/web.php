@@ -5,6 +5,7 @@ use App\Http\Controllers\CompassController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\PropostaController;
 use App\Http\Controllers\EmailController;
+use App\Http\Controllers\ClienteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,13 +48,21 @@ Route::get('/assinatura', [CompassController::class, 'assinatura'])->name('assin
 Route::get('/enviarErro', [EmailController::class, 'enviarErro'])->name('erroProposta');
 Route::get('/pegarValorAssinante', [AssinarDigitalController::class, 'pegarValorAssinante'])->name('pegarValorAssinante');
 
-
+Route::get('/acoesCliente', [ClienteController::class, 'acoesCliente'])->name('acoesCliente');
+Route::get('/pegarCliente', [ClienteController::class, 'pegarCliente'])->name('pegarCliente');
+Route::get('/pegarContato', [ClienteController::class, 'pegarContato'])->name('pegarContato');
+Route::get('/pegarEmail', [ClienteController::class, 'pegarEmail'])->name('pegarEmail');
+Route::get('/alterarCliente', [ClienteController::class, 'atualizarCliente'])->name('atualizarCliente');
+Route::get('/deletarCliente', [ClienteController::class, 'deletarCliente'])->name('deletarCliente');
 
 Route::get('/acoesProposta', [PropostaController::class, 'escolherAcao'])->name('acoesProposta');
 Route::get('/salvarProposta', [PropostaController::class, 'salvarProposta'])->name('salvarProposta');
 Route::get('/gerarProposta', [PropostaController::class, 'gerarPDF'])->name('gerarPDF');
 Route::get('/pegarCabecalho', [PropostaController::class, 'pegarCabecalho'])->name('pegarCabecalho');
 Route::get('/pegarProposta', [PropostaController::class, 'pegarPropostaCompleta'])->name('pegarProposta');
+Route::get('/deletarProposta', [PropostaController::class, 'deletarProposta'])->name('deletarProposta');
+Route::get('/atualizarAssinatura', [PropostaController::class, 'atualizarAssinaturaACL'])->name('atualizarAssinatura');
+Route::get('/pegarPropostaAssinatura', [PropostaController::class, 'pegarPropostaAssinatura'])->name('pegarPropostaAssinatura');
 
 Route::get('/verificarUsuario', [UsuarioController::class, 'verificarUsuario'])->name('verificarUsuario');
 Route::get('/adicionarUsuario', [UsuarioController::class, 'adicionarUsuario'])->name('adicionarUsuario');

@@ -12,17 +12,18 @@
 </head>
 <body>
 
-    <script src="/js/verificarLogin.js"></script>
-    <script>verificarLoginInicio()</script>
+    {{-- <script src="/js/verificarLogin.js"></script>
+    <script>verificarLoginInicio()</script> --}}
 
     <?php
-        // if(isset($_COOKIE['statusLogin']))
-        // {
-        //     if($_COOKIE['statusLogin'])
-        //     {
-        //         return redirect()->route("verificarUsuario");
-        //     };
-        // };
+        @session_start();
+        if(isset($_SESSION['Usuario']))
+        {
+            if($_SESSION['Usuario']['logado'])
+            {
+                echo("<script>window.location.href = 'http://localhost:8000/verificarUsuario'</script>");
+            };
+        };
     ?>
 
     <div class="container-fluid standartTxt align-items-end at100vh d-flex flex-column justify-content-between col-12 px-0">

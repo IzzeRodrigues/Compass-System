@@ -11,16 +11,17 @@ class EmailController extends Controller
         require '../vendor/autoload.php';
         session_start();
         $sessao = $_SESSION['infos'];
+        $id = $sessao['ID'];
 
-        $link = 'http://localhost:8000/assinatura';
-        $token = random_int(100000, 999999);;
+        $link = "http://localhost:8000/assinatura?ID=$id";
+        $token = $sessao['Token'];
 
         var_dump($sessao);
 
         $email = new \SendGrid\Mail\Mail();
         $email->setFrom("compassalgoritimo@gmail.com", "Algoritmo - Compass");
         $email->setSubject("PROPOSTA RECEBIDA!");
-        $email->addTo($sessao[0], $sessao[1]);
+        $email->addTo($sessao['Email'], $sessao['Nome']);
         $email->addContent(
             "text/html",
             " Olá! Você recebeu uma proposta da ACL Cargo. Para realizar a assinatura, Acesse o link $link e insira o token a seguir: $token."

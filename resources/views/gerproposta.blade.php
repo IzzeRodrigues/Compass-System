@@ -31,6 +31,8 @@
                                     <th>Destino</th>
                                     <th>Tipo Veículo</th>
                                     <th>Tipo Operação</th>
+                                    <th>Tipo Assinatura</th>
+                                    <th>Status</th>
                                     <th>Ação</th>
                                 </tr>
                             </thead>
@@ -43,20 +45,29 @@
                                     <th>Destino</th>
                                     <th>Tipo Veículo</th>
                                     <th>Tipo Operação</th>
+                                    <th>Tipo Assinatura</th>
+                                    <th>Status</th>
                                     <th>Ação</th>
                                 </tr>
                             </tfoot>
                             <tbody>
-                                <?php 
-                                    $usuario = DB::table('tb_email_usuario')->join('tb_usuario', 'tb_email_usuario.cd_usuario', '=', 'tb_usuario.cd_usuario')->where('tb_email_usuario.nm_email_usuario', '=', $_COOKIE['emailUsuario'])->get();
-                                    $usuario = $usuario[0]->cd_usuario;
-                                    if ($_COOKIE['privilegioUsuario'] == 'administrador')
+                                <?php
+                                    @session_start();
+                                    if (isset($_SESSION['Erros']['ErroVerProposta']))
                                     {
-                                        $propostas = DB::table('tb_proposta')->join('tb_cliente', 'tb_proposta.cd_proposta', '=', 'tb_cliente.cd_proposta')->join('tb_rota', 'tb_proposta.cd_proposta', '=', 'tb_rota.cd_proposta')->join('tb_veiculo', 'tb_proposta.cd_proposta', '=', 'tb_veiculo.cd_proposta')->join('tb_operacao', 'tb_proposta.cd_proposta', '=', 'tb_operacao.cd_proposta')->get();
+                                        $erro = $_SESSION['Erros']['ErroVerProposta'];
+                                        echo("<script>alert($erro)</script>");
+                                    }
+                                    $usuario = DB::table('tb_email_usuario')->join('tb_usuario', 'tb_email_usuario.cd_usuario', '=', 'tb_usuario.cd_usuario')->where('tb_email_usuario.nm_email_usuario', '=', $_SESSION['Usuario']['email'])->get();
+                                    $usuario = $usuario[0]->cd_usuario;
+                                    if ($_SESSION['Usuario']['privilegio'] == 'Adm')
+                                    {
+                                        $propostas = DB::table('tb_proposta')->join('tb_cliente_proposta', 'tb_proposta.cd_proposta', '=', 'tb_cliente_proposta.cd_proposta')->join('tb_rota', 'tb_proposta.cd_proposta', '=', 'tb_rota.cd_proposta')->join('tb_veiculo', 'tb_proposta.cd_proposta', '=', 'tb_veiculo.cd_proposta')->join('tb_operacao', 'tb_proposta.cd_proposta', '=', 'tb_operacao.cd_proposta')->get();
                                     }
                                     else
                                     {
-                                        $propostas = DB::table('tb_proposta')->join('tb_cliente', 'tb_proposta.cd_proposta', '=', 'tb_cliente.cd_proposta')->join('tb_rota', 'tb_proposta.cd_proposta', '=', 'tb_rota.cd_proposta')->join('tb_veiculo', 'tb_proposta.cd_proposta', '=', 'tb_veiculo.cd_proposta')->join('tb_operacao', 'tb_proposta.cd_proposta', '=', 'tb_operacao.cd_proposta')->where('tb_proposta.cd_usuario', '=', $usuario)->get();
+                                        if($_SESSION['Usuario']['privilegio'] == "Usuario")
+                                        $propostas = DB::table('tb_proposta')->join('tb_cliente_proposta', 'tb_proposta.cd_proposta', '=', 'tb_cliente_proposta.cd_proposta')->join('tb_rota', 'tb_proposta.cd_proposta', '=', 'tb_rota.cd_proposta')->join('tb_veiculo', 'tb_proposta.cd_proposta', '=', 'tb_veiculo.cd_proposta')->join('tb_operacao', 'tb_proposta.cd_proposta', '=', 'tb_operacao.cd_proposta')->where('tb_proposta.cd_usuario', '=', $usuario)->get();
                                     }
                                     // var_dump($propostas);
                                     foreach ($propostas as $proposta) {
@@ -68,7 +79,21 @@
                                                 <td>$proposta->nm_cidade_destino_rota</td>
                                                 <td>$proposta->nm_veiculo</td>
                                                 <td>$proposta->nm_tipo_operacao</td>
-                                                <td><a href='/verproposta?ID=$proposta->cd_proposta'><button type='button' class='btn btn-compass-color mx-1 btnhv'>Ver/Editar</button></a><button type='button' class='btn btn-danger me-1 btnhv'>Excluir</button></td>
+                                                <td>$proposta->ds_tipo_assinatura</td>
+                                                <td>$proposta->ds_status_proposta</td>
+                                                <td>
+                                                    <div class='d-flex justify-content-center'>
+                                                        <a href='/verproposta?ID=$proposta->cd_proposta'><button type='button' class='btn btn-compass-color mx-1 btnhv'>Ver/Editar</button></a>
+                                                        ");
+                                                        if ($_SESSION['Usuario']['privilegio'] == "Adm")
+                                                        {
+                                                            echo("
+                                                            <a href='/deletarProposta?ID=$proposta->cd_proposta'><button type='button' class='btn btn-danger me-1 btnhv'>Excluir</button></a>
+                                                            ");
+                                                        }
+                                                        echo("
+                                                        </div>
+                                                </td>
                                             </tr>");
                                     }
                                     
@@ -76,6 +101,7 @@
                             </tbody>
                         </table>
                     </div>
+                    <script src="js/modais.js" type="text/javascript"></script>
         </main>
         @stop
         @stop

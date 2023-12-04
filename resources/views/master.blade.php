@@ -14,8 +14,26 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     </head>
     <body class="sb-nav-fixed dashboardTxt">
-        <script src="/js/verificarLogin.js"></script>
-        <script>verificarLoginPaginas()</script>
+        {{-- <script src="/js/verificarLogin.js"></script> --}}
+        {{-- <script>verificarLoginPaginas()</script> --}}
+        <?php
+            @session_start();
+            if (isset($_SESSION['Usuario']))
+            {
+                if ($_SESSION['Usuario']['logado'] == "true")
+                {
+
+                }
+                else
+                {
+                    echo("<script>window.location.href = 'http://localhost:8000/deslogar'</script>");
+                }
+            }
+            else
+            {
+                echo("<script>window.location.href = 'http://localhost:8000/deslogar'</script>");
+            }
+        ?>
 
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark bg-perso">
             <!-- Navbar Brand-->
@@ -55,21 +73,28 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading side-title">Principal</div>
-                            <a class="nav-link" href="/admindex">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard
-                            </a>
+
                             <?php
-                            if (isset($_COOKIE['privilegioUsuario']))
+                            if (isset($_SESSION['Usuario']['privilegio']))
                             {
-                                if ($_COOKIE['privilegioUsuario'] == "administrador")
+                                if ($_SESSION['Usuario']['privilegio'] == "Adm")
                                 {
-                                    echo("<div class='sb-sidenav-menu-heading side-title'>Admin</div>
+                                    echo("
+                                    <a class='nav-link' href='/admindex'>
+                                        <div class='sb-nav-link-icon'><i class='fas fa-tachometer-alt'></i></div>
+                                        Dashboard
+                                    </a>
+                                    <div class='sb-sidenav-menu-heading side-title'>Admin</div>
+                                    <a class='nav-link' href='/impostos'>
+                                        <div class='sb-nav-link-icon'><i class='fas fa-chart-area'></i></div>
+                                        Impostos
+                                    </a>
                                     <a class='nav-link collapsed' href='#' data-bs-toggle='collapse' data-bs-target='#collapseLayouts' aria-expanded='false' aria-controls='collapseLayouts'>
                                         <div class='sb-nav-link-icon'><i class='fas fa-columns'></i></div>
                                         Funcionários
                                         <div class='sb-sidenav-collapse-arrow'><i class='fas fa-angle-down'></i></div>
                                     </a>
+
                                     <div class='collapse' id='collapseLayouts' aria-labelledby='headingOne' data-bs-parent='#sidenavAccordion'>
                                         <nav class='sb-sidenav-menu-nested nav'>
                                             <a class='nav-link' href='/addfuncionario'>Adicionar</a>
@@ -77,15 +102,25 @@
                                         </nav>
                                     </div>");
                                 }
+                                else
+                                {
+                                    if ($_SESSION['Usuario']['privilegio'] == "Usuario")
+                                    {
+                                        echo
+                                        ("
+                                            <a class='nav-link' href='/comercial'>
+                                                <div class='sb-nav-link-icon'><i class='fas fa-tachometer-alt'></i></div>
+                                                Dashboard
+                                            </a>
+                                        ");
+                                    }
+                                }
                             }
 
 
                             ?>
 
-                            <a class="nav-link" href="/impostos">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Impostos
-                            </a>
+
 
                             <div class="sb-sidenav-menu-heading side-title">Comercial</div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -113,8 +148,8 @@
                         </div>
                     </div>
                     <div class="sb-sidenav-footer bg-perso">
-                        <div class="small side-title">Olá,&nbsp; <?php if(isset($_COOKIE['cargoUsuario'])){echo($_COOKIE['cargoUsuario']);} ?></div>
-                        <div class="side-title"><?php if(isset($_COOKIE['nomeUsuario'])){echo($_COOKIE['nomeUsuario']);}?></div>
+                        <div class="small side-title">Olá,&nbsp; <?php if(isset($_SESSION['Usuario']['cargo'])){echo($_SESSION['Usuario']['cargo']);} ?></div>
+                        <div class="side-title"><?php if(isset($_SESSION['Usuario']['nome'])){echo($_SESSION['Usuario']['nome']);}?></div>
                     </div>
                 </nav>
             </div>

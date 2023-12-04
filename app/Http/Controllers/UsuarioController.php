@@ -12,169 +12,195 @@ class UsuarioController extends Controller
 {
     public function verificarUsuario(Request $request)
     {
-        session_start();
-        if (isset($_COOKIE['statusLogin']))
+        @session_start();
+        // if (isset($_COOKIE['statusLogin']))
+        // {
+        //     $resultado = DB::select("select * from tb_usuario where nm_nome_completo = '" . $_COOKIE['nomeUsuario'].  "'");
+        //     $resultado = DB::select("select * from tb_privilegio where cd_usuario = " . $resultado[0]->cd_usuario);
+
+        //     if($resultado[0]->nm_privilegio == "Adm")
+        //     {
+        //         setcookie(
+        //             "privilegioUsuario",
+        //             "administrador",
+        //             time() + (60 * 60),
+        //             "/"
+        //         );
+        //         return redirect()->route('admindex');
+        //     }
+
+        //     if($resultado[0]->nm_privilegio == "Usuario")
+        //     {
+        //         setcookie(
+        //             "privilegioUsuario",
+        //             "comercial",
+        //             time() + (60 * 60),
+        //             "/"
+        //         );
+        //         return redirect()->route('comercial');
+        //     }
+        // }
+        // else
+        // {
+        //     $usuario = $request->usuario;
+        //     $senha = $request->senha;
+
+        //     // $resultado = Usuario::query()->where('nm_nome_completo', $usuario)->get();
+
+        //     // $resultado = DB::select("select * from tb_usuario where nm");
+
+        //     $resultado = DB::select("select * from tb_email_usuario where nm_email_usuario = '$usuario'");
+
+
+        //     if(!isset($resultado[0]))
+        //     {
+        //         setcookie(
+        //             "erro",
+        //             "erroEmailSenha",
+        //             time() + 30,
+        //             "/",
+        //         );
+        //         return redirect()->route('inicio');
+        //     }
+
+        //     $resultado = DB::select("select * from tb_usuario where cd_usuario = " . $resultado[0]->cd_usuario);
+
+        //     if($senha != $resultado[0]->cd_senha)
+        //     {
+        //         setcookie(
+        //             "erro",
+        //             "erroEmailSenha",
+        //             time() + 30,
+        //             "/",
+        //         );
+        //         return redirect()->route('inicio');
+        //     }
+
+        //     setcookie(
+        //         "nomeUsuario",
+        //         $resultado[0]->nm_nome_completo,
+        //         time() + (60 * 60),
+        //         "/",
+        //     );
+        //     setcookie(
+        //         "cargoUsuario",
+        //         $resultado[0]->nm_cargo_usuario,
+        //         time() + (60 * 60),
+        //         "/",
+        //     );
+        //     setcookie(
+        //         "statusLogin",
+        //         true,
+        //         time() + (60 * 60),
+        //         "/",
+        //     );
+
+        //     $resultado = DB::select("select * from tb_email_usuario where cd_usuario = " . $resultado[0]->cd_usuario);
+
+        //     setcookie(
+        //         "emailUsuario",
+        //         $resultado[0]->nm_email_usuario,
+        //         time() + (60 * 60),
+        //         "/",
+        //     );
+
+        //     $resultado = DB::select("select * from tb_privilegio where cd_usuario = " . $resultado[0]->cd_usuario);
+
+        //     // $resultado = Privilegio::query()->where('cd_usuario', $resultado[0]->cd_usuario)->get();
+            
+
+        //     if($resultado[0]->nm_privilegio == "Adm")
+        //     {
+        //         setcookie(
+        //             "privilegioUsuario",
+        //             "administrador",
+        //             time() + (60 * 60),
+        //             "/"
+        //         );
+        //         return redirect()->route('admindex');
+        //     }
+
+        //     if($resultado[0]->nm_privilegio == "Usuario")
+        //     {
+        //         setcookie(
+        //             "privilegioUsuario",
+        //             "comercial",
+        //             time() + (60 * 60),
+        //             "/"
+        //         );
+        //         return redirect()->route('comercial');
+        //     }
+
+        //     return redirect()->route('inicio', ['situacao' => 'Erro encontrado']);
+        // }
+
+        // Novo login
+
+        
+        if(isset($_SESSION['Usuario']))
         {
-            $resultado = DB::select("select * from tb_usuario where nm_nome_completo = '" . $_COOKIE['nomeUsuario'].  "'");
-            $resultado = DB::select("select * from tb_privilegio where cd_usuario = " . $resultado[0]->cd_usuario);
-
-            if($resultado[0]->nm_privilegio == "Adm")
+            if($_SESSION['Usuario']['logado'])
             {
-                setcookie(
-                    "privilegioUsuario",
-                    "administrador",
-                    time() + (60 * 60),
-                    "/"
-                );
-                return redirect()->route('admindex');
-            }
-
-            if($resultado[0]->nm_privilegio == "Usuario")
-            {
-                setcookie(
-                    "privilegioUsuario",
-                    "comercial",
-                    time() + (60 * 60),
-                    "/"
-                );
-                return redirect()->route('comercial');
+                if($_SESSION['Usuario']['privilegio'] == "Adm")
+                {
+                    echo("<script>window.location.href = 'http://localhost:8000/admindex'</script>");
+                }
+                else
+                {
+                    if($_SESSION['Usuario']['privilegio'] == "Usuario")
+                    {
+                        echo("<script>window.location.href = 'http://localhost:8000/comercial'</script>");
+                    }
+                }
             }
         }
         else
         {
             $usuario = $request->usuario;
             $senha = $request->senha;
-
-            // $resultado = Usuario::query()->where('nm_nome_completo', $usuario)->get();
-
-            // $resultado = DB::select("select * from tb_usuario where nm");
-
-            $resultado = DB::select("select * from tb_email_usuario where nm_email_usuario = '$usuario'");
-
-
-            if(!isset($resultado[0]))
-            {
-                setcookie(
-                    "erro",
-                    "erroEmailSenha",
-                    time() + 30,
-                    "/",
-                );
-                return redirect()->route('inicio');
-            }
-
-            $resultado = DB::select("select * from tb_usuario where cd_usuario = " . $resultado[0]->cd_usuario);
-
-            if($senha != $resultado[0]->cd_senha)
-            {
-                setcookie(
-                    "erro",
-                    "erroEmailSenha",
-                    time() + 30,
-                    "/",
-                );
-                return redirect()->route('inicio');
-            }
-
-            setcookie(
-                "nomeUsuario",
-                $resultado[0]->nm_nome_completo,
-                time() + (60 * 60),
-                "/",
-            );
-            setcookie(
-                "cargoUsuario",
-                $resultado[0]->nm_cargo_usuario,
-                time() + (60 * 60),
-                "/",
-            );
-            setcookie(
-                "statusLogin",
-                true,
-                time() + (60 * 60),
-                "/",
-            );
-
-            $resultado = DB::select("select * from tb_email_usuario where cd_usuario = " . $resultado[0]->cd_usuario);
-
-            setcookie(
-                "emailUsuario",
-                $resultado[0]->nm_email_usuario,
-                time() + (60 * 60),
-                "/",
-            );
-
-            $resultado = DB::select("select * from tb_privilegio where cd_usuario = " . $resultado[0]->cd_usuario);
-
-            // $resultado = Privilegio::query()->where('cd_usuario', $resultado[0]->cd_usuario)->get();
             
-
-            if($resultado[0]->nm_privilegio == "Adm")
+            $usuario = DB::table('tb_email_usuario')
+            ->join('tb_usuario', 'tb_email_usuario.cd_usuario', '=', 'tb_usuario.cd_usuario')
+            ->join('tb_privilegio', 'tb_email_usuario.cd_usuario', '=', 'tb_privilegio.cd_usuario')
+            ->where('nm_email_usuario', '=', $usuario)
+            ->where('cd_senha', '=', $senha)
+            ->get();
+            
+            // dd($usuario);
+            if (isset($usuario[0]))
             {
-                setcookie(
-                    "privilegioUsuario",
-                    "administrador",
-                    time() + (60 * 60),
-                    "/"
-                );
-                return redirect()->route('admindex');
+                $_SESSION['Usuario'] = ['logado' => true, 'nome' => $usuario[0]->nm_nome_completo, 'email' => $usuario[0]->nm_email_usuario, 'cargo' => $usuario[0]->nm_cargo_usuario, 'privilegio' => $usuario[0]->nm_privilegio];
+                if ($usuario[0]->nm_privilegio == "Adm")
+                {
+                    return redirect()->route('admindex');
+                }
+                else
+                {
+                    if ($usuario[0]->nm_privilegio == "Usuario")
+                    {
+                        return redirect()->route('comercial');
+                    }
+                    else
+                    {
+                        $_SESSION['Erro'] = "Email e/ou senha incorretos";
+                        return redirect()->route('login');
+                    }
+                }
             }
-
-            if($resultado[0]->nm_privilegio == "Usuario")
+            else
             {
-                setcookie(
-                    "privilegioUsuario",
-                    "comercial",
-                    time() + (60 * 60),
-                    "/"
-                );
-                return redirect()->route('comercial');
+                $_SESSION['Erro'] = "Email e/ou senha incorretos";
+                return redirect()->route('login');
             }
-
-            return redirect()->route('inicio', ['situacao' => 'Erro encontrado']);
         }
 
-        // Novo login
-
-        $usuario = $request->usuario;
-        $senha = $request->senha;
-
-        $usuario = DB::table('tb_email_usuario')->join('tb_usuario', 'tb_email_usuario.cd_usuario', '=', 'tb_email_usuario.cd_usuario')->join('tb_privilegio', 'tb_email_usuario.cd_usuario', '=', 'tb_privilegio.cd_usuario')->where(['tb_email_usuario.nm_email_usuario', '=', $usuario], ['tb_usuario.cd_senha', "=", $senha])->get();
-
-        if ($usuario)
-        {
-            $_SESSION['Usuario'] = ['logado' => true, 'nome' => $usuario[0]->nm_nome_completo, 'cargo' => $usuario[0]->nm_cargo_usuario, 'privilegio' => $usuario[0]->nm_privilegio];
-        }
-        else
-        {
-            $_SESSION['Erro'] = "Email e/ou senha incorretos";
-        }
         
     }
 
     public function deslogar()
     {
-        setcookie(
-            "nomeUsuario",
-            '',
-            0,
-        );
-        setcookie(
-            "cargoUsuario",
-            '',
-            0,
-        );
-        setcookie(
-            "statusLogin",
-            false,
-            0,
-        );
-        setcookie(
-            "privilegioUsuario",
-            '',
-            0,
-        );
-        
+        @session_start();
+        unset($_SESSION['Usuario']);
         return redirect()->route('inicio');
     }
 

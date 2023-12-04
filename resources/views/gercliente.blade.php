@@ -45,303 +45,37 @@
                                 </tr>
                             </tfoot>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Danone</td>
-                                    <td>Marcia Lopes</td>
-                                    <td>Marcia.lopes@danone.com.br</td>
-                                    <td>(31) 3111-2222</td>
-                                    <td>Cliente MM</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
+                                    <?php 
+                                        @session_start();
+                                        $cliente = DB::table('tb_cliente')
+                                        ->join('tb_responsavel_cliente', 'tb_cliente.cd_cliente', 'tb_responsavel_cliente.cd_cliente')
+                                        ->join('tb_email_responsavel_cliente', 'tb_responsavel_cliente.cd_responsavel_cliente', 'tb_email_responsavel_cliente.cd_responsavel_cliente')
+                                        ->get();
+                                        // echo($cliente);
+                                        foreach ($cliente as $cliente) {
+                                        echo("<tr>
+                                                <td>$cliente->cd_cliente</td>
+                                                <td>$cliente->nm_empresa_cliente</td>
+                                                <td>$cliente->nm_responsavel_cliente</td>
+                                                <td>$cliente->nm_email_responsavel_cliente</td>
+                                                <td>$cliente->nr_telefone_responsavel_cliente</td>
+                                                <td>$cliente->ds_tipo_cliente</td>
+                                                <td>
+                                                    <div class='d-flex justify-content-center'>
+                                                        <a href='/vercliente?ID=$cliente->cd_cliente'><button type='button' class='btn btn-compass-color mx-1 btnhv'>Ver/Editar</button></a>
+                                                        ");
+                                                        if ($_SESSION['Usuario']['privilegio'] == "Adm")
+                                                        {
+                                                            echo("
+                                                            <a href='/deletarCliente?ID=$cliente->cd_cliente'><button type='button' class='btn btn-danger me-1 btnhv'>Excluir</button></a>
+                                                            ");
+                                                        }
+                                                        echo("
+                                                        </div>
+                                                </td>
+                                            </tr>");
+                                    }
+                                    ?>
                             </tbody>
                         </table>
                     </div>
