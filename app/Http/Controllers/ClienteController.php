@@ -39,6 +39,25 @@ class ClienteController extends Controller
         return ["Cliente" => $cliente];
     }
 
+    function atualizarCliente(Request $request)
+    {
+        $cliente = $request->all();
+        $alterandoCliente = DB::table('tb_cliente')
+        ->where('tb_cliente.cd_cliente', $cliente['idCliente'])
+        ->update(['nm_empresa_cliente' => $cliente['nomeCliente'], 'ds_tipo_cliente' => $cliente['tipoCliente']]);
+
+        $alterandoResponsavelCliente = DB::table('tb_responsavel_cliente')
+        ->where('tb_responsavel_cliente.cd_cliente', $cliente['idCliente'])
+        ->update(['nm_responsavel_cliente' => $cliente['valorNomeContatoCliente'], 'nr_telefone_responsavel_cliente' => $cliente['valorTelefoneContatoCliente']]);
+
+        $alterandoEmailCliente = DB::table('tb_email_responsavel_cliente')
+        ->join('tb_responsavel_cliente', 'tb_email_responsavel_cliente.cd_responsavel_cliente', 'tb_responsavel_cliente.cd_responsavel_cliente')
+        ->where('tb_responsavel_cliente.cd_cliente', $cliente['idCliente'])
+        ->update(['nm_email_responsavel_cliente' => $cliente['valorEmailContatoCliente']]);
+
+        return redirect()->route('gercliente');
+    }
+
     function pegarContato(Request $request)
     {
         $empresa = $request->Empresa;
@@ -66,8 +85,9 @@ class ClienteController extends Controller
         return ["Emails" => $email];
     }
 
-    function deletarCliente()
+    function deletarCliente(Request $request)
     {
-
+        $deletandoCliente = DB::table('tb_cliente')->where('tb_cliente.cd_cliente', $request->ID)->delete();
+        return redirect()->route('gercliente');
     }
 }
