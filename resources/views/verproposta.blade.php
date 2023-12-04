@@ -43,10 +43,7 @@
                             <select class="form-control" id="statusProposta" name="statusProposta">
                                 <option value="Não Enviada" selected disabled>Selecione...</option>
                                 <option value="Salvo">Salvo</option>
-                                <option value="Aguardando Envio">Aguardando Envio</option>
-                                <option value="Enviado Digitalmente">Enviado Digitalmente</option>
-                                <option value="Enviado Fisicamente">Enviado Fisicamente</option>
-                                <option value="Aguardando Assinatura do Cliente">Aguardando Assinatura do Cliente</option>
+                                <option value="Enviado / Aguardando Assinatura">Enviado / Aguardando Assinatura</option>
                                 <option value="Devolvido">Devolvido</option>
                                 <option value="Assinado">Assinado</option>
                             </select>

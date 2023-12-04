@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Redirect;
 use \Mpdf\Mpdf as PDF;
 use illuminate\support\facades\Storage;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\EmailController;
 
 
 class PropostaController extends Controller
@@ -139,6 +140,7 @@ class PropostaController extends Controller
         {
             if(isset($_SESSION['proposta']['botaoAssinarDigitalmente']))
             {
+                $_SESSION['idProposta'] = $idProposta;
                 return redirect()->route('assdigital');
             }
         }
@@ -374,4 +376,20 @@ class PropostaController extends Controller
         // ->where('tb_frete_peso.cd_proposta', $idProposta)
         // ->delete();
     }
+
+    function atualizarAssinaturaACL()
+    {
+        @session_start();
+        $representante = $_SESSION['representante'];
+        $idProposta = $_SESSION['idProposta'];
+        unset($_SESSION['idProposta']);
+        unset($_SESSION['representante']);
+        $token = rand(100000, 999999);
+        $_SESSION['infos'] = ["Nome" => $_SESSION['proposta']['valorNomeCliente'], "Email" => $_SESSION['proposta']['valorEmailContatoCliente'], "Token" =>$token];
+        unset($_SESSION['proposta']);
+        $tabelaAlterada = DB::table('tb_proposta')->where('tb_proposta.cd_proposta', $idProposta)->update(['cd_token_cliente' => $token]);
+        $tabelaAlterada = DB::table('tb_proposta')->where('tb_proposta.cd_proposta', $idProposta)->update(['ds_status_proposta' => "Enviado / Aguardando Assinatura"]);
+        return redirect()->action([EmailController::class, 'EnviarEmail']);
+    }
+
 }

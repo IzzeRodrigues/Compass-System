@@ -14,16 +14,7 @@
     @section('master')
     @section('conteudo')
             <script src="/js/proposta.js"></script>
-            <?php
             
-                @session_start();
-                if (isset($_SESSION['proposta']))
-                {
-                    $proposta = $_SESSION['proposta'];
-                    echo("<script>preencherPropostaAndamento($proposta)</script>");
-                }
-
-            ?>
             <div class="container-fluid px-4 blue-compass">
                 <h1 class="mt-4">Proposta</h1>
                 <ol class="breadcrumb mb-4">
@@ -894,6 +885,17 @@
                     </div>
                 </form>
             </div>
+            <?php
+            
+                @session_start();
+                if (isset($_SESSION['proposta']))
+                {
+                    $proposta = json_encode($_SESSION['proposta']);
+                    echo("<script>preencherPropostaEmAndamento($proposta)</script>");
+                    // var_dump($_SESSION['proposta']);
+                }
+
+            ?>
             <?php
                 @session_start();
                 $usuario = $_SESSION['Usuario']['nome'];

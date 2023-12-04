@@ -55,13 +55,13 @@ Route::get('/pegarEmail', [ClienteController::class, 'pegarEmail'])->name('pegar
 Route::get('/alterarCliente', [ClienteController::class, 'atualizarCliente'])->name('atualizarCliente');
 Route::get('/deletarCliente', [ClienteController::class, 'deletarCliente'])->name('deletarCliente');
 
-
 Route::get('/acoesProposta', [PropostaController::class, 'escolherAcao'])->name('acoesProposta');
 Route::get('/salvarProposta', [PropostaController::class, 'salvarProposta'])->name('salvarProposta');
 Route::get('/gerarProposta', [PropostaController::class, 'gerarPDF'])->name('gerarPDF');
 Route::get('/pegarCabecalho', [PropostaController::class, 'pegarCabecalho'])->name('pegarCabecalho');
 Route::get('/pegarProposta', [PropostaController::class, 'pegarPropostaCompleta'])->name('pegarProposta');
 Route::get('/deletarProposta', [PropostaController::class, 'deletarProposta'])->name('deletarProposta');
+Route::get('/atualizarAssinatura', [PropostaController::class, 'atualizarAssinaturaACL'])->name('atualizarAssinatura');
 
 Route::get('/verificarUsuario', [UsuarioController::class, 'verificarUsuario'])->name('verificarUsuario');
 Route::get('/adicionarUsuario', [UsuarioController::class, 'adicionarUsuario'])->name('adicionarUsuario');

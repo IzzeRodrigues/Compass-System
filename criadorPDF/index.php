@@ -959,7 +959,6 @@ function assinaturaDigital($variaveis)
     $contato_cliente = $variaveis['valorEmailContatoCliente'];
 
 
-    $_SESSION['infos'] = [$contato_cliente, $cliente];
     if ($variaveis['valorTotalImpostoSeguro'] != 0) {
         $valor_carga = "R$ " . $variaveis['valorTotalImpostoSeguro'];
     } else {
