@@ -22,11 +22,15 @@
                 </ol>
                 <form method="get" action="/adicionarUsuario">
                     <div class="row">
-                        <div class="col-md-6 col-sm-6 col-12 form-group mb-3">
+                        <div class="col-md-5 col-sm-6 col-12 form-group mb-3">
                             <label>Nome Completo</label>
                             <input type="text" name="nomeFuncionario" class="form-control">
                         </div>
-                        <div class="col-md-6 col-sm-6 col-12 form-group mb-3">
+                        <div class="col-md-3 col-sm-6 col-12 form-group mb-3">
+                            <label>CPF</label>
+                            <input type="text" name="CPFFuncionario" class="form-control">
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-12 form-group mb-3">
                             <label>Cargo</label>
                             <select class="form-control" name="cargo">
                                 <option selected disabled>Selecione...</option>
@@ -36,13 +40,13 @@
                                 <option value="Vendas e Relacionamento">Vendas e Relacionamento</option>
                             </select>
                         </div>
+                        
                     </div>
                     <div class="row">
                         <div class="col-md-5 col-sm-12 col-12 form-group mb-3">
                             <label>E-mail</label>
                             <div class="input-group">
                             <input type="text" class="form-control" name="email" placeholder="exemplo@acl.com.br">
-                            <span class="input-group-text span-class" id="basic-addon2">@aclcargo.com.br</span>
                         </div>
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 form-group mb-3">

@@ -206,42 +206,71 @@ class UsuarioController extends Controller
 
     public function adicionarUsuario(Request $request)
     {
-        if(isset($_COOKIE['statusLogin']))
-        {
-            if($_COOKIE['statusLogin'])
-            {
-                $nomeFuncionario = $request->nomeFuncionario;
-                $cargo = $request->cargo;
-                $email = $request->email."@aclcargo.com.br";
-                $privilegio = $request->privilegio;
-                $senha = $request->senha;
+        $nomeFuncionario = $request->nomeFuncionario;
+        $cargo = $request->cargo;
+        $email = $request->email;
+        $privilegio = $request->privilegio;
+        $senha = $request->senha;
+        $cpf = $request->CPFFuncionario;
 
-                $resultado = DB::select("select * from tb_usuario where nm_nome_completo = '$nomeFuncionario'");
+        $idUsuario = DB::table('tb_usuario')->insertGetId(['nm_nome_completo' => $nomeFuncionario, 'nm_cargo_usuario' => $cargo, 'cd_senha' => $senha, 'cd_cpf_usuario' => $cpf]);
 
-                var_dump($resultado);
+        $idPrivilegio = DB::table('tb_privilegio')->insertGetId(['nm_privilegio' => $privilegio, 'cd_usuario' => $idUsuario]);
 
-                // if(isset($resultado[0]))
-                // {
-                //     return redirect()->route('admindex');
-                // }
+        $idEmailUsuario = DB::table('tb_email_usuario')->insertGetId(['nm_email_usuario' => $email, 'cd_usuario' => $idUsuario]);
 
-                DB::insert("insert into tb_usuario (nm_nome_completo, nm_cargo_usuario, cd_senha) values (?, ?, ?)", [$nomeFuncionario, $cargo, $senha]);
+        $resultado = DB::select("select * from tb_usuario where nm_nome_completo = '$nomeFuncionario'");
 
-                $resultado = DB::select ("select * from tb_usuario where nm_nome_completo = '$nomeFuncionario'");
+        // var_dump($resultado);
+
+        // if(isset($resultado[0]))
+        // {
+        //     return redirect()->route('admindex');
+        // }
+
+        // DB::insert("insert into tb_usuario (nm_nome_completo, nm_cargo_usuario, cd_senha) values (?, ?, ?)", [$nomeFuncionario, $cargo, $senha]);
+
+        // $resultado = DB::select ("select * from tb_usuario where nm_nome_completo = '$nomeFuncionario'");
 
 
-                DB::insert("insert into tb_email_usuario (nm_email_usuario, cd_usuario) values (?, ?)", [$email, $resultado[0]->cd_usuario]);
+        // DB::insert("insert into tb_email_usuario (nm_email_usuario, cd_usuario) values (?, ?)", [$email, $resultado[0]->cd_usuario]);
 
-                DB::insert("insert into tb_privilegio (nm_privilegio, cd_usuario) values (?, ?)", [$privilegio, $resultado[0]->cd_usuario]);
+        // DB::insert("insert into tb_privilegio (nm_privilegio, cd_usuario) values (?, ?)", [$privilegio, $resultado[0]->cd_usuario]);
 
-                return redirect()->route('addfuncionario');
-            }
-        }
-        else
-        {
-            return redirect()->route('inicio');
-        }
+        return redirect()->route('gerfuncionario');
 
+    }
+
+    function pegarUsuario(Request $request)
+    {
+        $idFuncionario = $request->ID;
+        $funcionario = DB::table('tb_usuario')
+        ->join('tb_privilegio', 'tb_usuario.cd_usuario', 'tb_privilegio.cd_usuario')
+        ->join('tb_email_usuario', 'tb_usuario.cd_usuario', 'tb_email_usuario.cd_usuario')
+        ->where('tb_usuario.cd_usuario', $idFuncionario)
+        ->get();
+
+        return ['Funcionario' => $funcionario];
+    }
+
+    function atualizarUsuario(Request $request)
+    {
+        $funcionario = $request->all();
+        $alterandoUsuario = DB::table('tb_usuario')->where('tb_usuario.cd_usuario', $funcionario['idFuncionario'])->update(['nm_nome_completo' => $funcionario['nomeFuncionario'], 'nm_cargo_usuario' => $funcionario['cargo'], 'cd_senha' => $funcionario['senha'], 'cd_cpf_usuario' => $funcionario['CPFFuncionario']]);
+
+        $alterandoPrivilegio = DB::table('tb_privilegio')->where('tb_privilegio.cd_usuario', $funcionario['idFuncionario'])->update(['nm_privilegio' => $funcionario['privilegio']]);
+
+        $alterandoEmail = DB::table('tb_email_usuario')->where('tb_email_usuario.cd_usuario', $funcionario['idFuncionario'])->update(['nm_email_usuario' => $funcionario['email']]);
+
+        return redirect()->route('gerfuncionario');
+    }
+
+    function deletarUsuario(Request $request)
+    {
+        $idFuncionario = $request->ID;
+        $deletandoUsuario = DB::table('tb_usuario')->where('tb_usuario.cd_usuario', $idFuncionario)->delete();
+        
+        return redirect()->route('gerfuncionario');
     }
     
 }

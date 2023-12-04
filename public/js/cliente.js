@@ -10,7 +10,6 @@ if (!pegouCliente)
 
     function preencherCliente(cliente)
     {
-        console.log(cliente);
         document.getElementById('nomeCliente').value = cliente['Cliente'][0].nm_empresa_cliente;
         document.getElementById('tipoCliente').value = cliente['Cliente'][0].ds_tipo_cliente;
         document.getElementById('valorNomeContatoCliente').value = cliente['Cliente'][0].nm_responsavel_cliente

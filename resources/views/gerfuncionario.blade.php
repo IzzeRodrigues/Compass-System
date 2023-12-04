@@ -43,70 +43,37 @@
                                 </tr>
                             </tfoot>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Marco Antonio Carvalho</td>
-                                    <td>Diretor Nacional de Negócios</td>
-                                    <td>marco.antonio@aclcargo.com.br</td>
-                                    <td>Administrador</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Luiz Carlos B. dos Santos</td>
-                                    <td>Diretor Geral</td>
-                                    <td>luiz@aclcargo.com.br</td>
-                                    <td>Administrador</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Douglas Schiavoni</td>
-                                    <td>Vendas e Relacionamento</td>
-                                    <td>comercialmg@aclcargo.com.br</td>
-                                    <td>Usuário</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Cristiano Bexiga</td>
-                                    <td>Vendas e Relacionamento</td>
-                                    <td>comercial@aclcargo.com.br</td>
-                                    <td>Usuário</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Bruno Nabuco</td>
-                                    <td>Líder de Negócios</td>
-                                    <td>comercialsp@aclcargo.com.br</td>
-                                    <td>Usuário</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>Patrícia Barbosa</td>
-                                    <td>Vendas e Relacionamento</td>
-                                    <td>comercial.pr@aclcargo.com.br</td>
-                                    <td>Usuário</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>7</td>
-                                    <td>Helena Carvalho</td>
-                                    <td>Vendas e Relacionamento</td>
-                                    <td>helena@aclcargo.com.br</td>
-                                    <td>Usuário</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
-                                <tr>
-                                    <td>8</td>
-                                    <td>Rafael Pedroso</td>
-                                    <td>Vendas e Relacionamento</td>
-                                    <td>comercialgo@aclcargo.com.br</td>
-                                    <td>Usuário</td>
-                                    <td><a href="/vercliente"><button type="button" class="btn btn-compass-color mx-1 btnhv">Ver/Alterar</button></a><button type="button" class="btn btn-danger me-1 btnhv">Excluir</button></td>
-                                </tr>
+                                <?php
+
+                                    @session_start();
+                                    $usuario = DB::table('tb_usuario')
+                                    ->join('tb_privilegio', 'tb_usuario.cd_usuario', 'tb_privilegio.cd_usuario')
+                                    ->join('tb_email_usuario', 'tb_usuario.cd_usuario', 'tb_email_usuario.cd_usuario')
+                                    ->get();
+
+                                    foreach ($usuario as $usuario) {
+                                        echo("<tr>
+                                                <td>$usuario->cd_usuario</td>
+                                                <td>$usuario->nm_nome_completo</td>
+                                                <td>$usuario->nm_cargo_usuario</td>
+                                                <td>$usuario->nm_email_usuario</td>
+                                                <td>$usuario->nm_privilegio</td>
+                                                <td>
+                                                    <div class='d-flex justify-content-center'>
+                                                        <a href='/verfuncionario?ID=$usuario->cd_usuario'><button type='button' class='btn btn-compass-color mx-1 btnhv'>Ver/Editar</button></a>
+                                                        ");
+                                                        if ($_SESSION['Usuario']['privilegio'] == "Adm")
+                                                        {
+                                                            echo("
+                                                            <a href='/deletarUsuario?ID=$usuario->cd_usuario'><button type='button' class='btn btn-danger me-1 btnhv'>Excluir</button></a>
+                                                            ");
+                                                        }
+                                                        echo("
+                                                        </div>
+                                                </td>
+                                            </tr>");
+                                    }
+                                ?>
                             </tbody>
                         </table>
                     </div>

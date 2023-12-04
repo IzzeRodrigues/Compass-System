@@ -67,5 +67,8 @@ Route::get('/pegarPropostaAssinatura', [PropostaController::class, 'pegarPropost
 
 Route::get('/verificarUsuario', [UsuarioController::class, 'verificarUsuario'])->name('verificarUsuario');
 Route::get('/adicionarUsuario', [UsuarioController::class, 'adicionarUsuario'])->name('adicionarUsuario');
+Route::get('/pegarUsuario', [UsuarioController::class, 'pegarUsuario'])->name('pegarUsuario');
+Route::get('/alterarUsuario', [UsuarioController::class, 'atualizarUsuario'])->name('atualizarUsuario');
+Route::get('/deletarUsuario', [UsuarioController::class, 'deletarUsuario'])->name('deletarUsuario');
 Route::get('/deslogar', [UsuarioController::class, 'deslogar'])->name('deslogar');
 
