@@ -29,9 +29,11 @@ class ClienteController extends Controller
 
     function pegarCliente(Request $request)
     {
+        $idCliente = $request->ID;
         $cliente = DB::table('tb_cliente')
         ->join('tb_responsavel_cliente', 'tb_cliente.cd_cliente', 'tb_responsavel_cliente.cd_cliente')
         ->join('tb_email_responsavel_cliente', 'tb_responsavel_cliente.cd_responsavel_cliente', 'tb_email_responsavel_cliente.cd_responsavel_cliente')
+        ->where('tb_cliente.cd_cliente', $idCliente)
         ->get();
 
         return ["Cliente" => $cliente];
