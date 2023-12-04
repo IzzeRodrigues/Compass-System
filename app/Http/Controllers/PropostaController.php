@@ -470,10 +470,106 @@ class PropostaController extends Controller
     function puxandoPropostaData(Request $request)
     {
         @session_start();
-        $dia = $request->DIA;
-        $teste = DB::table('tb_proposta')->where('tb_proposta.dt_proposta', "2023-12-$dia")->get();
-        $teste = count($teste);
-        return $teste;
+        $data = date("Y-m-d");
+        $data = explode('-',$data);
+        $dia = $data[2];
+        $mes = $data[1];
+        switch($mes)
+        {
+            case 1:
+                $mesExtenso = "Janeiro";
+                break;
+            case 2:
+                $mesExtenso = "Fevereiro";
+                break;
+            case 3:
+                $mesExtenso = "Março";
+                break;
+            case 4:
+                $mesExtenso = "Abril";
+                break;
+            case 5:
+                $mesExtenso = "Maio";
+                break;
+            case 6:
+                $mesExtenso = "Junho";
+                break;
+            case 7:
+                $mesExtenso = "Julho";
+                break;
+            case 8:
+                $mesExtenso = "Agosto";
+                break;
+            case 9:
+                $mesExtenso = "Setembro";
+                break;
+            case 10:
+                $mesExtenso = "Outubro";
+                break;
+            case 11:
+                $mesExtenso = "Novembro";
+                break;
+            case 12:
+                $mesExtenso = "Dezembro";
+                break;
+        }
+        $dias = [];
+        $quantidade = [];
+        for ($i=1; $i <= $dia; $i++) 
+        { 
+            $diario = DB::table('tb_proposta')->where('tb_proposta.dt_proposta', "2023-12-$i")->get();
+            $quantidadeDiaria = count($diario);
+            array_push($dias, "$mesExtenso $i");
+            array_push($quantidade, "$quantidadeDiaria");
+        }
+        
+        for ($i=1; $i <= $mes; $i++)
+        {
+            $mensal = DB::table('tb_proposta')->where('tb_proposta.dt_proposta', 'LIKE' , "%-$i-%")->get();
+            switch($i)
+            {
+                case 1:
+                    $mesExtenso = "Janeiro";
+                    break;
+                case 2:
+                    $mesExtenso = "Fevereiro";
+                    break;
+                case 3:
+                    $mesExtenso = "Março";
+                    break;
+                case 4:
+                    $mesExtenso = "Abril";
+                    break;
+                case 5:
+                    $mesExtenso = "Maio";
+                    break;
+                case 6:
+                    $mesExtenso = "Junho";
+                    break;
+                case 7:
+                    $mesExtenso = "Julho";
+                    break;
+                case 8:
+                    $mesExtenso = "Agosto";
+                    break;
+                case 9:
+                    $mesExtenso = "Setembro";
+                    break;
+                case 10:
+                    $mesExtenso = "Outubro";
+                    break;
+                case 11:
+                    $mesExtenso = "Novembro";
+                    break;
+                case 12:
+                    $mesExtenso = "Dezembro";
+                    break;
+            }
+            array_push($meses, "$mesExtenso");
+            $quantidadeMensal = count($mensal);
+            array_push($quantidadeMeses, "$quantidadeMensal");
+        }
+        return ["Dias" => $dias, "Quantidade" => $quantidade, "Meses" => $meses, "QuantidadeMensal" => $quantidadeMensal];
     }
 
 }
