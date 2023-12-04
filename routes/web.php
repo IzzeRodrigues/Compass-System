@@ -62,6 +62,7 @@ Route::get('/pegarCabecalho', [PropostaController::class, 'pegarCabecalho'])->na
 Route::get('/pegarProposta', [PropostaController::class, 'pegarPropostaCompleta'])->name('pegarProposta');
 Route::get('/deletarProposta', [PropostaController::class, 'deletarProposta'])->name('deletarProposta');
 Route::get('/atualizarAssinatura', [PropostaController::class, 'atualizarAssinaturaACL'])->name('atualizarAssinatura');
+Route::get('/pegarPropostaAssinatura', [PropostaController::class, 'pegarPropostaAssinatura'])->name('pegarPropostaAssinatura');
 
 Route::get('/verificarUsuario', [UsuarioController::class, 'verificarUsuario'])->name('verificarUsuario');
 Route::get('/adicionarUsuario', [UsuarioController::class, 'adicionarUsuario'])->name('adicionarUsuario');

@@ -11,8 +11,9 @@ class EmailController extends Controller
         require '../vendor/autoload.php';
         session_start();
         $sessao = $_SESSION['infos'];
+        $id = $sessao['ID'];
 
-        $link = 'http://localhost:8000/assinatura';
+        $link = "http://localhost:8000/assinatura?ID=$id";
         $token = $sessao['Token'];
 
         var_dump($sessao);

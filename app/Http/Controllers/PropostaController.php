@@ -3,10 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Redirect;
-use \Mpdf\Mpdf as PDF;
-use illuminate\support\facades\Storage;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\EmailController;
 
@@ -220,6 +216,68 @@ class PropostaController extends Controller
         }
     }
 
+    function pegarPropostaAssinatura(Request $request)
+    {
+        @session_start();
+        $cabecalho = DB::table('tb_proposta')
+        ->join('tb_produto', 'tb_proposta.cd_proposta', '=', 'tb_produto.cd_proposta')
+        ->join('tb_filial', 'tb_proposta.cd_proposta', '=', 'tb_filial.cd_proposta')
+        ->join('tb_cliente_proposta', 'tb_proposta.cd_proposta', '=', 'tb_cliente_proposta.cd_proposta')
+        ->join('tb_responsavel_cliente_proposta', 'tb_cliente_proposta.cd_cliente', '=', 'tb_responsavel_cliente_proposta.cd_cliente')
+        ->join('tb_email_responsavel_cliente_proposta', 'tb_responsavel_cliente_proposta.cd_responsavel_cliente', '=', 'tb_email_responsavel_cliente_proposta.cd_responsavel_cliente')
+        ->join('tb_rota', 'tb_proposta.cd_proposta', '=', 'tb_rota.cd_proposta')
+        ->join('tb_veiculo', 'tb_proposta.cd_proposta', '=', 'tb_veiculo.cd_proposta')
+        ->where('tb_proposta.cd_proposta', '=', $request['ID'])
+        ->get();
+
+        $usuario = DB::table('tb_usuario')
+        ->join('tb_email_usuario', 'tb_usuario.cd_usuario', '=', 'tb_email_usuario.cd_usuario')
+        ->select('nm_nome_completo', 'nm_cargo_usuario', 'nm_email_usuario')
+        ->where('tb_usuario.cd_usuario', '=', $cabecalho[0]->cd_usuario)
+        ->get();
+
+        $operacao = DB::table('tb_operacao')
+        ->join('tb_mercadoria_operacao', 'tb_operacao.cd_operacao', '=', 'tb_mercadoria_operacao.cd_operacao')
+        ->join('tb_imp_operacao', 'tb_operacao.cd_operacao', '=', 'tb_imp_operacao.cd_operacao')
+        ->join('tb_adic_operacao', 'tb_operacao.cd_operacao', '=', 'tb_adic_operacao.cd_operacao')
+        ->where('tb_operacao.cd_proposta', '=', $request['ID'])
+        ->get();
+
+        $despesa = DB::table('tb_despesas')
+        ->join('tb_imp_despesas', 'tb_despesas.cd_despesas', '=', 'tb_imp_despesas.cd_despesas')
+        ->join('tb_adic_despesas', 'tb_despesas.cd_despesas', '=', 'tb_adic_despesas.cd_despesas')
+        ->where('tb_despesas.cd_proposta', '=', $request['ID'])
+        ->get();
+
+        $carga = DB::table('tb_carga')
+        ->join('tb_km_rota_carga', 'tb_carga.cd_carga', '=', 'tb_km_rota_carga.cd_carga')
+        ->join('tb_pedagio_rota_carga', 'tb_carga.cd_carga', '=', 'tb_pedagio_rota_carga.cd_carga')
+        ->join('tb_combustivel_carga', 'tb_carga.cd_carga', '=', 'tb_combustivel_carga.cd_carga')
+        ->join('tb_valor_carga', 'tb_carga.cd_carga', '=', 'tb_valor_carga.cd_carga')
+        ->where('tb_carga.cd_proposta', '=', $request['ID'])
+        ->get();
+
+        $fretePeso = DB::table('tb_frete_peso')
+        ->where('tb_frete_peso.cd_proposta', '=', $request['ID'])
+        ->get();
+
+        $motorista = DB::table('tb_motorista')
+        ->where('tb_motorista.cd_proposta', '=', $request['ID'])
+        ->get();
+
+        $cotacaoMotorista = DB::table('tb_cot_aut')
+        ->where('tb_cot_aut.cd_proposta', '=', $request['ID'])
+        ->get();
+
+        $adicionais = DB::table('tb_adicionais')
+        ->where('tb_adicionais.cd_proposta', '=', $request['ID'])
+        ->get();
+
+        $_SESSION['propostaAssinatura'] = json_encode(['cabecalho' => $cabecalho, 'usuario' => $usuario, 'operacao' => $operacao, 'despesa' => $despesa, 'carga' => $carga, 'fretePeso' => $fretePeso, 'motorista' => $motorista, 'adicionais' => $adicionais, 'assinando' => true]);
+
+        // return redirect()->route('assinatura');
+    }
+
     function atualizarProposta()
     {
         @session_start();
@@ -385,7 +443,7 @@ class PropostaController extends Controller
         unset($_SESSION['idProposta']);
         unset($_SESSION['representante']);
         $token = rand(100000, 999999);
-        $_SESSION['infos'] = ["Nome" => $_SESSION['proposta']['valorNomeCliente'], "Email" => $_SESSION['proposta']['valorEmailContatoCliente'], "Token" =>$token];
+        $_SESSION['infos'] = ["ID" => $idProposta, "Nome" => $_SESSION['proposta']['valorNomeCliente'], "Email" => $_SESSION['proposta']['valorEmailContatoCliente'], "Token" =>$token];
         unset($_SESSION['proposta']);
         $tabelaAlterada = DB::table('tb_proposta')->where('tb_proposta.cd_proposta', $idProposta)->update(['cd_token_cliente' => $token]);
         $tabelaAlterada = DB::table('tb_proposta')->where('tb_proposta.cd_proposta', $idProposta)->update(['ds_status_proposta' => "Enviado / Aguardando Assinatura"]);
