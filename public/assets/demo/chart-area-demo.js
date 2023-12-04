@@ -2,12 +2,34 @@
 Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#292b2c';
 
+
+const date = new Date();
+
+var dia = date.getDate();
+
+var dias = [];
+var quantidadeProposta = [];
+var Maximo;
+
+for (i = 0; i < dia; i++)
+{
+    dias.push(`Dezembro ${i+1}`);
+    fetch(`http://localhost:8000/puxandoPropostaData?DIA=${i+1}`)
+    .then((response) => response.json())
+    .then((json) => colocandoQuantidade(json))
+}
+
+function colocandoQuantidade(valor)
+{
+    quantidadeProposta.push(valor);
+}
+
 // Area Chart Example
-var ctx = document.getElementById("myAreaChart");
+var ctx = document.getElementById("myAreaChart");   
 var myLineChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ["Ago 1", "Ago 2", "Ago 3", "Ago 4", "Ago 5", "Ago 6", "Ago 7", "Ago 8", "Ago 9", "Ago 10", "Ago 11", "Ago 12", "Ago 13"],
+        labels: dias,
         datasets: [{
             label: "Propostas",
             lineTension: 0.3,
@@ -20,7 +42,7 @@ var myLineChart = new Chart(ctx, {
             pointHoverBackgroundColor: "rgba(2,117,216,1)",
             pointHitRadius: 50,
             pointBorderWidth: 2,
-            data: [3, 5, 9, 11, 8, 10, 4, 8, 7, 8, 8, 20, 30],
+            data: quantidadeProposta,
         }],
     },
     options: {
@@ -39,7 +61,7 @@ var myLineChart = new Chart(ctx, {
             yAxes: [{
                 ticks: {
                     min: 0,
-                    max: 100,
+                    max: Math.max(quantidadeProposta),
                     maxTicksLimit: 5
                 },
                 gridLines: {
@@ -52,3 +74,4 @@ var myLineChart = new Chart(ctx, {
         }
     }
 });
+

@@ -64,6 +64,7 @@ Route::get('/deletarProposta', [PropostaController::class, 'deletarProposta'])->
 Route::get('/atualizarAssinatura', [PropostaController::class, 'atualizarAssinaturaACL'])->name('atualizarAssinatura');
 Route::get('/atualizarAssinaturaCliente', [PropostaController::class, 'atualizarAssinaturaCliente'])->name('atualizarAssinaturaCliente');
 Route::get('/pegarPropostaAssinatura', [PropostaController::class, 'pegarPropostaAssinatura'])->name('pegarPropostaAssinatura');
+Route::get('/puxandoPropostaData', [PropostaController::class, 'puxandoPropostaData'])->name('puxandoPropostaData');
 
 Route::get('/verificarUsuario', [UsuarioController::class, 'verificarUsuario'])->name('verificarUsuario');
 Route::get('/adicionarUsuario', [UsuarioController::class, 'adicionarUsuario'])->name('adicionarUsuario');

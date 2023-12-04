@@ -467,4 +467,13 @@ class PropostaController extends Controller
         unset($_SESSION['idProposta']);
     }
 
+    function puxandoPropostaData(Request $request)
+    {
+        @session_start();
+        $dia = $request->DIA;
+        $teste = DB::table('tb_proposta')->where('tb_proposta.dt_proposta', "2023-12-$dia")->get();
+        $teste = count($teste);
+        return $teste;
+    }
+
 }
