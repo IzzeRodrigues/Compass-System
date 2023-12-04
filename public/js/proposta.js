@@ -16,7 +16,7 @@ function mudouResponsavel()
     puxouResponsavel = false;
 }
 
-function inicioProposta(usuario,email,cargo)
+function inicioProposta(usuario,email,cargo, cpf)
 {
     // let email = "emailUsuario=";
     // let nome = "nomeUsuario=";
@@ -96,6 +96,7 @@ function inicioProposta(usuario,email,cargo)
     document.getElementById('nomeResponsavel').value = usuario;
     document.getElementById('cargoResponsavel').value = cargo;
     document.getElementById('emailResponsavel').value = email;
+    document.getElementById('CPFResponsavel').value = cpf;
 
     datacao = new Date();
     dia = datacao.getDate();
@@ -136,19 +137,19 @@ function setNumeroProposta(referencia)
     }
 }
 
-function setNome(nome)
-{
-    document.getElementById('nomeResponsavel').value = nome.nm_nome_completo;
-    document.getElementById('cargoResponsavel').value = nome.nm_cargo_usuario;
-    fetch('http://localhost/Compass/slimCompass/getEmail/'+nome.cd_usuario)
-    .then((response) => response.json())
-    .then((json) => setEmail(json))
-}
+// function setNome(nome)
+// {
+//     document.getElementById('nomeResponsavel').value = nome.nm_nome_completo;
+//     document.getElementById('cargoResponsavel').value = nome.nm_cargo_usuario;
+//     fetch('http://localhost/Compass/slimCompass/getEmail/'+nome.cd_usuario)
+//     .then((response) => response.json())
+//     .then((json) => setEmail(json))
+// }
 
-function setEmail(email)
-{
-    document.getElementById('emailResponsavel').value = email.nm_email_usuario;
-}
+// function setEmail(email)
+// {
+//     document.getElementById('emailResponsavel').value = email.nm_email_usuario;
+// }
 
 function verificarVeiculo()
 {
@@ -1796,6 +1797,7 @@ function pegarProposta()
         document.getElementById('nomeResponsavel').value = usuario.nm_nome_completo 
         document.getElementById('emailResponsavel').value = usuario.nm_email_usuario
         document.getElementById('cargoResponsavel').value = usuario.nm_cargo_usuario
+        document.getElementById('CPFResponsavel').value = usuario.cd_cpf_usuario
         document.getElementById('valorDataProposta').value = proposta['cabecalho'][0].dt_proposta
         var referenciaVerProposta = (proposta['cabecalho'][0].nm_referencia_acl).split(" ");
         document.getElementById('valorReferenciaProposta').value = referenciaVerProposta[1]

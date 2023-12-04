@@ -169,7 +169,7 @@ class UsuarioController extends Controller
             // dd($usuario);
             if (isset($usuario[0]))
             {
-                $_SESSION['Usuario'] = ['logado' => true, 'nome' => $usuario[0]->nm_nome_completo, 'email' => $usuario[0]->nm_email_usuario, 'cargo' => $usuario[0]->nm_cargo_usuario, 'privilegio' => $usuario[0]->nm_privilegio];
+                $_SESSION['Usuario'] = ['logado' => true, 'nome' => $usuario[0]->nm_nome_completo, 'email' => $usuario[0]->nm_email_usuario, 'cargo' => $usuario[0]->nm_cargo_usuario, 'cpf' => $usuario[0]->cd_cpf_usuario, 'privilegio' => $usuario[0]->nm_privilegio];
                 if ($usuario[0]->nm_privilegio == "Adm")
                 {
                     return redirect()->route('admindex');

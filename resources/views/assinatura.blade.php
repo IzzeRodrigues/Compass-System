@@ -18,6 +18,19 @@
 
 <body class="sb-nav-fixed dashboardTxt">
 
+    <?php
+
+        @session_start();
+
+        if(isset($_SESSION['ErroAssinaturaCliente']))
+        {
+            $erro = $_SESSION['ErroAssinaturaCliente'];
+            unset($_SESSION['ErroAssinaturaCliente']);
+            echo("<script>alert('$erro')</script>");
+        }
+
+    ?>
+    
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark bg-perso">
         <!-- Navbar Brand-->
         <a class="navbar-brand ps-3 fs-5">ACL Cargo</a>
@@ -40,24 +53,24 @@
     <div class="pt-4 ps-4">
         <div>
             <p class="fs-5 ">O cliente deseja assinar digitalmente?</p>
-            <p>Para assinar o seu documento, precisamos revisar todas as informações.</p>
         </div>
-        <div class="d-flex justify-content-center localPDF">
-            <object class="col-10" data="http://localhost/Compass/criadorPDF" type="application/pdf"></object>
+        <div class="d-flex flex-column align-items-center">
+            <p class="col-10">Para assinar o seu documento, precisamos revisar todas as informações.</p>
+            <object class="col-10 localPDF" data="http://localhost/Compass/criadorPDF" type="application/pdf"></object>
         </div>
         <div class="col-12">
             <div class="d-flex flex-column align-items-center col-12">
                 <p>Todas as informações estão corretas? </p>
                 <div class="d-flex justify-content-evenly col-6">
-                    <button id="sim" onclick='exibeRepresentante()' class="col-5 btn-compass-color border border-0 rounded-4 px-4 =">Sim</button>
-                    <button id="nao" onclick='errado()' class="col-5 btn-compass-color border border-0 rounded-4 px-4 =">Não</button>
+                    <button id="sim" onclick='exibeRepresentante()' class="col-3 btn-compass-color border border-0 rounded-4 px-4 =">Sim</button>
+                    <button id="nao" onclick='errado()' class="col-3 btn-compass-color border border-0 rounded-4 px-4 =">Não</button>
                 </div>
             </div>
-            <div id="exibicao" class="d-none">
-                <p class="pt-5">Insira as informações necessárias para assinar sua proposta comercial de acordo.</p>
+            <div id="exibicao" class="d-none col-12 justify-content-center">
                 <div>
                     <form method="GET" action="/pegarValorAssinante">
                         <div class="d-flex flex-column align-items-center">
+                            <p class="pt-5 col-10">Insira as informações necessárias para assinar sua proposta comercial de acordo.</p>
                             <div class="d-flex col-10">
                                 <div class="col-3 pe-2">
                                     <label label for="nome">Nome completo</label>
@@ -81,7 +94,7 @@
                                 </div>
                             </div>
                             <button name='envio' value='envio' id='envio'
-                                class="col-3 btn-compass-color border border-0 rounded-4 mt-3">Assinar</button>
+                                class="col-2 btn-compass-color border border-0 rounded-4 mt-3">Assinar</button>
                         </div>
                     </form>
                 </div>

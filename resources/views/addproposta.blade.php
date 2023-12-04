@@ -901,7 +901,8 @@
                 $usuario = $_SESSION['Usuario']['nome'];
                 $email = $_SESSION['Usuario']['email'];
                 $cargo = $_SESSION['Usuario']['cargo'];
-                echo("<script>inicioProposta('$usuario', '$email', '$cargo')</script>")
+                $cpf = $_SESSION['Usuario']['cpf'];
+                echo("<script>inicioProposta('$usuario', '$email', '$cargo', $cpf)</script>")
             ?>
         </main>
         @stop

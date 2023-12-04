@@ -2,6 +2,16 @@
 @section('conteudo')
 
 <div class="pt-2 ps-4">
+    <?php
+        @session_start();
+        if (isset($_SESSION['ErroAssinaturaDigitalACL']))
+        {
+            $erro = $_SESSION['ErroAssinaturaDigitalACL'];
+            unset($_SESSION['ErroAssinaturaDigitalACL']);
+            echo("<script>alert('$erro')</script>");
+        }
+
+    ?>
     <div>
         <p class="fs-5 ">O cliente deseja assinar digitalmente?</p>
         <p>Primeiro, vamos revisar as informações.</p>

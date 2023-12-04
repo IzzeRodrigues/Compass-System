@@ -162,7 +162,7 @@ class PropostaController extends Controller
 
         $usuario = DB::table('tb_usuario')
         ->join('tb_email_usuario', 'tb_usuario.cd_usuario', '=', 'tb_email_usuario.cd_usuario')
-        ->select('nm_nome_completo', 'nm_cargo_usuario', 'nm_email_usuario')
+        ->select('nm_nome_completo', 'nm_cargo_usuario', 'nm_email_usuario', 'cd_cpf_usuario')
         ->where('tb_usuario.cd_usuario', '=', $cabecalho[0]->cd_usuario)
         ->get();
 
@@ -275,7 +275,7 @@ class PropostaController extends Controller
 
         $_SESSION['propostaAssinatura'] = json_encode(['cabecalho' => $cabecalho, 'usuario' => $usuario, 'operacao' => $operacao, 'despesa' => $despesa, 'carga' => $carga, 'fretePeso' => $fretePeso, 'motorista' => $motorista, 'adicionais' => $adicionais, 'assinando' => true]);
 
-        // return redirect()->route('assinatura');
+        return redirect()->route('assinatura');
     }
 
     function atualizarProposta()
@@ -438,16 +438,33 @@ class PropostaController extends Controller
     function atualizarAssinaturaACL()
     {
         @session_start();
-        $representante = $_SESSION['representante'];
-        $idProposta = $_SESSION['idProposta'];
-        unset($_SESSION['idProposta']);
-        unset($_SESSION['representante']);
+        if (isset($_SESSION['representante']))
+        {
+            $representante = $_SESSION['representante'];
+        }
+        if (isset($_SESSION['idProposta']))
+        {
+            $idProposta = $_SESSION['idProposta'];
+        }
         $token = rand(100000, 999999);
         $_SESSION['infos'] = ["ID" => $idProposta, "Nome" => $_SESSION['proposta']['valorNomeCliente'], "Email" => $_SESSION['proposta']['valorEmailContatoCliente'], "Token" =>$token];
-        unset($_SESSION['proposta']);
         $tabelaAlterada = DB::table('tb_proposta')->where('tb_proposta.cd_proposta', $idProposta)->update(['cd_token_cliente' => $token]);
         $tabelaAlterada = DB::table('tb_proposta')->where('tb_proposta.cd_proposta', $idProposta)->update(['ds_status_proposta' => "Enviado / Aguardando Assinatura"]);
+        unset($_SESSION['representante']);
         return redirect()->action([EmailController::class, 'EnviarEmail']);
+    }
+
+    function atualizarAssinaturaCliente()
+    {
+        @session_start();
+        if (isset($_SESSION['dadosAssinante']))
+        {
+            $dadosAssinante = $_SESSION['dadosAssinante'];
+        }
+        $idAssinaturaCliente = DB::table('tb_assinatura_cliente')->insertGetId(['nm_assinatura_cliente' => $dadosAssinante['nomeAssinante'], 'cd_cpf_assinatura_cliente' => $dadosAssinante['docAssinante'], 'nm_email_assinatura_cliente' => $dadosAssinante['emailAssinante'], 'cd_token_assinatura_cliente' => $dadosAssinante['token'], 'cd_proposta' => $_SESSION['idProposta']]);
+        $atualizacaoTabela = DB::table('tb_proposta')->where('tb_proposta.cd_proposta', $_SESSION['idProposta'])->update(['ds_status_proposta' => 'Assinado']);
+        unset($_SESSION['dadosAssinante']);
+        unset($_SESSION['idProposta']);
     }
 
 }

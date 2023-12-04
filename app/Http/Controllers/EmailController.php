@@ -9,14 +9,12 @@ class EmailController extends Controller
     function EnviarEmail()
     {
         require '../vendor/autoload.php';
-        session_start();
+        @session_start();
         $sessao = $_SESSION['infos'];
         $id = $sessao['ID'];
 
-        $link = "http://localhost:8000/assinatura?ID=$id";
+        $link = "http://localhost:8000/pegarPropostaAssinatura?ID=$id";
         $token = $sessao['Token'];
-
-        var_dump($sessao);
 
         $email = new \SendGrid\Mail\Mail();
         $email->setFrom("compassalgoritimo@gmail.com", "Algoritmo - Compass");
@@ -30,8 +28,21 @@ class EmailController extends Controller
         try {
             $response = $sendgrid->send($email);
             print $response->statusCode() . "\n";
-            print_r($response->headers());
-            print $response->body() . "\n";
+            // print_r($response->headers());
+            // print $response->body() . "\n";
+            if ($response->statusCode() == 202)
+            {
+                unset($_SESSION['proposta']);
+                $_SESSION['AvisoEnvioEmail'] = "Proposta enviada ao cliente.";
+                // var_dump($_SESSION['AvisoEnvioEmail']);
+                return redirect()->route('gerproposta');
+            }
+            else
+            {
+                $_SESSION['AvisoEnvioEmail'] = "Ocorreu um erro na tentativa de envio. Tente novamente.";
+                // var_dump($_SESSION['AvisoEnvioEmail']);
+                return redirect()->route('gerproposta');
+            }
         } catch (Exception $e) {
             echo 'Caught exception: ' . $e->getMessage() . "\n";
         }
