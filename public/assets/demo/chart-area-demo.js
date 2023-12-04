@@ -9,7 +9,6 @@ var dia = date.getDate();
 
 var dias = [];
 var quantidadeProposta = [];
-var Maximo;
 
 for (i = 0; i < dia; i++)
 {
@@ -22,6 +21,7 @@ for (i = 0; i < dia; i++)
 function colocandoQuantidade(valor)
 {
     quantidadeProposta.push(valor);
+    console.log(quantidadeProposta);
 }
 
 // Area Chart Example
@@ -42,7 +42,7 @@ var myLineChart = new Chart(ctx, {
             pointHoverBackgroundColor: "rgba(2,117,216,1)",
             pointHitRadius: 50,
             pointBorderWidth: 2,
-            data: quantidadeProposta,
+            data: [quantidadeProposta],
         }],
     },
     options: {
@@ -61,7 +61,7 @@ var myLineChart = new Chart(ctx, {
             yAxes: [{
                 ticks: {
                     min: 0,
-                    max: Math.max(quantidadeProposta),
+                    max: 10,
                     maxTicksLimit: 5
                 },
                 gridLines: {
@@ -74,4 +74,3 @@ var myLineChart = new Chart(ctx, {
         }
     }
 });
-
