@@ -15,31 +15,38 @@ if (isset($_SESSION['proposta']))
 // }
 require_once __DIR__ . '/vendor/autoload.php';
 
+
 if (isset($_SESSION['assinandoCliente']))
 {
     propostaAssinada();
 }
-
-if (isset($variaveis['botaoAssinarFisicamente'])) 
+else
 {
-    assinaturaFisica($variaveis);
-} 
-else 
-{
-    if (isset($variaveis['botaoAssinarDigitalmente'])) 
+    if (isset($variaveis['botaoAssinarFisicamente'])) 
     {
-        assinaturaDigital($variaveis);
+        assinaturaFisica($variaveis);
+    } 
+    else 
+    {
+        if (isset($variaveis['botaoAssinarDigitalmente'])) 
+        {
+            assinaturaDigital($variaveis);
+        }
+        else
+        {
+            if (isset($_SESSION['propostaAssinatura']))
+            {
+                $variaveis = json_decode($_SESSION['propostaAssinatura']);
+                if ($variaveis->assinando)
+                {
+                    assinando($variaveis);
+                }
+            }
+        }    
     }
 }
 
-if (isset($_SESSION['propostaAssinatura']))
-{
-    $variaveis = json_decode($_SESSION['propostaAssinatura']);
-    if ($variaveis->assinando)
-    {
-        assinando($variaveis);
-    }
-}
+
 
 function assinaturaFisica($variaveis)
 {
