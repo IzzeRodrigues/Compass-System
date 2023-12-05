@@ -93,9 +93,9 @@
                                         class="form-control" placeholder="000001">
                                 </div>
                             </div>
-                            <div>
-                                <p class="mt-3 text-center">Política de uso e privacidade – Assinatura digital Compass</p>
-                                    <textarea cols="60" rows="10"  style="resize: none" disabled>
+                            <div class="text-center">
+                                <p class="mt-3">Política de uso e privacidade – Assinatura digital Compass</p>
+                                    <textarea class="" cols="60" rows="10"  style="resize: none" disabled>
 Definições:
 Cliente / Assinante: indivíduo solicitado a participar de um processo de assinaturas via plataforma Compass desenvolvido pela Algoritmo.
 Operador / Contratante: indivíduo com acesso à plataforma Compass, com poder de solicitar assinaturas via site e, dependendo do seu nível de acesso, pode criar documentos.
@@ -128,9 +128,15 @@ Com o link, o cliente visualizará o documento enviado para assinatura e, caso t
 Solicitação de uso do token público emitido pelo ICP Brasil.
 As partes envolvidas poderão acompanhar quem já assinou e, ao final, o cliente recebe um e-mail com o documento assinado, já assinado e cadastrado com um código único, totalmente protegido de falsificações ou alterações do conteúdo. Já o operador, receberá o documento assinado dentro da dashboard do sistema Compass. Eles poderão copiar, guardar em pastas, na nuvem, no pen drive, entre outras possibilidades. A duração é eterna.
 </textarea>
+                                    <div class="form-check">
+                                        <input onclick='mudaBotao()' class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                            Ao clicar, você aceita todas as políticas de uso e privacidade da plataforma.
+                                        </label>
+                                    </div>
                                 </div>
                             <button name='envio' value='envio' id='envio'
-                                class="col-2 btn-compass-color border border-0 rounded-4 mt-3 mb-5">Assinar</button>
+                                class=" btn btn-primary disabled col-2 border border-0 rounded-4 mt-3 mb-5" >Assinar</button>
                         </div>
                     </form>
                 </div>

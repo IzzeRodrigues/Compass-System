@@ -16,3 +16,8 @@ function errado() {
         alert("Reclamação enviada. Aguarde resposta do setor comercial.")
     };
 }
+function mudaBotao() {
+    var pega = document.getElementById('envio')
+    pega.classList.remove('disabled', 'btn-primary');
+    pega.classList.add('btn-compass-color');
+}
