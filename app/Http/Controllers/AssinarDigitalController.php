@@ -41,12 +41,14 @@ class AssinarDigitalController extends Controller
 
         if ($_SESSION['dadosAssinante']['token'] == $sessao->cabecalho[0]->cd_token_cliente && $_SESSION['dadosAssinante']['nomeAssinante'] ==  $sessao->cabecalho[0]->nm_responsavel_cliente && $_SESSION['dadosAssinante']['emailAssinante'] == $sessao->cabecalho[0]->nm_email_responsavel_cliente)
         {
+            $_SESSION['assinandoCliente'] = true;
+            echo("<object data='http://localhost/Compass/criadorPDF' type='application/pdf'></object>");
             return redirect()->route('atualizarAssinaturaCliente');
         }
         else
         {
-            $_SESSION['ErroAssinaturaCliente'] = "Informações preenchidas incorretamente";
-            return redirect()->route('assinatura');
+            // $_SESSION['ErroAssinaturaCliente'] = "Informações preenchidas incorretamente";
+            // return redirect()->route('assinatura');
         }
     }
 }

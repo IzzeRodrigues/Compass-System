@@ -15,6 +15,10 @@ if (isset($_SESSION['proposta']))
 // }
 require_once __DIR__ . '/vendor/autoload.php';
 
+if (isset($_SESSION['assinandoCliente']))
+{
+    propostaAssinada();
+}
 
 if (isset($variaveis['botaoAssinarFisicamente'])) 
 {
