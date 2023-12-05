@@ -12,6 +12,7 @@
         <main>
     @section('master')
     @section('conteudo')
+    <script src="js/admindex.js"></script>
         <?php
 
                 @session_start();
@@ -33,46 +34,23 @@
                     <li class="breadcrumb-item active">Dashboard</li>
                 </ol>
                 <div class="row">
-                    <div class="col-xl-3 col-md-6">
-                        <div class="card bg-primary text-white mb-4 bg-perso card-height">
-                            <div class="card-body">Comissão Do Mês Atual</div>
-                            <p class="card-text card-just">R$2.413,25</p>
-                            <div class="card-footer d-flex align-items-center justify-content-between">
-                                <a class="small text-white stretched-link" href="#">Ver Detalhes</a>
-                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    <div class="col-xl-6 col-md-6">
+                        <div class="card bg-danger text-white mb-4 bg-perso" style="height: 200px">
+                            <div class="card-body">
+                                Valor Total de Comissão
+                                <div class="d-flex col-12 justify-content-center mt-5">
+                                    <p class="card-text" style="font-size: 24px" id="localComissao"><?php echo("<script>colocarDados()</script>") ?></p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-6">
-                        <div class="card bg-warning text-white mb-4 bg-perso card-height">
+                    <div class="col-xl-6 col-md-6">
+                        <div class="card bg-warning text-white mb-4 bg-perso" style="height: 200px">
                             <div class="card-body">Propostas Pendentes</div>
-                            <p class="card-text card-just">ACL 0023 <br> ACL 0031 <br> ACL 0041</p>
-                            <div class="card-footer d-flex align-items-center justify-content-between">
-                                <a class="small text-white stretched-link" href="#">Ver Detalhes</a>
-                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                            </div>
+                            <p class="card-text card-just" id="localPropostasPendentes">
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-6">
-                        <div class="card bg-success text-white mb-4 bg-perso card-height">
-                            <div class="card-body">Últimas Atividades</div>
-                            <p class="card-text card-just">Você alterou a proposta ACL 0046 <br> Você concluiu a proposta ACL 0049<br>Você cancelou a proposta ACL 0013</p>
-                            <div class="card-footer d-flex align-items-center justify-content-between">
-                                <a class="small text-white stretched-link" href="#">Ver Detalhes</a>
-                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6">
-                        <div class="card bg-danger text-white mb-4 bg-perso card-height">
-                            <div class="card-body"></div>
-                            <p class="card-text card-just"></p>
-                            <div class="card-footer d-flex align-items-center justify-content-between">
-                                <a class="small text-white stretched-link" href="#">Ver Detalhes</a>
-                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
                 <div class="row">
                     <div class="col-xl-6">

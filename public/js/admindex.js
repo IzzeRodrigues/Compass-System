@@ -6,12 +6,15 @@ function colocarDados()
     
     function colocarDados2(json)
     {
-        mensal = json['LucroMensal'];
-        if ((mensal % 1) == 0)
+        if (document.getElementById('localLucroMensal'))
         {
-            mensal = `${mensal}.00`;
+            mensal = json['LucroMensal'];
+            if ((mensal % 1) == 0)
+            {
+                mensal = `${mensal}.00`;
+            }
+            document.getElementById('localLucroMensal').innerHTML = `R$ ${mensal}`;
         }
-        document.getElementById('localLucroMensal').innerHTML = `R$ ${mensal}`;
 
         comissao = json['Comissao'];
         if ((comissao % 1) == 0)
@@ -22,8 +25,7 @@ function colocarDados()
 
         propostas = json['Propostas'];
         propostas.forEach(element => {
-            document.getElementById('localPropostasPendentes').innerText += `${element}`;
-            document.getElementById('localPropostasPendentes').innerText += <br>;
+            document.getElementById('localPropostasPendentes').innerText += `${element}\n`;
         });
     }
 }

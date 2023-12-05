@@ -85,10 +85,6 @@
                                         Dashboard
                                     </a>
                                     <div class='sb-sidenav-menu-heading side-title'>Admin</div>
-                                    <a class='nav-link' href='/impostos'>
-                                        <div class='sb-nav-link-icon'><i class='fas fa-chart-area'></i></div>
-                                        Impostos
-                                    </a>
                                     <a class='nav-link collapsed' href='#' data-bs-toggle='collapse' data-bs-target='#collapseLayouts' aria-expanded='false' aria-controls='collapseLayouts'>
                                         <div class='sb-nav-link-icon'><i class='fas fa-columns'></i></div>
                                         Funcionários
