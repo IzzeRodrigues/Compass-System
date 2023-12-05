@@ -67,6 +67,7 @@ Route::get('/atualizarAssinaturaCliente', [PropostaController::class, 'atualizar
 Route::get('/pegarPropostaAssinatura', [PropostaController::class, 'pegarPropostaAssinatura'])->name('pegarPropostaAssinatura');
 Route::get('/puxandoPropostaData', [PropostaController::class, 'puxandoPropostaData'])->name('puxandoPropostaData');
 Route::get('/statusEnvio', [CompassController::class, 'statusEnvio'])->name('statusEnvio');
+Route::get('/puxandoValoresDashboard', [PropostaController::class, 'puxandoValoresDashboard'])->name('puxandoValoresDashboard');
 
 Route::get('/verificarUsuario', [UsuarioController::class, 'verificarUsuario'])->name('verificarUsuario');
 Route::get('/adicionarUsuario', [UsuarioController::class, 'adicionarUsuario'])->name('adicionarUsuario');

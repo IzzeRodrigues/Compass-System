@@ -12,6 +12,7 @@
         <main>
     @section('master')
     @section('conteudo')
+    <script src="js/admindex.js"></script>
         <?php
 
             @session_start();
@@ -33,39 +34,28 @@
                 </ol>
                 <div class="row">
                     <div class="col-xl-4 col-md-6">
-                        <div class="card bg-primary text-white mb-4 bg-perso card-height">
-                            <div class="card-body">Lucro Mensal</div>
-                            <p class="card-text card-just">R$ 41.324,91</p>
-                            <div class="card-footer d-flex align-items-center justify-content-between">
-                                <a class="small text-white stretched-link" href="#">Ver Mais</a>
-                                <div class="small text-white">
-                                    <i class="fas fa-angle-right"></i>
+                        <div class="card bg-primary text-white mb-4 bg-perso" style="height: 200px">
+                            <div class="card-body">
+                                Lucro Mensal
+                                <div class="d-flex col-12 justify-content-center mt-5">
+                                    <p class="card-text" style="font-size: 24px" id="localLucroMensal"><?php echo("<script>colocarDados()</script>") ?></p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-4 col-md-6">
-                        <div class="card bg-warning text-white mb-4 bg-perso card-height">
+                        <div class="card bg-warning text-white mb-4 bg-perso" style="height: 200px">
                             <div class="card-body">Propostas Pendentes</div>
-                            <p class="card-text card-just">ACL 0056 <br>ACL 0053 <br> ACL 0045 <br> ACL 0039</p>
-                            <div class="card-footer d-flex align-items-center justify-content-between">
-                                <a class="small text-white stretched-link" href="#">Ver Mais</a>
-                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                            </div>
+                            <p class="card-text card-just" id="localPropostasPendentes">
                         </div>
                     </div>
                     <div class="col-xl-4 col-md-6">
-                        <div class="card bg-danger text-white mb-4 bg-perso card-height">
+                        <div class="card bg-danger text-white mb-4 bg-perso" style="height: 200px">
                             <div class="card-body">
                                 Valor Total de Comissão
                                 <div class="d-flex col-12 justify-content-center mt-5">
-                                    <p class="card-text" style="font-size: 24px">R$ 4.132,49</p>
+                                    <p class="card-text" style="font-size: 24px" id="localComissao"></p>
                                 </div>
-                            </div>
-                            
-                            <div class="card-footer d-flex align-items-center justify-content-between">
-                                <a class="small text-white stretched-link" href="#">Ver Mais</a>
-                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                             </div>
                         </div>
                     </div>

@@ -609,4 +609,53 @@ class PropostaController extends Controller
         return ["Dias" => $dias, "Quantidade" => $quantidade, "Meses" => $meses, "QuantidadeMensal" => $quantidadeMeses];
     }
 
+    function puxandoValoresDashboard()
+    {
+        @session_start();
+        $usuario = DB::table('tb_email_usuario')->join('tb_usuario', 'tb_email_usuario.cd_usuario', 'tb_usuario.cd_usuario')->join('tb_privilegio', 'tb_usuario.cd_usuario', 'tb_privilegio.cd_usuario')->where('tb_email_usuario.nm_email_usuario', $_SESSION['Usuario']['email'])->get();
+        $usuario = $usuario[0]->cd_usuario;
+
+        $valorComissao = 0;
+        $valorLucroMensal = 0;
+        $listaPropostas = [];
+        $dados = DB::table('tb_proposta')->join('tb_despesas', 'tb_proposta.cd_proposta', 'tb_despesas.cd_proposta')->where('tb_proposta.cd_usuario', $usuario)->get();
+        foreach($dados as $dado)
+        {
+            $valorComissao += $dado->vl_comissao_despesas;
+        }
+
+        $dadosGerais = DB::table('tb_proposta')->join('tb_despesas', 'tb_proposta.cd_proposta', 'tb_despesas.cd_proposta')->get();
+        foreach($dadosGerais as $dado)
+        {
+            $valorLucroMensal += $dado->vl_comissao_despesas;
+        }
+
+        if ($_SESSION['Usuario']['privilegio'] == "Adm")
+        {
+            $propostas = DB::table('tb_proposta')->where('tb_proposta.ds_status_proposta', '!=', 'Assinado')->get();
+            foreach($propostas as $proposta)
+            {
+                array_push($listaPropostas, "$proposta->nm_referencia_acl");
+            }
+        }
+        else
+        {
+            $propostas = DB::table('tb_proposta')->where('tb_proposta.ds_status_proposta', '!=', 'Assinado')->where('tb_proposta.cd_usuario', $usuario)->get();
+            foreach($propostas as $proposta)
+            {
+                array_push($listaPropostas, "$proposta->nm_referencia_acl");
+            }
+        }
+
+        if($_SESSION['Usuario']['privilegio'] == "Adm")
+        {
+            return ['LucroMensal' => $valorLucroMensal, 'Comissao' => $valorComissao, 'Propostas' => $listaPropostas];
+        }
+        else
+        {
+            return ['Comissao' => $valorComissao, 'Propostas' => $listaPropostas];
+        }
+
+    }
+
 }
