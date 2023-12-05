@@ -24,6 +24,7 @@ function colocandoQuantidade(json)
     quantidade = json['Quantidade'];
     meses = json['Meses'];
     quantidadeMensal = json['QuantidadeMensal'];
+    var limiteQuantidade = quantidade + 5;
     var ctx = document.getElementById("propostaMensal");
     var myLineChart = new Chart(ctx, {
         type: 'line',
@@ -60,7 +61,7 @@ function colocandoQuantidade(json)
                 yAxes: [{
                     ticks: {
                         min: 0,
-                        max: 10,
+                        max: 20,
                         maxTicksLimit: 5
                     },
                     gridLines: {
@@ -102,7 +103,7 @@ function colocandoQuantidade(json)
         yAxes: [{
             ticks: {
             min: 0,
-            max: 10,
+            max: 100,
             maxTicksLimit: 5
             },
             gridLines: {

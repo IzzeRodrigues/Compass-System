@@ -12,7 +12,9 @@
         <main>
     @section('master')
     @section('conteudo')
-
+            <?php
+                @session_start();
+            ?>
             <div class="container-fluid px-4">
                 <h1 class="mt-4">Compass</h1>
                 <div class="card mb-4">

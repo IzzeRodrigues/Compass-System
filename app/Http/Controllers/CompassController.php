@@ -55,8 +55,6 @@ class CompassController extends Controller
         return view('comconfig');
     }
 
-
-
     public function testePDF(){
         return view('criadorPDF');
     }
@@ -69,5 +67,9 @@ class CompassController extends Controller
     }
     public function assinatura(){
         return view('assinatura');
+    }
+
+    public function statusEnvio(){
+        return view('telaFinal');
     }
 }

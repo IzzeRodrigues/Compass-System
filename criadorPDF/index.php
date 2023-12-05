@@ -15,7 +15,6 @@ if (isset($_SESSION['proposta']))
 // }
 require_once __DIR__ . '/vendor/autoload.php';
 
-
 if (isset($_SESSION['assinandoCliente']))
 {
     propostaAssinada();
@@ -39,7 +38,7 @@ else
                 $variaveis = json_decode($_SESSION['propostaAssinatura']);
                 if ($variaveis->assinando)
                 {
-                    assinando($variaveis);
+                    assinando();
                 }
             }
         }    
@@ -1816,19 +1815,6 @@ function assinaturaDigital($variaveis)
     $negociacao = $variaveis['valorReferenciaProposta'] . '-' . $variaveis['valorNumeroProposta'];
     $_SESSION['dados'] = [$cliente, $email_criador, $referencia, $negociacao];
 
-    if (isset($_SESSION['representante'])) {
-        $clausulaDigital = '<div style=" border:0.5px solid black; border-top:none;">
-            <table style="">
-                <tr>
-                    <td>
-                    *DOCUMENTO ORIGINAL Grupo ACL Cargo SEDE: Rua Alexandre Gusmão, 11 CJ. 1315/16/17/18
-                    Santos (SP) devidamente inscrita no e-CNPJ/A1 certificado sob o número ' . $cnpjFilial . ', neste representado por ' . $representante['nomeRepresentante'] . ' portador(a) do documento de número ' . $representante['docRepresentante'] . ', possuindo o contato ' . $representante['emailRepresentante'] . '  Encontra-se de acordo com a proposta apresentada nesse documento.         
-                    </td>
-                </tr>
-            </table>
-            </div>';
-            $mpdf->WriteHTML($clausulaDigital);
-        }
         // unset($_SESSION['representante']);
         // header('Location:http://localhost:8000/emailCliente');
         // unset($_SESSION['dadosAssinante']);
@@ -1842,7 +1828,7 @@ function assinaturaDigital($variaveis)
 
 // Cliente assinando
 
-function assinando($variaveis)
+function assinando()
 {
     @session_start();
     $variaveis = json_decode($_SESSION['propostaAssinatura']);

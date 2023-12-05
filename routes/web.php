@@ -47,6 +47,7 @@ Route::get('/emailCliente', [EmailController::class, 'EnviarEmail'])->name('Envi
 Route::get('/assinatura', [CompassController::class, 'assinatura'])->name('assinatura');
 Route::get('/enviarErro', [EmailController::class, 'enviarErro'])->name('erroProposta');
 Route::get('/pegarValorAssinante', [AssinarDigitalController::class, 'pegarValorAssinante'])->name('pegarValorAssinante');
+Route::get('/enviarPropostaAssinada', [EmailController::class, 'enviaPronto'])->name('enviarPropostaAssinada');
 
 Route::get('/acoesCliente', [ClienteController::class, 'acoesCliente'])->name('acoesCliente');
 Route::get('/pegarCliente', [ClienteController::class, 'pegarCliente'])->name('pegarCliente');
@@ -65,6 +66,7 @@ Route::get('/atualizarAssinatura', [PropostaController::class, 'atualizarAssinat
 Route::get('/atualizarAssinaturaCliente', [PropostaController::class, 'atualizarAssinaturaCliente'])->name('atualizarAssinaturaCliente');
 Route::get('/pegarPropostaAssinatura', [PropostaController::class, 'pegarPropostaAssinatura'])->name('pegarPropostaAssinatura');
 Route::get('/puxandoPropostaData', [PropostaController::class, 'puxandoPropostaData'])->name('puxandoPropostaData');
+Route::get('/statusEnvio', [CompassController::class, 'statusEnvio'])->name('statusEnvio');
 
 Route::get('/verificarUsuario', [UsuarioController::class, 'verificarUsuario'])->name('verificarUsuario');
 Route::get('/adicionarUsuario', [UsuarioController::class, 'adicionarUsuario'])->name('adicionarUsuario');

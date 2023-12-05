@@ -32,7 +32,7 @@
                     <li class="breadcrumb-item active">Dashboard</li>
                 </ol>
                 <div class="row">
-                    <div class="col-xl-3 col-md-6">
+                    <div class="col-xl-4 col-md-6">
                         <div class="card bg-primary text-white mb-4 bg-perso card-height">
                             <div class="card-body">Lucro Mensal</div>
                             <p class="card-text card-just">R$ 41.324,91</p>
@@ -44,7 +44,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-6">
+                    <div class="col-xl-4 col-md-6">
                         <div class="card bg-warning text-white mb-4 bg-perso card-height">
                             <div class="card-body">Propostas Pendentes</div>
                             <p class="card-text card-just">ACL 0056 <br>ACL 0053 <br> ACL 0045 <br> ACL 0039</p>
@@ -54,20 +54,15 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-6">
-                        <div class="card bg-success text-white mb-4 bg-perso card-height">
-                            <div class="card-body">Últimas Atividades</div>
-                            <p class="card-text card-just">Helena criou uma nova proposta. <br>Cristiano alterou a proposta ACL 0044. <br> Bruno concluiu a proposta ACL 0049</p>
-                            <div class="card-footer d-flex align-items-center justify-content-between">
-                                <a class="small text-white stretched-link" href="#">Ver Mais</a>
-                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6">
+                    <div class="col-xl-4 col-md-6">
                         <div class="card bg-danger text-white mb-4 bg-perso card-height">
-                            <div class="card-body">Valor Total de Comissão</div>
-                            <p class="card-text card-just">R$ 4.132,49</p>
+                            <div class="card-body">
+                                Valor Total de Comissão
+                                <div class="d-flex col-12 justify-content-center mt-5">
+                                    <p class="card-text" style="font-size: 24px">R$ 4.132,49</p>
+                                </div>
+                            </div>
+                            
                             <div class="card-footer d-flex align-items-center justify-content-between">
                                 <a class="small text-white stretched-link" href="#">Ver Mais</a>
                                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>

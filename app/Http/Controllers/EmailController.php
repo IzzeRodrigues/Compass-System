@@ -50,7 +50,7 @@ class EmailController extends Controller
 
     function enviarErro()
     {
-        session_start();
+        @session_start();
         $dados = $_SESSION['dados'];
         $Erro = $_GET['Erro'];
 
@@ -84,6 +84,8 @@ class EmailController extends Controller
     function enviaPronto(){
         require '../vendor/autoload.php';    
 
+        @session_start();
+        $sessao = $_SESSION['infos'];
         $email = new \SendGrid\Mail\Mail();
         $email->setFrom("compassalgoritimo@gmail.com", "Algoritmo - Compass");
         $email->setSubject("PROPOSTA ASSINADA COM SUCESSO!");
@@ -92,7 +94,8 @@ class EmailController extends Controller
             "text/html",
             " Olá! Você assinou uma proposta da ACL Cargo. veja seu documento assinado aqui:"
         );
-        $fileContent = file_get_contents('./criadorPDF/file.pdf');
+        // $fileContent = file_get_contents('./criadorPDF/file.pdf');
+        $fileContent = file_get_contents('../criadorPDF/file.pdf');
         $attachment = new \SendGrid\Mail\Attachment();
         $attachment->setContent(base64_encode($fileContent));
         $attachment->setType("application/pdf");
@@ -107,13 +110,13 @@ class EmailController extends Controller
             if ($response->statusCode() == 202)
             {
                 unset($_SESSION['proposta']);
-                $_SESSION['AvisoEnvioEmail'] = "Proposta enviada ao cliente.";
+                $_SESSION['AvisoEnvioFinalEmail'] = "Proposta enviada ao cliente.";
                 // var_dump($_SESSION['AvisoEnvioEmail']);
                 return redirect()->route('gerproposta');
             }
             else
             {
-                $_SESSION['AvisoEnvioEmail'] = "Ocorreu um erro na tentativa de envio. Tente novamente.";
+                $_SESSION['AvisoEnvioFinalEmail'] = "Ocorreu um erro na tentativa de envio. Tente novamente.";
                 // var_dump($_SESSION['AvisoEnvioEmail']);
                 return redirect()->route('gerproposta');
             }
