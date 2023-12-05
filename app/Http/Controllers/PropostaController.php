@@ -515,7 +515,7 @@ class PropostaController extends Controller
         }
         $dias = [];
         $quantidade = [];
-        for ($i=1; $i <= $dia; $i++) 
+        for ($i=1; $i < $dia; $i++) 
         { 
             $diario = DB::table('tb_proposta')->where('tb_proposta.dt_proposta', "2023-12-$i")->get();
             $quantidadeDiaria = count($diario);
@@ -523,6 +523,8 @@ class PropostaController extends Controller
             array_push($quantidade, "$quantidadeDiaria");
         }
         
+        $meses = [];
+        $quantidadeMeses = [];
         for ($i=1; $i <= $mes; $i++)
         {
             $mensal = DB::table('tb_proposta')->where('tb_proposta.dt_proposta', 'LIKE' , "%-$i-%")->get();
@@ -569,7 +571,7 @@ class PropostaController extends Controller
             $quantidadeMensal = count($mensal);
             array_push($quantidadeMeses, "$quantidadeMensal");
         }
-        return ["Dias" => $dias, "Quantidade" => $quantidade, "Meses" => $meses, "QuantidadeMensal" => $quantidadeMensal];
+        return ["Dias" => $dias, "Quantidade" => $quantidade, "Meses" => $meses, "QuantidadeMensal" => $quantidadeMeses];
     }
 
 }

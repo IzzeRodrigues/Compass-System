@@ -9,6 +9,8 @@ var dia = date.getDate();
 
 var dias = [];
 var quantidade = [];
+var meses = [];
+var quantidadeMensal = [];
 
     // dias.push(`Dezembro ${i}`);
     fetch(`http://localhost:8000/puxandoPropostaData`)
@@ -20,7 +22,9 @@ function colocandoQuantidade(json)
 {
     dias = json['Dias'];
     quantidade = json['Quantidade'];
-    var ctx = document.getElementById("myAreaChart");
+    meses = json['Meses'];
+    quantidadeMensal = json['QuantidadeMensal'];
+    var ctx = document.getElementById("propostaMensal");
     var myLineChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -68,6 +72,48 @@ function colocandoQuantidade(json)
                 display: false
             }
         }
+    });
+
+    var ctx = document.getElementById("propostaAnual");
+    var myLineChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: meses,
+        datasets: [{
+        label: "Propostas",
+        backgroundColor: "rgba(2,117,216,1)",
+        borderColor: "rgba(2,117,216,1)",
+        data: quantidadeMensal,
+        }],
+    },
+    options: {
+        scales: {
+        xAxes: [{
+            time: {
+            unit: 'month'
+            },
+            gridLines: {
+            display: false
+            },
+            ticks: {
+            maxTicksLimit: 6
+            }
+        }],
+        yAxes: [{
+            ticks: {
+            min: 0,
+            max: 10,
+            maxTicksLimit: 5
+            },
+            gridLines: {
+            display: true
+            }
+        }],
+        },
+        legend: {
+        display: false
+        }
+    }
     });
 }
 
