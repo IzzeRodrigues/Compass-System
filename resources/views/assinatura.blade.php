@@ -135,8 +135,7 @@ As partes envolvidas poderão acompanhar quem já assinou e, ao final, o cliente
                                         </label>
                                     </div>
                                 </div>
-                            <button name='envio' value='envio' id='envio'
-                                class=" btn btn-primary disabled col-2 border border-0 rounded-4 mt-3 mb-5" >Assinar</button>
+                            <button name='envio' value='envio' id='envio' class=" btn btn-primary disabled col-2 border border-0 rounded-4 mt-3 mb-5" >Assinar</button>
                         </div>
                     </form>
                 </div>

@@ -81,4 +81,44 @@ class EmailController extends Controller
         }
 
     }
+    function enviaPronto(){
+        require '../vendor/autoload.php';    
+
+        $email = new \SendGrid\Mail\Mail();
+        $email->setFrom("compassalgoritimo@gmail.com", "Algoritmo - Compass");
+        $email->setSubject("PROPOSTA ASSINADA COM SUCESSO!");
+        $email->addTo($sessao['Email'], $sessao['Nome']);
+        $email->addContent(
+            "text/html",
+            " Olá! Você assinou uma proposta da ACL Cargo. veja seu documento assinado aqui:"
+        );
+        $fileContent = file_get_contents('./criadorPDF/file.pdf');
+        $attachment = new \SendGrid\Mail\Attachment();
+        $attachment->setContent(base64_encode($fileContent));
+        $attachment->setType("application/pdf");
+        $attachment->setFilename("nome-do-arquivo.pdf");
+        $attachment->setDisposition("attachment");
+        $email->addAttachment($attachment);
+
+        $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
+        try {
+            $response = $sendgrid->send($email);
+            print $response->statusCode() . "\n";
+            if ($response->statusCode() == 202)
+            {
+                unset($_SESSION['proposta']);
+                $_SESSION['AvisoEnvioEmail'] = "Proposta enviada ao cliente.";
+                // var_dump($_SESSION['AvisoEnvioEmail']);
+                return redirect()->route('gerproposta');
+            }
+            else
+            {
+                $_SESSION['AvisoEnvioEmail'] = "Ocorreu um erro na tentativa de envio. Tente novamente.";
+                // var_dump($_SESSION['AvisoEnvioEmail']);
+                return redirect()->route('gerproposta');
+            }
+        } catch (Exception $e) {
+            echo 'Caught exception: ' . $e->getMessage() . "\n";
+        }
+    }
 }
