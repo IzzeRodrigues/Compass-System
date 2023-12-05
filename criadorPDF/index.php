@@ -3741,7 +3741,8 @@ function assinando($variaveis)
 
             date_default_timezone_set('America/Sao_Paulo');
             $hora= date('G:i:s');
-
+            
+            // que porra é essa????????
             $token = "";
           
             if ($ip_assinante != 'UNKNOWN')
