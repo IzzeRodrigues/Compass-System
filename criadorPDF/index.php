@@ -3705,7 +3705,6 @@ function assinando($variaveis)
             </table>
             </div>';
         $mpdf->WriteHTML($clausulaDigital);
-       
         $mpdf->Output();
         // var_dump($variaveis);
         // unset($_SESSION['representante']);
@@ -3749,7 +3748,7 @@ function assinando($variaveis)
     //             <tr>
     //                 <td>
     //                 ASSINADO POR ' . $nome_assinante . ', Em ' . $ip_assinante . '. Portador do documento de número ' . $doc_assinante . ', às ' . $hora . ' Horário de Brasília-DF. Santos-SP, ' . $dia . ' de ' . $mes . ' de ' . $ano . '. 
-    //                 Número de identificação: ' . $negociacao . 'As assinaturas digitais estão previstas na MP 2.200-2/2001, e a plataforma está amparada no artigo 10, § 2º. Problemas com o contrato? Contate: admin@acl.com.br.     
+    //                 Número de identificação: ' . $negociacao . 'As assinaturas digitais estão previstas na MP 2.200-2/2001, e a plataforma está amparada no artigo 10, § 2º. Política de uso e privacidade aceitas no momento da assinatura. Problemas com o contrato? Contate: admin@acl.com.br. 
     //                 </td>
     //             </tr>
     //         </table>
