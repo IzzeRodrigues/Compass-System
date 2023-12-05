@@ -44,8 +44,8 @@ class AssinarDigitalController extends Controller
             // echo('emtro');
             $_SESSION['assinandoCliente'] = true;
             // var_dump($_SESSION['dadosAssinante']);
-            echo("<object data='http://localhost/Compass/criadorPDF' type='application/pdf'></object>");
-            return redirect()->route('atualizarAssinaturaCliente');
+            echo("<object data='http://localhost/Compass/criadorPDF' type='application/pdf'></object> <script>window.location.href = 'http://localhost:8000/atualizarAssinaturaCliente'</script>");
+            // return redirect()->route('atualizarAssinaturaCliente');
         }
         else
         {

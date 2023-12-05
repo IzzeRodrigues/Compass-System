@@ -22,6 +22,7 @@
 
         @session_start();
 
+        unset($_SESSION['assinandoCliente']);
         if(isset($_SESSION['ErroAssinaturaCliente']))
         {
             $erro = $_SESSION['ErroAssinaturaCliente'];
