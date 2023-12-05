@@ -471,7 +471,9 @@ class PropostaController extends Controller
     function puxandoPropostaData(Request $request)
     {
         @session_start();
-        $data = date("Y-m-d");
+        date_default_timezone_set('America/Sao_Paulo');
+        $data = date("Y-m-d H:i:s" );
+        echo($data);
         $data = explode('-',$data);
         $dia = $data[2];
         $mes = $data[1];
@@ -516,7 +518,7 @@ class PropostaController extends Controller
         }
         $dias = [];
         $quantidade = [];
-        for ($i=1; $i < $dia; $i++) 
+        for ($i=1; $i <= $dia; $i++) 
         { 
             $usuario = DB::table('tb_email_usuario')->join('tb_usuario', 'tb_email_usuario.cd_usuario', 'tb_usuario.cd_usuario')->join('tb_privilegio', 'tb_usuario.cd_usuario', 'tb_privilegio.cd_usuario')->where('tb_email_usuario.nm_email_usuario', $_SESSION['Usuario']['email'])->get();
             $usuario = $usuario[0]->cd_usuario;

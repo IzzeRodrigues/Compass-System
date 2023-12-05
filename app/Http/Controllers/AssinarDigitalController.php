@@ -30,7 +30,7 @@ class AssinarDigitalController extends Controller
         // var_dump($_SESSION['idProposta']);
     }
     function pegarValorAssinante(Request $request){
-        session_start();
+        @session_start();
         // if ($request->envio){
             // $valores = $request->all();
             $_SESSION['dadosAssinante'] = $request->all();
@@ -43,6 +43,7 @@ class AssinarDigitalController extends Controller
         {
             // echo('emtro');
             $_SESSION['assinandoCliente'] = true;
+            // var_dump($_SESSION['dadosAssinante']);
             echo("<object data='http://localhost/Compass/criadorPDF' type='application/pdf'></object>");
             return redirect()->route('atualizarAssinaturaCliente');
         }
