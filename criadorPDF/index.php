@@ -3693,15 +3693,23 @@ function assinando($variaveis)
             $nome_assinante = $_SESSION['dadosAssinante']['nomeAssinante'];
             $doc_assinante = $_SESSION['dadosAssinante']['docAssinante'];
             $email_assinante = $_SESSION['dadosAssinante']['emailAssinante'];
+
+            $dataAtual = date("Y-m-d");
+            $partesData = explode("-", $dataAtual);
+
+            $dia= $partesData[2];
+            $mes= $partesData[1];
+            $ano= $partesData[0];
+
+            date_default_timezone_set('America/Sao_Paulo');
+            $hora= date('h:i:s');
+
             $token = "";
-            $hora= "";
-            $dia ="";
-            $mes= "";
-            $ano= "";
+          
             if ($ip_assinante != 'UNKNOWN')
             {
                 $negociacao = $variaveis->cabecalho[0]->nm_referencia_acl;
-                $negociacao = explode(' ', $negociacao);
+                $negociacao = explode('', $negociacao);
                 $negociacao = "$negociacao[1] $negociacao[2]";
                 $clausulaDigital2 = '<div style=" border:0.5px solid black; border-top:none;">
                     <table style="">
