@@ -3709,7 +3709,7 @@ function assinando($variaveis)
             if ($ip_assinante != 'UNKNOWN')
             {
                 $negociacao = $variaveis->cabecalho[0]->nm_referencia_acl;
-                $negociacao = explode('', $negociacao);
+                $negociacao = explode(' ', $negociacao);
                 $negociacao = "$negociacao[1] $negociacao[2]";
                 $clausulaDigital2 = '<div style=" border:0.5px solid black; border-top:none;">
                     <table style="">
