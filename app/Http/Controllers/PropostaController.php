@@ -273,6 +273,7 @@ class PropostaController extends Controller
         ->where('tb_adicionais.cd_proposta', '=', $request['ID'])
         ->get();
 
+        $_SESSION['idProposta'] = $cabecalho[0]->cd_proposta;
         $_SESSION['propostaAssinatura'] = json_encode(['cabecalho' => $cabecalho, 'usuario' => $usuario, 'operacao' => $operacao, 'despesa' => $despesa, 'carga' => $carga, 'fretePeso' => $fretePeso, 'motorista' => $motorista, 'adicionais' => $adicionais, 'assinando' => true]);
 
         return redirect()->route('assinatura');

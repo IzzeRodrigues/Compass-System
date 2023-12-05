@@ -1820,66 +1820,18 @@ function assinaturaDigital($variaveis)
                 </tr>
             </table>
             </div>';
-        $mpdf->WriteHTML($clausulaDigital);
+            $mpdf->WriteHTML($clausulaDigital);
+        }
         // unset($_SESSION['representante']);
         // header('Location:http://localhost:8000/emailCliente');
-    }
-
-    function get_client_ip()
-    {
-        $ipaddress = '';
-        if (isset($_SERVER['HTTP_CLIENT_IP']))
-            $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
-        else if (isset($_SERVER['HTTP_X_FORWARDED_FOR']))
-            $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
-        else if (isset($_SERVER['HTTP_X_FORWARDED']))
-            $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
-        else if (isset($_SERVER['HTTP_FORWARDED_FOR']))
-            $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
-        else if (isset($_SERVER['HTTP_FORWARDED']))
-            $ipaddress = $_SERVER['HTTP_FORWARDED'];
-        else if (isset($_SERVER['REMOTE_ADDR']))
-            $ipaddress = $_SERVER['REMOTE_ADDR'];
-        else
-            $ipaddress = 'UNKNOWN';
-        return $ipaddress;
-    }
-    $ip_assinante = get_client_ip();
-    if (isset($_SESSION['dadosAssinante'])) {
-        $nome_assinante = $_SESSION['dadosAssinante']['nomeAssinante'];
-        $doc_assinante = $_SESSION['dadosAssinante']['docAssinante'];
-        $email_assinante = $_SESSION['dadosAssinante']['emailAssinante'];
-        $token = "";
-        $hora= "";
-        $dia ="";
-        $mes= "";
-        $ano= "";
-    }
-    ;
-    if (isset($_SESSION['dadosAssinante']) && $ip_assinante != 'UNKNOWN') {
-        $clausulaDigital2 = '<div style=" border:0.5px solid black; border-top:none;">
-            <table style="">
-                <tr>
-                    <td>
-                    ASSINADO POR ' . $nome_assinante . ', Em ' . $ip_assinante . '. Portador do documento de número ' . $doc_assinante . ', às ' . $hora . ' Horário de Brasília-DF. Santos-SP, ' . $dia . ' de ' . $mes . ' de ' . $ano . '. 
-                    Número de identificação: ' . $negociacao . '. As assinaturas digitais estão previstas na MP 2.200-2/2001, e a plataforma está amparada no artigo 10, § 2º. Problemas com o contrato? Contate: admin@acl.com.br.     
-                    </td>
-                </tr>
-            </table>
-            </div>';
-        $mpdf->WriteHTML($clausulaDigital2);
         // unset($_SESSION['dadosAssinante']);
         $mpdf->Output();
         // header("Location: http://localhost:8000/salvarProposta");
-    } else {
-        $mpdf->Output();
-    }
 
 
     // Em "adicionais" e "adicionais se necessário" será necessário criar um if no backend com as possibilidades, em caso de valor 0, dependendo do caso, usar "isento" "não aplicável" "sob consulta" "conferir legislação" ou isento comercialmente. 
 // Nesses dois, em caso de valor fixo, é importante acrescentar os sinais R$ - $ - % - € que não estarão no doc por conta das possibilidades acima.
 }
-;
 
 // Cliente assinando
 
@@ -2802,7 +2754,7 @@ function assinando($variaveis)
    //========================================================================proposta assinada============================================================================================
    //=============================================================================================================================================================================================
    //=============================================================================================================================================================================================
-    function propostaAssinada($variaveis)
+    function propostaAssinada()
 {
     @session_start();
     $variaveis = json_decode($_SESSION['propostaAssinatura']);
@@ -3710,57 +3662,67 @@ function assinando($variaveis)
             </div>';
         $mpdf->WriteHTML($clausulaDigital);
         // $mpdf->Output('filename.pdf', \Mpdf\Output\Destination::FILE);
-        $mpdf->OutputFile(__DIR__ . '/file.pdf');
 
         // $mpdf->Output();
         // var_dump($variaveis);
         // unset($_SESSION['representante']);
         // header('Location:http://localhost:8000/emailCliente');
+        // echo('entrou');
+        function get_client_ip()
+        {
+            $ipaddress = '';
+            if (isset($_SERVER['HTTP_CLIENT_IP']))
+                $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
+            else if (isset($_SERVER['HTTP_X_FORWARDED_FOR']))
+                $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
+            else if (isset($_SERVER['HTTP_X_FORWARDED']))
+                $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
+            else if (isset($_SERVER['HTTP_FORWARDED_FOR']))
+                $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
+            else if (isset($_SERVER['HTTP_FORWARDED']))
+                $ipaddress = $_SERVER['HTTP_FORWARDED'];
+            else if (isset($_SERVER['REMOTE_ADDR']))
+                $ipaddress = $_SERVER['REMOTE_ADDR'];
+            else
+                $ipaddress = 'UNKNOWN';
+            return $ipaddress;
+        }
+        $ip_assinante = get_client_ip();
+        if (isset($_SESSION['dadosAssinante'])) 
+        {
+            $nome_assinante = $_SESSION['dadosAssinante']['nomeAssinante'];
+            $doc_assinante = $_SESSION['dadosAssinante']['docAssinante'];
+            $email_assinante = $_SESSION['dadosAssinante']['emailAssinante'];
+            $token = "";
+            $hora= "";
+            $dia ="";
+            $mes= "";
+            $ano= "";
+            if ($ip_assinante != 'UNKNOWN')
+            {
+                $negociacao = $variaveis->cabecalho[0]->nm_referencia_acl;
+                $negociacao = explode(' ', $negociacao);
+                $negociacao = "$negociacao[1] $negociacao[2]";
+                $clausulaDigital2 = '<div style=" border:0.5px solid black; border-top:none;">
+                    <table style="">
+                        <tr>
+                            <td>
+                            ASSINADO POR ' . $nome_assinante . ', Em ' . $ip_assinante . '. Portador do documento de número ' . $doc_assinante . ', às ' . $hora . ' Horário de Brasília-DF. Santos-SP, ' . $dia . ' de ' . $mes . ' de ' . $ano . '. 
+                            Número de identificação: ' . $negociacao . 'As assinaturas digitais estão previstas na MP 2.200-2/2001, e a plataforma está amparada no artigo 10, § 2º. Política de uso e privacidade aceitas no momento da assinatura. Problemas com o contrato? Contate: admin@acl.com.br. 
+                            </td>
+                        </tr>
+                    </table>
+                    </div>';
+                $mpdf->WriteHTML($clausulaDigital2);
+            }
+        }
+        $mpdf->OutputFile(__DIR__ . '/file.pdf');
     }
 
-    // function get_client_ip()
-    // {
-    //     $ipaddress = '';
-    //     if (isset($_SERVER['HTTP_CLIENT_IP']))
-    //         $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
-    //     else if (isset($_SERVER['HTTP_X_FORWARDED_FOR']))
-    //         $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    //     else if (isset($_SERVER['HTTP_X_FORWARDED']))
-    //         $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
-    //     else if (isset($_SERVER['HTTP_FORWARDED_FOR']))
-    //         $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
-    //     else if (isset($_SERVER['HTTP_FORWARDED']))
-    //         $ipaddress = $_SERVER['HTTP_FORWARDED'];
-    //     else if (isset($_SERVER['REMOTE_ADDR']))
-    //         $ipaddress = $_SERVER['REMOTE_ADDR'];
-    //     else
-    //         $ipaddress = 'UNKNOWN';
-    //     return $ipaddress;
-    // }
-    // $ip_assinante = get_client_ip();
-    // if (isset($_SESSION['dadosAssinante'])) {
-    //     $nome_assinante = $_SESSION['dadosAssinante']['nomeAssinante'];
-    //     $doc_assinante = $_SESSION['dadosAssinante']['docAssinante'];
-    //     $email_assinante = $_SESSION['dadosAssinante']['emailAssinante'];
-    //     $token = "";
-    //     $hora= "";
-    //     $dia ="";
-    //     $mes= "";
-    //     $ano= "";
-    // }
-    // ;
+    
+    ;
     // if (isset($_SESSION['dadosAssinante']) && $ip_assinante != 'UNKNOWN') {
-    //     $clausulaDigital2 = '<div style=" border:0.5px solid black; border-top:none;">
-    //         <table style="">
-    //             <tr>
-    //                 <td>
-    //                 ASSINADO POR ' . $nome_assinante . ', Em ' . $ip_assinante . '. Portador do documento de número ' . $doc_assinante . ', às ' . $hora . ' Horário de Brasília-DF. Santos-SP, ' . $dia . ' de ' . $mes . ' de ' . $ano . '. 
-    //                 Número de identificação: ' . $negociacao . 'As assinaturas digitais estão previstas na MP 2.200-2/2001, e a plataforma está amparada no artigo 10, § 2º. Política de uso e privacidade aceitas no momento da assinatura. Problemas com o contrato? Contate: admin@acl.com.br. 
-    //                 </td>
-    //             </tr>
-    //         </table>
-    //         </div>';
-    //     $mpdf->WriteHTML($clausulaDigital2);
+        
     //     // unset($_SESSION['dadosAssinante']);
     //     $mpdf->Output();
     //     // header("Location: http://localhost:8000/salvarProposta");
