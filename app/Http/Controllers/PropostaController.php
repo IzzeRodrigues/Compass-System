@@ -232,7 +232,7 @@ class PropostaController extends Controller
 
         $usuario = DB::table('tb_usuario')
         ->join('tb_email_usuario', 'tb_usuario.cd_usuario', '=', 'tb_email_usuario.cd_usuario')
-        ->select('nm_nome_completo', 'nm_cargo_usuario', 'nm_email_usuario')
+        ->select('nm_nome_completo', 'nm_cargo_usuario', 'nm_email_usuario', 'cd_cpf_usuario')
         ->where('tb_usuario.cd_usuario', '=', $cabecalho[0]->cd_usuario)
         ->get();
 
@@ -517,7 +517,19 @@ class PropostaController extends Controller
         $quantidade = [];
         for ($i=1; $i < $dia; $i++) 
         { 
-            $diario = DB::table('tb_proposta')->where('tb_proposta.dt_proposta', "2023-12-$i")->get();
+            $usuario = DB::table('tb_email_usuario')->join('tb_usuario', 'tb_email_usuario.cd_usuario', 'tb_usuario.cd_usuario')->join('tb_privilegio', 'tb_usuario.cd_usuario', 'tb_privilegio.cd_usuario')->where('tb_email_usuario.nm_email_usuario', $_SESSION['Usuario']['email'])->get();
+            $usuario = $usuario[0]->cd_usuario;
+            if ($_SESSION['Usuario']['privilegio'] == "Adm")
+            {
+                $diario = DB::table('tb_proposta')->where('tb_proposta.dt_proposta', "2023-12-$i")->get();
+            }
+            else
+            {
+                if ($_SESSION['Usuario']['privilegio'] == "Usuario")
+                {
+                    $diario = DB::table('tb_proposta')->where('tb_proposta.dt_proposta', "2023-12-$i")->where('tb_proposta.cd_usuario', $usuario)->get();
+                }
+            }
             $quantidadeDiaria = count($diario);
             array_push($dias, "$mesExtenso $i");
             array_push($quantidade, "$quantidadeDiaria");
@@ -527,7 +539,19 @@ class PropostaController extends Controller
         $quantidadeMeses = [];
         for ($i=1; $i <= $mes; $i++)
         {
-            $mensal = DB::table('tb_proposta')->where('tb_proposta.dt_proposta', 'LIKE' , "%-$i-%")->get();
+            $usuario = DB::table('tb_email_usuario')->join('tb_usuario', 'tb_email_usuario.cd_usuario', 'tb_usuario.cd_usuario')->join('tb_privilegio', 'tb_usuario.cd_usuario', 'tb_privilegio.cd_usuario')->where('tb_email_usuario.nm_email_usuario', $_SESSION['Usuario']['email'])->get();
+            $usuario = $usuario[0]->cd_usuario;
+            if ($_SESSION['Usuario']['privilegio'] == "Adm")
+            {
+                $mensal = DB::table('tb_proposta')->where('tb_proposta.dt_proposta', 'LIKE' , "%-$i-%")->get();
+            }
+            else
+            {
+                if ($_SESSION['Usuario']['privilegio'] == "Usuario")
+                {
+                    $mensal = DB::table('tb_proposta')->where('tb_proposta.dt_proposta', 'LIKE' , "%-$i-%")->where('tb_proposta.cd_usuario', $usuario)->get();
+                }
+            }
             switch($i)
             {
                 case 1:
