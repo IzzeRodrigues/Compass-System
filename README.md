@@ -29,19 +29,19 @@ O sistema oferece visões distintas baseadas no perfil do usuário:
 
 ---
 
-## 🛠️ Tecnologias Utilizadas (Baseado na estrutura do projeto)
+## 🛠️ Tecnologias Utilizadas
 
 * **Linguagem:** PHP
 * **Framework:** Laravel
 * **Frontend:** Blade Templates, JavaScript
 * **Gerenciadores:** Composer e NPM
-* **Serviços:** Integração com APIs de e-mail (ex: SendGrid) para notificações e assinaturas.
+* **Serviços:** Integração com APIs de e-mail (SendGrid) para notificações e assinaturas, ViaCEP, Assinatura Digital.
 
 ---
 
 ### 📂 Estrutura do Repositório
 
-O projeto segue a arquitetura MVC (Model-View-Controller), com o histórico de desenvolvimento preservado da branch `BranchFinal`.
+O projeto segue a arquitetura MVC (Model-View-Controller).
 
 * **`app/Http/Controllers/`**: Contém a lógica de controle do sistema.
 * **Propostas**: Gerenciamento de cálculos, status e assinaturas digitais.
