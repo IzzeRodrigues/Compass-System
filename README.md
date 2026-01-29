@@ -35,7 +35,7 @@ O sistema oferece visões distintas baseadas no perfil do usuário:
 * **Framework:** Laravel
 * **Frontend:** Blade Templates, JavaScript
 * **Gerenciadores:** Composer e NPM
-* **Serviços:** Integração com APIs de e-mail (SendGrid) para notificações e assinaturas, ViaCEP, Assinatura Digital.
+* **Serviços:** Integração com APIs de e-mail (SendGrid) para notificações e assinaturas, ViaCEP, Assinatura Digital, Cálculo de frete.
 
 ---
 
